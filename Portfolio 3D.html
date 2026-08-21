@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="dark light">
+<title>Samiul Alam Sumel | AI Product Engineer — Port &amp; Logistics Domain</title>
+<meta name="description" content="AI Product Engineer with a 12+ year port-operations background at Mongla Port Authority. Builds with AI assistance, then rebuilds independently. React, Next.js, Node.js, MongoDB. 3 tools in daily production use.">
+<link rel="stylesheet" href="_ds/modernist-46555ee9-d749-4825-88bd-8c556936c15c/styles.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+    "three/addons/exporters/OBJExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js",
+    "three/addons/exporters/GLTFExporter.js": "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
+    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js": "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/OBJExporter.js": "sha384-nbwtoZENJD3Vq+ACK0CuGQdPMuDWHkamC2KJD70EV5nfg6jQjfppKOea07YJN+N3",
+    "https://unpkg.com/three@0.184.0/examples/jsm/exporters/GLTFExporter.js": "sha384-VofkvpG6HERhFCYbsUOHeNXBCqID2nfqkQqnVzE1jc/oPcz+qJ13ADdXH08hE+cQ"
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; }
+  a:hover { color: var(--color-accent-600); }
+  .card, .tag, .btn, .clk, .co, .rm-status, .model-cta, .pc-thumb, .dc-st, .h-eye, .theme-tgl, .input { border-radius: 5px; }
+
+  :root { --heading-accent: var(--color-accent-700); }
+  :root[data-theme='dark'] {
+    --color-bg: var(--color-neutral-900);
+    --color-surface: var(--color-neutral-800);
+    --color-text: var(--color-neutral-100);
+    --color-divider: color-mix(in srgb, var(--color-neutral-100) 25%, transparent);
+    --shadow-sm: 0 1px 2px color-mix(in srgb, black 55%, transparent);
+    --shadow-md: 0 3px 10px color-mix(in srgb, black 60%, transparent);
+    --shadow-lg: 0 12px 32px color-mix(in srgb, black 70%, transparent);
+    --heading-accent: var(--color-accent-400);
+  }
+  :root[data-theme='dark'] a:hover { color: var(--color-accent-400); }
+  .theme-tgl { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--color-divider); background: transparent; color: var(--color-text); cursor: pointer; margin-left: auto; }
+  .theme-tgl:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .theme-tgl svg { width: 16px; height: 16px; }
+  :root[data-theme='dark'] .icon-sun { display: block; }
+  :root[data-theme='dark'] .icon-moon { display: none; }
+  :root:not([data-theme='dark']) .icon-sun { display: none; }
+  :root:not([data-theme='dark']) .icon-moon { display: block; }
+  #scene { position: fixed; inset: 0; z-index: 0; display: block; width: 100vw; height: 100vh; }
+  #app { position: relative; z-index: 1; }
+
+  .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(6px); }
+  .nav-links { display: flex; align-items: center; gap: var(--space-4); list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+  .nav-links a { padding: 4px 0; }
+
+  .panel { padding: 96px 0; border-bottom: 2px solid var(--color-divider); background: color-mix(in srgb, var(--color-bg) 90%, transparent); backdrop-filter: blur(3px); }
+  .panel-clear { background: transparent; backdrop-filter: none; border-bottom: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  .slabel { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--heading-accent); margin: 0 0 8px; }
+  .stitle span { color: var(--color-accent); }
+  .grid-2 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+  @media (max-width: 800px) { .grid-2 { grid-template-columns: 1fr; } }
+  .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
+
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; align-items: center; padding-top: 40px; position: relative; }
+  #hero::before { content: ""; position: absolute; inset: -40px -28px; background: linear-gradient(100deg, color-mix(in srgb, var(--color-bg) 96%, transparent) 0%, color-mix(in srgb, var(--color-bg) 96%, transparent) 58%, color-mix(in srgb, var(--color-bg) 20%, transparent) 100%); z-index: -1; }
+  .h-eye { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--color-divider); padding: 6px 12px; margin-bottom: 20px; }
+  .h-dot { width: 7px; height: 7px; background: var(--color-accent); display: inline-block; }
+  .h-name { font-size: 56px; margin-bottom: 4px; }
+  .h-role { font-size: 22px; color: var(--color-accent-700); margin-bottom: 6px; font-family: var(--font-heading); font-weight: 800; }
+  .h-titles { font-size: 15px; color: var(--color-text); opacity: .75; margin-bottom: 20px; }
+  .h-desc { max-width: 640px; font-size: 16px; text-align: justify; hyphens: auto; }
+  .h-btns { display: flex; gap: 10px; flex-wrap: wrap; margin: 20px 0 36px; }
+  .h-stats { display: flex; gap: 40px; }
+  .st-val { font-size: 36px; font-weight: 800; font-family: var(--font-heading); }
+  .st-lbl { font-size: 12px; opacity: .65; }
+
+  .tl-ul, .dc-ul, .rm-ph-list, .mtd-ul { padding-left: 20px; margin: 0 0 var(--space-3); font-size: 14px; }
+  .tl-ul li, .dc-ul li, .rm-ph-list li, .mtd-ul li { margin-bottom: 6px; }
+  .ab-text p, .svc-intro, .ct-text p, .mtd-intro, .rm-intro, .dm-intro { text-align: justify; hyphens: auto; }
+
+  .hl-item { display: flex; gap: 14px; margin-bottom: 22px; }
+  .hl-ic { font-size: 22px; }
+  .hl-t { font-weight: 800; font-family: var(--font-heading); font-size: 15px; margin-bottom: 3px; }
+  .hl-d { font-size: 13px; opacity: .75; }
+  .ab-info { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; border-top: 2px solid var(--color-divider); padding-top: 20px; }
+  .ai-l { font-size: 11px; text-transform: uppercase; opacity: .55; }
+  .ai-v { font-size: 14px; font-weight: 600; }
+
+  .mtd-card { border-top: 2px solid var(--color-divider); padding-top: 16px; margin-bottom: 22px; }
+  .mtd-card-t { font-family: var(--font-heading); font-weight: 800; margin-bottom: 6px; }
+  .mtd-card-t span { color: var(--color-accent); }
+  .mtd-p { font-size: 14px; opacity: .85; }
+  .loop-svg { width: 100%; max-width: 380px; }
+  .loop-ring { fill: none; stroke: var(--color-divider); stroke-width: 1.5; }
+  .loop-node { fill: var(--color-surface); stroke: var(--color-divider); stroke-width: 2; }
+  .loop-node.hi { fill: var(--color-accent-100); stroke: var(--color-accent); }
+  .loop-lbl { font-size: 13px; font-family: Archivo, sans-serif; font-weight: 700; text-anchor: middle; dominant-baseline: middle; fill: var(--color-text); }
+  .loop-lbl.hi { fill: var(--color-accent-700); }
+  .loop-chevron { fill: var(--color-divider); }
+  .loop-dot { fill: var(--color-accent); }
+  .mtd-standards { border-top: 2px solid var(--color-divider); padding-top: 20px; margin-top: 20px; }
+  .mtd-standards-t { font-family: var(--font-heading); font-weight: 800; margin-bottom: 10px; }
+
+  .pc-thumb { aspect-ratio: 16/9; overflow: hidden; margin-bottom: 12px; background: var(--color-neutral-200); }
+  .pc-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .pc-hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+  .pc-lks { display: flex; gap: 8px; }
+  .pc-lk { text-decoration: none; font-size: 15px; }
+  .pc-nm { font-size: 17px; margin-bottom: 8px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .pc-date { font-size: 11px; opacity: .55; font-weight: 400; }
+  .pc-pb { font-size: 13px; opacity: .8; margin-bottom: 8px; }
+  .pc-ds { font-size: 13px; opacity: .9; margin-bottom: 10px; }
+  .pc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .sk-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .sk-ttl { font-size: 16px; margin: 0; }
+  .sk-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .sk-note { font-size: 12px; opacity: .7; margin-bottom: 10px; }
+  .sk-tier { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; opacity: .6; margin: 10px 0 6px; }
+  .sk-tier-ai { color: var(--heading-accent); }
+  .sk-full { grid-column: 1 / -1; }
+
+  .rm-status { border: 2px solid var(--color-divider); padding: 18px 20px; margin-bottom: 32px; }
+  .rm-status-row { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--color-divider); font-size: 13px; }
+  .rm-status-row:last-of-type { border-bottom: none; }
+  .rm-status-k { opacity: .55; letter-spacing: .06em; }
+  .rm-status-v { font-weight: 600; text-align: right; }
+  .rm-status-foot { font-size: 11px; opacity: .5; margin-top: 8px; }
+  .rm-phase { display: grid; grid-template-columns: 60px 1fr; gap: 16px; padding: 18px 0; border-top: 2px solid var(--color-divider); }
+  .rm-ph-num { font-size: 28px; font-weight: 800; font-family: var(--font-heading); opacity: .3; }
+  .rm-ph-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .rm-ph-t { font-weight: 800; font-family: var(--font-heading); }
+  .rm-st { font-size: 10px; text-transform: uppercase; padding: 2px 8px; letter-spacing: .05em; }
+  .rm-st.now { background: var(--color-accent); color: var(--color-bg); }
+  .rm-st.next { background: color-mix(in srgb, var(--color-text) 14%, transparent); color: var(--color-text); opacity: .85; }
+  .rm-ph-out { font-size: 12px; font-style: italic; opacity: .7; margin: 6px 0 0; }
+
+  .tl-item { border-top: 2px solid var(--color-divider); padding: 22px 0; }
+  .tl-hd { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .tl-role { font-size: 18px; margin: 0; }
+  .tl-per { font-size: 12px; opacity: .6; white-space: nowrap; }
+  .tl-org { font-weight: 700; margin-bottom: 2px; }
+  .tl-loc { font-size: 12px; opacity: .65; margin-bottom: 10px; }
+  .tl-sub { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--heading-accent); margin: 14px 0 6px; }
+
+  .svc-proof { font-size: 12px; color: var(--heading-accent); margin-top: 6px; }
+  .svc-ready { border-top: 2px solid var(--color-divider); padding-top: 20px; margin-top: 30px; }
+  .svc-ready-t { font-weight: 800; font-family: var(--font-heading); margin-bottom: 14px; }
+  .svc-ready-g { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; font-size: 13px; }
+  .svc-ready-item { display: flex; gap: 8px; align-items: flex-start; }
+
+  .dc-ttl { font-size: 16px; margin: 0 0 2px; }
+  .dc-org { font-size: 12px; opacity: .6; }
+  .dc-hd { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 8px; }
+  .dc-ic { font-size: 22px; }
+  .dc-st { font-size: 10px; text-transform: uppercase; padding: 2px 8px; }
+  .dc-st.ac { background: var(--color-accent-100); color: var(--color-accent-800); }
+  .dc-chips { margin: 10px 0; }
+  .dc-caveat { font-size: 11px; opacity: .55; font-style: italic; margin-top: 8px; }
+  .dc-kicker { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--heading-accent); margin-bottom: 6px; }
+
+  .eg { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 16px; }
+  .ec-deg { font-weight: 800; font-family: var(--font-heading); }
+  .ec-yr { font-size: 12px; opacity: .55; }
+
+  .cl { display: flex; flex-direction: column; gap: 4px; }
+  .clk { display: flex; gap: 12px; align-items: center; padding: 12px 14px; text-decoration: none; color: inherit; border: 1px solid var(--color-divider); }
+  .clk:hover { border-color: var(--color-accent); }
+  .clk-ic { font-size: 18px; }
+  .clk-l { font-size: 11px; opacity: .55; }
+  .clk-v { font-size: 14px; font-weight: 600; }
+  .tcos { margin-top: 20px; }
+  .tcos-t { font-weight: 800; font-family: var(--font-heading); margin-bottom: 10px; font-size: 13px; }
+  .tcos-g { display: flex; flex-wrap: wrap; gap: 8px; }
+  .co { font-size: 12px; border: 1px solid var(--color-divider); padding: 5px 10px; }
+
+  footer { padding: 40px 0; background: var(--color-bg); }
+  .ft-grid { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 24px; }
+  .ft-tagline { font-size: 13px; opacity: .7; max-width: 320px; }
+  .ft-col-title { font-size: 11px; text-transform: uppercase; opacity: .55; margin-bottom: 8px; }
+  .ft-link { display: block; font-size: 13px; color: inherit; text-decoration: none; margin-bottom: 6px; }
+  .ft-link:hover { color: var(--color-accent); }
+  .ft-bar { display: flex; justify-content: space-between; padding-top: 20px; border-top: 2px solid var(--color-divider); font-size: 12px; opacity: .6; flex-wrap: wrap; gap: 10px; }
+  .ft-top { color: inherit; text-decoration: none; }
+
+  .model-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 22px; border: 2px solid var(--color-divider); margin-top: 28px; }
+  .model-cta p { margin: 0; font-size: 13px; opacity: .75; max-width: 420px; }
+</style>
+</head>
+<body>
+<script>document.documentElement.setAttribute('data-theme', localStorage.getItem('sas-theme') || 'dark');</script>
+<canvas id="scene" aria-hidden="true"></canvas>
+
+<div id="app">
+  <nav class="nav">
+    <div class="wrap" style="display:flex;align-items:center;gap:24px;">
+      <a href="#hero" class="nav-brand" style="text-decoration:none;color:inherit;">SAS</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#domain">Domain</a></li>
+        <li><a href="#contact" class="btn btn-primary" style="padding:6px 16px;">Hire Me</a></li>
+      </ul>
+      <button class="theme-tgl" id="theme-tgl" type="button" aria-label="Toggle light/dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="panel panel-clear" data-cam="0">
+      <div class="wrap">
+        <div class="h-eye"><span class="h-dot"></span>Open to Work — Remote Worldwide</div>
+        <h1 class="h-name">MD Samiul Alam Sumel</h1>
+        <p class="h-role">AI Product Engineer</p>
+        <p class="h-titles">Port &amp; Logistics Domain · React, Next.js, Node.js &amp; MongoDB</p>
+        <p class="h-desc">I find a real operational problem, design the system, build it with AI-assisted development, then rebuild it independently from memory until I own every line. 12+ years inside Mongla Port Authority gives me problems no outside developer would even see. 3 self-built tools — billing, vehicle tracking, payroll automation — are in daily production use there.</p>
+        <div class="h-btns">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#method" class="btn btn-secondary">How I Build</a>
+          <a href="mailto:sa.sumel91@gmail.com" class="btn btn-secondary">Get In Touch</a>
+          <a href="Samiul_Alam_Sumel_CV.docx" download class="btn btn-secondary">Download CV</a>
+          <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+        </div>
+        <div class="h-stats">
+          <div><div class="st-val" data-count="12" id="c1">0</div><div class="st-lbl">Years Port Experience</div></div>
+          <div><div class="st-val" data-count="3" id="c2">0</div><div class="st-lbl">Production Tools</div></div>
+          <div><div class="st-val" data-count="7" id="c3">0</div><div class="st-lbl">Featured Projects</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="panel" data-cam="1" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="slabel">01 / Who I Am</p>
+        <h2 class="stitle" id="about-title">About <span>Me</span></h2>
+        <hr class="hr">
+        <div class="grid-2">
+          <div class="ab-text">
+            <p>I am an <strong>AI Product Engineer</strong> — I find a real operational problem, design the system around it, build with AI-assisted development, then rebuild the important parts independently until I own every line. Not a generalist developer, not a pure ops person: the rare combination of domain judgment and engineering execution.</p>
+            <p>I bring <strong>12+ years of professional work experience as a Senior Outdoor Assistant at Mongla Port Authority</strong> — Bangladesh's second-largest international seaport — in wharfrent billing, cargo dwell time management, terminal operations, and C&amp;F agent coordination.</p>
+            <p>I used that operational background to identify real workplace problems and built <strong>3 self-initiated web applications</strong> — plain JavaScript/HTML/CSS at the time — that are still used daily by C&amp;F agents and port staff. That is real, in-production software, not a class exercise. Alongside that operational work, I worked through a large part of an intensive, project-based full-stack curriculum — HTML, CSS, JavaScript (ES6+), React, React Router, part of Node.js/Express and Next.js, including authentication (JWT, Firebase) and deployment — before stepping away from the course to focus on shipping real projects.</p>
+            <p>I work requirement-first: I read the operational problem — which I can judge from 12 years inside port operations — decide what the system actually needs to do, then build and ship it, using AI-assisted development (Claude Code) as part of the build. On frontend and plain-JavaScript work I write and debug on my own; on backend and data work, AI assistance is genuinely part of how I get from requirement to working code. The <a href="#method">How I Build</a> section explains the discipline I use to close that gap, and the <a href="#roadmap">Roadmap</a> shows where I actually am on it right now.</p>
+            <p>I'm not a bootcamp graduate and not a senior engineer — I am upfront about that. What I bring is 12+ years of professional discipline from a demanding operational job, a large chunk of self-directed full-stack study, and real shipped software.</p>
+            <p>My goal is a <strong>remote AI Product Engineer, Port/Logistics-Tech, full-stack, or web developer role</strong> — anywhere in the world, with no time zone constraints.</p>
+            <div style="display:flex;gap:8px;margin-top:14px;">
+              <span class="tag tag-neutral">Bengali — Native</span>
+              <span class="tag tag-outline">English — Professional</span>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;">
+              <a href="Samiul_Alam_Sumel_CV.docx" download class="btn btn-primary">Download CV</a>
+              <a href="Samiul_Alam_Sumel_Freelance_CV.docx" download class="btn btn-secondary">Freelance CV</a>
+            </div>
+          </div>
+          <div>
+            <div class="hl-item"><div class="hl-ic">⚓</div><div><div class="hl-t">12+ Years Port Operations Background</div><div class="hl-d">Mongla Port Authority — wharfrent billing, terminal operations, C&amp;F agent coordination. The source of every problem I've built software for.</div></div></div>
+            <div class="hl-item"><div class="hl-ic">🚀</div><div><div class="hl-t">Operational Problem → Deployed Product</div><div class="hl-d">3 self-initiated web apps, each starting from an observed workflow inefficiency and ending in daily production use by C&amp;F agents and port staff.</div></div></div>
+            <div class="hl-item"><div class="hl-ic">🔁</div><div><div class="hl-t">Build → Rebuild → Explain</div><div class="hl-d">AI-assisted first pass, then independently rebuilt from memory and explained out loud — see <a href="#method">How I Build</a>.</div></div></div>
+            <div class="hl-item"><div class="hl-ic">🎯</div><div><div class="hl-t">Remote — Open to Work Worldwide</div><div class="hl-d">Seeking an AI Product Engineer, port/logistics-tech, or web developer role. No time zone constraints.</div></div></div>
+            <div class="ab-info">
+              <div><div class="ai-l">Location</div><div class="ai-v">Mongla, Bangladesh</div></div>
+              <div><div class="ai-l">Email</div><div class="ai-v"><a href="mailto:sa.sumel91@gmail.com">sa.sumel91@gmail.com</a></div></div>
+              <div><div class="ai-l">Phone</div><div class="ai-v">+880 1312 312 512</div></div>
+              <div><div class="ai-l">Portfolio</div><div class="ai-v"><a href="https://sasumel.pages.dev/" target="_blank" rel="noopener noreferrer">sasumel.pages.dev</a></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="panel" data-cam="2" aria-labelledby="method-title">
+      <div class="wrap">
+        <p class="slabel">02 / How I Work</p>
+        <h2 class="stitle" id="method-title">How I <span>Build</span></h2>
+        <hr class="hr">
+        <p class="mtd-intro">Every project on this site was built with AI assistance. That's a plain fact, not a confession — Claude and similar tools are part of how I get from a requirement to working code. But using a tool isn't a skill. The skill is the workflow around it, and the discipline of actually owning what comes out of it.</p>
+        <div class="grid-2">
+          <div style="display:flex;justify-content:center;">
+            <svg class="loop-svg" viewBox="0 0 440 440" role="img" aria-label="Loop diagram: Problem leads to Research, Design, Spec, Build, Rebuild, Test, Explain, and Improve, then back to Problem. Build, Rebuild, and Explain are highlighted.">
+              <circle class="loop-ring" cx="220" cy="220" r="150"></circle>
+              <circle class="loop-node n" cx="220.0" cy="70.0" r="38"></circle><text class="loop-lbl" x="220.0" y="70.0">Problem</text>
+              <circle class="loop-node n" cx="316.4" cy="105.1" r="38"></circle><text class="loop-lbl" x="316.4" y="105.1">Research</text>
+              <circle class="loop-node n" cx="367.7" cy="194.0" r="38"></circle><text class="loop-lbl" x="367.7" y="194.0">Design</text>
+              <circle class="loop-node n" cx="349.9" cy="295.0" r="38"></circle><text class="loop-lbl" x="349.9" y="295.0">Spec</text>
+              <circle class="loop-node hi" cx="271.3" cy="361.0" r="38"></circle><text class="loop-lbl hi" x="271.3" y="361.0">Build</text>
+              <circle class="loop-node hi" cx="168.7" cy="361.0" r="38"></circle><text class="loop-lbl hi" x="168.7" y="361.0">Rebuild</text>
+              <circle class="loop-node n" cx="90.1" cy="295.0" r="38"></circle><text class="loop-lbl" x="90.1" y="295.0">Test</text>
+              <circle class="loop-node hi" cx="72.3" cy="194.0" r="38"></circle><text class="loop-lbl hi" x="72.3" y="194.0">Explain</text>
+              <circle class="loop-node n" cx="123.6" cy="105.1" r="38"></circle><text class="loop-lbl" x="123.6" y="105.1">Improve</text>
+            </svg>
+          </div>
+          <div>
+            <div class="mtd-card"><div class="mtd-card-t"><span>01 ·</span> Tool ≠ Skill</div><p class="mtd-p">Using Claude to write code is tool use, not a skill in itself. The real skill is the workflow: understand the requirement, research it, design the solution, specify it clearly, then build — with AI assistance where that's honest, on my own where I can.</p></div>
+            <div class="mtd-card"><div class="mtd-card-t"><span>02 ·</span> Build, Rebuild, Explain</div><p class="mtd-p">A new piece gets built once with AI assistance to see the shape of it. Then I rebuild it from memory, no AI, on a timer, typing it myself. Then I explain it out loud as if teaching a junior developer. Until all three are done, I don't count it as learned.</p></div>
+            <div class="mtd-card"><div class="mtd-card-t"><span>03 ·</span> Context Engineering</div><p class="mtd-p">"Build me a billing app" gets a weak result from any model. Business rules, the real data model, edge cases, and acceptance criteria stated up front get an accurate one — I treat specifying that context as its own deliberate skill, not an afterthought.</p></div>
+          </div>
+        </div>
+        <div class="mtd-standards">
+          <div class="mtd-standards-t">Hands-On Standards</div>
+          <ul class="mtd-ul">
+            <li>Local dev environment and a real terminal, not a browser sandbox</li>
+            <li>A meaningful git commit for every rebuilt piece</li>
+            <li>No copy-paste during a rebuild — typed from memory, every time</li>
+            <li>Timed practice, logged, so improvement is measurable over time</li>
+            <li>CLI-first — git, npm, and deploy tooling by hand, not GUI shortcuts</li>
+            <li>Every README splits what's AI-assisted from what's independently rebuilt</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="panel" data-cam="3" aria-labelledby="projects-title">
+      <div class="wrap">
+        <p class="slabel">03 / Problem → Product</p>
+        <h2 class="stitle" id="projects-title">Featured <span>Projects</span></h2>
+        <hr class="hr">
+        <div class="grid-cards">
+          <div class="card elev-sm">
+            <div class="pc-thumb grayscale"><img src="assets/screenshots/portbill.jpg" alt="Port Billing Calculator — advance wharfrent charge screen" loading="lazy"></div>
+            <div class="pc-hd"><span>🧾</span><div class="pc-lks"><a href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk">🔗</a><a href="https://github.com/samiulAsumel/portbill" target="_blank" rel="noopener noreferrer" class="pc-lk">⚙</a></div></div>
+            <h3 class="pc-nm">Port Billing Calculator <span class="pc-date">May 2026</span></h3>
+            <p class="pc-pb">Problem: Port billing system creates permanent entries — C&amp;F agents had no way to estimate wharfrent charges before committing, causing billing disputes, excessive dwell time, and repeated counter visits.</p>
+            <p class="pc-ds">Real-time advance wharfrent calculator: slab-based charge computation, VAT and levy calculation, inside/outside cargo split, hoisting charge auto-calculation, print-ready A4 output. Actively used by C&amp;F agents at Mongla Port daily.</p>
+            <div class="pc-tags"><span class="tag tag-neutral">JavaScript</span><span class="tag tag-neutral">HTML/CSS</span><span class="tag tag-neutral">Cloudflare Pages</span><span class="tag tag-neutral">PWA</span></div>
+          </div>
+          <div class="card elev-sm">
+            <div class="pc-thumb grayscale"><img src="assets/screenshots/carview.jpg" alt="carview — Traffic Department vehicle balance dashboard" loading="lazy"></div>
+            <div class="pc-hd"><span>🚗</span><div class="pc-lks"><a href="https://carview.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk">🔗</a><a href="https://github.com/samiulAsumel/carview" target="_blank" rel="noopener noreferrer" class="pc-lk">⚙</a></div></div>
+            <h3 class="pc-nm">Daily Car Balance &amp; Location Tracking ("carview")</h3>
+            <p class="pc-pb">Problem: Vehicle positions across warehouse, shed, and yard were recorded in one person's personal Excel file — invisible to all other staff, creating bottlenecks and single-person dependency.</p>
+            <p class="pc-ds">Offline-first PWA tracking 8 port locations, with Cloudflare Worker + private GitHub repo sync, a Chart.js analytics dashboard (7 charts + KPIs), 13 report sections, and Excel export. Built for Mongla Port Authority's Traffic Department.</p>
+            <div class="pc-tags"><span class="tag tag-neutral">PWA</span><span class="tag tag-neutral">Cloudflare Worker</span><span class="tag tag-neutral">Chart.js</span></div>
+          </div>
+          <div class="card elev-sm">
+            <div class="pc-thumb grayscale"><img src="assets/screenshots/otbill.jpg" alt="OT Bill Management System — staff login screen" loading="lazy"></div>
+            <div class="pc-hd"><span>⏱️</span><div class="pc-lks"><a href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk">🔗</a><a href="https://github.com/samiulAsumel/otbill" target="_blank" rel="noopener noreferrer" class="pc-lk">⚙</a></div></div>
+            <h3 class="pc-nm">OT Bill Management System <span class="pc-date">May 2026</span></h3>
+            <p class="pc-pb">Problem: Overtime billing was a fully manual Excel process — multi-step hourly rate calculations, date-wise OT entry, and final bill generation done by hand every cycle.</p>
+            <p class="pc-ds">Staff enters an employee profile once; the system generates the complete final OT bill instantly with correct hourly rate, cumulative date-wise OT calculation, and A4 print-ready output.</p>
+            <div class="pc-tags"><span class="tag tag-neutral">JavaScript</span><span class="tag tag-neutral">Employee DB</span><span class="tag tag-neutral">A4 Print</span></div>
+          </div>
+          <div class="card elev-sm">
+            <div class="pc-thumb grayscale"><img src="assets/screenshots/client-intake.jpg" alt="Client Intake Form — project requirement sheet" loading="lazy"></div>
+            <div class="pc-hd"><span>📋</span><div class="pc-lks"><a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="pc-lk">🔗</a><a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="pc-lk">⚙</a></div></div>
+            <h3 class="pc-nm">Client Intake Form</h3>
+            <p class="pc-pb">Problem: Collecting project requirements from a client over email or chat is unstructured — details get missed, and following up to fill gaps wastes time on both sides.</p>
+            <p class="pc-ds">Single-file, client-side project requirement intake form — structured questions, no backend required, and a mailto-based report so the completed brief lands directly in an inbox.</p>
+            <div class="pc-tags"><span class="tag tag-neutral">JavaScript</span><span class="tag tag-neutral">Client-Side Only</span></div>
+          </div>
+          <div class="card elev-sm">
+            <div class="pc-thumb grayscale"><img src="assets/screenshots/kitchen-atlas.jpg" alt="World Kitchen Atlas — homepage with featured dishes" loading="lazy"></div>
+            <div class="pc-hd"><span>🍲</span><div class="pc-lks"><a href="https://kitchenatlas.pages.dev/" target="_blank" rel="noopener noreferrer" class="pc-lk">🔗</a><a href="https://github.com/samiulAsumel/world-kitchen-atlas" target="_blank" rel="noopener noreferrer" class="pc-lk">⚙</a></div></div>
+            <h3 class="pc-nm">World Kitchen Atlas</h3>
+            <p class="pc-pb">Problem: A global culinary reference needs fast, structured browsing by continent and country, with an admin workflow to add and edit entries without touching code.</p>
+            <p class="pc-ds">Next.js static-export site on Cloudflare Pages, with a Cloudflare Worker proxying a private GitHub data repo, admin login and CRUD, and a Durable-Object-backed visit counter.</p>
+            <div class="pc-tags"><span class="tag tag-neutral">Next.js</span><span class="tag tag-neutral">TypeScript</span><span class="tag tag-neutral">Durable Objects</span></div>
+          </div>
+          <div class="card elev-sm">
+            <div class="pc-hd"><span>🤖</span><div class="pc-lks"><a href="https://github.com/samiulAsumel/jarvis" target="_blank" rel="noopener noreferrer" class="pc-lk">⚙</a></div></div>
+            <h3 class="pc-nm">JARVIS <span class="pc-date">Source Available — No Live Demo</span></h3>
+            <p class="pc-pb">Problem: Commercial AI assistants lock you into one model, one vendor, and send every query off-device.</p>
+            <p class="pc-ds">Self-hosted personal AI assistant with smart multi-model routing across Groq, OpenRouter, Claude, and Gemini (plus local Ollama), voice input/output, file/folder ingestion, and persistent cross-session memory. Runs on a personal NixOS machine.</p>
+            <div class="pc-tags"><span class="tag tag-neutral">FastAPI</span><span class="tag tag-neutral">Multi-LLM Routing</span><span class="tag tag-neutral">NixOS</span></div>
+          </div>
+        </div>
+        <div class="model-cta">
+          <p>The crane and container assembly moving through this page is a real, downloadable 3D model — export it as OBJ+MTL or GLB.</p>
+          <a href="3D%20Model%20Viewer.html" class="btn btn-secondary">View &amp; Download 3D Model ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="panel" data-cam="4" aria-labelledby="skills-title">
+      <div class="wrap">
+        <p class="slabel">04 / Technical Stack</p>
+        <h2 class="stitle" id="skills-title">Core <span>Competencies</span></h2>
+        <hr class="hr">
+        <p class="svc-intro">Grouped by how I actually work with each: what I write and debug on my own, and what I build using AI-assisted development. Everything listed is either something I worked through in self-directed study or used in a public repo.</p>
+        <div class="grid-cards">
+          <div class="card elev-sm"><div class="sk-hd"><div>⚓</div><h3 class="sk-ttl">Domain &amp; Port Operations</h3></div>
+            <div class="sk-pills"><span class="tag tag-accent">Port Billing &amp; Tariff Systems</span><span class="tag tag-accent">Wharfrent / VAT / Levy</span><span class="tag tag-accent">Cargo &amp; Vessel Tracking</span><span class="tag tag-accent">C&amp;F Agent Workflows</span></div></div>
+          <div class="card elev-sm"><div class="sk-hd"><div>🎨</div><h3 class="sk-ttl">Frontend &amp; JavaScript</h3></div>
+            <div class="sk-pills"><span class="tag tag-neutral">HTML5</span><span class="tag tag-neutral">CSS3</span><span class="tag tag-neutral">Tailwind CSS</span><span class="tag tag-neutral">JavaScript (ES6+)</span><span class="tag tag-neutral">DOM &amp; Events</span><span class="tag tag-neutral">Fetch / Async-Await</span><span class="tag tag-neutral">ES Modules</span></div></div>
+          <div class="card elev-sm"><div class="sk-hd"><div>⚛️</div><h3 class="sk-ttl">React &amp; Next.js</h3></div>
+            <div class="sk-tier">Build Independently</div>
+            <div class="sk-pills"><span class="tag tag-outline">React (Hooks, Context)</span><span class="tag tag-outline">React Router</span><span class="tag tag-outline">React Hook Form</span></div>
+            <div class="sk-tier sk-tier-ai">With AI-Assisted Development</div>
+            <div class="sk-pills"><span class="tag tag-neutral">TanStack Query</span><span class="tag tag-neutral">Axios</span><span class="tag tag-neutral">Next.js App Router</span><span class="tag tag-neutral">NextAuth</span></div></div>
+          <div class="card elev-sm"><div class="sk-hd"><div>🛠️</div><h3 class="sk-ttl">Backend, Data &amp; Deployment</h3></div>
+            <p class="sk-note">Course-covered and used in real projects; on backend and data work I lean on AI-assisted development to get from requirement to working implementation — the Roadmap section is how I'm closing that gap.</p>
+            <div class="sk-tier">Build Independently</div>
+            <div class="sk-pills"><span class="tag tag-outline">Git &amp; GitHub</span><span class="tag tag-outline">Cloudflare Pages / Firebase</span></div>
+            <div class="sk-tier sk-tier-ai">With AI-Assisted Development</div>
+            <div class="sk-pills"><span class="tag tag-neutral">Node.js &amp; Express</span><span class="tag tag-neutral">REST APIs</span><span class="tag tag-neutral">MongoDB (Atlas)</span><span class="tag tag-neutral">JWT Auth</span><span class="tag tag-neutral">Firebase Auth</span><span class="tag tag-neutral">Stripe Payments</span></div></div>
+          <div class="card elev-sm sk-full"><div class="sk-hd"><div>🐧</div><h3 class="sk-ttl">Linux &amp; Automation (self-directed)</h3></div>
+            <div class="sk-pills"><span class="tag tag-neutral">Bash Scripting</span><span class="tag tag-neutral">Linux Administration (Ubuntu)</span><span class="tag tag-neutral">systemd</span><span class="tag tag-neutral">Cron &amp; Timers</span><span class="tag tag-neutral">Monitoring &amp; Alerting Scripts</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="panel" data-cam="5" aria-labelledby="roadmap-title">
+      <div class="wrap">
+        <p class="slabel">05 / Closing the Gap</p>
+        <h2 class="stitle" id="roadmap-title">Engineering <span>Roadmap</span></h2>
+        <hr class="hr">
+        <p class="rm-intro">A self-authored, phase-based plan for turning "built with AI assistance" into "built independently, AI or not." Each phase rebuilds a real piece of the shipped projects above from memory, with a concrete milestone before moving on.</p>
+        <div class="rm-status">
+          <div class="rm-status-row"><span class="rm-status-k">CURRENT PHASE</span><span class="rm-status-v">Phase 0 — Foundation</span></div>
+          <div class="rm-status-row"><span class="rm-status-k">MODULE</span><span class="rm-status-v">JavaScript / TypeScript — atomic breakdown</span></div>
+          <div class="rm-status-row"><span class="rm-status-k">IN PROGRESS</span><span class="rm-status-v">Function syntax (declaration / expression / arrow)</span></div>
+          <div class="rm-status-row"><span class="rm-status-k">COMPLETED</span><span class="rm-status-v">Variable declaration (let, const, var)</span></div>
+          <div class="rm-status-foot">Last updated Aug 2026</div>
+        </div>
+        <div class="rm-phases">
+          <div class="rm-phase"><div class="rm-ph-num">00</div><div><div class="rm-ph-hd"><span class="rm-ph-t">Foundation</span><span class="rm-st now">In Progress</span></div><ul class="rm-ph-list"><li>JavaScript/TypeScript, atomic breakdown</li><li>DSA basics</li><li>Git CLI workflow</li></ul><p class="rm-ph-out">Milestone: rebuild core JS/TS syntax from memory, no AI, timed.</p></div></div>
+          <div class="rm-phase"><div class="rm-ph-num">01</div><div><div class="rm-ph-hd"><span class="rm-ph-t">Backend &amp; Database Rebuild</span><span class="rm-st next">Planned</span></div><ul class="rm-ph-list"><li>Rebuild PortBill/OTBill backends independently</li><li>JWT + bcrypt by hand</li><li>REST API design</li><li>PostgreSQL schema &amp; migrations</li></ul><p class="rm-ph-out">Milestone: a REST API from scratch, explained with no notes.</p></div></div>
+          <div class="rm-phase"><div class="rm-ph-num">02</div><div><div class="rm-ph-hd"><span class="rm-ph-t">Cloud, Docker &amp; CI/CD</span><span class="rm-st next">Planned</span></div><ul class="rm-ph-list"><li>AWS — IAM, EC2, S3, Lambda, RDS</li><li>Dockerfile &amp; docker-compose</li><li>GitHub Actions pipeline</li></ul><p class="rm-ph-out">Milestone: a project deployed to AWS with a passing CI pipeline.</p></div></div>
+          <div class="rm-phase"><div class="rm-ph-num">03</div><div><div class="rm-ph-hd"><span class="rm-ph-t">AI Engineering</span><span class="rm-st next">Planned</span></div><ul class="rm-ph-list"><li>LLM API integration, in depth</li><li>RAG — chunking, embeddings, vector DBs</li><li>Agent orchestration</li></ul><p class="rm-ph-out">Milestone: JARVIS architecture explained end-to-end, plus a new feature added independently.</p></div></div>
+          <div class="rm-phase"><div class="rm-ph-num">04</div><div><div class="rm-ph-hd"><span class="rm-ph-t">Portfolio Packaging</span><span class="rm-st next">Planned</span></div><ul class="rm-ph-list"><li>Per-project READMEs: AI-assisted vs. self-written</li><li>Clean, meaningful commit history</li></ul><p class="rm-ph-out">Milestone: every project explainable from memory in 5 minutes.</p></div></div>
+          <div class="rm-phase"><div class="rm-ph-num">05</div><div><div class="rm-ph-hd"><span class="rm-ph-t">Interview Readiness</span><span class="rm-st next">Planned</span></div><ul class="rm-ph-list"><li>Weekly mock technical interviews</li><li>Small-scale system design practice</li></ul><p class="rm-ph-out">Milestone: a polished CV, LinkedIn, and a working interview rhythm.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="domain" class="panel" data-cam="6" aria-labelledby="domain-title">
+      <div class="wrap">
+        <p class="slabel">06 / Where the Problems Come From</p>
+        <h2 class="stitle" id="domain-title">Port Operations <span>Background</span></h2>
+        <hr class="hr">
+        <p class="dm-intro">Every project above started as a problem I saw first-hand doing this job — not a spec handed to me. That's the part an outside developer can't shortcut.</p>
+        <div class="tl-item">
+          <div class="tl-hd"><h3 class="tl-role">Senior Outdoor Assistant — Port Operations &amp; IT Systems</h3><span class="tl-per">Nov 2017 – Present</span></div>
+          <div class="tl-org">Mongla Port Authority</div>
+          <div class="tl-loc">Bangladesh's second-largest international seaport — vehicle imports, bulk cargo, and general cargo</div>
+          <div class="tl-sub">Core Port Operations</div>
+          <ul class="tl-ul">
+            <li>Manage end-to-end wharfrent billing cycle — slab-wise charge computation, VAT and levy calculation, inside/outside cargo split, and final billing issuance for active C&amp;F agents — independently built and deployed <strong>portbill</strong>, now used daily by the billing desk.</li>
+            <li>Provide advance billing estimates to C&amp;F agents, enabling accurate payment planning and reducing vehicle dwell time.</li>
+            <li>Track cargo and vehicle positions across warehouse, shed, and yard terminal locations in real time — the trigger for building <strong>carview</strong>, now the Traffic Department's shared, version-controlled tracking system.</li>
+            <li>Maintain daily and monthly revenue reports, cumulative income statements, and vehicle balance records for port authority management.</li>
+            <li>Generate car import/delivery and jetty statistics reports used for operational planning and port authority audits.</li>
+          </ul>
+          <div class="tl-sub">Self-Initiated Web Development &amp; Learning</div>
+          <ul class="tl-ul">
+            <li>Independently identified critical inefficiencies in manual billing, overtime payroll, and vehicle tracking workflows — designed and deployed <strong>3 live web applications</strong> now used daily by C&amp;F agents and port staff.</li>
+            <li>Built with plain JavaScript/HTML/CSS and deployed using AI-assisted development as a productivity tool, while working through a structured full-stack curriculum in parallel.</li>
+            <li>Maintain an active public GitHub portfolio (github.com/samiulAsumel) demonstrating continuous technical growth.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <div class="tl-hd"><h3 class="tl-role">Junior Outdoor Assistant — Port &amp; Terminal Operations</h3><span class="tl-per">Nov 2013 – Nov 2017</span></div>
+          <div class="tl-org">Mongla Port Authority</div>
+          <div class="tl-loc">Foundation of a 12-year uninterrupted career at Bangladesh's second-largest international seaport</div>
+          <ul class="tl-ul">
+            <li>Assisted in port inspections, vessel operations, and cargo handling under senior supervision.</li>
+            <li>Monitored cargo dwell time and vehicle positioning across all terminal locations.</li>
+            <li>Built foundational expertise in wharfrent billing, maritime logistics, and customs clearance that underpins all later self-initiated digital work.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="panel" data-cam="7" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="slabel">07 / Freelance &amp; Contract Work</p>
+        <h2 class="stitle" id="services-title">Services I <span>Deliver</span></h2>
+        <hr class="hr">
+        <p class="svc-intro">Send the workflow and the problem — I identify what's actually going wrong, design the solution, and build and deploy it using modern full-stack tools and AI-assisted development.</p>
+        <div class="grid-cards">
+          <div class="card elev-sm"><h3 class="sk-ttl">💻 Full-Stack Web Apps</h3><p class="svc-desc">React/Next.js on the frontend, Node.js/Express + MongoDB on the backend — REST APIs, JWT/Firebase authentication, and Stripe payments when the job needs them.</p><p class="svc-proof">✓ 3 apps in daily production use; React/Next.js from World Kitchen Atlas</p></div>
+          <div class="card elev-sm"><h3 class="sk-ttl">📊 Billing &amp; Tracking Dashboards</h3><p class="svc-desc">Custom billing calculators, tracking dashboards, and operational tools — the same kind of tool I built to solve real problems at my own workplace.</p><p class="svc-proof">✓ Built for real daily use, not a demo</p></div>
+          <div class="card elev-sm"><h3 class="sk-ttl">⚓ Port &amp; Logistics Workflow Digitisation</h3><p class="svc-desc">Turning paper-based or Excel-based port and logistics workflows into deployed, team-wide web tools, backed by first-hand operational knowledge.</p><p class="svc-proof">✓ Proven with 3 tools converted from manual/Excel processes</p></div>
+        </div>
+        <div class="svc-ready">
+          <div class="svc-ready-t">Remote &amp; Freelance Readiness</div>
+          <div class="svc-ready-g">
+            <div class="svc-ready-item">🌍 No time zone constraints — any schedule, worldwide</div>
+            <div class="svc-ready-item">🔧 Self-managed: scopes, builds, and deploys independently</div>
+            <div class="svc-ready-item">💬 Async-friendly English, Git/GitHub-based collaboration</div>
+            <div class="svc-ready-item">✅ Every past project is publicly verifiable before you hire</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="infra" class="panel" data-cam="8" aria-labelledby="infra-title">
+      <div class="wrap">
+        <p class="slabel">08 / Self-Directed Practice</p>
+        <h2 class="stitle" id="infra-title">Linux &amp; <span>Automation Practice</span></h2>
+        <hr class="hr">
+        <div class="card elev-sm">
+          <div class="dc-hd"><div class="dc-ic">🐧</div><div><h3 class="dc-ttl">Bash Automation &amp; Linux Practice</h3><div class="dc-org">Self-Directed</div></div><span class="dc-st ac" style="margin-left:auto;">Ongoing</span></div>
+          <p class="dc-note">Self-directed practice building production-style Bash automation for deployment, SSL certificate renewal, and log/security monitoring — daily Linux (Ubuntu) user, scripting and administering my own systems outside of any certification track.</p>
+          <div class="sk-pills dc-chips">
+            <a href="https://github.com/samiulAsumel/auto-deploy-pipeline" target="_blank" rel="noopener noreferrer" class="tag tag-neutral">Auto-Deploy Pipeline</a>
+            <a href="https://github.com/samiulAsumel/auto-ssl-manager" target="_blank" rel="noopener noreferrer" class="tag tag-neutral">Auto-SSL Manager</a>
+            <a href="https://github.com/samiulAsumel/log-analyzer-alert" target="_blank" rel="noopener noreferrer" class="tag tag-neutral">Log Analyzer &amp; Alert</a>
+          </div>
+          <p class="dc-caveat">Self-driven learning, not job-critical production work — listed for transparency only.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dev" class="panel" data-cam="9" aria-labelledby="dev-title">
+      <div class="wrap">
+        <p class="slabel">09 / Active Growth</p>
+        <h2 class="stitle" id="dev-title">Active <span>Growth</span></h2>
+        <hr class="hr">
+        <div class="grid-cards">
+          <div class="card elev-sm"><div class="dc-kicker">Self-Study Track</div>
+            <div class="dc-hd"><div class="dc-ic">📡</div><div><h3 class="dc-ttl">The Odin Project &amp; Full Stack Open</h3><div class="dc-org">Self-Directed · Aug 2026 – Present</div></div><span class="dc-st ac" style="margin-left:auto;">In Progress</span></div>
+            <p class="dc-note">Self-paced study for code comprehension, not a second certificate. Starting from The Odin Project's "Intermediate HTML and CSS" course, then continuing into Full Stack Open (University of Helsinki) — JavaScript fundamentals, Node.js/Express in depth, testing, and Git workflow.</p>
+            <div class="sk-pills dc-chips"><span class="tag tag-neutral">JavaScript Fundamentals</span><span class="tag tag-neutral">Node &amp; Express Depth</span><span class="tag tag-neutral">Testing (Jest/RTL)</span></div>
+            <p class="dc-caveat">In progress — listed for transparency, not counted as a current qualification.</p></div>
+          <div class="card elev-sm"><div class="dc-kicker">Self-Authored Track</div>
+            <div class="dc-hd"><div class="dc-ic">🧠</div><div><h3 class="dc-ttl">Personal AI Product Engineering Curriculum</h3><div class="dc-org">Self-Directed · Aug 2026 – Present</div></div><span class="dc-st ac" style="margin-left:auto;">In Progress</span></div>
+            <p class="dc-note">A self-authored, multi-phase curriculum pairing AI product strategy with hands-on engineering — AI fundamentals, context engineering, product discovery, full-stack AI product development, and deployment. Follows the Build → Rebuild → Explain discipline from <a href="#method">How I Build</a>.</p>
+            <div class="sk-pills dc-chips"><span class="tag tag-neutral">Context Engineering</span><span class="tag tag-neutral">AI Product Strategy</span><span class="tag tag-neutral">RAG &amp; AI Agents</span></div>
+            <p class="dc-caveat">Self-directed and ongoing — not a certification or completed course, listed for transparency.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="edu" class="panel" data-cam="10" aria-labelledby="edu-title">
+      <div class="wrap">
+        <p class="slabel">10 / Background</p>
+        <h2 class="stitle" id="edu-title">Education</h2>
+        <hr class="hr">
+        <div class="eg">
+          <div class="card elev-sm"><div class="ec-deg">Higher Secondary Certificate</div><div>Business Studies</div><div>Khulna Public College</div><div class="ec-yr">2009 – 2011</div></div>
+          <div class="card elev-sm"><div class="ec-deg">Secondary School Certificate</div><div>Business Studies</div><div>Mongla Bandar Secondary School</div><div class="ec-yr">1999 – 2009</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel" data-cam="11" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="slabel">11 / Let's Connect</p>
+        <h2 class="stitle" id="contact-title">Get In <span>Touch</span></h2>
+        <hr class="hr">
+        <div class="grid-2">
+          <div class="ct-text">
+            <p>I'm actively seeking a <strong>remote AI Product Engineer, Port Operations Technologist, Logistics Systems Engineer, or Full-Stack Developer role</strong> — and open to freelance and contract work — with organizations anywhere in the world. No time zone constraints.</p>
+            <p>With 12+ years of professional port operations experience and self-directed full-stack study, I bring a combination few candidates can offer — <strong>domain judgment and engineering execution</strong>, proven by 3 self-built tools in daily production use, not just studied.</p>
+            <div class="tcos">
+              <div class="tcos-t">Roles I'm Open To</div>
+              <div class="tcos-g"><div class="co">AI Product Engineer</div><div class="co">Port Operations Technologist</div><div class="co">Logistics Systems Engineer</div><div class="co">Full-Stack Developer</div><div class="co">Freelance / Contract</div></div>
+            </div>
+          </div>
+          <div class="cl">
+            <a href="mailto:sa.sumel91@gmail.com" class="clk"><span class="clk-ic">✉️</span><div><div class="clk-l">Email</div><div class="clk-v">sa.sumel91@gmail.com</div></div></a>
+            <a href="tel:+8801312312512" class="clk"><span class="clk-ic">📞</span><div><div class="clk-l">Phone / WhatsApp</div><div class="clk-v">+880 1312 312 512</div></div></a>
+            <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer" class="clk"><span class="clk-ic">💼</span><div><div class="clk-l">LinkedIn</div><div class="clk-v">linkedin.com/in/samiul-alam-sumel</div></div></a>
+            <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="clk"><span class="clk-ic">⚙</span><div><div class="clk-l">GitHub</div><div class="clk-v">github.com/samiulAsumel</div></div></a>
+            <a href="Samiul_Alam_Sumel_CV.docx" download class="clk"><span class="clk-ic">📄</span><div><div class="clk-l">Download CV</div><div class="clk-v">Samiul_Alam_Sumel_CV.docx</div></div></a>
+            <a href="Samiul_Alam_Sumel_Freelance_CV.docx" download class="clk"><span class="clk-ic">📄</span><div><div class="clk-l">Download Freelance CV</div><div class="clk-v">Samiul_Alam_Sumel_Freelance_CV.docx</div></div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="ft-grid">
+        <div>
+          <div style="font-family:var(--font-heading);font-weight:800;font-size:20px;">SAS</div>
+          <p class="ft-tagline">AI Product Engineer · Port &amp; Logistics Domain · React, Next.js, Node.js &amp; MongoDB</p>
+        </div>
+        <div>
+          <div class="ft-col-title">Contact</div>
+          <a href="mailto:sa.sumel91@gmail.com" class="ft-link">sa.sumel91@gmail.com</a>
+          <a href="tel:+8801312312512" class="ft-link">+880 1312 312 512</a>
+          <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="ft-link">github.com/samiulAsumel</a>
+          <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer" class="ft-link">LinkedIn Profile</a>
+        </div>
+      </div>
+      <div class="ft-bar">
+        <p>© 2026 MD Samiul Alam Sumel. All rights reserved.</p>
+        <a href="#hero" class="ft-top">↑ Back to top</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { createPortCraneModel } from './models/port-crane.js';
+
+const canvas = document.getElementById('scene');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.VSMShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.95;
+
+const SCENE_THEMES = {
+  dark: { bg: 0x201e1d, ground: 0x2d2b2b, fog: 0x201e1d, warehouse: 0x353332 },
+  light: { bg: 0xf3f2f2, ground: 0xd9d7d5, fog: 0xf3f2f2, warehouse: 0xbab6b6 },
+};
+const initialThemeName = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+const initialTheme = SCENE_THEMES[initialThemeName];
+
+const scene = new THREE.Scene();
+const bg = new THREE.Color(initialTheme.bg);
+scene.background = bg;
+scene.fog = new THREE.Fog(initialTheme.fog, 24, 95);
+
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 200);
+
+function resize() {
+  const w = window.innerWidth, h = window.innerHeight;
+  renderer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+window.addEventListener('resize', resize);
+resize();
+
+// lighting — flat studio, no color gels, matches the mono palette
+const hemi = new THREE.HemisphereLight(0xffffff, 0xd7d3d3, 0.85);
+scene.add(hemi);
+const key = new THREE.DirectionalLight(0xffffff, 1.5);
+key.position.set(20, 30, 15);
+key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048);
+key.shadow.radius = 4;
+key.shadow.blurSamples = 12;
+key.shadow.camera.near = 1;
+key.shadow.camera.far = 90;
+key.shadow.camera.left = -40; key.shadow.camera.right = 40;
+key.shadow.camera.top = 40; key.shadow.camera.bottom = -40;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xffffff, 0.35);
+fill.position.set(-18, 12, -10);
+scene.add(fill);
+const rim = new THREE.DirectionalLight(0xffffff, 0.5);
+rim.position.set(-10, 8, -22);
+scene.add(rim);
+scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+
+// ground
+const groundMat = new THREE.MeshStandardMaterial({ name: 'dockGround', color: initialTheme.ground, roughness: 0.95 });
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(140, 140), groundMat);
+ground.name = 'ground';
+ground.rotation.x = -Math.PI / 2;
+ground.receiveShadow = true;
+scene.add(ground);
+
+// quay stripe (accent line)
+const stripeMat = new THREE.MeshStandardMaterial({ name: 'quayStripe', color: 0xec3013, roughness: 0.7 });
+const stripe = new THREE.Mesh(new THREE.BoxGeometry(140, 0.02, 0.6), stripeMat);
+stripe.position.set(0, 0.011, -8);
+scene.add(stripe);
+
+// warehouse backdrop
+const whMat = new THREE.MeshStandardMaterial({ name: 'warehouse', color: initialTheme.warehouse, roughness: 0.9 });
+const warehouse = new THREE.Mesh(new THREE.BoxGeometry(24, 9, 7), whMat);
+warehouse.name = 'warehouse';
+warehouse.position.set(-2, 4.5, -20);
+warehouse.receiveShadow = true;
+warehouse.castShadow = true;
+scene.add(warehouse);
+
+// cargo ship hull, moored beyond the quay stripe — matches the reference photo
+const ship = new THREE.Group();
+ship.name = 'cargoShip';
+const hullMat = new THREE.MeshStandardMaterial({ name: 'shipHull', color: 0x7c342b, roughness: 0.6, metalness: 0.1 });
+const deckMat = new THREE.MeshStandardMaterial({ name: 'shipDeck', color: 0xc7c4c0, roughness: 0.75 });
+const bridgeMat = new THREE.MeshStandardMaterial({ name: 'shipBridge', color: 0x2f2e2d, roughness: 0.55 });
+const hull = new THREE.Mesh(new THREE.BoxGeometry(34, 5, 9), hullMat);
+hull.name = 'shipHullBody';
+hull.position.set(0, 2.5, 0);
+hull.castShadow = true;
+hull.receiveShadow = true;
+ship.add(hull);
+const deck = new THREE.Mesh(new THREE.BoxGeometry(34, 0.4, 9), deckMat);
+deck.name = 'shipDeckPlate';
+deck.position.set(0, 5.2, 0);
+ship.add(deck);
+const shipContainerMat = [hullMat, deckMat, bridgeMat];
+for (let i = 0; i < 10; i++) {
+  const stackH = 1 + (i % 3);
+  for (let s = 0; s < stackH; s++) {
+    const crate = new THREE.Mesh(new THREE.BoxGeometry(2.6, 1.1, 2.2), shipContainerMat[(i + s) % 3]);
+    crate.name = `shipCrate_${i}_${s}`;
+    crate.position.set(-15 + i * 3.2, 5.9 + s * 1.15, 0);
+    crate.castShadow = true;
+    ship.add(crate);
+  }
+}
+const bridge = new THREE.Mesh(new THREE.BoxGeometry(4, 4.5, 6.5), bridgeMat);
+bridge.name = 'shipBridgeTower';
+bridge.position.set(14.5, 7.6, 0);
+bridge.castShadow = true;
+ship.add(bridge);
+const bow = new THREE.Mesh(new THREE.ConeGeometry(4.6, 5, 4), hullMat);
+bow.name = 'shipBow';
+bow.rotation.z = Math.PI / 2;
+bow.rotation.y = Math.PI / 4;
+bow.scale.set(1, 1, 0.42);
+bow.position.set(-19.5, 2.5, 0);
+ship.add(bow);
+ship.position.set(-2, 0, -17);
+scene.add(ship);
+
+// roadmap marker posts (phases 00-05)
+const markers = new THREE.Group();
+markers.name = 'roadmapMarkers';
+const poleMat = new THREE.MeshStandardMaterial({ name: 'markerPole', color: 0x2b2a29, roughness: 0.5 });
+for (let i = 0; i < 6; i++) {
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.08, 3.2, 10), poleMat);
+  pole.position.set(-24 + i * 3.4, 1.6, 5);
+  pole.castShadow = true;
+  const flagMat = new THREE.MeshStandardMaterial({ color: i === 0 ? 0xec3013 : 0x9b9797, roughness: 0.6 });
+  const flag = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.5, 0.04), flagMat);
+  flag.position.set(0.4, 1.3, 0);
+  pole.add(flag);
+  markers.add(pole);
+}
+scene.add(markers);
+
+// education plaque
+const plaqueMat = new THREE.MeshStandardMaterial({ name: 'plaque', color: 0x201e1d, roughness: 0.6 });
+const plaquePost = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 1.6, 10), poleMat);
+plaquePost.position.set(-16, 0.8, -3);
+const plaqueBoard = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.9, 0.06), plaqueMat);
+plaqueBoard.position.set(0, 0.9, 0);
+plaquePost.add(plaqueBoard);
+scene.add(plaquePost);
+
+// hero object: crane + containers
+const heroModel = createPortCraneModel(THREE);
+heroModel.traverse((o) => { if (o.isMesh) o.castShadow = true; });
+scene.add(heroModel);
+
+// ---- camera path: one keyframe per section, blended by scroll fraction ----
+const KEYFRAMES = [
+  { pos: [8, 5, 26], look: [3, 10, -2] },     // 0 hero — pulled back, model off to the right
+  { pos: [-16, 10, 21], look: [-2, 8, 0] },   // 1 about
+  { pos: [11, 14, 17], look: [3, 11, -2] },   // 2 method
+  { pos: [15, 6.5, -0.5], look: [9.5, 3, -3] },// 3 projects
+  { pos: [0, 24, 1], look: [0, 0, 0] },       // 4 skills
+  { pos: [-21, 5.5, 8], look: [-10, 2, 3] },  // 5 roadmap
+  { pos: [-3, 4, 10], look: [-2, 11, 0] },    // 6 domain
+  { pos: [17, 4, 9], look: [9.5, 2, -3] },    // 7 services
+  { pos: [10, 3, 6], look: [9.5, 2.5, -3] },  // 8 infra
+  { pos: [0, 17, 24], look: [0, 8, 0] },      // 9 dev
+  { pos: [-16, 2.4, 2], look: [-16, 1, -3] }, // 10 edu
+  { pos: [0, 32, 36], look: [0, 6, 0] },      // 11 contact
+];
+const N = KEYFRAMES.length;
+const curPos = new THREE.Vector3(...KEYFRAMES[0].pos);
+const curLook = new THREE.Vector3(...KEYFRAMES[0].look);
+const tgtPos = new THREE.Vector3();
+const tgtLook = new THREE.Vector3();
+
+function scrollFraction() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  return max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+}
+
+const clock = new THREE.Clock();
+function animate() {
+  requestAnimationFrame(animate);
+  const f = scrollFraction();
+  const idx = f * (N - 1);
+  let i = Math.floor(idx);
+  if (i > N - 2) i = N - 2;
+  const localT = idx - i;
+  const a = KEYFRAMES[i], b = KEYFRAMES[i + 1];
+  tgtPos.set(
+    a.pos[0] + (b.pos[0] - a.pos[0]) * localT,
+    a.pos[1] + (b.pos[1] - a.pos[1]) * localT,
+    a.pos[2] + (b.pos[2] - a.pos[2]) * localT
+  );
+  tgtLook.set(
+    a.look[0] + (b.look[0] - a.look[0]) * localT,
+    a.look[1] + (b.look[1] - a.look[1]) * localT,
+    a.look[2] + (b.look[2] - a.look[2]) * localT
+  );
+  curPos.lerp(tgtPos, 0.07);
+  curLook.lerp(tgtLook, 0.07);
+  camera.position.copy(curPos);
+  camera.lookAt(curLook);
+
+  heroModel.userData.animate(clock.getElapsedTime());
+  renderer.render(scene, camera);
+}
+animate();
+
+window.__setScene3DTheme = function (name) {
+  const t = SCENE_THEMES[name] || SCENE_THEMES.dark;
+  scene.background.set(t.bg);
+  scene.fog.color.set(t.fog);
+  groundMat.color.set(t.ground);
+  whMat.color.set(t.warehouse);
+};
+</script>
+
+<script>
+  // hero stat counters
+  const counters = document.querySelectorAll('.st-val[data-count]');
+  const counted = new WeakSet();
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting && !counted.has(e.target)) {
+        counted.add(e.target);
+        const target = parseInt(e.target.dataset.count, 10);
+        const dur = 900;
+        const start = performance.now();
+        function step(now) {
+          const p = Math.min(1, (now - start) / dur);
+          e.target.textContent = Math.round(target * p);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach((c) => io.observe(c));
+
+  // theme toggle
+  const themeBtn = document.getElementById('theme-tgl');
+  themeBtn.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('sas-theme', next);
+    if (window.__setScene3DTheme) window.__setScene3DTheme(next);
+  });
+</script>
+</body>
+</html>

@@ -4,6 +4,26 @@ uploads/samiulAsumel.cv/
 # Auto-generated design-tool scratch output
 _ds/
 
-# OS junk
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Environment variables - NEVER commit these!
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+.next/
+out/
+
+# OS junk files
 .DS_Store
 Thumbs.db
+
+# Editor
+*.swp
+*.swo
+.vscode/settings.json

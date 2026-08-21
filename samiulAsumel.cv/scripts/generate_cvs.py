@@ -296,15 +296,18 @@ SKILLS = [
     ("Domain & Port Operations", "Port billing & tariff systems, wharfrent/VAT/levy calculation, "
                                   "cargo & vessel tracking, C&F agent workflows, "
                                   "customs/regulatory compliance context"),
-    ("Frontend & JavaScript", "HTML5 (Semantic), CSS3, Responsive Design, Flexbox, CSS Grid, "
+    ("Frontend & JavaScript", "HTML5 (Semantic), CSS3, Responsive Design, "
                                "Tailwind CSS, DaisyUI, JavaScript (ES6+), DOM & Events, "
-                               "Fetch & Promises, Async/Await, Array/Object Methods, ES Modules"),
+                               "Fetch & Promises / Async-Await, Array/Object Methods, ES Modules"),
     ("React & Next.js", "Own: React (Hooks, Context), React Router, React Hook Form. "
-                         "AI-assisted: TanStack Query, Axios, Next.js App Router, NextAuth"),
-    ("Backend, Data & Deployment", "Own: Git/GitHub, deployment (Cloudflare Pages/Firebase/"
-                                    "Netlify). AI-assisted: Node.js/Express, REST APIs, "
-                                    "MongoDB (Atlas), Aggregation Pipeline, JWT/Firebase "
-                                    "Auth, Next.js API Routes, Stripe Payments"),
+                         "AI-assisted: TanStack Query, Axios (incl. Interceptors), "
+                         "Next.js App Router, NextAuth"),
+    ("Backend, Data & Deployment", "Own: Git & GitHub (Branching, PRs), deployment "
+                                    "(Cloudflare Pages/Firebase/Netlify). AI-assisted: "
+                                    "Node.js & Express, REST APIs (CRUD), MongoDB (Atlas), "
+                                    "Aggregation Pipeline, JWT Auth, Firebase Auth & Admin "
+                                    "SDK, Next.js API Routes, Stripe Payments, "
+                                    "Pagination & Search"),
     ("Linux & Automation (self-directed)", "Bash Scripting, Linux Administration (Ubuntu), "
                                             "systemd, Cron & Timers, Monitoring & Alerting Scripts"),
 ]

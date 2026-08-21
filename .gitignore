@@ -1,0 +1,9 @@
+# Stray copy of the samiulAsumel.cv project (includes private visa docs)
+uploads/samiulAsumel.cv/
+
+# Auto-generated design-tool scratch output
+_ds/
+
+# OS junk
+.DS_Store
+Thumbs.db

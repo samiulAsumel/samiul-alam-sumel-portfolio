@@ -160,7 +160,7 @@
         if (entry.isIntersecting) {
           animateCounter(document.getElementById('c1'), 12, '+');
           animateCounter(document.getElementById('c2'), 3);
-          animateCounter(document.getElementById('c3'), 6);
+          animateCounter(document.getElementById('c3'), 8);
           statsObs.disconnect();
         }
       });

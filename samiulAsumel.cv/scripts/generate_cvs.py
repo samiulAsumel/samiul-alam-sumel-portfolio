@@ -424,8 +424,8 @@ def build_final_cv():
         "vessel/vehicle tracking, and port authority workflows at Mongla Port Authority. "
         "Works requirement-first — finds the manual step in a process, designs the system, "
         "and builds it with AI-assisted development, tested against real business rules "
-        "before it ships. 3 self-built tools — billing, vehicle tracking, payroll "
-        "automation — are in daily production use. Skills backed by that shipped software "
+        "before it ships. 3 self-built tools are in daily production use at the billing "
+        "desk and Traffic Department. Skills backed by that shipped software "
         "and self-directed study (The Odin Project, Full Stack Open), not a bootcamp "
         "certificate. Builds frontend independently; backend/data work with AI-assisted "
         "development (Claude Code), going deeper through a self-authored engineering "
@@ -541,8 +541,9 @@ def build_freelance_cv():
         "Every build gets manually tested against the real business rules and explained "
         "back before I call it done. An AI Product Engineer (React/Next.js, Node.js/Express, "
         "MongoDB) who worked through a large part of an intensive full-stack curriculum, "
-        "backed by 3 live web apps built for real daily use — not demos. Available for "
-        "freelance and contract work worldwide, no time zone constraints.",
+        "backed by 3 live web apps built for real daily use, not demos, and publicly "
+        "verifiable on GitHub. Available for freelance and contract work worldwide, no "
+        "time zone constraints.",
         size=9.4,
     )
 

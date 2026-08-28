@@ -207,7 +207,8 @@
               ><span>React, Next.js, Node.js &amp; MongoDB</span>
             </p>
             <p class="h-desc fi">
-              I find a real operational problem, design the system, build it
+              I listen to what the people doing the work actually need, find
+              the manual step in their process, design the system, build it
               with AI-assisted development, then rebuild it independently
               from memory until I own every line. 12+ years inside Mongla
               Port Authority gives me problems no outside developer would
@@ -294,15 +295,18 @@
                 course to focus on shipping real projects.
               </p>
               <p>
-                I work requirement-first: I read the operational problem —
-                which I can judge from 12 years inside port operations —
-                decide what the system actually needs to do, then build and
-                ship it, using AI-assisted development (Claude Code) as part
-                of the build. On frontend and plain-JavaScript work I write
-                and debug on my own; on backend and data work, AI assistance
-                is genuinely part of how I get from requirement to working
-                code. The <a href="#method">How I Build</a> section explains
-                the discipline I use to close that gap, and the
+                I work requirement-first. That means sitting with the people
+                who actually do the work, asking how the process runs today,
+                and finding the step that's still manual — a paper form, a
+                shared Excel sheet, a calculation someone redoes by hand
+                every day. I write that down as a plain requirement, confirm
+                it back before touching code, then build and ship it — using
+                AI-assisted development (Claude Code) as part of the build.
+                On frontend and plain-JavaScript work I write and debug on my
+                own; on backend and data work, AI assistance is genuinely
+                part of how I get from requirement to working code. The
+                <a href="#method">How I Build</a> section explains the
+                discipline I use to close that gap, and the
                 <a href="#roadmap">Roadmap</a> shows where I actually am on
                 it right now.
               </p>
@@ -442,12 +446,43 @@
           </h2>
           <div class="sline fi"></div>
           <p class="mtd-intro fi">
-            Every project on this site was built with AI assistance. That's a
-            plain fact, not a confession — Claude and similar tools are part
-            of how I get from a requirement to working code. But using a tool
-            isn't a skill. The skill is the workflow around it, and the
-            discipline of actually owning what comes out of it.
+            A job starts with a conversation, not a keyboard. I ask what the
+            workflow looks like today, where people lose time to a manual
+            step, and what "done" needs to mean for them — then I write that
+            down as a plain-language requirement and confirm it back before
+            any code gets written. From there, every project on this site
+            was built with AI assistance. That's a plain fact, not a
+            confession — Claude and similar tools are part of how I get from
+            a requirement to working code. But using a tool isn't a skill.
+            The skill is the workflow around it, and the discipline of
+            actually owning what comes out of it.
           </p>
+
+          <div class="mtd-standards fi" style="margin-bottom:var(--sp-8)">
+            <div class="mtd-standards-t">Working From Requirements</div>
+            <p class="mtd-p" style="margin-bottom:14px">
+              <strong>Talk first, build second.</strong> Before any design or
+              code, I go through what the person or team actually needs —
+              what the current process looks like, who touches it, and where
+              it breaks down. That conversation becomes the spec.
+            </p>
+            <p class="mtd-p" style="margin-bottom:14px">
+              <strong>Automate the manual step.</strong> For a company or
+              industry client, the goal is almost always the same: find the
+              part of their running process still done by hand — a paper
+              form, a shared Excel sheet, a recalculation someone repeats
+              every day — and replace it with a deployed tool the whole team
+              can use. That's exactly what portbill, otbill, and carview do
+              for port operations at Mongla; the same approach applies to any
+              workflow with a manual bottleneck.
+            </p>
+            <p class="mtd-p">
+              <strong>Solve the problem, not just the request.</strong> A
+              website or dashboard is the deliverable, but the actual job is
+              closing the gap the client described — if the stated request
+              doesn't fully solve it, I say so before building it anyway.
+            </p>
+          </div>
 
           <div class="mtd-grid">
             <div class="mtd-loop fi">
@@ -545,6 +580,15 @@
                   skill, not an afterthought.
                 </p>
               </div>
+              <div class="mtd-card fi">
+                <div class="mtd-card-t"><span>04 ·</span> Requirements Before Code</div>
+                <p class="mtd-p">
+                  I don't start building from a one-line request. I ask
+                  enough questions to see the actual workflow, put the
+                  answer in writing, and get it confirmed — so what gets
+                  built matches what was actually needed, not a guess at it.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -557,6 +601,8 @@
               <li>Timed practice, logged, so improvement is measurable over time</li>
               <li>CLI-first — git, npm, and deploy tooling by hand, not GUI shortcuts</li>
               <li>Every README splits what's AI-assisted from what's independently rebuilt</li>
+              <li>Scope written down and confirmed with the client before work starts</li>
+              <li>The manual step being replaced is named explicitly, not assumed</li>
             </ul>
           </div>
         </div>
@@ -1216,9 +1262,12 @@
           </h2>
           <div class="sline fi"></div>
           <p class="dm-intro fi">
-            Every project above started as a problem I saw first-hand doing
-            this job — not a spec handed to me. That's the part an outside
-            developer can't shortcut.
+            Every project above started as a real problem — some I saw
+            first-hand doing this job, others described to me by the people
+            who deal with them. Either way, this 12-year background is what
+            lets me tell a genuine requirement from a vague one, and judge
+            whether a solution actually fits how the work gets done. That's
+            the part an outside developer can't shortcut.
           </p>
           <div class="tl">
             <div class="tl-item current fi">
@@ -1361,11 +1410,16 @@
           </h2>
           <div class="sline fi"></div>
           <p class="svc-intro fi">
-            Send the workflow and the problem — I identify what's actually
-            going wrong, design the solution, and build and deploy it using
-            modern full-stack tools and AI-assisted development. The categories
-            below have a proven, verifiable track record; other problem types
-            are evaluated the same way.
+            Describe the workflow and where it's breaking down. I ask
+            questions until the requirement is clear and written down, then
+            design the solution, and build and deploy it using modern
+            full-stack tools and AI-assisted development. For a company or
+            industry, that solution is usually the same shape: find the
+            manual step in a process that already runs — a paper form, a
+            shared spreadsheet, a hand calculation — and replace it with a
+            deployed tool the whole team can rely on. The categories below
+            have a proven, verifiable track record; other problem types are
+            evaluated the same way.
           </p>
           <div class="svc-grid">
             <div class="sk-card fi">
@@ -1376,7 +1430,9 @@
               <p class="svc-desc">
                 React/Next.js on the frontend, Node.js/Express + MongoDB on
                 the backend — REST APIs, JWT/Firebase authentication, and
-                Stripe payments when the job needs them.
+                Stripe payments when the job needs them. Scope starts from a
+                written, agreed requirement, not a guess, so what ships
+                matches what was actually asked for.
               </p>
               <p class="svc-proof">
                 ✓ 3 apps in daily production use (vanilla JS + Cloudflare
@@ -1392,7 +1448,9 @@
               <p class="svc-desc">
                 Custom billing calculators, tracking dashboards, and
                 operational tools — the same kind of tool I built to solve
-                real problems at my own workplace.
+                real problems at my own workplace, after talking through
+                exactly how the numbers are supposed to work with the people
+                who use them daily.
               </p>
               <p class="svc-proof">
                 ✓ Built for real daily use, not a demo
@@ -1412,6 +1470,23 @@
               </p>
               <p class="svc-proof">
                 ✓ Proven with 3 tools converted from manual/Excel processes
+              </p>
+            </div>
+            <div class="sk-card fi">
+              <div class="sk-hd">
+                <div class="sk-ic" aria-hidden="true">🔁</div>
+                <h3 class="sk-ttl">Manual Process Automation</h3>
+              </div>
+              <p class="svc-desc">
+                For any company or industry: I sit with the team, map how a
+                process actually runs today, find the step still done by
+                hand — a paper form, a shared spreadsheet, a recalculation
+                someone repeats every day — and replace it with a deployed
+                tool the whole team can use, not just a one-off script.
+              </p>
+              <p class="svc-proof">
+                ✓ portbill, otbill, and carview each replaced a specific
+                manual step at Mongla Port and are still in daily use
               </p>
             </div>
           </div>
@@ -1434,6 +1509,16 @@
               <div class="svc-ready-item">
                 <span aria-hidden="true">✅</span>Every past project is
                 publicly verifiable before you hire
+              </div>
+              <div class="svc-ready-item">
+                <span aria-hidden="true">🗣️</span>Requirement gathered by
+                conversation first, written down and confirmed before any
+                build starts
+              </div>
+              <div class="svc-ready-item">
+                <span aria-hidden="true">🎯</span>Focused on the manual
+                bottleneck that's actually costing time, not just the
+                feature list
               </div>
             </div>
           </div>

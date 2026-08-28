@@ -422,10 +422,11 @@ def build_final_cv():
         doc,
         "AI Product Engineer with 12+ years of hands-on experience in cargo billing, "
         "vessel/vehicle tracking, and port authority workflows at Mongla Port Authority. "
-        "Finds the operational problem, designs the system, builds it with AI-assisted "
-        "development, then rebuilds each piece independently from memory before counting "
-        "it as learned. 3 self-built tools — billing, vehicle tracking, payroll automation "
-        "— are in daily production use. Skills backed by that shipped software and "
+        "Works requirement-first — finds the manual step in a process, designs the system, "
+        "builds it with AI-assisted development, then rebuilds each piece independently "
+        "from memory before counting it as learned. 3 self-built tools — billing, vehicle "
+        "tracking, payroll automation — are in daily production use. Skills backed by that "
+        "shipped software and "
         "self-directed study (The Odin Project, Full Stack Open), not a bootcamp "
         "certificate. Builds frontend independently; backend/data work with AI-assisted "
         "development (Claude Code), closed through a self-authored engineering roadmap. "
@@ -464,11 +465,10 @@ def build_final_cv():
         add_bullet(doc, t)
     add_body(doc, "Self-Initiated Web Development & Learning", space_after=1, size=9.3, italic=True, color=GOLD, align=None)
     for t in [
-        "Independently identified critical inefficiencies in manual paper-based billing, "
-        "overtime payroll calculation, and vehicle tracking workflows — designed and "
-        "deployed 3 live web applications now used daily by C&F agents and port staff, "
-        "built with plain JavaScript/HTML/CSS and AI-assisted development as a productivity "
-        "tool.",
+        "Talked to the billing desk, Traffic Department, and C&F agents to find the manual "
+        "bottleneck in each workflow — then designed and deployed 3 live web applications "
+        "now used daily by C&F agents and port staff, built with plain JavaScript/HTML/CSS "
+        "and AI-assisted development as a productivity tool.",
         "Worked through a large part of a full-stack curriculum (HTML/CSS, JavaScript, "
         "React, part of Node.js/Express and Next.js) alongside a full-time port operations "
         "career, before stepping away to focus on shipping real projects.",
@@ -531,15 +531,18 @@ def build_freelance_cv():
     add_section_heading(doc, "How I Work", space_before=0)
     add_body(
         doc,
-        "Send the workflow and the problem — I identify what's actually going wrong, using "
-        "12+ years of port operations experience, then design, build, and deploy the "
+        "Describe the workflow and where it breaks down — I ask questions until the "
+        "requirement is clear and written down, using 12+ years of port operations "
+        "experience to judge what actually fits, then design, build, and deploy the "
         "solution: frontend independently, backend/data work with AI-assisted development "
-        "(Claude Code). Every build gets a second pass — rebuilt from memory, no AI, then "
-        "explained back before I call it done. An AI Product Engineer (React/Next.js, "
-        "Node.js/Express, MongoDB) who worked through a large part of an intensive full-stack "
-        "curriculum, backed by 3 live web apps built for real daily use — not demos. "
-        "Available for freelance and "
-        "contract work worldwide, no time zone constraints.",
+        "(Claude Code). For a company or industry, the goal is usually the same: find the "
+        "manual step in a process that already runs — a paper form, a shared spreadsheet, a "
+        "hand calculation — and replace it with a deployed tool the whole team can use. "
+        "Every build gets a second pass — rebuilt from memory, no AI, then explained back "
+        "before I call it done. An AI Product Engineer (React/Next.js, Node.js/Express, "
+        "MongoDB) who worked through a large part of an intensive full-stack curriculum, "
+        "backed by 3 live web apps built for real daily use — not demos. Available for "
+        "freelance and contract work worldwide, no time zone constraints.",
         size=9.4,
     )
 
@@ -547,18 +550,26 @@ def build_freelance_cv():
     services = [
         ("Full-Stack Web Apps",
          "React/Next.js on the frontend, Node.js/Express + MongoDB on the backend — REST "
-         "APIs, JWT/Firebase authentication, and Stripe payments when the job needs them.",
+         "APIs, JWT/Firebase authentication, and Stripe payments when the job needs them. "
+         "Scope starts from a written, agreed requirement, not a guess.",
          "3 apps in daily production use (vanilla JS + Cloudflare Workers); React/Next.js "
          "via World Kitchen Atlas, Node/MongoDB backend via AI-assisted development."),
         ("Billing & Tracking Dashboards",
          "Custom billing calculators, tracking dashboards, and operational tools — the same "
-         "kind of tool built to solve real problems at my own workplace.",
+         "kind of tool built to solve real problems at my own workplace, after talking "
+         "through exactly how the numbers are supposed to work with the people who use them.",
          "Built for real daily use, not a demo."),
         ("Port & Logistics Workflow Digitisation",
          "Turning paper-based or Excel-based port and logistics workflows — wharfrent "
          "billing, overtime payroll, cargo/vehicle tracking — into deployed, team-wide web "
          "tools, backed by first-hand operational knowledge.",
          "Proven with 3 tools converted from manual/Excel processes."),
+        ("Manual Process Automation",
+         "For any company or industry: map how a process actually runs today, find the "
+         "step still done by hand, and replace it with a deployed tool the whole team can "
+         "use, not just a one-off script.",
+         "portbill, otbill, and carview each replaced a specific manual step and are still "
+         "in daily use."),
     ]
     for title, desc, proof in services:
         p = doc.add_paragraph()

@@ -85,10 +85,10 @@ def set_base_style(doc):
     rFonts.set(qn("w:eastAsia"), FONT)
 
     sec = doc.sections[0]
-    sec.top_margin = Inches(0.32)
-    sec.bottom_margin = Inches(0.25)
-    sec.left_margin = Inches(0.55)
-    sec.right_margin = Inches(0.55)
+    sec.top_margin = Inches(0.28)
+    sec.bottom_margin = Inches(0.2)
+    sec.left_margin = Inches(0.52)
+    sec.right_margin = Inches(0.52)
 
     lb = doc.styles["List Bullet"]
     lb.font.name = FONT
@@ -143,7 +143,7 @@ def add_name_header(doc, name, title, contact_parts):
     para_border_bottom(p3, color="1E3A5F", sz=10)
 
 
-def add_section_heading(doc, text, space_before=9):
+def add_section_heading(doc, text, space_before=7):
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(space_before)
     p.paragraph_format.space_after = Pt(3)
@@ -234,7 +234,7 @@ def add_skill_line(doc, category, items, space_after=3):
 
 def add_project_entry(doc, name, links, problem, solution, tags):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(5)
+    p.paragraph_format.space_before = Pt(4)
     p.paragraph_format.space_after = Pt(1)
     r = p.add_run(name)
     r.bold = True
@@ -253,12 +253,12 @@ def add_project_entry(doc, name, links, problem, solution, tags):
 
     add_body(doc, "Problem: " + problem, space_after=1, size=9.1, italic=True, color=MUTED)
     add_body(doc, solution, space_after=1, size=9.3)
-    add_body(doc, "Tech: " + tags, space_after=4, size=8.6, italic=True, color=MUTED)
+    add_body(doc, "Tech: " + tags, space_after=3, size=8.6, italic=True, color=MUTED)
 
 
 def add_compact_project(doc, name, links, sentence, tag_note=None):
     p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(2)
+    p.paragraph_format.space_before = Pt(1)
     p.paragraph_format.space_after = Pt(0)
     p.paragraph_format.line_spacing = 1.0
     r = p.add_run(name)
@@ -280,7 +280,7 @@ def add_compact_project(doc, name, links, sentence, tag_note=None):
                 s.font.size = Pt(8.2)
                 s.font.color.rgb = MUTED
             add_hyperlink(p, url, label, color=GOLD, underline=True, size=8.2)
-    add_body(doc, sentence, space_after=2, size=8.5)
+    add_body(doc, sentence, space_after=1, size=8.5)
 
 
 CONTACT = [
@@ -368,6 +368,24 @@ ADDITIONAL_PROJECTS = [
         sentence="Next.js static-export culinary encyclopedia on Cloudflare Pages, with a "
                  "Cloudflare Worker proxying a private GitHub data repo, admin CRUD, and a "
                  "Durable-Object-backed visit counter.",
+    ),
+    dict(
+        name="Outreach Copilot",
+        tag_note=None,
+        links=[("Live", "https://outreach-copilot.pages.dev"),
+               ("GitHub", "https://github.com/samiulAsumel/outreach-copilot")],
+        sentence="Single-user AI-drafted cold-outreach tool — Cloudflare Pages + Workers API, "
+                 "D1-backed leads/analytics, Workers AI draft generation across email/LinkedIn/"
+                 "WhatsApp/cover letter; every send stays a manual, deliberate step.",
+    ),
+    dict(
+        name="SalahSync",
+        tag_note=None,
+        links=[("Live", "https://salahsync.pages.dev"),
+               ("GitHub", "https://github.com/samiulAsumel/salahsync")],
+        sentence="Offline-first installable PWA that auto-generates a full daily prayer/routine "
+                 "schedule from Fajr time and office hours — offline solar prayer-time "
+                 "calculation, streak tracking, bilingual Bangla/English UI.",
     ),
     dict(
         name="JARVIS",

@@ -115,13 +115,33 @@ a stepwise methodology graphic for this site, stop and rewrite it as prose.
   (fullstackopen.com).
 - Job history (Mongla Port Authority, both roles) is real and is now part
   of the headline positioning, not just background — see Positioning above.
-- **7 featured projects**, each verified before use — don't assume link
-  status, re-check if it's been a while:
+- **9 featured projects** (2026-08-28: added Outreach Copilot and SalahSync
+  after a GitHub + Cloudflare dashboard sweep — see below), each verified
+  before use — don't assume link status, re-check if it's been a while:
   - Live + GitHub, in daily production use: Port Billing Calculator
     (`portbill`), carview, OT Bill Management System (`otbill`), Client
     Intake Form.
   - Live + GitHub, not production tools: World Kitchen Atlas
-    (`world-kitchen-atlas`, live at `kitchenatlas.pages.dev`).
+    (`world-kitchen-atlas`, live at `kitchenatlas.pages.dev`), Outreach
+    Copilot (`outreach-copilot`, live frontend at
+    `outreach-copilot.pages.dev` + a separate live API Worker), SalahSync
+    (`salahsync`, live at `salahsync.pages.dev` — personal PWA, entire
+    README/UI is in Bengali but the site card is English-only, per the
+    Bengali-script grep check below).
+  - **Explicitly excluded, do not add** (found in the same 2026-08-28
+    sweep): `pts-sas` (personal 880-lesson curriculum tracker; its own
+    README names "Germany EU Blue Card" as a target market and RHCSA/RHCE
+    tracks — exactly the content the rules below ban) and
+    `devops-command-summary` (a RHCSA/DevOps/SELinux/Ansible/Podman command
+    reference — directly hits the banned-terms grep). Both are real,
+    live-deployed repos; they are excluded on content-policy grounds, not
+    because they're unverified. `deskora` (live at
+    `deskora.sasas.workers.dev`) was deliberately deferred — its own README
+    says the core booking/concurrency logic (the actual selling point) is
+    still a skeleton; revisit once M4 (the concurrency tests) lands.
+    `onboard-signup-form` (GitHub only, no live link, Odin Project exercise
+    extended) was deferred as too small to add given the site's project
+    bar.
   - GitHub only, **no working live link** — do not label "Live":
     `pcs-port-system` (its only public URL is a GitHub Pages *docs* site,
     not a running app — label as "Architecture Showcase" with a Docs

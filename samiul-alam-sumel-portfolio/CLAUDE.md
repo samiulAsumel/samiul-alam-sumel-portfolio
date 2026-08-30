@@ -1,4 +1,4 @@
-# CLAUDE.md — samiulAsumel.cv
+# CLAUDE.md — samiul-alam-sumel-portfolio
 
 Project-specific instructions for Claude Code working in this repo. This
 supplements (does not replace) the user's global instructions.

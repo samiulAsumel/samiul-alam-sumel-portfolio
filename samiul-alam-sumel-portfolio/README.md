@@ -1,10 +1,10 @@
 # Samiul Alam Sumel — Portfolio
 
-Personal portfolio site for MD Samiul Alam Sumel, a Port Operations
-Technologist and Product Engineer (React/Next.js, Node.js/Express, MongoDB)
-with 12+ years of professional experience at Mongla Port Authority who
-personally designs and ships the software that runs those workflows. Static
-HTML/CSS/JS, no build step, deployed on Cloudflare Pages.
+Personal portfolio site for MD Samiul Alam Sumel, an AI Product Engineer —
+Port & Logistics Domain (React/Next.js, Node.js/Express, MongoDB) with 12+
+years of professional experience at Mongla Port Authority who personally
+designs and ships the software that runs those workflows. Static HTML/CSS/JS,
+no build step, deployed on Cloudflare Pages.
 
 **Live:** https://sasumel.pages.dev/
 

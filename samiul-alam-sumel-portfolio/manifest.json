@@ -6,8 +6,8 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f6f7fa",
-  "theme_color": "#1e3a5f",
+  "background_color": "#fafafa",
+  "theme_color": "#fafafa",
   "lang": "en",
   "categories": ["portfolio", "resume", "business", "productivity"],
   "icons": [

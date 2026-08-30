@@ -1,5 +1,8 @@
 # Never publish private visa/learning docs from the samiul-alam-sumel-portfolio project
-samiul-alam-sumel-portfolio/private/
+private/
+
+# Local Wrangler CLI cache
+.wrangler/
 
 # Auto-generated design-tool scratch output
 _ds/

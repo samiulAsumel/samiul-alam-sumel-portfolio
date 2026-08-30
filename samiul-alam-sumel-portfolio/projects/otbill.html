@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>OT Bill Management System — Case Study | Samiul Alam Sumel</title>
+    <meta
+      name="description"
+      content="Case study: OT Bill Management System turned a fully manual overtime billing process into a single data-entry point and an instant bill, in daily production use at Mongla Port Authority."
+    />
+    <meta name="author" content="MD Samiul Alam Sumel" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sasumel.pages.dev/projects/otbill.html" />
+
+    <meta name="theme-color" content="#fafafa" />
+    <link rel="manifest" href="../manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sasumel.pages.dev/projects/otbill.html" />
+    <meta property="og:title" content="OT Bill Management System — Case Study" />
+    <meta
+      property="og:description"
+      content="Turned a fully manual, multi-step overtime billing process into a single data-entry point and an instant bill."
+    />
+    <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OT Bill Management System — Case Study" />
+    <meta
+      name="twitter:description"
+      content="Turned a fully manual, multi-step overtime billing process into a single data-entry point and an instant bill."
+    />
+    <meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+      <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+      <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+      <path d="M10 9H8" />
+      <path d="M16 13H8" />
+      <path d="M16 17H8" /></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+    </svg>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav id="nb" aria-label="Primary navigation">
+      <div class="wrap nav-in">
+        <a href="../index.html#hero" class="logo"
+          >SAS <span class="logo-badge">AI Product Engineer</span></a
+        >
+        <ul class="nav-links" role="list">
+          <li><a href="../index.html#work">← All Projects</a></li>
+        </ul>
+        <button
+          class="theme-tgl"
+          id="theme-tgl"
+          type="button"
+          aria-label="Toggle light/dark theme"
+        >
+          <span aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </nav>
+
+    <main id="main-content" tabindex="-1">
+      <section class="sec" style="padding-top:150px" aria-labelledby="cs-title">
+        <div class="wrap">
+          <p class="slabel fi"><a href="../index.html#work" style="color:inherit">← Selected Engineering Work</a></p>
+          <h1 class="stitle fi" id="cs-title">OT Bill <span>Management System</span></h1>
+          <div class="sline fi"></div>
+
+          <article class="case-study cs-standalone fl" style="opacity:1;transform:none;filter:none">
+            <div class="cs-summary" style="cursor:default">
+              <div class="cs-summary-body">
+                <div class="cs-summary-hd">
+                  <span class="cs-nm">OT Bill Management System</span>
+                  <span class="cs-status">● LIVE — DAILY USE</span>
+                </div>
+                <p class="cs-sent">
+                  Turned a fully manual, multi-step overtime billing process into a
+                  single data-entry point and an instant bill.
+                </p>
+              </div>
+            </div>
+            <div class="cs-body" style="border-top:1px solid var(--bdr-s)">
+              <div class="cs-grid">
+                <div class="cs-full">
+                  <div class="cs-demo">
+                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">otbill.pages.dev</span></div>
+                    <img src="../assets/screenshots/otbill.webp" alt="OT Bill Management System login screen" loading="lazy" width="1200" height="750" />
+                  </div>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Problem</div>
+                  <p class="cs-block-p">
+                    Overtime billing was a fully manual Excel process — multi-step
+                    hourly-rate calculations and date-wise OT entry redone by hand
+                    every cycle, with real error risk and real time cost each
+                    period.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Users</div>
+                  <p class="cs-block-p">
+                    Whoever runs the overtime billing cycle at Mongla Port —
+                    previously a repeated manual task every period.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Constraints</div>
+                  <p class="cs-block-p">
+                    Had to match the real hourly-rate and cumulative OT rules
+                    exactly. Needed print-ready A4 output, same as portbill, since
+                    the result feeds physical paperwork.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The System</div>
+                  <p class="cs-block-p">
+                    Staff enter an employee profile once; the system generates the
+                    complete final OT bill instantly with correct hourly rate,
+                    cumulative date-wise OT calculation, and A4 print-ready output.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Architecture</div>
+                  <div class="cs-diagram flow">
+                    <div class="flow-node"><div class="flow-node-k">Browser</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">JS Business Logic</div><div class="flow-node-t">Client-side, same no-backend shape as portbill</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">A4 Print Output</div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="cs-block-t">Technical Decisions</div>
+                  <p class="cs-block-p">
+                    Same plain-JS, no-framework, Cloudflare Pages approach as
+                    portbill — each of these is a single-purpose calculation tool,
+                    not a platform, so the simplest architecture that works is the
+                    right one.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Challenges</div>
+                  <p class="cs-block-p">
+                    Eliminating manual calculation errors meant the cumulative
+                    date-wise OT logic had to handle real edge cases correctly, not
+                    just the common case.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Result</div>
+                  <p class="cs-block-p">
+                    Reduced the billing cycle from hours to minutes and eliminated
+                    the manual calculation errors that came with redoing the math
+                    by hand every period.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">What I Learned</div>
+                  <p class="cs-block-p">
+                    The biggest win wasn't a feature — it was moving data entry to
+                    a single one-time point (the employee profile), removing the
+                    chance for input errors at the exact place they used to happen
+                    every cycle.
+                  </p>
+                </div>
+                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Cuts each overtime billing cycle from an estimated <strong>2–4 hours</strong> of manual Excel work down to minutes — a rough before/after comparison from memory of the old process, not a timed measurement.</span></div>
+                <div class="cs-full cs-links">
+                  <a href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
+                  <a href="https://github.com/samiulAsumel/otbill" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                  <a href="../index.html#work" class="btn btn-o">← Back to Portfolio</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="ft-center">
+          <div class="ft-logo">SAS</div>
+          <p class="ft-tagline">
+            AI Product Engineer · Port &amp; Logistics Domain · Building
+            software for real-world operations.
+          </p>
+        </div>
+        <nav class="ft-links" aria-label="Footer navigation">
+          <a href="../index.html#hero" class="ft-link">Home</a>
+          <a href="../index.html#about" class="ft-link">About</a>
+          <a href="../index.html#work" class="ft-link">Projects</a>
+          <a href="../index.html#contact" class="ft-link">Contact</a>
+          <a href="https://github.com/samiulAsumel/otbill" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
+        </nav>
+        <div class="ft-bar">
+          <p class="ft-copy">
+            © 2026 <span>MD Samiul Alam Sumel</span>. All rights reserved.
+          </p>
+          <a href="../index.html#hero" class="ft-top">↑ Back to portfolio</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

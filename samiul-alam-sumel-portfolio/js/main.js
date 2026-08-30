@@ -116,21 +116,33 @@
      SCROLL REVEAL
   ---------------------------------------------------------- */
   const animated = document.querySelectorAll('.fi, .fl, .fr');
+  const STAGGER_STEP_MS = 60;
+  const STAGGER_MAX_MS = 300;
 
-  function revealElement(el) {
+  function revealElement(el, delayMs) {
+    if (delayMs) {
+      el.style.transitionDelay = delayMs + 'ms';
+      window.setTimeout(() => { el.style.transitionDelay = ''; }, delayMs + 750);
+    }
     el.classList.add('v');
   }
 
   if ('IntersectionObserver' in window) {
     const animObs = new IntersectionObserver(entries => {
+      let staggerIndex = 0;
       entries.forEach(entry => {
-        if (entry.isIntersecting) revealElement(entry.target);
+        if (!entry.isIntersecting) return;
+        animObs.unobserve(entry.target);
+        const inHero = entry.target.closest('#hero');
+        const delay = inHero ? 0 : Math.min(staggerIndex * STAGGER_STEP_MS, STAGGER_MAX_MS);
+        revealElement(entry.target, delay);
+        if (!inHero) staggerIndex++;
       });
     }, { threshold: 0.1 });
 
     animated.forEach(el => animObs.observe(el));
   } else {
-    animated.forEach(revealElement);
+    animated.forEach(el => revealElement(el, 0));
   }
 
   window.setTimeout(() => {

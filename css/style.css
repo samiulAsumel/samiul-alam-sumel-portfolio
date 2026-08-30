@@ -129,7 +129,8 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--tx);overflow-
 
 ::selection{background:var(--accent);color:#fff}
 
-.h-desc,.ab-text p,.svc-intro,.svc-desc,.pc-pb,.pc-ds,.dc-note,.ct-text p,.mtd-p,.mtd-intro,.cs-desc,.vf-note{
+.h-desc,.ab-text p,.svc-intro,.svc-desc,.pc-pb,.pc-ds,.dc-note,.ct-text p,.mtd-p,.mtd-intro,.cs-desc,.vf-note,
+.cs-block-p,.cs-sent,.work-intro,.story-intro,.rm-intro,.dm-intro,.ai-eng-p{
   text-align:justify;text-align-last:left;hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;
 }
 

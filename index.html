@@ -902,7 +902,7 @@
           <h2 class="stitle fi" id="work-title">Selected <span>Engineering Work</span></h2>
           <div class="sline fi"></div>
           <p class="work-intro fi">
-            Not every project here carries equal weight. The three below are
+            Not every project here carries equal weight. The four below are
             real production systems, still running today — expand any one
             for the full case study: problem, users, constraints,
             architecture, and what I'd have done differently.
@@ -1281,6 +1281,128 @@
             </div>
           </details>
 
+          <!-- CASE STUDY: CLIENT INTAKE FORM -->
+          <details class="case-study fi">
+            <summary class="cs-summary">
+              <div class="cs-thumb">
+                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
+                <img src="assets/screenshots/client-intake.webp" alt="Client Intake Form project requirement sheet" loading="lazy" width="240" height="150" />
+              </div>
+              <div class="cs-summary-body">
+                <div class="cs-summary-hd">
+                  <span class="cs-nm">Client Intake Form</span>
+                  <span class="cs-status">● LIVE — DAILY USE</span>
+                </div>
+                <p class="cs-sent">
+                  Turns a scattered email/chat back-and-forth into one structured
+                  sheet that becomes the actual scope of the quotation.
+                </p>
+              </div>
+              <span class="cs-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="cs-body">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-t">The Problem</div>
+                  <p class="cs-block-p">
+                    Collecting project requirements from a freelance/contract client
+                    over email or chat is unstructured — details get missed, and
+                    without a written scope, "what was actually agreed" becomes a
+                    dispute later rather than a shared reference.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Users</div>
+                  <p class="cs-block-p">
+                    Freelance and contract clients bringing a new website, online
+                    store, or custom software project — before any code gets
+                    written.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Constraints</div>
+                  <p class="cs-block-p">
+                    Had to work for a client who has never touched the tool before —
+                    open a link, no account, no install. One form had to flex across
+                    very different project types (a shop's brochure site vs. an
+                    internal SaaS tool) without turning into a maze. An 18-section
+                    form risks losing 20 minutes of typing to a closed tab, with no
+                    server to save progress to.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The System</div>
+                  <p class="cs-block-p">
+                    18 sections, gated by an opening "what are you building?"
+                    answer — website, online store, custom software, or not sure —
+                    that decides which later sections even appear (custom-software
+                    projects get user roles, modules, data sensitivity, and hosting
+                    questions; a brochure site doesn't). Ends in a declaration step
+                    where the client types their name to confirm written engagement
+                    terms — scope, quotation, payment, revisions, ownership — before
+                    a summary is generated and sent via their own email app.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Architecture</div>
+                  <div class="cs-diagram flow">
+                    <div class="flow-node"><div class="flow-node-k">Browser Form</div><div class="flow-node-t">Single HTML file, no backend</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">localStorage</div><div class="flow-node-t">Debounced draft autosave, private to that browser</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">mailto:</div><div class="flow-node-t">Summary sent via the client's own email app</div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="cs-block-t">Technical Decisions</div>
+                  <p class="cs-block-p">
+                    Kept it a single dependency-free HTML file on purpose — a client
+                    should be able to open a link and start typing, with nothing to
+                    install or sign up for. mailto: avoids running or paying for a
+                    mail-sending service just to receive occasional intake
+                    submissions. The draft autosave needed no server or account
+                    either — it's just localStorage, debounced and flushed on
+                    blur/tab-hide/unload.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Challenges</div>
+                  <p class="cs-block-p">
+                    Branching one form across genuinely different project types
+                    without it feeling like a maze — solved by making the very
+                    first answer ("what are you building?") gate which sections
+                    appear later, rather than showing every client all 18 sections
+                    regardless of relevance.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Result</div>
+                  <p class="cs-block-p">
+                    Now the intake step before quoting new freelance/contract work —
+                    the same "how do you handle this today" and "why now" questions
+                    the form asks clients are the ones that used to get lost in a
+                    chat thread.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">What I Learned</div>
+                  <p class="cs-block-p">
+                    Putting the engagement terms — scope, quotation, payment,
+                    revisions, ownership — directly into the form's own declaration
+                    step, instead of a separate contract sent later, means client
+                    and freelancer agree on the boundary of the work before it
+                    starts, not after a disagreement about it.
+                  </p>
+                </div>
+                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Used as the intake step before quoting new freelance/contract work — covers everything from a brochure site to a custom internal tool through the same <strong>18-section</strong> flow, though exact usage isn't logged.</span></div>
+                <div class="cs-full cs-links">
+                  <a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
+                  <a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </details>
+
           <div class="work-tier-hd fi">
             <span class="work-tier-t">Product Engineering</span>
             <span class="work-tier-line"></span>
@@ -1322,18 +1444,6 @@
               <h3 class="pc-nm">SalahSync</h3>
               <p class="pc-ds">Offline-first PWA auto-generating a daily prayer/routine schedule from Fajr time and office hours — no API dependency, bilingual UI.</p>
               <div class="pc-tags"><span class="pt">PWA</span><span class="pt">Offline-First</span><span class="pt">i18n</span></div>
-            </div>
-            <div class="pc">
-              <div class="pc-hd">
-                <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-clipboard-list"/></svg></span>
-                <div class="pc-lks">
-                  <a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="Live App"><svg class="icon"><use href="#i-external-link"/></svg></a>
-                  <a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
-                </div>
-              </div>
-              <h3 class="pc-nm">Client Intake Form</h3>
-              <p class="pc-ds">Structured, client-side project requirement intake — no backend required, mailto-based report.</p>
-              <div class="pc-tags"><span class="pt">JavaScript</span><span class="pt">Client-Side Only</span></div>
             </div>
             <div class="pc">
               <div class="pc-hd">

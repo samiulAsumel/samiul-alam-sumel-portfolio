@@ -902,8 +902,8 @@
           <h2 class="stitle fi" id="work-title">Selected <span>Engineering Work</span></h2>
           <div class="sline fi"></div>
           <p class="work-intro fi">
-            Not every project here carries equal weight. The five below are
-            real production systems, still running today — expand any one
+            Not every project here carries equal weight. The six below are
+            real, working systems, still running today — expand any one
             for the full case study: problem, users, constraints,
             architecture, and what I'd have done differently.
           </p>
@@ -1531,24 +1531,145 @@
             </div>
           </details>
 
+          <!-- CASE STUDY: WORLD KITCHEN ATLAS -->
+          <details class="case-study fi">
+            <summary class="cs-summary">
+              <div class="cs-thumb">
+                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
+                <img src="assets/screenshots/kitchen-atlas.webp" alt="World Kitchen Atlas culinary encyclopedia homepage" loading="lazy" width="240" height="150" />
+              </div>
+              <div class="cs-summary-body">
+                <div class="cs-summary-hd">
+                  <span class="cs-nm">World Kitchen Atlas</span>
+                  <span class="cs-status">● LIVE</span>
+                </div>
+                <p class="cs-sent">
+                  A culinary encyclopedia that rates its own confidence per
+                  dish instead of presenting uncertain food history as fact.
+                </p>
+              </div>
+              <span class="cs-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="cs-body">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-t">The Problem</div>
+                  <p class="cs-block-p">
+                    Most recipe content online is thin — an ingredient list
+                    with no real history, occasion, or cultural context, and
+                    when a dish's origin genuinely isn't settled, most sites
+                    just assert one version as fact anyway.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Users</div>
+                  <p class="cs-block-p">
+                    Public, anonymous visitors browsing world cuisine —
+                    there's no login. I don't have exported traffic numbers
+                    to quote, but it's a real, publicly reachable site with a
+                    working visit counter behind it.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Constraints</div>
+                  <p class="cs-block-p">
+                    The recipe dataset lives in a private repo and its
+                    GitHub token can never reach the browser. Under Next.js's
+                    static export mode, the entire build fails outright if
+                    any country has zero seeded dishes — so real content had
+                    to exist before the site could deploy at all, not after.
+                    And a lot of culinary history is genuinely uncertain, so
+                    the site had to have a real way to say "we're not fully
+                    sure" instead of quietly inventing a clean answer.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The System</div>
+                  <p class="cs-block-p">
+                    Dishes are organized continent → country → dish, with
+                    client-side search and browse-by-meal-time. Every entry
+                    carries a visible confidence rating — a tick-mark badge
+                    from "verified" down to thinner sourcing — instead of
+                    presenting every dish as equally certain. Small nations
+                    with few well-documented dishes list only what can
+                    genuinely be confirmed rather than padding the count.
+                    Asia is live today — 7 countries, 280 dishes — with the
+                    rest of the world marked "coming soon" rather than faked
+                    in. An admin panel (PBKDF2 auth) handles recipe CRUD
+                    against the private data repo.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Architecture</div>
+                  <div class="cs-diagram flow">
+                    <div class="flow-node"><div class="flow-node-k">Next.js Static Export</div><div class="flow-node-t">Pure static HTML/CSS/JS, no server runtime</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">Cloudflare Worker</div><div class="flow-node-t">Proxies the private data repo + admin auth/CRUD + visit tracking</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">Private GitHub Data Repo</div><div class="flow-node-t">One JSON file per country, source of truth</div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="cs-block-t">Technical Decisions</div>
+                  <p class="cs-block-p">
+                    The GitHub token that can write to the data repo never
+                    leaves the Worker — the Next.js build fetches through it
+                    at build time, not the browser at request time. Visit
+                    counting runs on a SQLite-backed Durable Object rather
+                    than Workers KV, specifically because KV's free-tier
+                    write limits can't survive a real per-pageview counter.
+                    A cosmetic client-side scraping deterrent
+                    (right-click/DevTools blocking) is paired honestly with
+                    the protection that actually matters — Cloudflare Bot
+                    Fight Mode and WAF rate-limiting — rather than relying on
+                    the client-side layer alone.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Challenges</div>
+                  <p class="cs-block-p">
+                    Deciding how to represent food history that's genuinely
+                    contested or thinly documented, without either asserting
+                    false precision or making the whole site read as
+                    unreliable — solved by making confidence a visible,
+                    per-dish rating instead of a hidden editorial judgment
+                    call.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Result</div>
+                  <p class="cs-block-p">
+                    Live today with real, sourced content for Asia — 7
+                    countries, 280 dishes — rather than a thin dataset
+                    dressed up to look complete. Europe, Africa, the
+                    Americas, and Oceania are the next phases.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">What I Learned</div>
+                  <p class="cs-block-p">
+                    On a content-heavy project like this, sourcing and
+                    verifying real information is the actual bottleneck, not
+                    the code — and being upfront about what isn't confirmed
+                    holds up better long-term than presenting a thin dataset
+                    as a finished, authoritative record.
+                  </p>
+                </div>
+                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Asia is live with <strong>280 dishes across 7 countries</strong>, each with a visible confidence rating — the rest of the world is planned, not faked in, and I don't have exported visit numbers to quote.</span></div>
+                <div class="cs-full cs-links">
+                  <a href="https://kitchenatlas.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
+                  <a href="https://github.com/samiulAsumel/world-kitchen-atlas" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </details>
+
           <div class="work-tier-hd fi">
             <span class="work-tier-t">Product Engineering</span>
             <span class="work-tier-line"></span>
           </div>
           <p class="work-tier-note fi">Shipped and live, but not tied to Mongla Port's daily operations.</p>
           <div class="pg fi">
-            <div class="pc">
-              <div class="pc-hd">
-                <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-soup"/></svg></span>
-                <div class="pc-lks">
-                  <a href="https://kitchenatlas.pages.dev/" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="Live App"><svg class="icon"><use href="#i-external-link"/></svg></a>
-                  <a href="https://github.com/samiulAsumel/world-kitchen-atlas" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
-                </div>
-              </div>
-              <h3 class="pc-nm">World Kitchen Atlas</h3>
-              <p class="pc-ds">Next.js static-export culinary encyclopedia with a Worker-proxied private data repo, admin CRUD, and a Durable-Object-backed visit counter.</p>
-              <div class="pc-tags"><span class="pt">Next.js</span><span class="pt">TypeScript</span><span class="pt">Cloudflare Worker</span></div>
-            </div>
             <div class="pc">
               <div class="pc-hd">
                 <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-send"/></svg></span>

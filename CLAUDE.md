@@ -117,21 +117,40 @@ a stepwise methodology graphic for this site, stop and rewrite it as prose.
   of the headline positioning, not just background — see Positioning above.
 - **9 featured projects** (2026-08-28: added Outreach Copilot and SalahSync
   after a GitHub + Cloudflare dashboard sweep — see below), each verified
-  before use — don't assume link status, re-check if it's been a while:
-  - Live + GitHub, in daily production use: Port Billing Calculator
-    (`portbill`), carview, OT Bill Management System (`otbill`), Client
-    Intake Form, SalahSync (`salahsync`, live at `salahsync.pages.dev` —
-    explicitly promoted into this tier 2026-09-02 at the user's request,
-    even though it's a personal, single-user PWA rather than a
-    coworker/client-facing system like the other three — the site case
-    study is worded honestly about that ("Just me — this is a personal
-    daily-use tool, not a multi-user product"); entire README/UI is in
-    Bengali but the site card is English-only, per the Bengali-script grep
-    check below).
-  - Live + GitHub, not production tools: World Kitchen Atlas
-    (`world-kitchen-atlas`, live at `kitchenatlas.pages.dev`), Outreach
-    Copilot (`outreach-copilot`, live frontend at
-    `outreach-copilot.pages.dev` + a separate live API Worker).
+  before use — don't assume link status, re-check if it's been a while.
+  The "Production / Real-World Systems" tier (top of #work, full
+  case-study `<details>` treatment) is no longer strictly "in daily
+  production use" — the work-intro copy was deliberately loosened to
+  "real, working systems" on 2026-09-02 once it grew to include entries
+  that don't fit that phrase literally. Don't re-tighten the copy back to
+  "production" without checking this list first:
+  - Coworker/client-facing, genuinely in daily production use: Port
+    Billing Calculator (`portbill`), carview, OT Bill Management System
+    (`otbill`), Client Intake Form — real other people rely on these.
+  - Personal daily-use, promoted into the tier 2026-09-02 at the user's
+    explicit request despite being single-user: SalahSync (`salahsync`,
+    live at `salahsync.pages.dev`) — the site case study says so plainly
+    ("Just me — this is a personal daily-use tool, not a multi-user
+    product"); entire README/UI is in Bengali but the site card is
+    English-only, per the Bengali-script grep check below. Uses the same
+    "● LIVE — DAILY USE" status badge as the four above (user's explicit
+    choice), even though the "daily use" there is personal, not
+    multi-user.
+  - Public live product, no confirmed usage, promoted into the tier
+    2026-09-02 at the user's request: World Kitchen Atlas
+    (`world-kitchen-atlas`, live at `kitchenatlas.pages.dev`) — real
+    content (Asia: 7 countries / 280 dishes, confidence-rated per dish),
+    real infra (Cloudflare Worker + private data repo + Durable-Object
+    visit counter), but no exported traffic numbers exist to back a
+    "daily use" claim, so it deliberately uses a plain "● LIVE" status
+    badge instead of "● LIVE — DAILY USE". Its GitHub README describes an
+    earlier build phase (claims the data repo is still empty) — that's
+    stale; the deployed site is well ahead of it, verified directly
+    against `kitchenatlas.pages.dev`. Don't trust that README's "Status"
+    section without re-checking the live site.
+  - Live + GitHub, not in the top tier: Outreach Copilot
+    (`outreach-copilot`, live frontend at `outreach-copilot.pages.dev` +
+    a separate live API Worker) — single-user tool, not promoted.
   - **Explicitly excluded, do not add** (found in the same 2026-08-28
     sweep): `pts-sas` (personal 880-lesson curriculum tracker; its own
     README names "Germany EU Blue Card" as a target market and RHCSA/RHCE

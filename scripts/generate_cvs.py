@@ -357,6 +357,19 @@ PROJECTS = [
                  "lands directly in an inbox.",
         tags="JavaScript, HTML/CSS, Client-Side Only",
     ),
+    dict(
+        name="SalahSync",
+        links=[("Live", "https://salahsync.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/salahsync")],
+        problem="A static printed daily-routine sheet couldn't adapt when Fajr time or office "
+                "hours shifted, and couldn't track whether a prayer was actually made in "
+                "jamaah, alone, or missed.",
+        solution="Offline-first installable PWA: set Fajr time/location and office hours once, "
+                 "and the full day's schedule (Tahajjud through sleep) recalculates itself, "
+                 "with a prayer/amal tracker, streaks, and offline solar prayer-time "
+                 "calculation — no API dependency. Personal daily-use tool, bilingual "
+                 "Bangla/English UI.",
+        tags="PWA, Offline-First, Vanilla JS, i18n",
+    ),
 ]
 
 ADDITIONAL_PROJECTS = [
@@ -377,15 +390,6 @@ ADDITIONAL_PROJECTS = [
         sentence="Single-user AI-drafted cold-outreach tool — Cloudflare Pages + Workers API, "
                  "D1-backed leads/analytics, Workers AI draft generation across email/LinkedIn/"
                  "WhatsApp/cover letter; every send stays a manual, deliberate step.",
-    ),
-    dict(
-        name="SalahSync",
-        tag_note=None,
-        links=[("Live", "https://salahsync.pages.dev"),
-               ("GitHub", "https://github.com/samiulAsumel/salahsync")],
-        sentence="Offline-first installable PWA that auto-generates a full daily prayer/routine "
-                 "schedule from Fajr time and office hours — offline solar prayer-time "
-                 "calculation, streak tracking, bilingual Bangla/English UI.",
     ),
     dict(
         name="JARVIS",

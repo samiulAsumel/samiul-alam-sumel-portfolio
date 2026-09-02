@@ -419,6 +419,125 @@
   }
 
   /* ----------------------------------------------------------
+     MAGNETIC BUTTONS — CTAs pull gently toward the cursor within
+     a small radius. Desktop pointer only; off entirely on touch
+     and under prefers-reduced-motion.
+  ---------------------------------------------------------- */
+  const magneticBtns = document.querySelectorAll('.btn');
+  if (canHover && !reducedMotion && magneticBtns.length) {
+    const MAG_STRENGTH = 0.25;
+    const MAG_MAX = 7;
+    magneticBtns.forEach(btn => {
+      btn.addEventListener('pointermove', event => {
+        const rect = btn.getBoundingClientRect();
+        const dx = event.clientX - (rect.left + rect.width / 2);
+        const dy = event.clientY - (rect.top + rect.height / 2);
+        const mx = Math.max(-MAG_MAX, Math.min(MAG_MAX, dx * MAG_STRENGTH));
+        const my = Math.max(-MAG_MAX, Math.min(MAG_MAX, dy * MAG_STRENGTH));
+        btn.style.transform = `translate(${mx}px, ${my}px)`;
+      }, { passive: true });
+      btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+    });
+  }
+
+  /* ----------------------------------------------------------
+     BACK TO TOP — fades in once you've scrolled past the hero
+  ---------------------------------------------------------- */
+  const totop = document.getElementById('totop');
+  if (totop) {
+    let totopTicking = false;
+    function updateTotop() {
+      totopTicking = false;
+      totop.classList.toggle('show', window.scrollY > window.innerHeight * 0.8);
+    }
+    window.addEventListener('scroll', () => {
+      if (!totopTicking) {
+        window.requestAnimationFrame(updateTotop);
+        totopTicking = true;
+      }
+    }, { passive: true });
+    updateTotop();
+  }
+
+  /* ----------------------------------------------------------
+     SMOOTH CASE-STUDY EXPAND/COLLAPSE — animates the native
+     <details> open/close with WAAPI instead of the default snap.
+     Falls back to plain native behaviour when Element#animate or
+     prefers-reduced-motion isn't available.
+  ---------------------------------------------------------- */
+  const caseStudies = document.querySelectorAll('.case-study');
+  if (caseStudies.length && !reducedMotion && document.documentElement.animate) {
+    const DURATION = 320;
+    const EASING = 'cubic-bezier(.4,0,.2,1)';
+
+    caseStudies.forEach(details => {
+      const summary = details.querySelector('summary');
+      const body = details.querySelector('.cs-body');
+      if (!summary || !body) return;
+
+      let anim = null;
+      let closing = false;
+      let opening = false;
+
+      function onFinish(openState) {
+        details.open = openState;
+        anim = null;
+        closing = false;
+        opening = false;
+        details.style.height = '';
+        details.style.overflow = '';
+      }
+
+      // anim.onfinish is the primary signal; the setTimeout is a safety net
+      // in case a backgrounded/throttled tab never fires it, so the panel
+      // can never get stuck mid-animation.
+      function runAnim(startHeight, endHeight, openState) {
+        if (anim) anim.cancel();
+        const thisAnim = details.animate({ height: [startHeight, endHeight] }, { duration: DURATION, easing: EASING });
+        anim = thisAnim;
+        const finish = () => { if (anim === thisAnim) onFinish(openState); };
+        thisAnim.onfinish = finish;
+        thisAnim.oncancel = () => {
+          if (anim === thisAnim) { closing = false; opening = false; }
+        };
+        window.setTimeout(finish, DURATION + 80);
+      }
+
+      function shrink() {
+        closing = true;
+        const startHeight = details.offsetHeight + 'px';
+        const endHeight = summary.offsetHeight + 'px';
+        details.style.overflow = 'hidden';
+        runAnim(startHeight, endHeight, false);
+      }
+
+      function expand() {
+        opening = true;
+        details.style.overflow = 'hidden';
+        const startHeight = details.offsetHeight + 'px';
+        const endHeight = summary.offsetHeight + body.offsetHeight + 'px';
+        runAnim(startHeight, endHeight, true);
+      }
+
+      function open() {
+        details.style.height = details.offsetHeight + 'px';
+        details.open = true;
+        window.requestAnimationFrame(() => expand());
+      }
+
+      summary.addEventListener('click', event => {
+        event.preventDefault();
+        details.style.overflow = 'hidden';
+        if (closing || !details.open) {
+          open();
+        } else if (opening || details.open) {
+          shrink();
+        }
+      });
+    });
+  }
+
+  /* ----------------------------------------------------------
      SERVICE WORKER
   ---------------------------------------------------------- */
   if ('serviceWorker' in navigator && /^(https?:)$/.test(window.location.protocol)) {

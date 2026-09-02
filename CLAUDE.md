@@ -120,14 +120,18 @@ a stepwise methodology graphic for this site, stop and rewrite it as prose.
   before use — don't assume link status, re-check if it's been a while:
   - Live + GitHub, in daily production use: Port Billing Calculator
     (`portbill`), carview, OT Bill Management System (`otbill`), Client
-    Intake Form.
+    Intake Form, SalahSync (`salahsync`, live at `salahsync.pages.dev` —
+    explicitly promoted into this tier 2026-09-02 at the user's request,
+    even though it's a personal, single-user PWA rather than a
+    coworker/client-facing system like the other three — the site case
+    study is worded honestly about that ("Just me — this is a personal
+    daily-use tool, not a multi-user product"); entire README/UI is in
+    Bengali but the site card is English-only, per the Bengali-script grep
+    check below).
   - Live + GitHub, not production tools: World Kitchen Atlas
     (`world-kitchen-atlas`, live at `kitchenatlas.pages.dev`), Outreach
     Copilot (`outreach-copilot`, live frontend at
-    `outreach-copilot.pages.dev` + a separate live API Worker), SalahSync
-    (`salahsync`, live at `salahsync.pages.dev` — personal PWA, entire
-    README/UI is in Bengali but the site card is English-only, per the
-    Bengali-script grep check below).
+    `outreach-copilot.pages.dev` + a separate live API Worker).
   - **Explicitly excluded, do not add** (found in the same 2026-08-28
     sweep): `pts-sas` (personal 880-lesson curriculum tracker; its own
     README names "Germany EU Blue Card" as a target market and RHCSA/RHCE

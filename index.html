@@ -902,7 +902,7 @@
           <h2 class="stitle fi" id="work-title">Selected <span>Engineering Work</span></h2>
           <div class="sline fi"></div>
           <p class="work-intro fi">
-            Not every project here carries equal weight. The four below are
+            Not every project here carries equal weight. The five below are
             real production systems, still running today — expand any one
             for the full case study: problem, users, constraints,
             architecture, and what I'd have done differently.
@@ -1403,6 +1403,134 @@
             </div>
           </details>
 
+          <!-- CASE STUDY: SALAHSYNC -->
+          <details class="case-study fi">
+            <summary class="cs-summary">
+              <div class="cs-thumb">
+                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
+                <img src="assets/screenshots/salahsync.jpg" alt="SalahSync daily prayer and routine tracker" loading="lazy" width="240" height="150" />
+              </div>
+              <div class="cs-summary-body">
+                <div class="cs-summary-hd">
+                  <span class="cs-nm">SalahSync</span>
+                  <span class="cs-status">● LIVE — DAILY USE</span>
+                </div>
+                <p class="cs-sent">
+                  Set one anchor — Fajr time and office hours — and the rest of
+                  the day's schedule, prayer to sleep, recalculates itself.
+                </p>
+              </div>
+              <span class="cs-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="cs-body">
+              <div class="cs-grid">
+                <div>
+                  <div class="cs-block-t">The Problem</div>
+                  <p class="cs-block-p">
+                    Started from a static printed daily-routine sheet. Every
+                    time Fajr time shifted with the season, or office hours
+                    changed, the whole sheet had to be redone by hand — and a
+                    paper sheet can't track whether a prayer actually happened
+                    in jamaah, alone, or was missed.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Users</div>
+                  <p class="cs-block-p">
+                    Just me — this is a personal daily-use tool, not a
+                    multi-user product. It's the one I open first every
+                    morning.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The Constraints</div>
+                  <p class="cs-block-p">
+                    Had to work fully offline — no prayer-time API, no
+                    server. Had to hold a genuinely global settings space
+                    (~243 countries, full Bangladesh division → district →
+                    upazila) including multi-timezone countries like Russia,
+                    the US, and Australia, without breaking the schedule
+                    math for any of them. And it needed a real bilingual UI —
+                    Bangla and English — not just translated labels bolted on
+                    after the fact.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">The System</div>
+                  <p class="cs-block-p">
+                    Set a location (or GPS) and office hours once; prayer
+                    times are computed client-side with a solar calculation
+                    algorithm, and every other block — Tahajjud, Sunnah,
+                    jamaah breaks, learning time, sleep — is recalculated
+                    around them automatically, per day-type (workday / Friday
+                    / Saturday each has its own structure). A tracker logs
+                    jamaah / alone / qaza / missed per prayer plus daily amal,
+                    with streaks and a weekly chart, and flags the day when
+                    something doesn't fit — e.g. sleep falling under target.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Architecture</div>
+                  <div class="cs-diagram flow">
+                    <div class="flow-node"><div class="flow-node-k">Settings</div><div class="flow-node-t">Fajr/location + office hours, set once</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">Schedule Engine</div><div class="flow-node-t">Client-side prayer-time calc + day rebuild, no API</div></div>
+                    <div class="flow-connector" aria-hidden="true"></div>
+                    <div class="flow-node"><div class="flow-node-k">localStorage + Service Worker</div><div class="flow-node-t">Logs/streaks saved locally, app installable and offline</div></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="cs-block-t">Technical Decisions</div>
+                  <p class="cs-block-p">
+                    Used the praytimes.org solar-calculation algorithm
+                    instead of a prayer-times API specifically so the app
+                    never depends on a network call to know what time it is
+                    to pray. Vanilla JS with ES modules, no framework, no
+                    backend — a service worker with a network-first strategy
+                    keeps it installable and offline-capable while still
+                    picking up the newest version when online. All settings
+                    and logs live in localStorage, with a manual JSON
+                    export/import for backup since there's no account or
+                    server to sync to.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Challenges</div>
+                  <p class="cs-block-p">
+                    Making one Fajr-time input cascade correctly into every
+                    other block of the day — across three different day
+                    profiles and a genuinely global location dataset with
+                    multi-timezone countries — without the schedule engine
+                    needing special-case logic per country.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Result</div>
+                  <p class="cs-block-p">
+                    Replaced the static printed sheet entirely. Now the first
+                    thing checked every morning — the schedule adjusts itself
+                    to that day's actual prayer times instead of needing to
+                    be redrawn by hand.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">What I Learned</div>
+                  <p class="cs-block-p">
+                    Treating Bangla/English as a real first-class toggle from
+                    the start — full UI string tables, not just a translated
+                    label here and there — was far less painful than trying
+                    to retrofit i18n onto a UI that assumed one language.
+                  </p>
+                </div>
+                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>My own daily schedule since I built it — prayer/amal streaks and weekly stats are tracked locally, though I don't have exported numbers to quote.</span></div>
+                <div class="cs-full cs-links">
+                  <a href="https://salahsync.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
+                  <a href="https://github.com/samiulAsumel/salahsync" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </details>
+
           <div class="work-tier-hd fi">
             <span class="work-tier-t">Product Engineering</span>
             <span class="work-tier-line"></span>
@@ -1432,18 +1560,6 @@
               <h3 class="pc-nm">Outreach Copilot</h3>
               <p class="pc-ds">AI-drafted cold outreach from a saved resume and a target company — email, LinkedIn, WhatsApp, or cover letter. Every send stays manual.</p>
               <div class="pc-tags"><span class="pt">TypeScript</span><span class="pt">Workers AI</span><span class="pt">D1</span></div>
-            </div>
-            <div class="pc">
-              <div class="pc-hd">
-                <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-moon-star"/></svg></span>
-                <div class="pc-lks">
-                  <a href="https://salahsync.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="Live App"><svg class="icon"><use href="#i-external-link"/></svg></a>
-                  <a href="https://github.com/samiulAsumel/salahsync" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
-                </div>
-              </div>
-              <h3 class="pc-nm">SalahSync</h3>
-              <p class="pc-ds">Offline-first PWA auto-generating a daily prayer/routine schedule from Fajr time and office hours — no API dependency, bilingual UI.</p>
-              <div class="pc-tags"><span class="pt">PWA</span><span class="pt">Offline-First</span><span class="pt">i18n</span></div>
             </div>
             <div class="pc">
               <div class="pc-hd">

@@ -370,18 +370,23 @@ PROJECTS = [
                  "Bangla/English UI.",
         tags="PWA, Offline-First, Vanilla JS, i18n",
     ),
+    dict(
+        name="World Kitchen Atlas",
+        links=[("Live", "https://kitchenatlas.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/world-kitchen-atlas")],
+        problem="Most recipe content online skips real culinary history, and asserts "
+                "uncertain food history as settled fact rather than acknowledging what "
+                "isn't actually confirmed.",
+        solution="Next.js static-export culinary encyclopedia on Cloudflare Pages: continent "
+                 "-> country -> dish browsing, client-side search, and a per-dish confidence "
+                 "rating instead of presenting every entry as equally certain. Cloudflare "
+                 "Worker proxies a private GitHub data repo, admin CRUD, and a "
+                 "Durable-Object-backed visit counter. Asia live (7 countries, 280 dishes); "
+                 "other continents planned.",
+        tags="Next.js, TypeScript, Cloudflare Worker, Static Export",
+    ),
 ]
 
 ADDITIONAL_PROJECTS = [
-    dict(
-        name="World Kitchen Atlas",
-        tag_note=None,
-        links=[("Live", "https://kitchenatlas.pages.dev"),
-               ("GitHub", "https://github.com/samiulAsumel/world-kitchen-atlas")],
-        sentence="Next.js static-export culinary encyclopedia on Cloudflare Pages, with a "
-                 "Cloudflare Worker proxying a private GitHub data repo, admin CRUD, and a "
-                 "Durable-Object-backed visit counter.",
-    ),
     dict(
         name="Outreach Copilot",
         tag_note=None,

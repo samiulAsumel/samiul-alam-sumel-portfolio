@@ -285,8 +285,6 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--tx);overflow-
 
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
 @keyframes pulse-ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.2);opacity:0}}
-@keyframes loop-flow{to{stroke-dashoffset:-943}}
-@keyframes chevron-pulse{0%,100%{opacity:.4}50%{opacity:1}}
 @keyframes float-y{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes grad-pan{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes scanline{0%{transform:translateY(-100%)}100%{transform:translateY(220%)}}
@@ -613,24 +611,7 @@ body{font-family:var(--font-body);background:var(--bg);color:var(--tx);overflow-
 
 .mtd-loop{border:1px solid var(--bdr-s);border-radius:var(--r-lg);background:var(--card);padding:var(--sp-6);box-shadow:var(--shd)}
 .mtd-loop-t{font-family:var(--font-mono);font-size:.68rem;color:var(--accent-tx);letter-spacing:.14em;text-transform:uppercase;margin-bottom:var(--sp-5);font-weight:600}
-.loop-svg{width:100%;height:auto;display:block}
-.loop-ring{fill:none;stroke:var(--bdr-s2);stroke-width:1.5}
-.loop-ring.flow{stroke:var(--accent);stroke-opacity:.5;stroke-width:2;stroke-dasharray:6 10;stroke-linecap:round;animation:loop-flow 22s linear infinite}
-.loop-chevron{fill:var(--accent);animation:chevron-pulse 2.4s ease-in-out infinite}
-.loop-chevrons path:nth-child(1){animation-delay:0s}
-.loop-chevrons path:nth-child(2){animation-delay:.6s}
-.loop-chevrons path:nth-child(3){animation-delay:1.2s}
-.loop-chevrons path:nth-child(4){animation-delay:1.8s}
-.loop-dot{fill:var(--accent);filter:drop-shadow(0 0 6px var(--accent-25))}
-@media(prefers-reduced-motion:reduce){.loop-dot{display:none}}
-.loop-node{stroke-width:1.5;transition:stroke var(--ease),fill var(--ease)}
-.loop-node.n{fill:var(--card2);stroke:var(--bdr-s2)}
-.loop-node.hi{fill:var(--accent-10);stroke:var(--accent);stroke-width:2.2}
-.loop-lbl{font-family:var(--font-mono);font-size:12px;fill:var(--tx2);text-anchor:middle;dominant-baseline:middle;letter-spacing:.01em}
-.loop-lbl.hi{fill:var(--accent-tx);font-weight:700}
-
-.loop-legend{display:flex;align-items:center;gap:10px;margin-top:var(--sp-5);padding-top:var(--sp-4);border-top:1px solid var(--bdr-s);font-size:.78rem;color:var(--tx2);line-height:1.5}
-.loop-legend-dot{width:11px;height:11px;border-radius:50%;background:var(--accent-10);border:2px solid var(--accent);flex-shrink:0}
+.mtd-loop .pipeline-panel{margin-top:var(--sp-4)}
 
 .mtd-rules{display:flex;flex-direction:column;gap:var(--sp-4)}
 .mtd-card{padding:var(--sp-5);border-radius:var(--r-md);background:var(--card);border:1px solid var(--bdr-s)}
@@ -764,7 +745,8 @@ a.sp{text-decoration:none}
    AI ENGINEERING MULTIPLIER
 ═══════════════════════════════════════════════════════════════ */
 #ai-eng{background:var(--bg2)}
-.ai-eng-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.ai-eng-sub{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:var(--tx2);margin-bottom:var(--sp-6)}
+.ai-eng-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-bottom:var(--sp-7)}
 .ai-eng-lead{font-family:var(--font-display);font-size:1.1rem;color:var(--tx);font-weight:600;line-height:1.5;margin-bottom:16px}
 .ai-eng-p{font-size:.9rem;color:var(--tx2);line-height:1.8}
 .ai-eng-list{display:flex;flex-direction:column;gap:14px}
@@ -787,10 +769,16 @@ a.sp{text-decoration:none}
 #roadmap{background:var(--bg2)}
 .rm-intro{max-width:760px;color:var(--tx2);font-size:1rem;line-height:1.8;margin-bottom:var(--sp-6)}
 
+.rm-log{margin-top:var(--sp-6)}
+.rm-log-summary{cursor:pointer;list-style:none;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);padding:8px 0;display:inline-flex;align-items:center;gap:8px}
+.rm-log-summary::-webkit-details-marker{display:none}
+.rm-log-summary::before{content:'▸';transition:transform var(--ease)}
+.rm-log[open] .rm-log-summary::before{transform:rotate(90deg)}
+.rm-log-summary:hover{color:var(--accent-tx)}
 .rm-status{
   font-family:var(--font-mono);font-size:.8rem;line-height:2;
   background:var(--tx);color:var(--bg2);border-radius:var(--r-md);
-  padding:38px 28px 22px;margin-bottom:var(--sp-6);border:1px solid var(--bdr-h);
+  padding:38px 28px 22px;margin-top:var(--sp-4);border:1px solid var(--bdr-h);
   overflow:hidden;position:relative;box-shadow:var(--shd-lg);
 }
 .rm-status::before{

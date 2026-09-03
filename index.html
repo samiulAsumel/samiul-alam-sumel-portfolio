@@ -1439,66 +1439,51 @@
 
           <div class="mtd-grid">
             <div class="mtd-loop fi">
-              <div class="mtd-loop-t">Product Development Loop</div>
-              <svg
-                class="loop-svg"
-                viewBox="0 0 440 440"
-                role="img"
-                aria-label="Loop diagram: Problem leads to Research, Design, Spec, Build, Refine, Test, Explain, and Improve, then back to Problem. Build, Refine, and Explain are highlighted as the practical loop."
+              <div class="mtd-loop-t">From Problem to Product</div>
+              <div
+                class="pipeline"
+                data-pipeline="method"
+                role="group"
+                aria-label="The seven-step build process — select a step to see what it means"
               >
-                <circle class="loop-ring" cx="220" cy="220" r="150"></circle>
-                <circle class="loop-ring flow" cx="220" cy="220" r="150"></circle>
-                <path
-                  id="loopMotionPath"
-                  d="M 220,70 A 150,150 0 1 1 219.99,70"
-                  fill="none"
-                  stroke="none"
-                ></path>
-                <circle class="loop-dot" r="6">
-                  <animateMotion dur="9s" repeatCount="indefinite">
-                    <mpath href="#loopMotionPath" xlink:href="#loopMotionPath"></mpath>
-                  </animateMotion>
-                </circle>
-
-                <g class="loop-chevrons">
-                  <path class="loop-chevron" d="M-7,-7 L7,0 L-7,7 Z" transform="translate(271.3,79.0) rotate(20)"></path>
-                  <path class="loop-chevron" d="M-7,-7 L7,0 L-7,7 Z" transform="translate(367.7,246.0) rotate(100)"></path>
-                  <path class="loop-chevron" d="M-7,-7 L7,0 L-7,7 Z" transform="translate(220,370) rotate(180)"></path>
-                  <path class="loop-chevron" d="M-7,-7 L7,0 L-7,7 Z" transform="translate(72.3,246.0) rotate(260)"></path>
-                </g>
-
-                <g>
-                  <circle class="loop-node n" cx="220.0" cy="70.0" r="38"></circle>
-                  <text class="loop-lbl" x="220.0" y="70.0">Problem</text>
-
-                  <circle class="loop-node n" cx="316.4" cy="105.1" r="38"></circle>
-                  <text class="loop-lbl" x="316.4" y="105.1">Research</text>
-
-                  <circle class="loop-node n" cx="367.7" cy="194.0" r="38"></circle>
-                  <text class="loop-lbl" x="367.7" y="194.0">Design</text>
-
-                  <circle class="loop-node n" cx="349.9" cy="295.0" r="38"></circle>
-                  <text class="loop-lbl" x="349.9" y="295.0">Spec</text>
-
-                  <circle class="loop-node hi" cx="271.3" cy="361.0" r="38"></circle>
-                  <text class="loop-lbl hi" x="271.3" y="361.0">Build</text>
-
-                  <circle class="loop-node hi" cx="168.7" cy="361.0" r="38"></circle>
-                  <text class="loop-lbl hi" x="168.7" y="361.0">Refine</text>
-
-                  <circle class="loop-node n" cx="90.1" cy="295.0" r="38"></circle>
-                  <text class="loop-lbl" x="90.1" y="295.0">Test</text>
-
-                  <circle class="loop-node hi" cx="72.3" cy="194.0" r="38"></circle>
-                  <text class="loop-lbl hi" x="72.3" y="194.0">Explain</text>
-
-                  <circle class="loop-node n" cx="123.6" cy="105.1" r="38"></circle>
-                  <text class="loop-lbl" x="123.6" y="105.1">Improve</text>
-                </g>
-              </svg>
-              <div class="loop-legend">
-                <span class="loop-legend-dot" aria-hidden="true"></span>
-                Highlighted — the practical loop: Build, Refine, Explain
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Sit with the people who do the work and watch where the process actually loses time.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>01 Observe</span>
+                </button>
+                <span class="pipeline-connector" aria-hidden="true">↓</span>
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Write the problem down in plain language and confirm it back before any code gets written.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>02 Define</span>
+                </button>
+                <span class="pipeline-connector" aria-hidden="true">↓</span>
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Work out the real business rules and data shape before touching a framework or a database.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>03 Model</span>
+                </button>
+                <span class="pipeline-connector" aria-hidden="true">↓</span>
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Build with AI-assisted development — the requirement and the business rules are the spec the tool works from.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>04 Build</span>
+                </button>
+                <span class="pipeline-connector" aria-hidden="true">↓</span>
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Test every business rule and edge case against reality, by hand, before anything ships.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>05 Validate</span>
+                </button>
+                <span class="pipeline-connector" aria-hidden="true">↓</span>
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Deploy the smallest useful version and get it in front of the people who'll actually use it.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>06 Ship</span>
+                </button>
+                <span class="pipeline-connector" aria-hidden="true">↓</span>
+                <button type="button" class="pipeline-node" aria-expanded="false"
+                  data-explain="Explain what was built and why, clearly enough to teach it to someone else — that's what makes it mine to ship.">
+                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>07 Learn</span>
+                </button>
+              </div>
+              <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
+                <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
+                <p class="pipeline-panel-text" data-pipeline-panel-text></p>
               </div>
             </div>
 
@@ -1532,13 +1517,17 @@
       <section id="ai-eng" class="sec" aria-labelledby="ai-eng-title">
         <div class="wrap">
           <p class="slabel fi">04 / Where AI Fits</p>
-          <h2 class="stitle fi" id="ai-eng-title">AI as an Engineering <span>Multiplier</span></h2>
+          <h2 class="stitle fi" id="ai-eng-title">AI Is the <span>Accelerator</span></h2>
           <div class="sline fi"></div>
+          <p class="ai-eng-sub fi">Engineering is the responsibility.</p>
           <div class="ai-eng-grid">
             <div class="fl">
               <p class="ai-eng-lead">AI is part of my engineering workflow. It is not the entire identity.</p>
               <p class="ai-eng-p">
                 I'm a Product Engineer who uses AI-assisted development to build practical operational software — not an "AI expert" building revolutionary AI systems. My strongest evidence: real domain knowledge, real shipped software, real daily users. The honest tiering in the <a href="#skills">Skills</a> section shows exactly where AI was involved in each project.
+              </p>
+              <p class="ai-eng-p" style="margin-top:12px">
+                AI helps produce code faster. It does not decide what the correct product should do.
               </p>
             </div>
             <div class="ai-eng-list fr">
@@ -1562,6 +1551,60 @@
                 <strong>The system still needs validation</strong>
                 Every business rule and edge case gets manually tested against reality before anything ships.
               </div>
+            </div>
+          </div>
+
+          <div class="mtd-loop fi" style="margin-top:var(--sp-6)">
+            <div class="mtd-loop-t">Where AI Sits In The Build</div>
+            <div
+              class="pipeline"
+              data-pipeline="ai-eng"
+              role="group"
+              aria-label="Where AI fits in the build process — select a step to see what it means"
+            >
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="An observed operational problem — not a feature request invented without a real user behind it.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Real Problem</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="Written down in plain language and confirmed with the person who does the work — this comes before any AI is involved.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Requirements</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="The real business rules, edge cases, and data model — a model can't infer these; I have to know and specify them.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Business Context</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="Claude Code turns the requirement and business context into working code, faster than writing every line by hand.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>AI Assistance</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="Every line the tool produces gets read and understood before it ships — not accepted on trust.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Code Review</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="The edge cases a business rule creates — an oversize cargo slab, a multi-timezone location — get tested deliberately, not assumed away.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Edge-Case Testing</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="Checked against the real business rules and real data — manually, before anything ships.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Validation</span>
+              </button>
+              <span class="pipeline-connector" aria-hidden="true">↓</span>
+              <button type="button" class="pipeline-node" aria-expanded="false"
+                data-explain="Deployed and, for the port tools, put in front of C&amp;F agents and port staff who use it daily.">
+                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Ship</span>
+              </button>
+            </div>
+            <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
+              <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
+              <p class="pipeline-panel-text" data-pipeline-panel-text></p>
             </div>
           </div>
         </div>
@@ -1887,26 +1930,6 @@
             Everything above — the production tools, the GitHub repos — is already built and already shipping. This roadmap is a separate, deliberate pass through CS fundamentals in parallel with that work: backend depth, cloud deployment, and applied AI engineering, each phase logged with a concrete milestone before moving on. Most AI-assisted developers skip re-deriving fundamentals from first principles; this is that pass, done in the open rather than hidden.
           </p>
 
-          <div class="rm-status fi" role="status" aria-label="Current curriculum progress">
-            <div class="rm-status-row">
-              <span class="rm-status-k">CURRENT PHASE</span
-              ><span class="rm-status-v">Phase 0 — Foundation</span>
-            </div>
-            <div class="rm-status-row">
-              <span class="rm-status-k">MODULE</span
-              ><span class="rm-status-v">JavaScript / TypeScript — atomic breakdown</span>
-            </div>
-            <div class="rm-status-row">
-              <span class="rm-status-k">IN PROGRESS</span
-              ><span class="rm-status-v">Function syntax (declaration / expression / arrow)</span>
-            </div>
-            <div class="rm-status-row">
-              <span class="rm-status-k">COMPLETED</span
-              ><span class="rm-status-v">Variable declaration (let, const, var)</span>
-            </div>
-            <div class="rm-status-foot">Last updated Aug 2026</div>
-          </div>
-
           <div class="rm-journey fi">
             <div class="rm-journey-t">Currently Building Toward</div>
             <div class="flow-mini">
@@ -1920,6 +1943,29 @@
               <span class="flow-mini-node">Interview Readiness</span>
             </div>
           </div>
+
+          <details class="rm-log fi">
+            <summary class="rm-log-summary">Full progress log</summary>
+            <div class="rm-status" role="status" aria-label="Current curriculum progress">
+              <div class="rm-status-row">
+                <span class="rm-status-k">CURRENT PHASE</span
+                ><span class="rm-status-v">Phase 0 — Foundation</span>
+              </div>
+              <div class="rm-status-row">
+                <span class="rm-status-k">MODULE</span
+                ><span class="rm-status-v">JavaScript / TypeScript — atomic breakdown</span>
+              </div>
+              <div class="rm-status-row">
+                <span class="rm-status-k">IN PROGRESS</span
+                ><span class="rm-status-v">Function syntax (declaration / expression / arrow)</span>
+              </div>
+              <div class="rm-status-row">
+                <span class="rm-status-k">COMPLETED</span
+                ><span class="rm-status-v">Variable declaration (let, const, var)</span>
+              </div>
+              <div class="rm-status-foot">Last updated Aug 2026</div>
+            </div>
+          </details>
 
 
         </div>
@@ -2111,9 +2157,15 @@
           </p>
           <div class="story-flow fi">
             <div class="story-node">
-              <div class="story-yr">2013</div>
-              <div class="story-lbl">Started</div>
-              <div class="story-d">Junior role in port operations at Mongla Port Authority</div>
+              <div class="story-yr">Nov 2013</div>
+              <div class="story-lbl">Joined</div>
+              <div class="story-d">Junior Outdoor Assistant, Mongla Port Authority</div>
+            </div>
+            <div class="story-arrow">→</div>
+            <div class="story-node">
+              <div class="story-yr">Nov 2017</div>
+              <div class="story-lbl">Promoted</div>
+              <div class="story-d">Senior Outdoor Assistant, Traffic Department</div>
             </div>
             <div class="story-arrow">→</div>
             <div class="story-node">

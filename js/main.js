@@ -1,5 +1,5 @@
 /* ============================================================
-   Samiul Alam Sumel — Portfolio JS v6.0
+   Samiul Alam Sumel — Portfolio JS v7.0
    ============================================================ */
 (function () {
   'use strict';
@@ -536,6 +536,34 @@
       });
     });
   }
+
+  /* ----------------------------------------------------------
+     PIPELINE COMPONENT — the recurring problem-to-product flow
+     diagram (hero, and later #work/#method/#ai-eng use the same
+     markup pattern). Hover or focus a node to see its explanation;
+     click/Enter does the same, so touch and keyboard get parity.
+  ---------------------------------------------------------- */
+  document.querySelectorAll('[data-pipeline]').forEach(container => {
+    const nodes = Array.from(container.querySelectorAll('.pipeline-node'));
+    const panel = container.parentElement && container.parentElement.querySelector('[data-pipeline-panel]');
+    if (!nodes.length || !panel) return;
+    const lbl = panel.querySelector('[data-pipeline-panel-lbl]');
+    const text = panel.querySelector('[data-pipeline-panel-text]');
+
+    function show(node) {
+      nodes.forEach(n => n.setAttribute('aria-expanded', String(n === node)));
+      const k = node.querySelector('.pipeline-node-k');
+      if (lbl) lbl.textContent = k ? k.textContent.trim() : '';
+      if (text) text.textContent = node.dataset.explain || '';
+      panel.hidden = false;
+    }
+
+    nodes.forEach(node => {
+      node.addEventListener('mouseenter', () => show(node));
+      node.addEventListener('focus', () => show(node));
+      node.addEventListener('click', () => show(node));
+    });
+  });
 
   /* ----------------------------------------------------------
      SERVICE WORKER

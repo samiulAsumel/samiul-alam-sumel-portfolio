@@ -1,13 +1,13 @@
 {
   "name": "Samiul Alam Sumel — Portfolio",
   "short_name": "SAS CV",
-  "description": "AI Product Engineer — Port & Logistics Domain — 12+ years of port operations experience (React, Next.js, Node.js, MongoDB). Available for remote roles and freelance work worldwide.",
+  "description": "Product Engineer for Real-World Operations — 12+ years of port operations experience (React, Next.js, Node.js, MongoDB). Available for remote roles and freelance work worldwide.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa",
+  "background_color": "#0a0c11",
+  "theme_color": "#0a0c11",
   "lang": "en",
   "categories": ["portfolio", "resume", "business", "productivity"],
   "icons": [

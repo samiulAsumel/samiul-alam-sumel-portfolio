@@ -1619,10 +1619,11 @@
           </h2>
           <div class="sline fi"></div>
           <p class="svc-intro fi">
-            Grouped by how I actually work with each: what I write and debug
-            on my own, and what I build using AI-assisted development.
-            Everything listed is either something I worked through in
-            self-directed study or used in a public repo.
+            Three tiers, honestly: what I've proven through shipped projects,
+            what I've used but not at expert level, and what's current active
+            learning. Everything listed is either something I worked through
+            in self-directed study or used in a public repo — see
+            <a href="#roadmap">Roadmap</a> for what's actively in progress.
           </p>
           <div class="sk-grid">
             <div class="sk-card fi">
@@ -1631,21 +1632,21 @@
                 <h3 class="sk-ttl">Product Engineering</h3>
               </div>
               <div class="sk-group">
-                <div class="sk-tier">Build Independently</div>
+                <div class="sk-tier">Proven Through Projects</div>
                 <div class="sk-pills">
                   <span class="sp gd">HTML5 (Semantic)</span><span class="sp gd">CSS3</span
-                  ><span class="sp gd">Tailwind CSS</span><span class="sp gd">JavaScript (ES6+)</span
+                  ><span class="sp gd">JavaScript (ES6+)</span
                   ><span class="sp gd">DOM &amp; Events</span><span class="sp gd">ES Modules</span
-                  ><span class="sp gd">React (Hooks, Context)</span><span class="sp gd">React Router</span
-                  ><span class="sp gd">React Hook Form</span>
+                  ><span class="sp gd">React (Hooks, Context)</span>
                 </div>
               </div>
               <div class="sk-group">
-                <div class="sk-tier sk-tier-ai">With AI-Assisted Development</div>
+                <div class="sk-tier sk-tier-ai">Working Knowledge</div>
                 <div class="sk-pills">
-                  <span class="sp gd">TanStack Query</span><span class="sp gd">Next.js App Router</span
-                  ><span class="sp gd">REST APIs (CRUD)</span><span class="sp gd">JWT / Firebase Auth</span
-                  ><span class="sp gd">Stripe Payments</span>
+                  <span class="sp gd">Tailwind CSS</span><span class="sp gd">React Router</span
+                  ><span class="sp gd">React Hook Form</span><span class="sp gd">TanStack Query</span
+                  ><span class="sp gd">Next.js App Router</span><span class="sp gd">REST APIs (CRUD)</span
+                  ><span class="sp gd">JWT / Firebase Auth</span><span class="sp gd">Stripe Payments</span>
                 </div>
               </div>
             </div>
@@ -1662,15 +1663,25 @@
                 ><span class="sp bl">C&amp;F Agent Workflows</span
                 ><span class="sp bl">Business-Rule Modeling</span>
               </div>
+              <p class="sk-card-ev">Proven through <strong>portbill</strong>, <strong>carview</strong> &amp; <strong>otbill</strong> — all three still in daily use.</p>
             </div>
             <div class="sk-card fi">
               <div class="sk-hd">
                 <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-cloud"/></svg></div>
                 <h3 class="sk-ttl">Cloud &amp; Deployment</h3>
               </div>
-              <div class="sk-pills">
-                <span class="sp gr">Cloudflare Pages</span><span class="sp gr">Cloudflare Workers</span
-                ><span class="sp gr">Firebase Hosting</span><span class="sp gr">Netlify</span>
+              <div class="sk-group">
+                <div class="sk-tier">Proven Through Projects</div>
+                <div class="sk-pills">
+                  <span class="sp gr">Cloudflare Pages</span><span class="sp gr">Cloudflare Workers</span
+                  ><span class="sp gr">PWA Development</span>
+                </div>
+              </div>
+              <div class="sk-group">
+                <div class="sk-tier sk-tier-ai">Working Knowledge</div>
+                <div class="sk-pills">
+                  <span class="sp gr">Firebase Hosting</span><span class="sp gr">Netlify</span>
+                </div>
               </div>
             </div>
             <div class="sk-card fi">
@@ -1683,16 +1694,25 @@
                 ><span class="sp nu">systemd</span><span class="sp nu">Cron &amp; Timers</span
                 ><span class="sp nu">Monitoring &amp; Alerting Scripts</span>
               </div>
+              <p class="sk-card-ev">Proven through <strong>auto-deploy-pipeline</strong>, <strong>auto-ssl-manager</strong> &amp; <strong>log-analyzer-alert</strong> — see <a href="#infra">Linux &amp; Automation Practice</a>.</p>
             </div>
             <div class="sk-card fi">
               <div class="sk-hd">
                 <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-database"/></svg></div>
                 <h3 class="sk-ttl">Data</h3>
               </div>
-              <div class="sk-pills">
-                <span class="sp pu">MongoDB (Atlas)</span><span class="sp pu">Aggregation Pipeline</span
-                ><span class="sp pu">Cloudflare D1</span><span class="sp pu">Excel Export</span
-                ><span class="sp pu">Chart.js Analytics</span>
+              <div class="sk-group">
+                <div class="sk-tier">Proven Through Projects</div>
+                <div class="sk-pills">
+                  <span class="sp pu">Cloudflare D1</span><span class="sp pu">Excel Export</span
+                  ><span class="sp pu">Chart.js Analytics</span>
+                </div>
+              </div>
+              <div class="sk-group">
+                <div class="sk-tier sk-tier-ai">Working Knowledge</div>
+                <div class="sk-pills">
+                  <span class="sp pu">MongoDB (Atlas)</span><span class="sp pu">Aggregation Pipeline</span>
+                </div>
               </div>
             </div>
             <div class="sk-card fi">
@@ -1705,6 +1725,41 @@
                 ><span class="sp gd">AI-Assisted Development (Claude Code)</span>
               </div>
             </div>
+          </div>
+
+          <div class="sk-evidence fi">
+            <div class="sk-evidence-t">Technology <span aria-hidden="true">→</span> Evidence</div>
+            <div class="sk-evidence-grid">
+              <div class="sk-ev-item">
+                <div class="sk-ev-k">Cloudflare Workers</div>
+                <div class="sk-ev-v">Used in <strong>CarView</strong> &amp; <strong>World Kitchen Atlas</strong> — proxies a private GitHub data repo so the write token never reaches the browser.</div>
+              </div>
+              <div class="sk-ev-item">
+                <div class="sk-ev-k">PWA Development</div>
+                <div class="sk-ev-v">Used in <strong>Port Billing Calculator</strong>, <strong>CarView</strong> &amp; <strong>SalahSync</strong> — offline-first, installable, no backend required.</div>
+              </div>
+              <div class="sk-ev-item">
+                <div class="sk-ev-k">Chart.js Analytics</div>
+                <div class="sk-ev-v">Used in <strong>CarView</strong> — a 7-chart analytics dashboard plus KPIs for the Traffic Department.</div>
+              </div>
+              <div class="sk-ev-item">
+                <div class="sk-ev-k">Cloudflare D1</div>
+                <div class="sk-ev-v">Used in <strong>Outreach Copilot</strong> — structured storage for saved resumes and outreach history.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sk-current fi">
+            <div class="sk-current-t">Current Development</div>
+            <div class="flow-mini">
+              <span class="flow-mini-node now">TypeScript</span
+              ><span class="flow-mini-node now">Node / Express Depth</span
+              ><span class="flow-mini-node">Testing</span
+              ><span class="flow-mini-node">Docker</span
+              ><span class="flow-mini-node">CI/CD</span
+              ><span class="flow-mini-node">AI Product Engineering</span>
+            </div>
+            <a href="#roadmap" class="sk-current-lk">View Engineering Roadmap <span class="arw">↗</span></a>
           </div>
         </div>
       </section>
@@ -2483,6 +2538,7 @@ For any company or industry, not limited to my own domain — I map the actual p
           <p class="slabel fi">14 / Background</p>
           <h2 class="stitle fi" id="edu-title">My <span>Education</span></h2>
           <div class="sline fi"></div>
+          <div class="eg-group-t fi">Formal Education</div>
           <div class="eg">
             <div class="ec fi">
               <div class="ec-deg">Higher Secondary Certificate</div>
@@ -2496,6 +2552,9 @@ For any company or industry, not limited to my own domain — I map the actual p
               <div class="ec-inst">Mongla Bandar Secondary School</div>
               <div class="ec-yr">1999 – 2009</div>
             </div>
+          </div>
+          <div class="eg-group-t fi" style="margin-top:var(--sp-5)">Independent Engineering Education</div>
+          <div class="eg eg-solo">
             <div class="ec ec-active fi">
               <div class="ec-deg">The Odin Project &amp; Full Stack Open</div>
               <div class="ec-field">Self-Directed Study — In Progress</div>
@@ -2510,12 +2569,17 @@ For any company or industry, not limited to my own domain — I map the actual p
       <section id="verify" class="sec" aria-labelledby="verify-title">
         <div class="wrap">
           <p class="slabel fi">15 / Don't Take My Word For It</p>
-          <h2 class="stitle fi" id="verify-title">Build in <span>Public</span></h2>
+          <h2 class="stitle fi" id="verify-title">Proof of <span>Work</span></h2>
           <div class="sline fi"></div>
+          <div class="pow-row fi">
+            <span class="pow-item">Live Systems</span>
+            <span class="pow-item">Public Source</span>
+            <span class="pow-item">Real Workflows</span>
+            <span class="pow-item">Technical Case Studies</span>
+          </div>
           <p class="vf-note fi">
-            I don't have client testimonials to show you — I haven't taken on outside
-            client work yet. What I have instead is better: every project on this site
-            is live and its source is public. Open any of these and judge for yourself.
+            Every project on this site is live and its source is public. Open
+            any of these and judge for yourself.
           </p>
           <div class="vf-grid">
             <a href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
@@ -2574,16 +2638,19 @@ For any company or industry, not limited to my own domain — I map the actual p
         <div class="wrap">
           <p class="slabel fi">16 / Let's Connect</p>
           <h2 class="stitle fi" id="contact-title">
-            Have an Operational Problem <span>Worth Solving?</span>
+            Let's Build <span>Something Useful.</span>
           </h2>
           <div class="sline fi"></div>
           <div class="cg">
             <div class="fl">
               <div class="ct-text">
-                <p>
-                  I'm actively seeking a <strong>remote Product Engineer role</strong> — building AI-assisted, production-grade software for real operational workflows. My 12+ years of port-operations background also make me a strong fit for Port Operations Technologist, Logistics Systems Engineer, or Full-Stack Developer roles, and I'm open to freelance and contract work — with organizations anywhere in the world. No time zone constraints; available to work and communicate on any schedule.
+                <p class="ct-hook">
+                  Looking for someone who understands the workflow before touching the code?
                 </p>
-                              </div>
+                <p>
+                  I'm open to a <strong>remote Product Engineer role</strong> — building AI-assisted, production-grade software for real operational workflows — and to freelance and contract work, with organizations anywhere in the world. No time zone constraints; available to work and communicate on any schedule.
+                </p>
+              </div>
               <div class="ct-av" role="status" aria-live="polite">
                 <div class="av-dot" aria-hidden="true"></div>
                 <div class="av-t">
@@ -2594,13 +2661,22 @@ For any company or industry, not limited to my own domain — I map the actual p
                   >
                 </div>
               </div>
+              <div class="ct-btns">
+                <a href="mailto:sa.sumel91@gmail.com" class="btn btn-p">Start a Conversation <span class="arw">↗</span></a>
+                <a href="#resume" class="btn btn-o">View Resume <span class="arw">↗</span></a>
+              </div>
               <div class="tcos">
-                <div class="tcos-t">Primary Focus: Product Engineer — Also a Fit For</div>
-                <div class="tcos-g">
-                  <div class="co">Port Operations Technologist</div>
-                  <div class="co">Logistics Systems Engineer</div>
-                  <div class="co">Full-Stack Developer</div>
-                  <div class="co">Freelance / Contract</div>
+                <div class="tcos-row">
+                  <span class="tcos-k">Primary</span>
+                  <span class="tcos-v">Product Engineer / Operational Systems</span>
+                </div>
+                <div class="tcos-row">
+                  <span class="tcos-k">Secondary</span>
+                  <span class="tcos-v">Logistics-Tech / Full-Stack Developer</span>
+                </div>
+                <div class="tcos-row">
+                  <span class="tcos-k">Additional</span>
+                  <span class="tcos-v">Contract / Freelance</span>
                 </div>
               </div>
             </div>

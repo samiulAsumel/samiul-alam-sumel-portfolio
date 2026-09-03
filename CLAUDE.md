@@ -48,21 +48,33 @@ actual current phase/topic, never re-add gap-matrix or visa content.
 
 ## Positioning — read before editing content
 
-The site's identity is **AI Product Engineer — Port & Logistics Domain**
-(React/Next.js, Node.js/Express, MongoDB). This is a **second deliberate
-reversal (2026-08-21, explicit user instruction, two confirmation rounds via
-AskUserQuestion)** of the prior "Port Operations Technologist"-primary
-identity (set 2026-08-09, itself a reversal of "Product Engineer"-primary
-set 2026-07-28). **Do not drift this back toward "Port Operations
-Technologist" as the primary title without being explicitly asked** — the
-12+ year port-operations background is now positioned as domain context and
-the source of every project's problem (see the `#domain` section, née
-`#experience`), not the headline. The concrete job targets (AI Product
-Engineer / Full-Stack / Frontend / Web Developer / Logistics Systems
-Engineer) stay listed alongside the primary title for ATS matching and
-junior/mid honesty. Given this identity has now flipped twice in six weeks,
-treat any future positioning request as needing the same explicit
-confirmation before touching the primary title again.
+The site's identity is **Product Engineer for Real-World Operations**
+(React/Next.js, Node.js/Express, MongoDB), supporting tagline "I turn
+operational problems into practical software." This is a **third
+deliberate reversal (2026-09-04, explicit user instruction, two
+confirmation rounds via AskUserQuestion)** — of "AI Product Engineer — Port
+& Logistics Domain" (set 2026-08-21, itself a reversal of "Port Operations
+Technologist"-primary set 2026-08-09, itself a reversal of "Product
+Engineer"-primary set 2026-07-28). Rationale given: "AI developer" reads as
+generic in 2026; this title is meant to read as differentiated because the
+site's projects demonstrably originate from real operational problems, not
+from AI-tooling novelty. **Do not drift this back toward "AI Product
+Engineer" or "Port Operations Technologist" as the primary title without
+being explicitly asked** — the 12+ year port-operations background stays
+positioned as domain context and the source of every project's problem
+(see the `#domain` section, née `#experience`), not the headline.
+AI-assisted development is now a supporting credibility-strip line in the
+hero (new `.h-cred` element in `css/style.css`, styled like `.h-titles`),
+not part of the primary title. The concrete job targets (Product Engineer /
+Full-Stack / Frontend / Web Developer / Logistics Systems Engineer) stay
+listed alongside the primary title for ATS matching and junior/mid
+honesty — the Contact section's "Primary Focus" line now leads with
+"Product Engineer." The "Personal AI Product Engineering Curriculum —
+Self-Authored" heading (`#roadmap`) was deliberately left unchanged — it
+names a self-study curriculum, not a job-title claim. Given this identity
+has now flipped three times in about six weeks, treat any future
+positioning request as needing the same explicit confirmation before
+touching the primary title again.
 
 **Tone (2026-07-28, explicit user correction):** no marketing slogans, no
 consulting-deck "identify → analyze → design → build → iterate" arrow-chain

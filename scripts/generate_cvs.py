@@ -424,12 +424,13 @@ def build_final_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "AI Product Engineer — Port & Logistics Domain", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Product Engineer for Real-World Operations", CONTACT)
 
     add_section_heading(doc, "Professional Summary", space_before=0)
     add_body(
         doc,
-        "AI Product Engineer with 12+ years of hands-on experience in cargo billing, "
+        "Product Engineer for Real-World Operations — turns operational problems into "
+        "practical software. 12+ years of hands-on experience in cargo billing, "
         "vessel/vehicle tracking, and port authority workflows at Mongla Port Authority. "
         "Works requirement-first — finds the manual step in a process, designs the system, "
         "and builds it with AI-assisted development, tested against real business rules "
@@ -440,7 +441,7 @@ def build_final_cv():
         "development (Claude Code), going deeper through a self-authored engineering "
         "roadmap. "
         "Not a bootcamp graduate or senior engineer, but bringing 12+ years of professional "
-        "discipline from a demanding operational job. Seeking a remote AI Product Engineer, "
+        "discipline from a demanding operational job. Seeking a remote Product Engineer, "
         "Port Operations Technologist, Logistics Systems Engineer, or full-stack role, "
         "worldwide, with no time zone constraints.",
         size=9.4,
@@ -535,7 +536,7 @@ def build_freelance_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "AI Product Engineer — Port & Logistics Domain — Freelance & Remote", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Product Engineer for Real-World Operations — Freelance & Remote", CONTACT)
 
     add_section_heading(doc, "How I Work", space_before=0)
     add_body(
@@ -548,8 +549,9 @@ def build_freelance_cv():
         "manual step in a process that already runs — a paper form, a shared spreadsheet, a "
         "hand calculation — and replace it with a deployed tool the whole team can use. "
         "Every build gets manually tested against the real business rules and explained "
-        "back before I call it done. An AI Product Engineer (React/Next.js, Node.js/Express, "
-        "MongoDB) who worked through a large part of an intensive full-stack curriculum, "
+        "back before I call it done. A Product Engineer for Real-World Operations "
+        "(React/Next.js, Node.js/Express, MongoDB) who worked through a large part of an "
+        "intensive full-stack curriculum, "
         "backed by 3 live web apps built for real daily use, not demos, and publicly "
         "verifiable on GitHub. Available for freelance and contract work worldwide, no "
         "time zone constraints.",

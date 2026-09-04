@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sas-portfolio-v58';
+const CACHE_NAME = 'sas-portfolio-v59';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -11,7 +11,14 @@ const PRECACHE_ASSETS = [
   './manifest.json',
   './projects/portbill.html',
   './projects/carview.html',
-  './projects/otbill.html'
+  './projects/otbill.html',
+  './about/',
+  './experience/',
+  './engineering/',
+  './engineering/how-i-build/',
+  './engineering/ai-engineering/',
+  './engineering/roadmap/',
+  './resume/'
 ];
 
 self.addEventListener('install', event => {

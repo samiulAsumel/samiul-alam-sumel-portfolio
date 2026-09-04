@@ -362,8 +362,10 @@
         a.remove();
       } else if (item.dataset.external === 'true') {
         window.open(href, '_blank', 'noopener,noreferrer');
-      } else {
+      } else if (href.charAt(0) === '#') {
         window.location.hash = href;
+      } else {
+        window.location.href = href;
       }
       closeCmdk();
     }

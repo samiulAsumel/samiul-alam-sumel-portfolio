@@ -1077,3 +1077,11 @@ footer::before{content:'';position:absolute;top:-1px;left:50%;translate:-50% 0;w
   a[href]::after{content:" (" attr(href) ")";font-size:.7rem;color:#555}
   .pc-lk[href]::after,.clk[href]::after{content:none}
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   STANDALONE PAGES — shared header used by /about, /experience,
+   /engineering/*, /resume (a small breadcrumb above the real H1)
+═══════════════════════════════════════════════════════════════ */
+.page-hero{padding-bottom:0}
+.page-back{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--tx3);text-decoration:none;margin-bottom:var(--sp-5)}
+.page-back:hover{color:var(--accent-tx)}

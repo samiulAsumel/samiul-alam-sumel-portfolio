@@ -280,10 +280,10 @@
         >
         <ul class="nav-links" role="list">
           <li><a href="#work">Work</a></li>
-          <li><a href="#method">Engineering</a></li>
-          <li><a href="#domain">Experience</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
+          <li><a href="/engineering/">Engineering</a></li>
+          <li><a href="/experience/">Experience</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/resume/">Resume</a></li>
           <li><a href="#contact" class="btn btn-o btn-nav">Contact</a></li>
         </ul>
         <button
@@ -332,14 +332,14 @@
       <a href="#method">How I Build</a>
       <a href="#ai-eng">AI Engineering</a>
       <a href="#skills">Skills</a>
-      <a href="#domain">Experience</a>
+      <a href="/experience/">Experience</a>
       <a href="#roadmap">Roadmap</a>
-      <a href="#about">About</a>
+      <a href="/about/">About</a>
       <a href="#story">Story</a>
       <a href="#services">Services</a>
       <a href="#edu">Education</a>
       <a href="#verify">Build in Public</a>
-      <a href="#resume">Resume</a>
+      <a href="/resume/">Resume</a>
       <a href="#contact">Contact</a>
       <a href="Samiul_Alam_Sumel_CV.docx" download><svg class="icon" aria-hidden="true"><use href="#i-file-text"/></svg> Download Resume</a>
       <a
@@ -367,7 +367,8 @@
         <ul class="cmdk-list" id="cmdk-list" role="listbox">
           <li role="option" data-group="Section" data-href="#hero"><svg class="icon"><use href="#i-house"/></svg><span>Home</span></li>
           <li role="option" data-group="Section" data-href="#difference"><svg class="icon"><use href="#i-target"/></svg><span>The Difference</span></li>
-          <li role="option" data-group="Section" data-href="#about"><svg class="icon"><use href="#i-anchor"/></svg><span>About</span></li>
+          <li role="option" data-group="Page" data-href="/engineering/"><svg class="icon"><use href="#i-code"/></svg><span>Engineering (full pages)</span></li>
+          <li role="option" data-group="Page" data-href="/about/"><svg class="icon"><use href="#i-anchor"/></svg><span>About</span></li>
           <li role="option" data-group="Section" data-href="#story"><svg class="icon"><use href="#i-repeat"/></svg><span>The Story</span></li>
           <li role="option" data-group="Section" data-href="#method"><svg class="icon"><use href="#i-code"/></svg><span>How I Build</span></li>
           <li role="option" data-group="Section" data-href="#work"><svg class="icon"><use href="#i-rocket"/></svg><span>Selected Engineering Work</span></li>
@@ -375,13 +376,13 @@
           <li role="option" data-group="Section" data-href="#ai-eng"><svg class="icon"><use href="#i-brain"/></svg><span>AI as an Engineering Multiplier</span></li>
           <li role="option" data-group="Section" data-href="#maturity"><svg class="icon"><use href="#i-target"/></svg><span>Engineering Maturity</span></li>
           <li role="option" data-group="Section" data-href="#roadmap"><svg class="icon"><use href="#i-satellite-dish"/></svg><span>Engineering Roadmap</span></li>
-          <li role="option" data-group="Section" data-href="#domain"><svg class="icon"><use href="#i-anchor"/></svg><span>12+ Years Inside Real Operations</span></li>
+          <li role="option" data-group="Page" data-href="/experience/"><svg class="icon"><use href="#i-anchor"/></svg><span>12+ Years Inside Real Operations</span></li>
           <li role="option" data-group="Section" data-href="#services"><svg class="icon"><use href="#i-wrench"/></svg><span>Services I Deliver</span></li>
           <li role="option" data-group="Section" data-href="#infra"><svg class="icon"><use href="#i-terminal"/></svg><span>Linux &amp; Automation Practice</span></li>
           <li role="option" data-group="Section" data-href="#dev"><svg class="icon"><use href="#i-database"/></svg><span>Active Growth</span></li>
           <li role="option" data-group="Section" data-href="#edu"><svg class="icon"><use href="#i-clipboard-list"/></svg><span>Education</span></li>
           <li role="option" data-group="Section" data-href="#verify"><svg class="icon"><use href="#i-check-circle"/></svg><span>Build in Public</span></li>
-          <li role="option" data-group="Section" data-href="#resume"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume</span></li>
+          <li role="option" data-group="Page" data-href="/resume/"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume</span></li>
           <li role="option" data-group="Section" data-href="#contact"><svg class="icon"><use href="#i-mail"/></svg><span>Contact</span></li>
           <li role="option" data-group="Project" data-href="https://portbill.pages.dev" data-external="true"><svg class="icon"><use href="#i-receipt"/></svg><span>Port Billing Calculator (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://carview.pages.dev" data-external="true"><svg class="icon"><use href="#i-car"/></svg><span>carview (Live)</span></li>
@@ -1792,83 +1793,9 @@
                   </div>
                   <div class="tl-org">Mongla Port Authority</div>
                   <div class="tl-loc">
-                    Bangladesh's second-largest international seaport — vehicle
-                    imports, bulk cargo, and general cargo
+                    Wharfrent billing, cargo &amp; vehicle tracking, revenue reporting —
+                    the source of portbill, carview, and otbill.
                   </div>
-                  <div class="tl-sub">Core Port Operations</div>
-                  <ul class="tl-ul">
-                    <li>
-                      Manage end-to-end wharfrent billing cycle — slab-wise charge
-                      computation, VAT and levy calculation, inside/outside cargo
-                      split, and final billing issuance for active C&amp;F agents
-                      — identified the recurring manual-calculation bottleneck in
-                      this cycle and independently built and deployed
-                      <strong>portbill</strong>, now used daily by the billing
-                      desk to verify charges in advance
-                    </li>
-                    <li>
-                      Provide advance billing estimates to C&amp;F agents,
-                      enabling accurate payment planning, reducing vehicle dwell
-                      time, and eliminating unnecessary counter visits
-                    </li>
-                    <li>
-                      Track cargo and vehicle positions simultaneously across
-                      warehouse, shed, and yard terminal locations in real time —
-                      the single-person, Excel-only version of this record was
-                      the direct trigger for building
-                      <strong>carview</strong>, now the Traffic Department's
-                      shared, version-controlled tracking system
-                    </li>
-                    <li>
-                      Maintain daily and monthly revenue reports, cumulative
-                      income statements, and vehicle balance records for port
-                      authority management
-                    </li>
-                    <li>
-                      Generate car import/delivery and jetty statistics reports
-                      used for operational planning and port authority audits
-                    </li>
-                    <li>
-                      Operate port automation billing system — manage full
-                      wharfrent computation workflow from vessel arrival through
-                      final billing issuance
-                    </li>
-                    <li>
-                      Coordinate C&amp;F agent documentation, billing queries, and
-                      advance payment planning across the terminal
-                    </li>
-                  </ul>
-                  <div class="tl-sub">
-                    Self-Initiated Web Development &amp; Learning
-                  </div>
-                  <ul class="tl-ul">
-                    <li>
-                      Independently identified critical inefficiencies in manual
-                      paper-based billing, overtime payroll calculation, and
-                      vehicle tracking workflows — designed and deployed
-                      <strong>3 live web applications</strong> (billing, payroll
-                      automation, vehicle tracking) now used daily by C&amp;F
-                      agents and port staff at Mongla Port
-                    </li>
-                    <li>
-                      Built with plain JavaScript/HTML/CSS and deployed using
-                      AI-assisted development as a productivity tool, while
-                      working through a structured full-stack curriculum in
-                      parallel
-                    </li>
-                    <li>
-                      Worked through a large part of a structured full-stack
-                      curriculum (HTML/CSS, JavaScript, React, part of
-                      Node.js/Express and Next.js) alongside a full-time port
-                      operations career, before stepping away from it to focus
-                      on shipping real projects
-                    </li>
-                    <li>
-                      Maintain an active public GitHub portfolio
-                      (github.com/samiulAsumel) demonstrating continuous
-                      technical growth
-                    </li>
-                  </ul>
                 </div>
               </div>
               <div class="tl-item fi">
@@ -1882,34 +1809,12 @@
                   <div class="tl-org">Mongla Port Authority</div>
                   <div class="tl-loc">
                     Foundation of a 12-year uninterrupted career at Bangladesh's
-                    second-largest international seaport
+                    second-largest international seaport.
                   </div>
-                  <ul class="tl-ul">
-                    <li>
-                      Assisted in port inspections, vessel operations, and cargo
-                      handling under senior supervision
-                    </li>
-                    <li>
-                      Monitored cargo dwell time and vehicle positioning across
-                      all terminal locations
-                    </li>
-                    <li>
-                      Maintained inspection reports, cargo handling records, and
-                      operational incident logs
-                    </li>
-                    <li>
-                      Coordinated with C&amp;F agents for efficient cargo
-                      clearance and documentation workflows
-                    </li>
-                    <li>
-                      Built foundational expertise in wharfrent billing, maritime
-                      logistics, and customs clearance that underpins all later
-                      self-initiated digital work
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
+            <p class="fi"><a href="/experience/">Read Full Experience <span class="arw">→</span></a></p>
 
             <div class="connect-strip fi">
               <div class="connect-card">
@@ -2036,62 +1941,24 @@
             <div class="ab-text fl">
               <div class="ab-tl">
               <p>
-                I am a
-                <strong>Product Engineer for Real-World Operations</strong>
-                — I find a real operational problem, design the system
-                around it, and build it with AI-assisted development. Not a
-                generalist developer, not a pure ops person: the rare
-                combination of domain judgment and engineering execution.
-              </p>
-              <p>
-                I bring
-                <strong
-                  ><span class="ab-num" id="ab-c-yrs">12</span>+ years of
-                  professional work experience as a Senior Outdoor Assistant
-                  at Mongla Port Authority</strong
-                >
-                — Bangladesh's second-largest international seaport — in
-                wharfrent billing, cargo dwell time management, terminal
-                operations, and C&amp;F agent coordination.
-              </p>
-              <p>
-                I used that operational background to identify real workplace
-                problems and built
+                I am a <strong>Product Engineer for Real-World Operations</strong>
+                — I find a real operational problem, design the system around
+                it, and build it with AI-assisted development. I bring
+                <strong><span class="ab-num" id="ab-c-yrs">12</span>+ years</strong>
+                as a Senior Outdoor Assistant at Mongla Port Authority, in
+                wharfrent billing, cargo tracking, and C&amp;F agent
+                coordination. That background led me to build
                 <strong><span class="ab-num" id="ab-c-apps">3</span> self-initiated web applications</strong>
-                — plain JavaScript/HTML/CSS at the time — that are still used
-                daily by the billing desk, the Traffic Department, and C&amp;F
-                agents at Mongla Port. That is real, in-production software,
-                not a class exercise. Alongside that
-                operational work, I worked through a large part of an
-                intensive, project-based full-stack curriculum — HTML, CSS,
-                JavaScript (ES6+), React, React Router, part of
-                Node.js/Express and Next.js, including authentication (JWT,
-                Firebase) and deployment — before stepping away from the
-                course to focus on shipping real projects.
-              </p>
-              <p>
-                I work requirement-first. That means sitting with the people
-                who actually do the work, asking how the process runs today,
-                and finding the step that's still manual — a paper form, a
-                shared Excel sheet, a calculation someone redoes by hand
-                every day. I write that down as a plain requirement, confirm
-                it back before touching code, then build and ship it — using
-                AI-assisted development (Claude Code) as part of the build.
-                On frontend and plain-JavaScript work I write and debug on my
-                own; on backend and data work, AI assistance is genuinely
-                part of how I get from requirement to working code. The
-                <a href="#method">How I Build</a> section explains that
-                discipline in full, and the
-                <a href="#roadmap">Roadmap</a> shows where I actually am on
-                it right now.
-              </p>
-              <p>
-                My goal is a
-                <strong>remote Product Engineer, Port/Logistics-Tech,
-                full-stack, or web developer role</strong>
-                — anywhere in the world, with no time zone constraints.
+                — still used daily by the billing desk, the Traffic
+                Department, and C&amp;F agents. I work requirement-first: sit
+                with the people who do the work, write down the actual
+                problem, then build and ship it using AI-assisted development
+                as part of the process. My goal is a remote Product Engineer,
+                port/logistics-tech, or full-stack role, anywhere in the
+                world.
               </p>
               </div>
+              <p><a href="/about/">Read the Full Story <span class="arw">→</span></a></p>
               <div class="lp">
                 <span class="tag">🇧🇩 Bengali — Native</span>
                 <span class="tag bl">🇬🇧 English — Professional</span>
@@ -2757,11 +2624,12 @@ For any company or industry, not limited to my own domain — I map the actual p
         </div>
         <nav class="ft-links" aria-label="Footer navigation">
           <a href="#hero" class="ft-link">Home</a>
-          <a href="#about" class="ft-link">About</a>
+          <a href="/about/" class="ft-link">About</a>
           <a href="#work" class="ft-link">Work</a>
-          <a href="#domain" class="ft-link">Experience</a>
+          <a href="/experience/" class="ft-link">Experience</a>
+          <a href="/engineering/" class="ft-link">Engineering</a>
           <a href="#verify" class="ft-link">Build in Public</a>
-          <a href="#resume" class="ft-link">Resume</a>
+          <a href="/resume/" class="ft-link">Resume</a>
           <a href="#contact" class="ft-link">Contact</a>
           <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
           <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer" class="ft-link">LinkedIn</a>

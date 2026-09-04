@@ -135,14 +135,14 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The Users</div>
+                  <div class="cs-block-t">Who Had The Problem</div>
                   <p class="cs-block-p">
                     Whoever runs the overtime billing cycle at Mongla Port —
                     previously a repeated manual task every period.
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The Constraints</div>
+                  <div class="cs-block-t">Constraints</div>
                   <p class="cs-block-p">
                     Had to match the real hourly-rate and cumulative OT rules
                     exactly. Needed print-ready A4 output, same as portbill, since
@@ -150,15 +150,24 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The System</div>
+                  <div class="cs-block-t">Requirements</div>
                   <p class="cs-block-p">
-                    Staff enter an employee profile once; the system generates the
-                    complete final OT bill instantly with correct hourly rate,
-                    cumulative date-wise OT calculation, and A4 print-ready output.
+                    Generate a complete, correct OT bill instantly from a single
+                    data-entry point, matching the real hourly-rate and cumulative
+                    OT rules exactly, output print-ready on A4.
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">Architecture</div>
+                  <div class="cs-block-t">Business Rules</div>
+                  <p class="cs-block-p">
+                    Hourly rate and cumulative date-wise overtime calculation —
+                    the same rules staff previously worked out by hand from Excel,
+                    matched exactly so the automated bill can't drift from what the
+                    real payroll rules require.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">System Architecture</div>
                   <div class="cs-diagram flow">
                     <div class="flow-node"><div class="flow-node-k">Browser</div></div>
                     <div class="flow-connector" aria-hidden="true"></div>
@@ -177,11 +186,27 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">Challenges</div>
+                  <div class="cs-block-t">Implementation</div>
                   <p class="cs-block-p">
-                    Eliminating manual calculation errors meant the cumulative
-                    date-wise OT logic had to handle real edge cases correctly, not
-                    just the common case.
+                    Staff enter an employee profile once; from that single input
+                    the system runs the hourly-rate and cumulative OT logic and
+                    renders the complete bill instantly, without needing to touch
+                    Excel.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Validation</div>
+                  <p class="cs-block-p">
+                    The cumulative date-wise OT logic was tested against real edge
+                    cases, not just the common case, since eliminating manual
+                    calculation errors was the entire point of the tool.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Deployment</div>
+                  <p class="cs-block-p">
+                    Same plain-JS, Cloudflare Pages deployment as portbill — no
+                    backend to host, no build step.
                   </p>
                 </div>
                 <div>
@@ -193,7 +218,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">What I Learned</div>
+                  <div class="cs-block-t">Lessons</div>
                   <p class="cs-block-p">
                     The biggest win wasn't a feature — it was moving data entry to
                     a single one-time point (the employee profile), removing the

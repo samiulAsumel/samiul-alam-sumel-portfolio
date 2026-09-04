@@ -136,7 +136,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The Users</div>
+                  <div class="cs-block-t">Who Had The Problem</div>
                   <p class="cs-block-p">
                     C&amp;F agents at Mongla Port who need to know the expected
                     charge before final submission, and — indirectly — the billing
@@ -144,7 +144,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The Constraints</div>
+                  <div class="cs-block-t">Constraints</div>
                   <p class="cs-block-p">
                     Had to match the port authority's actual slab/VAT/levy rules
                     exactly — a wrong estimate is worse than no estimate. No access
@@ -154,11 +154,12 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The System</div>
+                  <div class="cs-block-t">Requirements</div>
                   <p class="cs-block-p">
-                    Slab-based charge computation, VAT and levy calculation,
-                    inside/outside cargo split, hoisting charge auto-calculation,
-                    print-ready A4 output.
+                    Estimate wharfrent charges before a C&amp;F agent commits to
+                    them, matching the port's real slab/VAT/levy rules exactly,
+                    printable on A4, without touching the port's internal billing
+                    database.
                   </p>
                 </div>
                 <div class="cs-full">
@@ -171,29 +172,58 @@
                 </div>
                 <div class="cs-full">
                   <div class="cs-block-t">Business Rules</div>
-                  <div class="cs-diagram">
-                    <div class="flow flow-h">
-                      <div class="flow-node"><div class="flow-node-k">Cargo Info</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Free Time</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Storage Duration</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Applicable Slab</div></div>
+                  <p class="cs-block-p" style="margin-bottom:16px">Select a stage to see what it does.</p>
+                  <div class="mtd-loop" style="padding:var(--sp-5)">
+                    <div
+                      class="pipeline"
+                      data-pipeline="portbill-rules"
+                      role="group"
+                      aria-label="The Port Billing Calculator's business-rule chain — select a stage to see what it does"
+                    >
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The C&amp;F agent enters BL and cargo details — the starting input for every downstream calculation.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Cargo Data</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Determines how many free days apply before storage charges start, per the port's own rules.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Free-Time Logic</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="How long the cargo has actually been on the yard past free time — the number every slab decision depends on.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Storage Duration</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The port authority's slab-wise charge tiers — the exact rule set this tool had to match precisely.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Rate Slab</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Computes the base wharfrent charge from the applicable slab and storage duration.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Charge Engine</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Applies the port authority's VAT and levy rules on top of the base charge.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>VAT / Levy</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Inside/outside cargo split and the hoisting-charge rule for cargo over 3 tons, auto-applied when it fits.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Special Charges</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The complete advance estimate the C&amp;F agent sees before deciding whether to commit.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Final Estimate</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Formatted for print, because C&amp;F agents still work from paper at the counter.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>A4 Output</span>
+                      </button>
                     </div>
-                    <div class="flow flow-h" style="margin-top:10px">
-                      <div class="flow-node"><div class="flow-node-k">Charge Calc</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">VAT / Levy</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Additional Charges</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Final Bill</div></div>
+                    <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
+                      <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
+                      <p class="pipeline-panel-text" data-pipeline-panel-text></p>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="cs-block-t">Architecture</div>
+                  <div class="cs-block-t">System Architecture</div>
                   <div class="cs-diagram flow">
                     <div class="flow-node"><div class="flow-node-k">Browser</div><div class="flow-node-t">C&amp;F agent's device</div></div>
                     <div class="flow-connector" aria-hidden="true"></div>
@@ -207,18 +237,32 @@
                   <p class="cs-block-p">
                     Plain JavaScript/HTML/CSS over a framework — the whole app is
                     one calculation form, and a framework would add build tooling
-                    for no real benefit. Deployed as a static PWA on Cloudflare
-                    Pages: no hosting cost, works offline, matches how the billing
-                    desk actually operates.
+                    for no real benefit.
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">Challenges</div>
+                  <div class="cs-block-t">Implementation</div>
                   <p class="cs-block-p">
-                    Getting the slab/VAT/levy math to match the port authority's
-                    real billing system exactly — any mismatch makes the estimate
-                    actively misleading to the agents relying on it, worse than not
-                    having the tool at all.
+                    A single calculation form — plain JavaScript reads the agent's
+                    cargo/BL inputs, runs the slab/VAT/levy rules client-side,
+                    updates a live Quick Preview total as fields change, then
+                    renders the print-ready A4 output. No backend, no build step.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Validation</div>
+                  <p class="cs-block-p">
+                    Every slab/VAT/levy combination checked by hand against the
+                    port authority's real billing rules before shipping — a wrong
+                    estimate is worse than no estimate, so mismatches had to be
+                    caught before agents ever saw them.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Deployment</div>
+                  <p class="cs-block-p">
+                    Deployed as a static PWA on Cloudflare Pages: no hosting cost,
+                    works offline, matches how the billing desk actually operates.
                   </p>
                 </div>
                 <div>
@@ -230,7 +274,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">What I Learned</div>
+                  <div class="cs-block-t">Lessons</div>
                   <p class="cs-block-p">
                     A tool doesn't need a backend to be a real system its users
                     depend on daily — client-side logic was enough because the

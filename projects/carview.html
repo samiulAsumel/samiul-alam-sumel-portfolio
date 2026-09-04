@@ -135,7 +135,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The Users</div>
+                  <div class="cs-block-t">Who Had The Problem</div>
                   <p class="cs-block-p">
                     Mongla Port Authority's Traffic Department — everyone who needs
                     current vehicle positions, not just the one person who used to
@@ -143,7 +143,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The Constraints</div>
+                  <div class="cs-block-t">Constraints</div>
                   <p class="cs-block-p">
                     Terminal locations don't guarantee reliable connectivity, so it
                     had to work offline-first. No budget or infrastructure for a
@@ -152,12 +152,22 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">The System</div>
+                  <div class="cs-block-t">Requirements</div>
                   <p class="cs-block-p">
-                    Offline-first PWA tracking 8 port locations, a Bangladesh
-                    Government Holiday Calendar loader, a Chart.js analytics
-                    dashboard (7 charts + KPIs), 13 report sections, and Excel
-                    export.
+                    Replace the single-person Excel file with a system the whole
+                    Traffic Department can see and trust — offline-capable, no
+                    hosted database, with a real history of position changes, not
+                    just a snapshot.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Business Rules</div>
+                  <p class="cs-block-p">
+                    Each location's daily balance carries forward from the prior
+                    day's closing balance, adjusted by that day's vehicle receipts
+                    and deliveries — the same running-balance logic staff already
+                    used on paper, now computed automatically across all 8 tracked
+                    locations.
                   </p>
                 </div>
                 <div class="cs-full">
@@ -168,14 +178,40 @@
                     <div class="cs-demo-cap"><span class="dot" aria-hidden="true"></span>Live capture from carview.pages.dev — real Traffic Department tracking data, read-only view</div>
                   </div>
                 </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser PWA</div><div class="flow-node-t">Offline-first, installable</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Cloudflare Worker</div><div class="flow-node-t">Proxies writes — access token never reaches the browser</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Private GitHub Repo</div><div class="flow-node-t">The actual data store — every save is a commit</div></div>
+                <div class="cs-full">
+                  <div class="cs-block-t">System Architecture</div>
+                  <p class="cs-block-p" style="margin-bottom:16px">The architectural decision this project is built on — select a stage to see why.</p>
+                  <div class="mtd-loop" style="padding:var(--sp-5)">
+                    <div
+                      class="pipeline"
+                      data-pipeline="carview-arch"
+                      role="group"
+                      aria-label="carview's architecture — select a stage to see what it does"
+                    >
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Installable, offline-first — works on terminal locations that don't guarantee reliable connectivity.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>PWA</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Entries made while offline are held on the device until connectivity returns, then synced — nothing is lost to a dead signal.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Offline Storage</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Proxies every write — the GitHub access token never reaches the browser.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Cloudflare Worker</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="A private GitHub repo is the actual data store — every save is a commit, giving a full audit history for free, with no database to host.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Version-Controlled Data</span>
+                      </button>
+                      <span class="pipeline-connector" aria-hidden="true">↓</span>
+                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The Traffic Department now shares one system instead of depending on one person's private spreadsheet.">
+                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Traffic Department</span>
+                      </button>
+                    </div>
+                    <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
+                      <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
+                      <p class="pipeline-panel-text" data-pipeline-panel-text></p>
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -189,12 +225,31 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">Challenges</div>
+                  <div class="cs-block-t">Implementation</div>
+                  <p class="cs-block-p">
+                    Built as an installable PWA tracking 8 port locations, with a
+                    Bangladesh Government Holiday Calendar loader for correct
+                    working-day calculations, a Chart.js analytics dashboard (7
+                    charts + KPIs), 13 report sections, and Excel export for anyone
+                    who needs the data outside the app.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Validation</div>
                   <p class="cs-block-p">
                     Replacing a single Excel file with a shared system without
                     introducing a point of failure worse than the one it replaced —
-                    the Worker-proxied sync had to be reliable enough that staff
-                    would actually trust it over the spreadsheet they already knew.
+                    the Worker-proxied sync had to prove reliable enough, in real
+                    use, that staff would actually trust it over the spreadsheet
+                    they already knew.
+                  </p>
+                </div>
+                <div>
+                  <div class="cs-block-t">Deployment</div>
+                  <p class="cs-block-p">
+                    Deployed as an installable PWA on Cloudflare Pages, with the
+                    Cloudflare Worker handling authenticated writes to the private
+                    GitHub data repo.
                   </p>
                 </div>
                 <div>
@@ -205,7 +260,7 @@
                   </p>
                 </div>
                 <div>
-                  <div class="cs-block-t">What I Learned</div>
+                  <div class="cs-block-t">Lessons</div>
                   <p class="cs-block-p">
                     Version control can be the actual data layer, not just for code
                     — the "no budget for a database" constraint led to a genuinely

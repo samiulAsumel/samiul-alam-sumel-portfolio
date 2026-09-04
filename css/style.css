@@ -971,6 +971,9 @@ footer::before{content:'';position:absolute;top:-1px;left:50%;translate:-50% 0;w
   .trust{row-gap:var(--sp-5)}
   .trust-cell{padding:0 var(--sp-5)}
 }
+@media(max-width:420px){
+  .logo-badge{display:none}
+}
 @media(max-width:768px){
   .sec{padding:60px 0}
   .nav-links{display:none}

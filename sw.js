@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sas-portfolio-v61';
+const CACHE_NAME = 'sas-portfolio-v62';
 const PRECACHE_ASSETS = [
   './',
   './index.html',

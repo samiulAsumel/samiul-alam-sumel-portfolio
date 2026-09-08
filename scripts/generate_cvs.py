@@ -582,6 +582,12 @@ def build_freelance_cv():
          "use, not just a one-off script.",
          "portbill, otbill, and carview each replaced a specific manual step and are still "
          "in daily use."),
+        ("Website Design & Build (AI-Assisted)",
+         "Marketing sites, portfolios, and small business websites — designed, built, and "
+         "deployed using the same AI-assisted workflow behind every project here: a written "
+         "requirement first, then a build tested end to end and explainable line by line.",
+         "This CV's own portfolio site is the proof — built, tested, and shipped with "
+         "AI-assisted development, deployed on Cloudflare Pages."),
     ]
     for title, desc, proof in services:
         p = doc.add_paragraph()

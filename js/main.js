@@ -770,6 +770,47 @@
   });
 
   /* ----------------------------------------------------------
+     GITHUB LIVE ACTIVITY
+     Fetches real numbers from GitHub's public REST API (no auth needed)
+     so the "verify my work on GitHub" claim is self-updating instead of a
+     hand-typed number that goes stale. Fails silently — the static link
+     in the markup already works without JS, this only enhances it.
+  ---------------------------------------------------------- */
+  const ghLive = document.getElementById('gh-live');
+  if (ghLive) {
+    const repoCountEl = document.getElementById('gh-repo-count');
+    const lastPushEl = document.getElementById('gh-last-push');
+
+    // Renders a GitHub push timestamp as a short relative string
+    // ("3d ago") instead of a raw ISO date, matching this site's compact
+    // stat-tile style elsewhere.
+    function relativeTime(isoString) {
+      const diffMs = Date.now() - new Date(isoString).getTime();
+      const days = Math.floor(diffMs / 86400000);
+      if (days < 1) return 'today';
+      if (days === 1) return '1d ago';
+      if (days < 30) return `${days}d ago`;
+      const months = Math.floor(days / 30);
+      if (months < 12) return `${months}mo ago`;
+      return `${Math.floor(months / 12)}y ago`;
+    }
+
+    Promise.all([
+      fetch('https://api.github.com/users/samiulAsumel').then(r => r.ok ? r.json() : null),
+      fetch('https://api.github.com/users/samiulAsumel/repos?sort=pushed&per_page=1').then(r => r.ok ? r.json() : null),
+    ])
+      .then(([user, repos]) => {
+        if (user && typeof user.public_repos === 'number' && repoCountEl) {
+          repoCountEl.textContent = String(user.public_repos);
+        }
+        if (Array.isArray(repos) && repos[0] && repos[0].pushed_at && lastPushEl) {
+          lastPushEl.textContent = relativeTime(repos[0].pushed_at);
+        }
+      })
+      .catch(() => {}); // Network failure or rate limit — the em-dash placeholders and static profile link stay as the honest fallback.
+  }
+
+  /* ----------------------------------------------------------
      SERVICE WORKER
      Registers the offline/caching service worker (sw.js) so the site can
      serve cached assets on repeat visits and work offline.

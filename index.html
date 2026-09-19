@@ -459,10 +459,10 @@
       <a href="#difference">The Difference</a>
       <a href="#work">Work</a>
       <a href="#method">How I Build</a>
-      <a href="#ai-eng">AI Engineering</a>
+      <a href="/engineering/ai-engineering/">AI Engineering</a>
       <a href="#skills">Skills</a>
       <a href="/experience/">Experience</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="/engineering/roadmap/">Roadmap</a>
       <a href="/about/">About</a>
       <a href="#story">Story</a>
       <a href="#services">Services</a>
@@ -502,9 +502,9 @@
           <li role="option" data-group="Section" data-href="#method"><svg class="icon"><use href="#i-code"/></svg><span>How I Build</span></li>
           <li role="option" data-group="Section" data-href="#work"><svg class="icon"><use href="#i-rocket"/></svg><span>Selected Engineering Work</span></li>
           <li role="option" data-group="Section" data-href="#skills"><svg class="icon"><use href="#i-palette"/></svg><span>Skills</span></li>
-          <li role="option" data-group="Section" data-href="#ai-eng"><svg class="icon"><use href="#i-brain"/></svg><span>AI as an Engineering Multiplier</span></li>
+          <li role="option" data-group="Section" data-href="/engineering/ai-engineering/"><svg class="icon"><use href="#i-brain"/></svg><span>AI as an Engineering Multiplier</span></li>
           <li role="option" data-group="Section" data-href="#maturity"><svg class="icon"><use href="#i-target"/></svg><span>Engineering Maturity</span></li>
-          <li role="option" data-group="Section" data-href="#roadmap"><svg class="icon"><use href="#i-satellite-dish"/></svg><span>Engineering Roadmap</span></li>
+          <li role="option" data-group="Section" data-href="/engineering/roadmap/"><svg class="icon"><use href="#i-satellite-dish"/></svg><span>Engineering Roadmap</span></li>
           <li role="option" data-group="Page" data-href="/experience/"><svg class="icon"><use href="#i-anchor"/></svg><span>12+ Years Inside Real Operations</span></li>
           <li role="option" data-group="Section" data-href="#services"><svg class="icon"><use href="#i-wrench"/></svg><span>Services I Deliver</span></li>
           <li role="option" data-group="Section" data-href="#infra"><svg class="icon"><use href="#i-terminal"/></svg><span>Linux &amp; Automation Practice</span></li>
@@ -1682,103 +1682,33 @@
         </div>
       </section>
 
-      <!-- AI ENGINEERING MULTIPLIER -->
-      <section id="ai-eng" class="sec" aria-labelledby="ai-eng-title">
+      <!-- GO DEEPER -->
+      <section id="deeper" class="sec" aria-labelledby="deeper-title">
         <div class="wrap">
-          <p class="slabel fi">04 / Where AI Fits</p>
-          <h2 class="stitle fi" id="ai-eng-title">AI Is the <span>Accelerator</span></h2>
+          <p class="slabel fi">04 / Go Deeper</p>
+          <h2 class="stitle fi" id="deeper-title">The Full <span>Detail</span></h2>
           <div class="sline fi"></div>
-          <p class="ai-eng-sub fi">Engineering is the responsibility.</p>
-          <div class="ai-eng-grid">
-            <div class="fl">
-              <p class="ai-eng-lead">AI is part of my engineering workflow. It is not the entire identity.</p>
-              <p class="ai-eng-p">
-                I'm a Product Engineer who uses AI-assisted development to build practical operational software — not an "AI expert" building revolutionary AI systems. My strongest evidence: real domain knowledge, real shipped software, real daily users. The honest tiering in the <a href="#skills">Skills</a> section shows exactly where AI was involved in each project.
-              </p>
-              <p class="ai-eng-p" style="margin-top:12px">
-                AI helps produce code faster. It does not decide what the correct product should do.
-              </p>
-            </div>
-            <div class="ai-eng-list fr">
-              <div class="ai-eng-item">
-                <strong>Accelerates implementation</strong>
-                Gets me from a written requirement to working code faster, especially on backend and data work.
-              </div>
-              <div class="ai-eng-item">
-                <strong>Helps explore solutions</strong>
-                Useful for reasoning through implementation problems and prototyping before committing to an approach.
-              </div>
-              <div class="ai-eng-item">
-                <strong>Requirements still come from the real problem</strong>
-                No amount of AI assistance replaces sitting with the person who does the work and writing down what they actually need.
-              </div>
-              <div class="ai-eng-item">
-                <strong>Business rules still need to be understood</strong>
-                Slab charges, VAT, levy, cumulative OT — a model can't infer these; I have to know them and specify them.
-              </div>
-              <div class="ai-eng-item">
-                <strong>The system still needs validation</strong>
-                Every business rule and edge case gets manually tested against reality before anything ships.
-              </div>
-            </div>
-          </div>
-
-          <div class="mtd-loop fi" style="margin-top:var(--sp-6)">
-            <div class="mtd-loop-t">Where AI Sits In The Build</div>
-            <div
-              class="pipeline"
-              data-pipeline="ai-eng"
-              role="group"
-              aria-label="Where AI fits in the build process — select a step to see what it means"
-            >
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="An observed operational problem — not a feature request invented without a real user behind it.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Real Problem</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="Written down in plain language and confirmed with the person who does the work — this comes before any AI is involved.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Requirements</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="The real business rules, edge cases, and data model — a model can't infer these; I have to know and specify them.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Business Context</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="Claude Code turns the requirement and business context into working code, faster than writing every line by hand.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>AI Assistance</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="Every line the tool produces gets read and understood before it ships — not accepted on trust.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Code Review</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="The edge cases a business rule creates — an oversize cargo slab, a multi-timezone location — get tested deliberately, not assumed away.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Edge-Case Testing</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="Checked against the real business rules and real data — manually, before anything ships.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Validation</span>
-              </button>
-              <span class="pipeline-connector" aria-hidden="true">↓</span>
-              <button type="button" class="pipeline-node" aria-expanded="false"
-                data-explain="Deployed and, for the port tools, put in front of C&amp;F agents and port staff who use it daily.">
-                <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Ship</span>
-              </button>
-            </div>
-            <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
-              <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
-              <p class="pipeline-panel-text" data-pipeline-panel-text></p>
-            </div>
-          </div>
-
-          <div class="cs-full cs-links fi" style="margin-top:var(--sp-6)">
-            <a href="projects/portfolio-site.html" class="btn btn-p">Read How This Site Was Built <span class="arw">↗</span></a>
+          <p class="work-intro fi">
+            The short version is on this page. Each of these goes further, on
+            its own page.
+          </p>
+          <div class="dp-grid fi">
+            <a href="/engineering/how-i-build/" class="dp-card">
+              <span class="dp-t">How I Build</span>
+              <span class="dp-d">The requirement-first process behind every project, and where AI fits into it.</span>
+            </a>
+            <a href="/engineering/ai-engineering/" class="dp-card">
+              <span class="dp-t">AI-Assisted Development</span>
+              <span class="dp-d">What AI does in my workflow, what stays my responsibility, and why I say so plainly.</span>
+            </a>
+            <a href="/experience/" class="dp-card">
+              <span class="dp-t">Where the Problems Come From</span>
+              <span class="dp-d">12+ years at Mongla Port Authority: the operational work every project starts from.</span>
+            </a>
+            <a href="/engineering/roadmap/" class="dp-card">
+              <span class="dp-t">Engineering Roadmap</span>
+              <span class="dp-d">The learning plan and an honest progress log: current phase, in progress, last completed.</span>
+            </a>
           </div>
         </div>
       </section>
@@ -1796,7 +1726,7 @@
             what I've used but not at expert level, and what's current active
             learning. Everything listed is either something I worked through
             in self-directed study or used in a public repo — see
-            <a href="#roadmap">Roadmap</a> for what's actively in progress.
+            <a href="/engineering/roadmap/">Roadmap</a> for what's actively in progress.
           </p>
           <div class="sk-grid">
             <div class="sk-card fi">
@@ -1932,79 +1862,7 @@
               ><span class="flow-mini-node">CI/CD</span
               ><span class="flow-mini-node">AI Product Engineering</span>
             </div>
-            <a href="#roadmap" class="sk-current-lk">View Engineering Roadmap <span class="arw">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- DOMAIN — 12+ Years Inside Real Operations -->
-      <section id="domain" class="sec" aria-labelledby="domain-title">
-        <div class="wrap">
-          <p class="slabel fi">06 / Where the Problems Come From</p>
-          <h2 class="stitle fi" id="domain-title">
-            12+ Years Inside <span>Real Operations</span>
-          </h2>
-          <div class="sline fi"></div>
-          <div class="dm-solo">
-            <p class="dm-intro fi">
-              Every project above started as a real problem — some I saw
-              first-hand doing this job, others described to me by the people
-              who deal with them. Either way, this 12-year background is what
-              lets me tell a genuine requirement from a vague one, and judge
-              whether a solution actually fits how the work gets done. That's
-              the part an outside developer can't shortcut.
-            </p>
-            <div class="tl">
-              <div class="tl-item current fi">
-                <div class="tl-card">
-                  <div class="tl-hd">
-                    <h3 class="tl-role">
-                      Senior Outdoor Assistant — Traffic Department, Revenue Branch
-                    </h3>
-                    <span class="tl-per">Nov 2017 – Present</span>
-                  </div>
-                  <div class="tl-org">Mongla Port Authority</div>
-                  <div class="tl-loc">
-                    Wharfrent billing, cargo &amp; vehicle tracking, revenue reporting —
-                    the source of portbill, carview, and otbill.
-                  </div>
-                </div>
-              </div>
-              <div class="tl-item fi">
-                <div class="tl-card">
-                  <div class="tl-hd">
-                    <h3 class="tl-role">
-                      Junior Outdoor Assistant — Port &amp; Terminal Operations
-                    </h3>
-                    <span class="tl-per">Nov 2013 – Nov 2017</span>
-                  </div>
-                  <div class="tl-org">Mongla Port Authority</div>
-                  <div class="tl-loc">
-                    Foundation of a 12-year uninterrupted career at Bangladesh's
-                    second-largest international seaport.
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p class="fi"><a href="/experience/">Read Full Experience <span class="arw">→</span></a></p>
-
-            <div class="connect-strip fi">
-              <div class="connect-card">
-                <div class="connect-a">Port Billing</div>
-                <div class="connect-arrow">↓ business rules ↓</div>
-                <div class="connect-c">portbill</div>
-              </div>
-              <div class="connect-card">
-                <div class="connect-a">Vehicle Tracking</div>
-                <div class="connect-arrow">↓ visibility problem ↓</div>
-                <div class="connect-c">carview</div>
-              </div>
-              <div class="connect-card">
-                <div class="connect-a">Manual OT Billing</div>
-                <div class="connect-arrow">↓ automation opportunity ↓</div>
-                <div class="connect-c">otbill</div>
-              </div>
-            </div>
+            <a href="/engineering/roadmap/" class="sk-current-lk">View Engineering Roadmap <span class="arw">↗</span></a>
           </div>
         </div>
       </section>
@@ -2012,7 +1870,7 @@
       <!-- ENGINEERING MATURITY -->
       <section id="maturity" class="sec" aria-labelledby="maturity-title">
         <div class="wrap">
-          <p class="slabel fi">07 / Development Philosophy</p>
+          <p class="slabel fi">06 / Development Philosophy</p>
           <h2 class="stitle fi" id="maturity-title">Engineering <span>Maturity</span></h2>
           <div class="sline fi"></div>
           <div class="mat-grid fi">
@@ -2050,63 +1908,10 @@
         </div>
       </section>
 
-      <!-- ROADMAP -->
-      <section id="roadmap" class="sec" aria-labelledby="roadmap-title">
-        <div class="wrap">
-          <p class="slabel fi">08 / What's Next</p>
-          <h2 class="stitle fi" id="roadmap-title">
-            Engineering <span>Roadmap</span>
-          </h2>
-          <div class="sline fi"></div>
-          <p class="rm-intro fi">
-            Everything above — the production tools, the GitHub repos — is already built and already shipping. This roadmap is a separate, deliberate pass through CS fundamentals in parallel with that work: backend depth, cloud deployment, and applied AI engineering, each phase logged with a concrete milestone before moving on. Most AI-assisted developers skip re-deriving fundamentals from first principles; this is that pass, done in the open rather than hidden.
-          </p>
-
-          <div class="rm-journey fi">
-            <div class="rm-journey-t">Currently Building Toward</div>
-            <div class="flow-mini">
-              <span class="flow-mini-node done">JavaScript</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node done">React</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node now">TypeScript Depth</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node now">Node / Express Depth</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node">Cloud &amp; Docker</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node">CI/CD</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node">AI Engineering</span><span class="flow-mini-sep">→</span>
-              <span class="flow-mini-node">Interview Readiness</span>
-            </div>
-          </div>
-
-          <details class="rm-log fi">
-            <summary class="rm-log-summary">Full progress log</summary>
-            <div class="rm-status" role="status" aria-label="Current curriculum progress">
-              <div class="rm-status-row">
-                <span class="rm-status-k">CURRENT PHASE</span
-                ><span class="rm-status-v">Phase 0 — Foundation</span>
-              </div>
-              <div class="rm-status-row">
-                <span class="rm-status-k">MODULE</span
-                ><span class="rm-status-v">JavaScript / TypeScript — atomic breakdown</span>
-              </div>
-              <div class="rm-status-row">
-                <span class="rm-status-k">IN PROGRESS</span
-                ><span class="rm-status-v">Function syntax (declaration / expression / arrow)</span>
-              </div>
-              <div class="rm-status-row">
-                <span class="rm-status-k">COMPLETED</span
-                ><span class="rm-status-v">Variable declaration (let, const, var)</span>
-              </div>
-              <div class="rm-status-foot">Last updated Aug 2026</div>
-            </div>
-          </details>
-
-
-        </div>
-      </section>
-
       <!-- ABOUT -->
       <section id="about" class="sec" aria-labelledby="about-title">
         <div class="wrap">
-          <p class="slabel fi">09 / Who I Am</p>
+          <p class="slabel fi">07 / Who I Am</p>
           <h2 class="stitle fi" id="about-title">About <span>Me</span></h2>
           <div class="sline fi"></div>
           <div class="ab-grid">
@@ -2238,7 +2043,7 @@
       <!-- STORY -->
       <section id="story" class="sec" aria-labelledby="story-title">
         <div class="wrap">
-          <p class="slabel fi">10 / The Story</p>
+          <p class="slabel fi">08 / The Story</p>
           <h2 class="stitle fi" id="story-title">From Operations <span>to Engineering</span></h2>
           <div class="sline fi"></div>
           <p class="story-intro fi">
@@ -2295,7 +2100,7 @@
       <!-- SERVICES -->
       <section id="services" class="sec" aria-labelledby="services-title">
         <div class="wrap">
-          <p class="slabel fi">11 / Freelance &amp; Contract Work</p>
+          <p class="slabel fi">09 / Freelance &amp; Contract Work</p>
           <h2 class="stitle fi" id="services-title">
             Services I <span>Deliver</span>
           </h2>
@@ -2433,7 +2238,7 @@ For any company or industry, not limited to my own domain — I map the actual p
       <!-- LINUX & INFRASTRUCTURE -->
       <section id="infra" class="sec" aria-labelledby="infra-title">
         <div class="wrap">
-          <p class="slabel fi">12 / Self-Directed Practice</p>
+          <p class="slabel fi">10 / Self-Directed Practice</p>
           <h2 class="stitle fi" id="infra-title">
             Linux &amp; <span>Automation Practice</span>
           </h2>
@@ -2455,7 +2260,7 @@ For any company or industry, not limited to my own domain — I map the actual p
                 and administering my own systems outside of any certification
                 track. Real professional infrastructure experience stops at
                 the items above; Docker, CI/CD, and cloud infra are tracked
-                honestly as planned in the <a href="#roadmap">Roadmap</a>,
+                honestly as planned in the <a href="/engineering/roadmap/">Roadmap</a>,
                 not claimed here.
               </p>
               <div class="sk-pills dc-chips">
@@ -2494,7 +2299,7 @@ For any company or industry, not limited to my own domain — I map the actual p
       <!-- ACTIVE GROWTH -->
       <section id="dev" class="sec" aria-labelledby="dev-title">
         <div class="wrap">
-          <p class="slabel fi">13 / Active Growth</p>
+          <p class="slabel fi">11 / Active Growth</p>
           <h2 class="stitle fi" id="dev-title">
             Active <span>Growth</span>
           </h2>
@@ -2568,7 +2373,7 @@ For any company or industry, not limited to my own domain — I map the actual p
                 specification, full-stack AI product development, and
                 deployment. Follows the requirement-first, AI-assisted build
                 approach described in the <a href="#method">How I Build</a>
-                section above. See the <a href="#roadmap">Roadmap</a> for the
+                section above. See the <a href="/engineering/roadmap/">Roadmap</a> for the
                 current phase and progress.
               </p>
               <div class="sk-pills dc-chips">
@@ -2589,7 +2394,7 @@ For any company or industry, not limited to my own domain — I map the actual p
       <!-- EDUCATION -->
       <section id="edu" class="sec" aria-labelledby="edu-title">
         <div class="wrap">
-          <p class="slabel fi">14 / Background</p>
+          <p class="slabel fi">12 / Background</p>
           <h2 class="stitle fi" id="edu-title">My <span>Education</span></h2>
           <div class="sline fi"></div>
           <div class="eg-group-t fi">Formal Education</div>
@@ -2622,7 +2427,7 @@ For any company or industry, not limited to my own domain — I map the actual p
       <!-- BUILD IN PUBLIC -->
       <section id="verify" class="sec" aria-labelledby="verify-title">
         <div class="wrap">
-          <p class="slabel fi">15 / Don't Take My Word For It</p>
+          <p class="slabel fi">13 / Don't Take My Word For It</p>
           <h2 class="stitle fi" id="verify-title">Proof of <span>Work</span></h2>
           <div class="sline fi"></div>
           <div class="pow-row fi">
@@ -2735,7 +2540,7 @@ For any company or industry, not limited to my own domain — I map the actual p
       <!-- CONTACT -->
       <section id="contact" class="sec" aria-labelledby="contact-title">
         <div class="wrap">
-          <p class="slabel fi">16 / Let's Connect</p>
+          <p class="slabel fi">14 / Let's Connect</p>
           <h2 class="stitle fi" id="contact-title">
             Let's Build <span>Something Useful.</span>
           </h2>

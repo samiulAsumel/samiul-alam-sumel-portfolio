@@ -248,8 +248,8 @@
         if (entry.isIntersecting) {
           animateCounter(document.getElementById('c1'), 12, '+');
           animateCounter(document.getElementById('c2'), 3);
-          animateCounter(document.getElementById('c3'), 8);
-          animateCounter(document.getElementById('c4'), 7);
+          animateCounter(document.getElementById('c3'), 9);
+          animateCounter(document.getElementById('c4'), 8);
           statsObs.disconnect(); // One-shot — no need to keep observing after the counters have run.
         }
       });

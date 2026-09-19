@@ -10,32 +10,34 @@ Samiul Alam Sumel's personal portfolio: a static site (`index.html` +
 `.docx` files generated from the same source facts as the site
 (`scripts/generate_cvs.py`). No framework, no build step, no backend.
 
-## Pending — apply locally next (2026-09-08)
+## Pending (updated 2026-09-19)
 
-This session (browser-only, via vscode.dev) pushed a site bug fix and a Contra
-profile refresh directly to `main` -- already live. It could NOT touch binary
-files or large scripts (no way to drive a native file picker or safely retype
-a multi-KB Python file from a browser automation session). Do these with real
-`git` next time this repo is pulled locally:
+Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
+`salahsync.webp` uploaded and referenced (the `.jpg` is gone). Still open:
 
-1. Regenerate the CV docx files and commit them: `pip install python-docx`
-   then `python3 scripts/generate_cvs.py`. The script already has the
-      reframed Professional Summary and flattened skills list -- this just needs
-         to be re-run and the output `.docx` files committed.
-         2. Recreate `scripts/generate_cover_letter.py` (written this session, never
-            pushed -- ask Claude to regenerate it if needed) and run it to produce
-               `Samiul_Alam_Sumel_Cover_Letter.docx`. Commit both the script and the
-                  output file.
-                  3. Upload `assets/screenshots/salahsync.webp` (a ~38% smaller WebP version of
-                     the SalahSync screenshot) and delete `salahsync.jpg`. `index.html`
-                        currently still points at the `.jpg` (reverted back after an earlier
-                           attempt referenced a webp that didn't exist in the repo) -- once the webp
-                              is actually committed, switch the `<img src>` back to `.webp` and bump
-                                 `sw.js`'s `CACHE_NAME` again.
-                                 4. Fill in the rate field in `CONTRA_PROFILE.md` (`## Rate / Availability` --
-                                    currently `[FILL IN]`) before pasting that profile anywhere.
-                                    
-                                    ## Private learning-protocol docs (not for the site)
+1. Recreate `scripts/generate_cover_letter.py` (never pushed) and run it to
+   produce `Samiul_Alam_Sumel_Cover_Letter.docx`; commit both.
+2. Fill in the rate field in `CONTRA_PROFILE.md` (`## Rate / Availability`,
+   currently `[FILL IN]`) before pasting that profile anywhere.
+
+## Site maintenance rules added 2026-09-19
+
+- **Project counts appear in four places and must move together** when a
+  project is added: hero proof strip (`.h-proof`), trust strip (`#c3`/`#c4`
+  in `index.html` *and* the `animateCounter` calls in `js/main.js`), the
+  `#verify` proof grid, and the JSON-LD `ItemList` in `index.html`. The
+  counts are: featured project cards (currently 9) and live deployments
+  (currently 8). Recount from the actual cards; never trust the old number.
+- Fonts are self-hosted (`assets/fonts/*.woff2`, `css/fonts.css`, latin
+  subset only). Do not re-add Google Fonts links — `_headers` sets a CSP with
+  `font-src 'self'` and `style-src 'self' 'unsafe-inline'`, so any new
+  third-party script, font, image host or `connect-src` origin must be added
+  to `_headers` deliberately.
+- Regenerate the sitemap with `python3 scripts/generate_sitemap.py` after
+  adding or editing any page (it reads git dates; 404 is excluded).
+- New subpages need a `BreadcrumbList` JSON-LD block like the existing ones.
+
+## Private learning-protocol docs (not for the site)
 
 `private/` (gitignored, added 2026-08-21) holds four personal Claude-session
 curriculum prompts the user pastes into other sessions to drive his own

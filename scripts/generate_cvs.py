@@ -352,10 +352,10 @@ PROJECTS = [
         links=[("Live", "https://clif91.pages.dev/"), ("GitHub", "https://github.com/samiulAsumel/client-intake-form")],
         problem="Collecting project requirements from a client over email or chat is "
                 "unstructured — details get missed, wasting time on both sides.",
-        solution="Single-file, client-side project requirement intake form — structured "
-                 "questions, no backend required, mailto-based report so the completed brief "
-                 "lands directly in an inbox.",
-        tags="JavaScript, HTML/CSS, Client-Side Only",
+        solution="Project requirement intake form — 18 structured sections, a serverless "
+                 "submission API, and a password-protected admin dashboard that tracks each "
+                 "lead from New to Won/Lost, with the client's own email app as a fallback.",
+        tags="JavaScript, HTML/CSS, Cloudflare Pages Functions, GitHub API",
     ),
     dict(
         name="SalahSync",
@@ -380,7 +380,7 @@ PROJECTS = [
                  "-> country -> dish browsing, client-side search, and a per-dish confidence "
                  "rating instead of presenting every entry as equally certain. Cloudflare "
                  "Worker proxies a private GitHub data repo, admin CRUD, and a "
-                 "Durable-Object-backed visit counter. Asia live (7 countries, 280 dishes); "
+                 "Durable-Object-backed visit counter. Asia live (7 countries, 295 dishes); "
                  "other continents planned.",
         tags="Next.js, TypeScript, Cloudflare Worker, Static Export",
     ),
@@ -389,8 +389,8 @@ PROJECTS = [
         links=[("Live", "https://englishmastery.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/english-reading-mastery")],
         problem="English-reading material online is usually a loose pile of pages with no "
                 "level structure, so a learner can't tell where they are or what to read next.",
-        solution="Content-driven learning platform: 88 reading lessons across 9 skill levels, "
-                 "each paired with a writing task and a speaking drill. A Node build script "
+        solution="Content-driven learning platform: 88 reading lessons across 9 skill levels "
+                 "with 87 paired writing tasks and speaking drills. A Node build script "
                  "validates every Markdown lesson against a schema and generates the whole "
                  "static site, so adding a lesson is a one-file change. Zero-framework "
                  "HTML/CSS/vanilla JS output, GitHub Actions CI, auto-deployed to Cloudflare "

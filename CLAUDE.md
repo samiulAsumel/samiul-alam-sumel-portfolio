@@ -36,6 +36,11 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
 - Regenerate the sitemap with `python3 scripts/generate_sitemap.py` after
   adding or editing any page (it reads git dates; 404 is excluded).
 - New subpages need a `BreadcrumbList` JSON-LD block like the existing ones.
+- Case studies (`projects/*.html`) reuse the `otbill.html` shell. Every claim in one
+  must trace to the project's code, its live site, or its CI (checked 2026-09-19);
+  never quote a metric that was not measured, and re-verify counts (World Kitchen
+  Atlas dish count = dish URLs in its live sitemap) before changing them. Repo READMEs
+  can be stale (Client Intake's says "no backend" but it has a Pages Functions API).
 - Cloudflare Pages 308-redirects `/x.html` to `/x`, so link, canonicalise and
   sitemap every page by its extensionless URL. `404.html` must keep root-absolute
   asset paths (it is served at arbitrary depths) and no canonical tag.

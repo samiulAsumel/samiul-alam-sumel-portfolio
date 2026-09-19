@@ -191,7 +191,7 @@
               "@type": "SoftwareApplication",
               "name": "Client Intake Form",
               "url": "https://clif91.pages.dev/",
-              "description": "Client-side project requirement intake form with a mailto-based brief.",
+              "description": "Project requirement intake form with a serverless submission API and a password-protected admin dashboard.",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
               "author": {
@@ -1123,7 +1123,7 @@
                     very different project types (a shop's brochure site vs. an
                     internal SaaS tool) without turning into a maze. An 18-section
                     form risks losing 20 minutes of typing to a closed tab, with no
-                    server to save progress to.
+                    account to save progress to.
                   </p>
                 </div>
                 <div>
@@ -1136,17 +1136,18 @@
                     questions; a brochure site doesn't). Ends in a declaration step
                     where the client types their name to confirm written engagement
                     terms — scope, quotation, payment, revisions, ownership — before
-                    a summary is generated and sent via their own email app.
+                    a summary is generated and submitted, with the client's own email
+                    app as the fallback.
                   </p>
                 </div>
                 <div>
                   <div class="cs-block-t">Architecture</div>
                   <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser Form</div><div class="flow-node-t">Single HTML file, no backend</div></div>
+                    <div class="flow-node"><div class="flow-node-k">Browser Form</div><div class="flow-node-t">One dependency-free HTML page with debounced draft autosave</div></div>
                     <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">localStorage</div><div class="flow-node-t">Debounced draft autosave, private to that browser</div></div>
+                    <div class="flow-node"><div class="flow-node-k">Pages Function</div><div class="flow-node-t">Validates each submission and stores it as a JSON file in a GitHub repo</div></div>
                     <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">mailto:</div><div class="flow-node-t">Summary sent via the client's own email app</div></div>
+                    <div class="flow-node"><div class="flow-node-k">Admin Dashboard</div><div class="flow-node-t">Password-protected lead pipeline, New through Won or Lost</div></div>
                   </div>
                 </div>
                 <div>
@@ -1154,11 +1155,12 @@
                   <p class="cs-block-p">
                     Kept it a single dependency-free HTML file on purpose — a client
                     should be able to open a link and start typing, with nothing to
-                    install or sign up for. mailto: avoids running or paying for a
-                    mail-sending service just to receive occasional intake
-                    submissions. The draft autosave needed no server or account
-                    either — it's just localStorage, debounced and flushed on
-                    blur/tab-hide/unload.
+                    install or sign up for. Submissions go to a small serverless
+                    function that stores each one as a JSON file in a GitHub
+                    repository — no database to run or pay for — and the
+                    client's own email app is the fallback if that call fails.
+                    The draft autosave needs no account either — it's just
+                    localStorage, debounced and flushed on blur/tab-hide/unload.
                   </p>
                 </div>
                 <div>
@@ -1194,6 +1196,7 @@
                 <div class="cs-full cs-links">
                   <a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
                   <a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                <a href="projects/client-intake-form" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
                 </div>
               </div>
             </div>
@@ -1322,6 +1325,7 @@
                 <div class="cs-full cs-links">
                   <a href="https://salahsync.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
                   <a href="https://github.com/samiulAsumel/salahsync" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                <a href="projects/salahsync" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
                 </div>
               </div>
             </div>
@@ -1389,7 +1393,7 @@
                     presenting every dish as equally certain. Small nations
                     with few well-documented dishes list only what can
                     genuinely be confirmed rather than padding the count.
-                    Asia is live today — 7 countries, 280 dishes — with the
+                    Asia is live today — 7 countries, 295 dishes — with the
                     rest of the world marked "coming soon" rather than faked
                     in. An admin panel (PBKDF2 auth) handles recipe CRUD
                     against the private data repo.
@@ -1436,7 +1440,7 @@
                   <div class="cs-block-t">Result</div>
                   <p class="cs-block-p">
                     Live today with real, sourced content for Asia — 7
-                    countries, 280 dishes — rather than a thin dataset
+                    countries, 295 dishes — rather than a thin dataset
                     dressed up to look complete. Europe, Africa, the
                     Americas, and Oceania are the next phases.
                   </p>
@@ -1451,10 +1455,11 @@
                     as a finished, authoritative record.
                   </p>
                 </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Asia is live with <strong>280 dishes across 7 countries</strong>, each with a visible confidence rating — the rest of the world is planned, not faked in, and I don't have exported visit numbers to quote.</span></div>
+                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Asia is live with <strong>295 dishes across 7 countries</strong>, each with a visible confidence rating — the rest of the world is planned, not faked in, and I don't have exported visit numbers to quote.</span></div>
                 <div class="cs-full cs-links">
                   <a href="https://kitchenatlas.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
                   <a href="https://github.com/samiulAsumel/world-kitchen-atlas" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+                <a href="projects/world-kitchen-atlas" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
                 </div>
               </div>
             </div>
@@ -1485,11 +1490,12 @@
                 <div class="pc-lks">
                   <a href="https://englishmastery.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="Live App"><svg class="icon"><use href="#i-external-link"/></svg></a>
                   <a href="https://github.com/samiulAsumel/english-reading-mastery" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
+                  <a href="projects/english-mastery" class="pc-lk" aria-label="Case study"><svg class="icon"><use href="#i-file-text"/></svg></a>
                 </div>
               </div>
               <h3 class="pc-nm">English Mastery</h3>
               <span class="cs-status">● LIVE</span>
-              <p class="pc-ds">Structured English learning platform — 88 reading lessons across 9 levels, each paired with a writing task and speaking drill. A Node build script validates every Markdown lesson and generates the static site; CI on every push.</p>
+              <p class="pc-ds">Structured English learning platform — 88 reading lessons across 9 levels, with 87 paired writing tasks and speaking drills. A Node build script validates every Markdown lesson and generates the static site; CI on every push.</p>
               <div class="pc-tags"><span class="pt">Node.js</span><span class="pt">Vanilla JS</span><span class="pt">GitHub Actions</span></div>
             </div>
             <div class="pc">

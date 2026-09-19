@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sas-portfolio-v68';
+const CACHE_NAME = 'sas-portfolio-v69';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -14,10 +14,10 @@ const PRECACHE_ASSETS = [
   './icon-512.png',
   './apple-touch-icon.png',
   './manifest.json',
-  './projects/portbill.html',
-  './projects/carview.html',
-  './projects/otbill.html',
-  './projects/portfolio-site.html',
+  './projects/portbill',
+  './projects/carview',
+  './projects/otbill',
+  './projects/portfolio-site',
   './about/',
   './experience/',
   './engineering/',

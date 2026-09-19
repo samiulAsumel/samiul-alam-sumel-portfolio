@@ -23,7 +23,8 @@ def page_url(path: Path) -> str:
         return f"{BASE_URL}/"
     if rel.endswith("/index.html"):
         return f"{BASE_URL}/{rel[: -len('index.html')]}"
-    return f"{BASE_URL}/{rel}"
+    # Cloudflare Pages 308-redirects *.html to the extensionless URL, so that is the canonical form.
+    return f"{BASE_URL}/{rel.removesuffix('.html')}"
 
 
 def last_modified(path: Path) -> str:

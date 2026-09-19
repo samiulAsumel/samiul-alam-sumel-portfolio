@@ -384,6 +384,19 @@ PROJECTS = [
                  "other continents planned.",
         tags="Next.js, TypeScript, Cloudflare Worker, Static Export",
     ),
+    dict(
+        name="English Mastery",
+        links=[("Live", "https://englishmastery.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/english-reading-mastery")],
+        problem="English-reading material online is usually a loose pile of pages with no "
+                "level structure, so a learner can't tell where they are or what to read next.",
+        solution="Content-driven learning platform: 88 reading lessons across 9 skill levels, "
+                 "each paired with a writing task and a speaking drill. A Node build script "
+                 "validates every Markdown lesson against a schema and generates the whole "
+                 "static site, so adding a lesson is a one-file change. Zero-framework "
+                 "HTML/CSS/vanilla JS output, GitHub Actions CI, auto-deployed to Cloudflare "
+                 "Pages.",
+        tags="Node.js, Vanilla JS, Static Site Generation, GitHub Actions, Cloudflare Pages",
+    ),
 ]
 
 ADDITIONAL_PROJECTS = [

@@ -419,10 +419,13 @@ ADDITIONAL_PROJECTS = [
 ]
 
 INFRA_NOTE = (
-    "Self-directed practice building production-style Bash automation for deployment "
-    "(auto-deploy-pipeline), SSL certificate renewal (auto-ssl-manager), and log/security "
-    "monitoring (log-analyzer-alert). Daily Linux (Ubuntu) user; self-driven learning, not "
-    "job-critical production work."
+    "Six self-directed Bash automation projects: zero-downtime deployment with auto-rollback "
+    "(auto-deploy-pipeline), SSL certificate monitoring and renewal (auto-ssl-manager), "
+    "log analysis and threat alerting (log-analyzer-alert), CSV-driven user/access lifecycle "
+    "management (linux-user-access-mgmt), user/group provisioning and sudo policy automation "
+    "(enterprise-user-mgmt), and multi-team file-sharing permissions with POSIX ACLs "
+    "(secure-file-sharing). Daily Linux (Ubuntu) user; self-driven learning, not job-critical "
+    "production work."
 )
 
 STUDY_SUMMARY = (

@@ -1525,6 +1525,9 @@
             <a href="https://github.com/samiulAsumel/auto-deploy-pipeline" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Auto-Deploy Pipeline</a>
             <a href="https://github.com/samiulAsumel/auto-ssl-manager" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Auto-SSL Manager</a>
             <a href="https://github.com/samiulAsumel/log-analyzer-alert" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Log Analyzer &amp; Alert</a>
+            <a href="https://github.com/samiulAsumel/linux-user-access-mgmt" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> User &amp; Access Management</a>
+            <a href="https://github.com/samiulAsumel/enterprise-user-mgmt" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> User &amp; Group Provisioning</a>
+            <a href="https://github.com/samiulAsumel/secure-file-sharing" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Secure File Sharing</a>
           </div>
 
           <div class="gh-live fi" id="gh-live">
@@ -1701,7 +1704,7 @@
           <div class="dp-grid fi">
             <a href="/engineering/how-i-build/" class="dp-card">
               <span class="dp-t">How I Build</span>
-              <span class="dp-d">The requirement-first process behind every project, and where AI fits into it.</span>
+              <span class="dp-d">Two real bug fixes from a live repo, in full detail — what was wrong, how I found it, and how I verified the fix.</span>
             </a>
             <a href="/engineering/ai-engineering/" class="dp-card">
               <span class="dp-t">AI-Assisted Development</span>
@@ -2249,56 +2252,199 @@ For any company or industry, not limited to my own domain — I map the actual p
             Linux &amp; <span>Automation Practice</span>
           </h2>
           <div class="sline fi"></div>
+          <p class="work-intro fi">
+            Six self-directed Bash automation projects, built outside any job
+            or client brief — I wanted to understand how deployment,
+            certificate renewal, log monitoring, and access control actually
+            work under the hood, so I built working versions of each. Each
+            one ships with a dry-run mode and an audit trail, and most have
+            an automated test suite or CI — written to hold up, not just to
+            demo. Daily Linux (Ubuntu) user, scripting and administering my
+            own systems outside of any certification track. Real
+            professional infrastructure experience stops at the three
+            production tools in <a href="#work">Work</a> above; this is
+            deliberate self-study, listed here for transparency, not claimed
+            as job experience.
+          </p>
           <div class="dg">
-            <div class="dc dc-wide fi">
+            <div class="dc fi">
               <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-terminal"/></svg></div>
+                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-rocket"/></svg></div>
                 <div>
-                  <h3 class="dc-ttl">Bash Automation &amp; Linux Practice</h3>
+                  <h3 class="dc-ttl">Auto-Deploy Pipeline</h3>
                   <div class="dc-org">Self-Directed</div>
                 </div>
               </div>
-              <span class="dc-st ac">Ongoing</span>
               <p class="dc-note">
-                Self-directed practice building production-style Bash
-                automation for deployment, SSL certificate renewal, and
-                log/security monitoring — daily Linux (Ubuntu) user, scripting
-                and administering my own systems outside of any certification
-                track. Real professional infrastructure experience stops at
-                the items above; Docker, CI/CD, and cloud infra are tracked
-                honestly as planned in the <a href="/engineering/roadmap/">Roadmap</a>,
-                not claimed here.
+                Zero-downtime deployment in pure Bash — a 9-step run
+                (pre-flight checks, backup, pull, test, atomic symlink
+                switch, service restart, health check, cleanup, notify)
+                across production/staging/dev environments. If the
+                post-deploy health check fails, it rolls back to the
+                previous release automatically, no human in the loop. No
+                Docker or orchestration framework required — if the server
+                has bash, git, and curl, it can deploy.
               </p>
               <div class="sk-pills dc-chips">
-                <a
+                <span class="sp gd">Atomic Deploys</span><span class="sp gd">Auto-Rollback</span><span class="sp gd">9/9 Tests Passing</span><a
                   href="https://github.com/samiulAsumel/auto-deploy-pipeline"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="sp nu"
                   style="cursor:pointer"
-                  >Auto-Deploy Pipeline</a
-                ><a
+                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
+                >
+              </div>
+            </div>
+            <div class="dc fi">
+              <div class="dc-hd">
+                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-check-circle"/></svg></div>
+                <div>
+                  <h3 class="dc-ttl">Auto-SSL Manager</h3>
+                  <div class="dc-org">Self-Directed</div>
+                </div>
+              </div>
+              <p class="dc-note">
+                Monitors every TLS certificate on a schedule and renews
+                Let's Encrypt certificates automatically before they expire.
+                Alerts by email, Slack, Teams, or PagerDuty, rate-limited so
+                a recurring warning doesn't spam the channel while a genuine
+                emergency still fires immediately. Weekly encrypted backups
+                of the certificate store.
+              </p>
+              <div class="sk-pills dc-chips">
+                <span class="sp gd">Cert Auto-Renewal</span><span class="sp gd">Multi-Channel Alerts</span><span class="sp gd">CI Pipeline</span><a
                   href="https://github.com/samiulAsumel/auto-ssl-manager"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="sp nu"
                   style="cursor:pointer"
-                  >Auto-SSL Manager</a
-                ><a
+                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
+                >
+              </div>
+            </div>
+            <div class="dc fi">
+              <div class="dc-hd">
+                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-satellite-dish"/></svg></div>
+                <div>
+                  <h3 class="dc-ttl">Log Analyzer &amp; Alert</h3>
+                  <div class="dc-org">Self-Directed</div>
+                </div>
+              </div>
+              <p class="dc-note">
+                Scans system, auth, web-server, database, and application
+                logs plus the systemd journal every 15 minutes, correlates
+                findings across sources into a threat score, and fires an
+                alert within minutes of anything serious — a brute-force
+                attempt, an out-of-memory kill, a spike in server errors.
+                Everything below that threshold gets batched into a daily
+                HTML digest instead of adding noise. Findings export as
+                JSON for handing off to a real log pipeline.
+              </p>
+              <div class="sk-pills dc-chips">
+                <span class="sp gd">Threat Correlation</span><span class="sp gd">15-Min Scan Cycle</span><span class="sp gd">SIEM-Ready Export</span><a
                   href="https://github.com/samiulAsumel/log-analyzer-alert"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="sp nu"
                   style="cursor:pointer"
-                  >Log Analyzer &amp; Alert</a
+                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
                 >
               </div>
-              <p class="dc-caveat">
-                Self-driven learning, not job-critical production work —
-                listed for transparency only.
+            </div>
+            <div class="dc fi">
+              <div class="dc-hd">
+                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-clipboard-list"/></svg></div>
+                <div>
+                  <h3 class="dc-ttl">User &amp; Access Management</h3>
+                  <div class="dc-org">Self-Directed</div>
+                </div>
+              </div>
+              <p class="dc-note">
+                CSV-driven bulk user lifecycle management across 8
+                independent Bash modules — bulk account creation, disabling
+                with an immediate session kill, SSH key rotation, POSIX ACL
+                and group management, password-aging policy, and a
+                7-section HTML audit report so "who has access to what" has
+                an actual answer instead of institutional memory. Dry-run
+                mode previews every change before anything touches the
+                system; zero warnings from static analysis.
               </p>
+              <div class="sk-pills dc-chips">
+                <span class="sp gd">CSV-Driven</span><span class="sp gd">Dry-Run Safe</span><span class="sp gd">Zero Lint Warnings</span><a
+                  href="https://github.com/samiulAsumel/linux-user-access-mgmt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="sp nu"
+                  style="cursor:pointer"
+                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
+                >
+              </div>
+            </div>
+            <div class="dc fi">
+              <div class="dc-hd">
+                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></div>
+                <div>
+                  <h3 class="dc-ttl">User &amp; Group Provisioning</h3>
+                  <div class="dc-org">Self-Directed</div>
+                </div>
+              </div>
+              <p class="dc-note">
+                Bulk user and group provisioning from CSV manifests —
+                account creation, sudo policy that's validated before it's
+                applied, system-wide password-complexity rules, per-user
+                password aging, and brute-force account lockouts, plus an
+                HTML/text security audit report. Every run previews in
+                dry-run mode first — nothing is applied silently.
+              </p>
+              <div class="sk-pills dc-chips">
+                <span class="sp gd">CSV Manifests</span><span class="sp gd">Sudo Policy Automation</span><span class="sp gd">Brute-Force Lockout</span><a
+                  href="https://github.com/samiulAsumel/enterprise-user-mgmt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="sp nu"
+                  style="cursor:pointer"
+                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
+                >
+              </div>
+            </div>
+            <div class="dc fi">
+              <div class="dc-hd">
+                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-database"/></svg></div>
+                <div>
+                  <h3 class="dc-ttl">Secure File Sharing</h3>
+                  <div class="dc-org">Self-Directed</div>
+                </div>
+              </div>
+              <p class="dc-note">
+                Multi-team shared-storage layout — five differently
+                permissioned directories (per-team folders, a managers-only
+                reports folder, a read-only public share, a world-writable
+                temp folder that only lets you delete your own files) built
+                with group ownership, the SGID and sticky bits, and POSIX
+                ACLs with default-ACL inheritance, so permissions on new
+                files are correct automatically instead of set by hand
+                after the fact. Config-driven, with automated audit and
+                backup.
+              </p>
+              <div class="sk-pills dc-chips">
+                <span class="sp gd">POSIX ACLs</span><span class="sp gd">SGID / Sticky Bit</span><span class="sp gd">Config-Driven</span><a
+                  href="https://github.com/samiulAsumel/secure-file-sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="sp nu"
+                  style="cursor:pointer"
+                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
+                >
+              </div>
             </div>
           </div>
+          <p class="dc-caveat" style="margin-top:18px">
+            Self-driven learning, not job-critical production work — listed
+            for transparency only. Docker, CI/CD, and cloud infra beyond
+            these are tracked honestly as planned in the
+            <a href="/engineering/roadmap/">Roadmap</a>, not claimed here.
+          </p>
         </div>
       </section>
 

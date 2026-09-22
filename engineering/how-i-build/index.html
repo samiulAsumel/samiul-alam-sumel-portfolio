@@ -7,11 +7,11 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="color-scheme" content="light dark" />
 
-    <title>Engineering — Samiul Alam Sumel</title>
-    <meta name="description" content="How I build, where AI fits in the process, and the honest state of my parallel engineering-fundamentals roadmap." />
+    <title>How I Build — Samiul Alam Sumel</title>
+    <meta name="description" content="Two real bug fixes from a live production repo, in full detail: what was wrong, how I found it, what I changed, and how I verified it." />
     <meta name="author" content="MD Samiul Alam Sumel" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://sasumel.pages.dev/engineering/" />
+    <link rel="canonical" href="https://sasumel.pages.dev/engineering/how-i-build/" />
 
     <meta name="theme-color" content="#0a0c11" />
     <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
@@ -22,9 +22,9 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sasumel.pages.dev/engineering/" />
-    <meta property="og:title" content="Engineering — Samiul Alam Sumel" />
-    <meta property="og:description" content="How I build, where AI fits in the process, and the honest state of my parallel engineering-fundamentals roadmap." />
+    <meta property="og:url" content="https://sasumel.pages.dev/engineering/how-i-build/" />
+    <meta property="og:title" content="How I Build — Samiul Alam Sumel" />
+    <meta property="og:description" content="Two real bug fixes from a live production repo, in full detail: what was wrong, how I found it, what I changed, and how I verified it." />
     <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -32,8 +32,8 @@
     <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Engineering — Samiul Alam Sumel" />
-    <meta name="twitter:description" content="How I build, where AI fits in the process, and the honest state of my parallel engineering-fundamentals roadmap." />
+    <meta name="twitter:title" content="How I Build — Samiul Alam Sumel" />
+    <meta name="twitter:description" content="Two real bug fixes from a live production repo, in full detail: what was wrong, how I found it, what I changed, and how I verified it." />
     <meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
 
     <script type="application/ld+json">
@@ -285,33 +285,155 @@
         </div>
       </section>
 
-      <section class="sec" aria-labelledby="eng-title" style="padding-top:0">
+      <section class="sec" aria-labelledby="hib-title" style="padding-top:0">
         <div class="wrap">
-          <p class="slabel fi">Engineering</p>
-          <h1 class="stitle fi" id="eng-title">How I <span>Engineer</span></h1>
+          <p class="slabel fi">Engineering / How I Build</p>
+          <h1 class="stitle fi" id="hib-title">Two Real <span>Bug Fixes</span>, In Full</h1>
           <div class="sline fi"></div>
-          <p class="work-intro fi">
-            The full depth behind the homepage's condensed versions — method,
-            where AI actually fits, and the honest state of the parallel
-            fundamentals pass I'm running alongside shipped work.
+          <p class="ai-eng-sub fi">Not a methodology diagram — the actual work, from a live repo.</p>
+
+          <p class="ai-eng-p fi" style="max-width:70ch">
+            The short version is on the homepage: observe the problem, write
+            it down, build with AI assistance, test it against the real
+            rules, ship, explain. What that loop actually looks like day to
+            day is less "one prompt, done" and more "open the tool, decide
+            exactly what's wrong with the logic or the output, describe that
+            one thing precisely, check the result against the real rule,
+            repeat until it's right." Below are two real examples of that
+            loop from <a href="https://github.com/samiulAsumel/portbill" target="_blank" rel="noopener noreferrer">portbill</a>,
+            the wharfrent calculator C&amp;F agents use daily at Mongla Port
+            — with enough detail that you could go read the actual commit
+            and code yourself.
           </p>
-          <div class="eg" style="grid-template-columns:1fr 1fr 1fr">
-            <a href="/engineering/how-i-build/" class="ec fi" style="text-decoration:none;display:block">
-              <div class="ec-deg">How I Build</div>
-              <div class="ec-field">From Problem to Product</div>
-              <div class="ec-inst">The full requirement-first, AI-assisted build process — conversation, business rules, and the discipline behind shipping it.</div>
-            </a>
-            <a href="/engineering/ai-engineering/" class="ec fi" style="text-decoration:none;display:block">
-              <div class="ec-deg">AI Engineering</div>
-              <div class="ec-field">AI Is the Accelerator</div>
-              <div class="ec-inst">Where AI actually sits in the build, and why engineering judgment — not the tool — is what makes it mine to ship.</div>
-            </a>
-            <a href="/engineering/roadmap/" class="ec fi" style="text-decoration:none;display:block">
-              <div class="ec-deg">Roadmap</div>
-              <div class="ec-field">What's Next</div>
-              <div class="ec-inst">The parallel CS-fundamentals pass — full phase log, done in the open rather than hidden.</div>
-            </a>
+
+          <div class="work-tier-hd fi" style="margin-top:var(--sp-7)">
+            <span class="work-tier-t">Example 1 — A One-Poysha VAT Mismatch</span>
+            <span class="work-tier-line"></span>
           </div>
+          <div class="cs-body" style="padding:0;border-top:none">
+            <div class="cs-grid">
+              <div>
+                <div class="cs-block-t">What Was Wrong</div>
+                <p class="cs-block-p">
+                  PortBill's printed VAT line was occasionally one poysha
+                  (Tk 0.01) off from the official bill the Port Authority's
+                  own billing system produced for the same charges — a small
+                  gap, but on a document C&amp;F agents check against a real
+                  government bill, "small" and "wrong" are the same thing.
+                </p>
+              </div>
+              <div>
+                <div class="cs-block-t">How I Found It</div>
+                <p class="cs-block-p">
+                  Every monetary value in the app, including VAT at the
+                  time, used the same round-half-down rule — the port's
+                  documented convention for everything else. Comparing
+                  enough real bills against the MPA-printed totals, the
+                  mismatch only ever showed up at an exact half-poysha
+                  midpoint with an odd result. That pattern — not a random
+                  scatter — meant two rounding <em>rules</em> disagreeing,
+                  not a math error.
+                </p>
+              </div>
+              <div>
+                <div class="cs-block-t">The Fix</div>
+                <p class="cs-block-p">
+                  MPA's own billing engine is a C# system, and .NET's
+                  <code>Math.Round</code> defaults to banker's rounding
+                  (round-half-to-even) — not round-half-down. I wrote
+                  <code>calcVATmpa()</code> as its own dedicated function,
+                  separate from every other monetary calculation in the app,
+                  using integer poysha-scale math and half-to-even rounding
+                  — so VAT alone matches the government system's convention,
+                  while every other charge keeps the port's existing
+                  round-half-down rule untouched.
+                </p>
+              </div>
+              <div>
+                <div class="cs-block-t">How I Verified It</div>
+                <p class="cs-block-p">
+                  A dedicated test suite checks <code>calcVATmpa()</code>
+                  against the documented half-poysha midpoint cases, and a
+                  second test scans every other monetary-rounding site in
+                  the codebase and fails the build if any copy drifts from
+                  the shared formula — so this exact class of bug can't
+                  quietly come back later without a test catching it first.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="work-tier-hd fi" style="margin-top:var(--sp-8)">
+            <span class="work-tier-t">Example 2 — A Fail-Open Authorization Bug</span>
+            <span class="work-tier-line"></span>
+          </div>
+          <div class="cs-body" style="padding:0;border-top:none">
+            <div class="cs-grid">
+              <div>
+                <div class="cs-block-t">What Was Wrong</div>
+                <p class="cs-block-p">
+                  The Cloudflare Worker behind PortBill gates admin-only
+                  writes — config changes, deleting a saved bill, the
+                  rotation registry — behind a Bearer token checked against
+                  a hashed secret. Until that secret was actually set on the
+                  Worker, the authorization check returned
+                  <code>true</code> — "authorized" — instead of
+                  <code>false</code>. That meant every admin-only write,
+                  including the one that stores the admin password hash
+                  itself, was open to anyone with the Worker's URL for as
+                  long as the secret hadn't been configured.
+                </p>
+              </div>
+              <div>
+                <div class="cs-block-t">How I Found It</div>
+                <p class="cs-block-p">
+                  Found while adding a genuinely new open-by-design route
+                  (bill-saving isn't admin-gated on purpose — any user can
+                  save a bill) and reading what the shared authorization
+                  function actually returned in every branch, not just the
+                  branch I was adding to.
+                </p>
+              </div>
+              <div>
+                <div class="cs-block-t">The Fix</div>
+                <p class="cs-block-p">
+                  Flipped it to fail closed: no secret configured now means
+                  every admin write is refused, not allowed. Since one route
+                  (saved-bills) is meant to stay open by design, I added an
+                  explicit allowlist naming only that one filename — kept
+                  short and deliberate so adding to it later can't be done
+                  by accident — plus an Origin allowlist and a body-size cap
+                  as additional hardening on the now more clearly-defined
+                  open route.
+                </p>
+              </div>
+              <div>
+                <div class="cs-block-t">How I Verified It</div>
+                <p class="cs-block-p">
+                  Re-read every call site of the authorization check after
+                  the change to confirm nothing outside the allowlist could
+                  reach a write path with the secret unset, then deployed
+                  and re-tested both the admin panel and the saved-bills
+                  flow against the live Worker before calling it done.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mtd-manifesto fi" style="margin-top:var(--sp-8)">
+            <p class="mtd-intro">
+              <strong class="mtd-intro-lead">Neither fix started with a big prompt.</strong>
+              Both started with noticing something specific was wrong,
+              narrowing it to a cause, and describing that one thing
+              precisely enough that the fix could be checked against a real
+              rule — a government billing convention, an authorization
+              path — not just against "does it look right." That narrowing
+              and checking is the actual skill; the tool writes the
+              resulting code faster than I'd type it by hand.
+            </p>
+          </div>
+
+          <p style="margin-top:var(--sp-6)"><a href="/engineering/ai-engineering/">Next: where AI actually fits in this loop →</a></p>
         </div>
       </section>
 

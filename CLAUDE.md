@@ -35,6 +35,18 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   `#verify` grid are gone. "3 in production" (`#credibility`) means portbill,
   carview and otbill — recount if one is added; the JSON-LD `ItemList` in
   `index.html` still lists live deployments and must match reality.
+- **Featured systems policy (2026-09-29, step 4).** `#work` and `/projects/portbill`,
+  `/carview`, `/otbill` are the rebuilt 8-part case studies (css: `case-mocks`,
+  `case-visuals`, `case-study`, `project-cards`). Privacy rules, decided with the
+  user: CarView and OT Bill are shown ONLY as synthetic mockups with fictional
+  figures (`.mock`), never the real screenshots/GIF; no live-app or GitHub links
+  for either (CarView's live view and public repo carry real aggregate operating
+  data; OT Bill's public repo carries real employee names, IC numbers and salaries
+  plus a hard-coded admin password). PortBill keeps its live + GitHub links (no
+  records in either). Keep OT Bill described as overtime billing, not payroll, and
+  CarView as quantity tracking, not GPS. `assets/screenshots/carview*.webp`,
+  `otbill.webp` and `assets/demos/carview-demo.gif` are now unreferenced and should
+  be deleted once the user confirms.
 - **OpsFlow facts (checked 2026-09-29 against the private repo):** M0 done,
   M1 identity/RBAC done, M2 master-data and M3 fleet backends done; orders,
   trips, invoices, payments NOT built; no customers. It is labelled Building,

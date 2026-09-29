@@ -1,0 +1,42 @@
+/* ============================================================
+   Case-study visuals, part 1: browser frame and the synthetic UI mocks.
+   The mocks replicate real layouts with fictional figures, so no
+   operational record is ever published. Shared by homepage cards and
+   case-study pages. Tokens only; sizes scale with the frame width.
+   ============================================================ */
+
+.frame { background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-elevated); }
+.frame__bar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--color-surface-2); border-bottom: var(--border-default); }
+.frame__bar > span { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--color-border-strong); }
+.frame__bar em { margin-left: var(--space-2); font-style: normal; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-text-muted); }
+.frame__bar .badge { margin-left: auto; }
+.frame__body { display: block; position: relative; container-type: inline-size; }
+.frame img { display: block; width: 100%; height: auto; }
+
+/* ---- Mock canvas: container units keep the layout identical at thumbnail and full size ---- */
+.mock { aspect-ratio: 16 / 10; padding: 4cqw; font-size: 3cqw; line-height: 1.3; color: var(--color-text-2); background: var(--color-bg); overflow: hidden; }
+.mock * { min-width: 0; }
+.mock b { color: var(--color-text); font-weight: var(--weight-semibold); font-variant-numeric: tabular-nums; }
+.mock small { display: block; font-family: var(--font-mono); font-size: 0.78em; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.mock__head { display: flex; justify-content: space-between; gap: 2cqw; align-items: baseline; padding-bottom: 2.5cqw; margin-bottom: 2.5cqw; border-bottom: 1px solid var(--color-border); }
+.mock__head strong { font-size: 1.15em; color: var(--color-text); }
+.mock__card { padding: 2cqw; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 1.4cqw; }
+.mock__card b { display: block; font-size: 1.5em; }
+
+/* Vehicle tracking mock: summary cards, then three location groups */
+.mock--cv .mock__kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2cqw; margin-bottom: 3cqw; }
+.mock--cv .mock__groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2cqw; }
+.mock--cv .mock__group h5 { margin-bottom: 1.5cqw; font-size: 0.9em; font-weight: var(--weight-semibold); color: var(--color-accent-text); text-transform: uppercase; letter-spacing: 0.06em; }
+.mock--cv .mock__group div { display: flex; justify-content: space-between; padding: 1.6cqw 2cqw; margin-bottom: 1.2cqw; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 1.2cqw; }
+
+/* Overtime bill mock: three steps, an employee card, a small hours table */
+.mock--ot .mock__steps { display: flex; gap: 2cqw; margin-bottom: 3cqw; }
+.mock--ot .mock__steps span { padding: 1.2cqw 2.4cqw; border: 1px solid var(--color-border); border-radius: 1.2cqw; }
+.mock--ot .mock__steps .is-on { color: var(--color-accent-text); border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+.mock--ot .mock__cols { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 2.5cqw; }
+.mock--ot table { width: 100%; border-collapse: collapse; }
+.mock--ot th { text-align: left; padding: 1cqw 1.4cqw; font-family: var(--font-mono); font-size: 0.78em; font-weight: var(--weight-medium); color: var(--color-text-muted); }
+.mock--ot td { padding: 1.4cqw; border-top: 1px solid var(--color-border); }
+.mock--ot tfoot td { color: var(--color-text); font-weight: var(--weight-semibold); }
+/* Real screenshots share the mocks' 16:10 frame so cards line up */
+.frame__body > img, .cs-zoom img { aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }

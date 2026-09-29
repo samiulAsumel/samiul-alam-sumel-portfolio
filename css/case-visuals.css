@@ -1,0 +1,37 @@
+/* ============================================================
+   Case-study visuals, part 2: vertical flow, "from Excel to system"
+   band, role chain, glossary chips. Tokens only.
+   ============================================================ */
+
+/* ---- Vertical flow: workflow, approach and architecture all use this ---- */
+.flow { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); counter-reset: flow; }
+.flow > li { position: relative; display: flex; flex-direction: column; gap: 2px; margin-left: var(--space-7); padding: var(--space-3) var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.flow > li b { font-weight: var(--weight-semibold); color: var(--color-text); }
+.flow > li span { font-size: var(--text-body-sm); color: var(--color-text-2); }
+.flow > li::before { content: counter(flow, decimal-leading-zero); counter-increment: flow; position: absolute; top: var(--space-3); left: calc(var(--space-7) * -1); width: 1.5rem; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); }
+/* Connector: one hairline segment joins each node to the next */
+.flow > li:not(:last-child)::after { content: ''; position: absolute; left: calc(var(--space-5) * -1); top: 100%; width: 2px; height: var(--space-4); background: var(--color-border-strong); }
+.flow > li.is-out { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+
+/* ---- "From Excel to system": the software follows the process, not the reverse ---- */
+.x2s { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); list-style: none; }
+.x2s > li { position: relative; padding: var(--space-3) var(--space-4); font-size: var(--text-body-sm); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.x2s > li b { display: block; color: var(--color-text); }
+.x2s > li:not(:last-child)::after { content: '→'; content: '→' / ''; position: absolute; top: 50%; right: calc(var(--space-3) * -1); transform: translate(50%, -50%); z-index: 1; font-family: var(--font-mono); color: var(--color-accent-text); }
+.x2s > li:last-child { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+.x2s-cap { margin-top: var(--space-3); font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+/* ---- Role chain: the same six roles on every case study ---- */
+.roles { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.roles > li { padding: var(--space-2) var(--space-3); font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-text); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-sm); }
+.roles > li:not(:last-child)::after { content: '→'; content: '→' / ''; margin-left: var(--space-2); color: var(--color-accent-text); }
+.roles > li.is-ai { border-color: var(--color-border-accent); }
+
+/* ---- Glossary chips for terms an international reader may not know ---- */
+.gloss { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin-top: var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); }
+.gloss b { color: var(--color-text); font-weight: var(--weight-semibold); }
+
+@media (max-width: 900px) {
+  .x2s { grid-template-columns: minmax(0, 1fr); }
+  .x2s > li:not(:last-child)::after { content: '↓'; content: '↓' / ''; top: auto; right: auto; bottom: calc(var(--space-3) * -1); left: 50%; transform: translate(-50%, 50%); }
+}

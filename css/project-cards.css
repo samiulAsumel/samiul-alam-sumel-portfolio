@@ -1,0 +1,51 @@
+/* ============================================================
+   Homepage "Selected systems": relationship tree and project cards.
+   The whole card is one link (stretched title anchor), so it works
+   by mouse, touch and keyboard. Tokens only.
+   ============================================================ */
+
+/* ---- Relationship tree: one operational domain, three systems ---- */
+.reltree { position: relative; margin-bottom: var(--space-8); padding: var(--space-5) var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
+.reltree__root { display: inline-block; margin-bottom: var(--space-4); padding: var(--space-2) var(--space-4); font-family: var(--font-mono); font-size: var(--text-caption); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-accent-text); background: var(--color-accent-subtle); border: var(--border-interactive); border-radius: var(--radius-md); }
+.reltree__branches { list-style: none; position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); padding-top: var(--space-5); }
+/* Trunk and drops: a horizontal rule across the branches, a short stem on each */
+.reltree__branches::before { content: ''; position: absolute; top: 0; left: 16.66%; right: 16.66%; height: 1px; background: var(--color-border-strong); }
+.reltree__branches li { position: relative; display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md); }
+.reltree__branches li::before { content: ''; position: absolute; left: 50%; bottom: 100%; width: 1px; height: var(--space-5); background: var(--color-border-strong); }
+.reltree__area { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-text-muted); }
+.reltree__sys { font-weight: var(--weight-semibold); color: var(--color-text); text-decoration: none; }
+.reltree__sys:hover { color: var(--color-accent-text); }
+
+/* ---- Project cards ---- */
+.hm-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
+.pcard {
+  position: relative; display: flex; flex-direction: column; overflow: hidden; background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl);
+  transition: transform var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard);
+}
+.pcard:hover { transform: translateY(-3px); border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated); }
+.pcard__media { padding: var(--space-4) var(--space-4) 0; overflow: hidden; }
+.pcard__media .frame { box-shadow: none; transform-origin: top center; transition: transform var(--dur-slow) var(--ease-out); }
+.pcard:hover .pcard__media .frame { transform: scale(1.03); }
+.pcard__body { display: flex; flex: 1; flex-direction: column; gap: var(--space-3); padding: var(--space-5); }
+.pcard__cat { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
+.pcard__title { font-size: var(--text-h3); letter-spacing: var(--tracking-heading); }
+.pcard__link { color: var(--color-text); text-decoration: none; }
+.pcard__link::after { content: ''; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.pcard__link:focus-visible { outline: none; }
+.pcard__link:focus-visible::after { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.pcard__value { color: var(--color-text-2); font-size: var(--text-body-sm); }
+.pcard__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-top: auto; padding-top: var(--space-3); border-top: var(--border-default); }
+.pcard__cta { font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-accent-text); }
+.pcard__cta i { display: inline-block; font-style: normal; transition: transform var(--dur-base) var(--ease-standard); }
+.pcard:hover .pcard__cta i, .pcard:focus-within .pcard__cta i { transform: translateX(3px); }
+
+@media (max-width: 1024px) { .hm-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 768px) {
+  .hm-projects { grid-template-columns: minmax(0, 1fr); }
+  .reltree__branches { grid-template-columns: minmax(0, 1fr); padding-top: 0; padding-left: var(--space-5); }
+  .reltree__branches::before { top: 0; bottom: var(--space-5); left: 0; right: auto; width: 1px; height: auto; }
+  .reltree__branches li::before { left: calc(var(--space-5) * -1); bottom: auto; top: 50%; width: var(--space-5); height: 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pcard:hover, .pcard:hover .pcard__media .frame { transform: none; }
+}

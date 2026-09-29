@@ -3,13 +3,7 @@
    experience preview, contact. Tokens only.
    ============================================================ */
 
-/* ---- Selected systems ---- */
-.hm-project { height: 100%; }
-.hm-project__body { display: flex; flex-direction: column; gap: var(--space-4); flex: 1; }
-.hm-project__dl > div + div { margin-top: var(--space-3); }
-.hm-project__dl dt { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
-.hm-project__dl dd { color: var(--color-text-2); }
-.hm-project .card__footer { align-items: center; }
+/* ---- Selected systems: cards live in project-cards.css; the "more projects" list stays here ---- */
 .hm-more { margin-top: var(--space-9); padding-top: var(--space-7); border-top: var(--border-default); }
 .hm-more__title { margin-bottom: var(--space-4); font-family: var(--font-mono); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
 .hm-more__list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: var(--space-3); }

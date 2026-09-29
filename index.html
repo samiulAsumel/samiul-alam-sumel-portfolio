@@ -74,6 +74,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/home-sections.css" />
+    <link rel="stylesheet" href="css/case-mocks.css" />
+    <link rel="stylesheet" href="css/project-cards.css" />
     <link rel="stylesheet" href="css/hb-process.css" />
     <link rel="stylesheet" href="css/hb-examples.css" />
 
@@ -164,7 +166,7 @@
             "item": {
               "@type": "SoftwareApplication",
               "name": "carview",
-              "url": "https://carview.pages.dev",
+              "url": "https://sasumel.pages.dev/projects/carview",
               "description": "Offline-first daily vehicle balance and location tracker with analytics dashboard.",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
@@ -180,8 +182,8 @@
             "position": 3,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "OT Bill Management System",
-              "url": "https://otbill.pages.dev",
+              "name": "OT Bill Management / Automation",
+              "url": "https://sasumel.pages.dev/projects/otbill",
               "description": "Generates overtime bills from an employee profile with date-wise cumulative calculation.",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
@@ -491,9 +493,9 @@
           <li role="option" data-group="Section" data-href="/engineering/roadmap/"><svg class="icon"><use href="#i-satellite-dish"/></svg><span>Engineering Roadmap</span></li>
           <li role="option" data-group="Page" data-href="/experience/"><svg class="icon"><use href="#i-anchor"/></svg><span>12+ Years Inside Real Operations</span></li>
           <li role="option" data-group="Page" data-href="/resume/"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume</span></li>
-          <li role="option" data-group="Project" data-href="https://portbill.pages.dev" data-external="true"><svg class="icon"><use href="#i-receipt"/></svg><span>Port Billing Calculator (Live)</span></li>
-          <li role="option" data-group="Project" data-href="https://carview.pages.dev" data-external="true"><svg class="icon"><use href="#i-car"/></svg><span>carview (Live)</span></li>
-          <li role="option" data-group="Project" data-href="https://otbill.pages.dev" data-external="true"><svg class="icon"><use href="#i-timer"/></svg><span>OT Bill Management (Live)</span></li>
+          <li role="option" data-group="Project" data-href="/projects/portbill"><svg class="icon"><use href="#i-receipt"/></svg><span>Port Billing System (Case study)</span></li>
+          <li role="option" data-group="Project" data-href="/projects/carview"><svg class="icon"><use href="#i-car"/></svg><span>Vehicle Tracking / CarView (Case study)</span></li>
+          <li role="option" data-group="Project" data-href="/projects/otbill"><svg class="icon"><use href="#i-timer"/></svg><span>OT Bill Management (Case study)</span></li>
           <li role="option" data-group="Project" data-href="https://clif91.pages.dev/" data-external="true"><svg class="icon"><use href="#i-clipboard-list"/></svg><span>Client Intake Form (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://salahsync.pages.dev" data-external="true"><svg class="icon"><use href="#i-moon-star"/></svg><span>SalahSync (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://kitchenatlas.pages.dev" data-external="true"><svg class="icon"><use href="#i-soup"/></svg><span>World Kitchen Atlas (Live)</span></li>
@@ -913,65 +915,73 @@
         <div class="container">
           <div class="section-header fi">
             <p class="eyebrow">Selected systems</p>
-            <h2 class="section-header__title" id="work-title">Software built around real operational problems.</h2>
+            <h2 class="section-header__title" id="work-title">Software Built Around Real Operations</h2>
             <p class="section-header__lead">
-              These projects started from workflows, calculations and reporting problems I encountered
-              or identified in real operational environments.
+              These systems began with practical operational problems (billing, tracking, reporting
+              and workflow management) and were developed into working web-based tools.
             </p>
           </div>
-          <div class="grid-auto hm-projects" style="--grid-min: 320px">
-            <article class="card card--case-study hm-project fi">
-              <header class="card__header">
-                <h3 class="card__title">Port Billing Calculator</h3>
-                <span class="status status--production">Production</span>
-              </header>
-              <div class="card__body hm-project__body">
-                <p class="card__meta">Port operations · Billing · Revenue</p>
-                <dl class="hm-project__dl">
-                  <div><dt>Problem</dt><dd>Wharf rent (port facility usage charges) was computed by hand, slab by slab with VAT and levy, so customs &amp; freight-forwarding (C&amp;F) agents only learned the charge at the counter.</dd></div>
-                  <div><dt>Solution</dt><dd>A web calculator built on the port authority's real billing rules, used daily by the billing desk to verify charges in advance.</dd></div>
-                </dl>
-                <ul class="cluster hm-chips" role="list"><li class="badge">JavaScript</li><li class="badge">PWA</li><li class="badge">Cloudflare Pages</li></ul>
-                <div class="card__footer">
-                  <a class="btn btn--secondary btn--sm" href="/projects/portbill">View Project <span class="arw" aria-hidden="true">↗</span></a>
-                  <a class="btn btn--text btn--sm" href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer">Live app ↗</a>
-                </div>
+
+          <!-- How the three systems connect back to one operational domain -->
+          <div class="reltree fi">
+            <p class="reltree__root">Port operations</p>
+            <ul class="reltree__branches" role="list">
+              <li><span class="reltree__area">Billing</span><a class="reltree__sys" href="/projects/portbill">Port Billing System</a></li>
+              <li><span class="reltree__area">Vehicle operations</span><a class="reltree__sys" href="/projects/carview">CarView</a></li>
+              <li><span class="reltree__area">Admin / billing</span><a class="reltree__sys" href="/projects/otbill">OT Bill Automation</a></li>
+            </ul>
+          </div>
+
+          <div class="hm-projects">
+            <article class="pcard fi">
+              <div class="pcard__media" aria-hidden="true"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>portbill.pages.dev</em><b class="badge badge--demo-data">Empty inputs</b></div><div class="frame__body"><img src="assets/screenshots/portbill-thumb.webp" width="480" height="320" loading="lazy" decoding="async" alt="" /></div></div></div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Port operations × Billing</p>
+                <h3 class="pcard__title"><a class="pcard__link" href="/projects/portbill">Port Billing System</a></h3>
+                <p class="pcard__value">A web-based billing system designed around port cargo and vehicle billing workflows: wharf rent, VAT and levy from the port’s own rules.</p>
+                <ul class="hm-chips cluster" role="list" aria-label="Capabilities"><li class="badge">Billing</li><li class="badge">Business rules</li><li class="badge">Reporting</li><li class="badge">Automation</li></ul>
+                <div class="pcard__foot"><span class="status status--production">Operational system</span><span class="pcard__cta" aria-hidden="true">View case study <i>→</i></span></div>
               </div>
             </article>
-            <article class="card card--case-study hm-project fi">
-              <header class="card__header">
-                <h3 class="card__title">CarView</h3>
-                <span class="status status--production">Production</span>
-              </header>
-              <div class="card__body hm-project__body">
-                <p class="card__meta">Vehicle &amp; cargo tracking · Yard operations</p>
-                <dl class="hm-project__dl">
-                  <div><dt>Problem</dt><dd>Vehicle and cargo positions across warehouse, shed and yard lived in one person's private Excel file.</dd></div>
-                  <div><dt>Solution</dt><dd>A shared, offline-capable tracking system for the whole Traffic Department, with every change kept as a version-controlled record.</dd></div>
-                </dl>
-                <ul class="cluster hm-chips" role="list"><li class="badge">JavaScript</li><li class="badge">PWA</li><li class="badge">Cloudflare Workers</li></ul>
-                <div class="card__footer">
-                  <a class="btn btn--secondary btn--sm" href="/projects/carview">View Project <span class="arw" aria-hidden="true">↗</span></a>
-                  <a class="btn btn--text btn--sm" href="https://carview.pages.dev" target="_blank" rel="noopener noreferrer">Live app ↗</a>
-                </div>
+            <article class="pcard fi">
+              <div class="pcard__media" aria-hidden="true"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>vehicle-tracking</em><b class="badge badge--demo-data">Demo data</b></div><div class="frame__body"><div class="mock mock--cv" role="img" aria-label="Illustrative vehicle tracking dashboard with fictional figures: summary cards for opening balance, receipts, deliveries and closing balance, and groups for warehouses, yards and sheds.">
+  <div class="mock__head"><strong>Vehicle Tracking</strong><span>Daily balance · sample month</span></div>
+  <div class="mock__kpis">
+    <div class="mock__card"><small>Opening</small><b>120</b></div>
+    <div class="mock__card"><small>Receipts</small><b>45</b></div>
+    <div class="mock__card"><small>Deliveries</small><b>38</b></div>
+    <div class="mock__card"><small>Closing</small><b>127</b></div>
+  </div>
+  <div class="mock__groups">
+    <div class="mock__group"><h5>Warehouse</h5><div><span>Warehouse A</span><b>48</b></div><div><span>Warehouse B</span><b>30</b></div></div>
+    <div class="mock__group"><h5>Yard</h5><div><span>Yard 1</span><b>22</b></div><div><span>Yard 2</span><b>12</b></div></div>
+    <div class="mock__group"><h5>Shed</h5><div><span>Shed 1</span><b>9</b></div><div><span>Shed 2</span><b>6</b></div></div>
+  </div>
+</div></div></div></div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Transport operations × Tracking</p>
+                <h3 class="pcard__title"><a class="pcard__link" href="/projects/carview">Vehicle Tracking / CarView</a></h3>
+                <p class="pcard__value">A shared, offline-capable system for daily vehicle receipts, deliveries and balances across storage locations, with reports and change history.</p>
+                <ul class="hm-chips cluster" role="list" aria-label="Capabilities"><li class="badge">Tracking</li><li class="badge">Data management</li><li class="badge">Reporting</li><li class="badge">Offline-first</li></ul>
+                <div class="pcard__foot"><span class="status status--production">Operational system</span><span class="pcard__cta" aria-hidden="true">View case study <i>→</i></span></div>
               </div>
             </article>
-            <article class="card card--case-study hm-project fi">
-              <header class="card__header">
-                <h3 class="card__title">OT Bill Management</h3>
-                <span class="status status--production">Production</span>
-              </header>
-              <div class="card__body hm-project__body">
-                <p class="card__meta">Overtime billing · Workflow automation</p>
-                <dl class="hm-project__dl">
-                  <div><dt>Problem</dt><dd>Overtime billing was a manual, multi-step calculation where errors were easy to make.</dd></div>
-                  <div><dt>Solution</dt><dd>A single data-entry point that applies the cumulative, date-wise overtime rules and produces the bill instantly.</dd></div>
-                </dl>
-                <ul class="cluster hm-chips" role="list"><li class="badge">JavaScript</li><li class="badge">Cloudflare Pages</li></ul>
-                <div class="card__footer">
-                  <a class="btn btn--secondary btn--sm" href="/projects/otbill">View Project <span class="arw" aria-hidden="true">↗</span></a>
-                  <a class="btn btn--text btn--sm" href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer">Live app ↗</a>
-                </div>
+            <article class="pcard fi">
+              <div class="pcard__media" aria-hidden="true"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>ot-bill</em><b class="badge badge--demo-data">Demo data</b></div><div class="frame__body"><div class="mock mock--ot" role="img" aria-label="Illustrative overtime bill screen with fictional data: three steps, an employee card with an automatically derived hourly rate, and a table of daily overtime hours with a total.">
+  <div class="mock__steps"><span>1 · Select employee</span><span class="is-on">2 · Enter daily hours</span><span>3 · Review bill</span></div>
+  <div class="mock__cols">
+    <div class="mock__card"><small>Employee (fictional)</small><b>Demo Employee A</b><small>Basic pay</small><b>10,400</b><small>Hourly rate · basic ÷ 104</small><b>100</b></div>
+    <table><thead><tr><th>Date</th><th>From</th><th>To</th><th>Hours</th></tr></thead>
+      <tbody><tr><td>03 Mar</td><td>18:00</td><td>20:00</td><td>2</td></tr><tr><td>04 Mar</td><td>18:00</td><td>21:00</td><td>3</td></tr><tr><td>07 Mar</td><td>18:00</td><td>20:00</td><td>2</td></tr></tbody>
+      <tfoot><tr><td colspan="3">Total · 7 h × 100</td><td>700</td></tr></tfoot></table>
+  </div>
+</div></div></div></div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Operational administration × Billing</p>
+                <h3 class="pcard__title"><a class="pcard__link" href="/projects/otbill">OT Bill Management / Automation</a></h3>
+                <p class="pcard__value">Prepares overtime bills from employee profiles and daily hours, applying the rate rule automatically and printing an A4 bill.</p>
+                <ul class="hm-chips cluster" role="list" aria-label="Capabilities"><li class="badge">Billing</li><li class="badge">Business rules</li><li class="badge">Automation</li><li class="badge">Data management</li></ul>
+                <div class="pcard__foot"><span class="status status--production">Operational system</span><span class="pcard__cta" aria-hidden="true">View case study <i>→</i></span></div>
               </div>
             </article>
           </div>

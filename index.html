@@ -74,6 +74,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/home-sections.css" />
+    <link rel="stylesheet" href="css/hb-process.css" />
+    <link rel="stylesheet" href="css/hb-examples.css" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -478,7 +480,7 @@
           <li role="option" data-group="Section" data-href="#hero"><svg class="icon"><use href="#i-house"/></svg><span>Home</span></li>
           <li role="option" data-group="Section" data-href="#bring"><svg class="icon"><use href="#i-workflow"/></svg><span>What I Bring</span></li>
           <li role="option" data-group="Section" data-href="#combination"><svg class="icon"><use href="#i-layers"/></svg><span>The Combination</span></li>
-          <li role="option" data-group="Section" data-href="#approach"><svg class="icon"><use href="#i-repeat"/></svg><span>From Friction to Software</span></li>
+          <li role="option" data-group="Section" data-href="#how-i-build"><svg class="icon"><use href="#i-repeat"/></svg><span>How I Build</span></li>
           <li role="option" data-group="Section" data-href="#work"><svg class="icon"><use href="#i-rocket"/></svg><span>Selected Systems</span></li>
           <li role="option" data-group="Section" data-href="#opsflow"><svg class="icon"><use href="#i-warehouse"/></svg><span>OpsFlow (Building)</span></li>
           <li role="option" data-group="Section" data-href="#experience"><svg class="icon"><use href="#i-anchor"/></svg><span>Professional Experience</span></li>
@@ -721,42 +723,187 @@
         </div>
       </section>
 
-      <!-- FROM WORKFLOW TO SOFTWARE -->
-      <section id="approach" class="section" aria-labelledby="approach-title">
+      <!-- HOW I BUILD -->
+      <section id="how-i-build" class="section" aria-labelledby="hib-title">
         <div class="container">
           <div class="section-header fi">
-            <p class="eyebrow">How it gets built</p>
-            <h2 class="section-header__title" id="approach-title">From operational friction to working software.</h2>
+            <p class="eyebrow">How I build</p>
+            <h2 class="section-header__title" id="hib-title">From Operational Problems to Working Systems</h2>
+            <p class="section-header__lead">
+              I start with the real workflow, identify where time, data or accuracy is being lost,
+              model the process, and build practical software around it.
+            </p>
           </div>
-          <div class="workflow fi" role="list">
-            <div class="workflow__node" role="listitem">
-              <span class="workflow__label">01 · Observe</span>
-              <span class="workflow__text">Understand the real process.</span>
+
+          <!-- Stages are plain articles; js/how-i-build.js turns them into tabs on wide screens -->
+          <div class="hb fi" id="hb" data-tabs data-tabs-label="Build process stages" data-stack-below="900" data-progress>
+            <div data-tablist-slot></div>
+            <div class="hb__layout">
+              <div class="hb__panels">
+                <article class="hb__panel" id="hb-stage-1" data-tab-panel data-label="Observe" data-num="01">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">01</span><h3 class="hb__title">Observe the Operation</h3></header>
+                  <p class="hb__desc">Start with the real-world workflow, users, documents, data and operational constraints. Start with the actual business workflow rather than the software.</p>
+                  <ul class="hb__focus cluster" role="list" aria-label="Focus areas">
+                    <li class="badge">Cargo movement</li><li class="badge">Vehicle operations</li><li class="badge">Billing workflows</li>
+                    <li class="badge">Documentation</li><li class="badge">Reporting</li><li class="badge">Repetitive manual tasks</li>
+                  </ul>
+                  <ol class="hb__chain" aria-label="Operational environment"><li>People</li><li>Process</li><li>Data</li><li>Documents</li></ol>
+                </article>
+
+                <article class="hb__panel" id="hb-stage-2" data-tab-panel data-label="Understand" data-num="02">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">02</span><h3 class="hb__title">Understand the Business Process</h3></header>
+                  <p class="hb__desc">Break the operation into clear steps and identify where information moves, where decisions happen and where manual work creates friction.</p>
+                  <ol class="hb__chain" aria-label="Process structure"><li>Input</li><li>Process</li><li>Decision</li><li>Output</li></ol>
+                  <ul class="hb__lines" role="list" aria-label="Example processes">
+                    <li>Cargo → Calculation → Billing → Report</li>
+                    <li>Vehicle → Delivery → Charges → Balance</li>
+                    <li>Order → Trip → Invoice → Payment <span class="hb__tag">the workflow OpsFlow is being built around</span></li>
+                  </ul>
+                </article>
+
+                <article class="hb__panel" id="hb-stage-3" data-tab-panel data-label="Model" data-num="03">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">03</span><h3 class="hb__title">Model the Workflow</h3></header>
+                  <p class="hb__desc">Convert the operational process into structured workflows, business rules, data relationships and system requirements.</p>
+                  <ul class="hb__focus cluster" role="list" aria-label="What gets modelled">
+                    <li class="badge">Workflow</li><li class="badge">Business rules</li><li class="badge">Data</li>
+                    <li class="badge">Users</li><li class="badge">Permissions</li><li class="badge">Reports</li>
+                  </ul>
+                  <ol class="hb__chain" aria-label="Modelling sequence"><li>Business process</li><li>Workflow</li><li>Business rules</li><li>Data model</li><li>System requirements</li></ol>
+                </article>
+
+                <article class="hb__panel" id="hb-stage-4" data-tab-panel data-label="Design" data-num="04">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">04</span><h3 class="hb__title">Design the System</h3></header>
+                  <p class="hb__desc">Design the interface, data flow, system structure and user experience around the actual business problem.</p>
+                  <ol class="hb__chain" aria-label="System structure"><li>User interface</li><li>Application logic</li><li>Database</li><li>Reports / outputs</li></ol>
+                  <ul class="hb__focus cluster" role="list" aria-label="Design concerns">
+                    <li class="badge">Forms</li><li class="badge">Validation</li><li class="badge">Calculations</li><li class="badge">Dashboards</li>
+                    <li class="badge">Search / filter</li><li class="badge">Reporting</li><li class="badge">User roles</li><li class="badge">Audit / history where applicable</li>
+                  </ul>
+                  <p class="hb__note">Sized to the problem: a calculator that only estimates needs no database, while shared records need a data store and a small API.</p>
+                </article>
+
+                <article class="hb__panel" id="hb-stage-5" data-tab-panel data-label="Build" data-num="05">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">05</span><h3 class="hb__title">Build with AI-Assisted Development</h3></header>
+                  <p class="hb__desc">I use AI coding tools to accelerate implementation, while I remain responsible for understanding the requirements, system logic, architecture, testing, validation and deployment.</p>
+                  <ol class="hb__chain" aria-label="Development flow"><li>Requirements</li><li>Architecture</li><li>AI-assisted implementation</li><li>Code review / inspection</li><li>Testing</li><li>Iteration</li></ol>
+                </article>
+
+                <article class="hb__panel" id="hb-stage-6" data-tab-panel data-label="Validate" data-num="06">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">06</span><h3 class="hb__title">Validate Against the Real Workflow</h3></header>
+                  <p class="hb__desc">A system is useful only when its behavior matches the operational process it is designed to support.</p>
+                  <ul class="hb__console" role="list" aria-label="Validation checks">
+                    <li><strong>Business logic</strong><span>Do calculations and rules behave correctly?</span></li>
+                    <li><strong>Data</strong><span>Is information stored and displayed consistently?</span></li>
+                    <li><strong>Workflow</strong><span>Does the system follow the actual operational sequence?</span></li>
+                    <li><strong>User experience</strong><span>Can users complete tasks efficiently?</span></li>
+                    <li><strong>Edge cases</strong><span>What happens when data is incomplete, duplicated or unusual?</span></li>
+                  </ul>
+                  <p class="hb__note">In the port billing calculator, the slab, VAT and rounding rules are covered by automated tests and were compared against real bills.</p>
+                </article>
+
+                <article class="hb__panel" id="hb-stage-7" data-tab-panel data-label="Deploy &amp; Improve" data-num="07">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">07</span><h3 class="hb__title">Deploy, Observe &amp; Improve</h3></header>
+                  <p class="hb__desc">Deploy the working system, monitor how it behaves, identify issues and continuously improve the product.</p>
+                  <ol class="hb__chain hb__chain--loop" aria-label="Improvement loop"><li>Build</li><li>Deploy</li><li>Use</li><li>Feedback</li><li>Improve</li><li>Repeat</li></ol>
+                  <p class="hb__note">The live tools run as installable web apps on Cloudflare Pages and Workers, with code versioned on GitHub. <a class="link" href="/engineering/how-i-build/">Read two real bug fixes, in full ↗</a></p>
+                </article>
+              </div>
+
+              <!-- Decorative architecture view: mirrors the stage state, adds no information -->
+              <aside class="hb__rail" aria-hidden="true">
+                <p class="hb__rail-cap">Operations technology architecture</p>
+                <ol>
+                  <li data-rail-item><span>Real operation</span><small>Cargo, vehicles, billing</small></li>
+                  <li data-rail-item><span>Business process</span><small>Steps, decisions, friction</small></li>
+                  <li data-rail-item><span>Data + rules</span><small>Workflow, rules, data model</small></li>
+                  <li data-rail-item><span>System design</span><small>Interface, logic, storage</small></li>
+                  <li data-rail-item><span>AI-assisted build</span><small>Implementation I review</small></li>
+                  <li data-rail-item><span>Validation</span><small>Checked against the real workflow</small></li>
+                  <li data-rail-item><span>Working product</span><small>Deployed, used, improved</small></li>
+                </ol>
+              </aside>
             </div>
-            <span class="workflow__connector" aria-hidden="true"></span>
-            <div class="workflow__node" role="listitem">
-              <span class="workflow__label">02 · Model</span>
-              <span class="workflow__text">Define workflow and business rules.</span>
+          </div>
+
+          <!-- Worked examples: only features that exist in the live projects -->
+          <div class="hb-ex fi">
+            <h3 class="hb-ex__title">A Real Example of the Approach</h3>
+            <p class="hb-ex__cap">Illustrative summary — no real records or figures are shown.</p>
+            <div id="hb-ex" data-tabs data-tabs-label="Worked examples" data-tabs-class="hb-ex__tabs">
+              <div data-tablist-slot></div>
+              <article class="hb-ex__panel" id="hb-ex-port" data-tab-panel data-label="Port billing">
+                <ol class="hb-ex__steps">
+                  <li>
+                    <h4>Operational problem</h4>
+                    <p>The port's billing system creates permanent entries, so customs &amp; freight-forwarding (C&amp;F) agents could not check wharf rent (port facility usage charges) before committing. The result was billing disputes, longer cargo dwell time and repeat trips to the counter.</p>
+                  </li>
+                  <li>
+                    <h4>Operational understanding</h4>
+                    <ul class="cluster hb-ex__chips" role="list">
+                      <li class="badge">Cargo and vehicle workflow</li><li class="badge">Billing scenarios</li><li class="badge">Free time</li>
+                      <li class="badge">Wharf-rent slabs</li><li class="badge">VAT and levy</li><li class="badge">Inside / outside storage</li>
+                      <li class="badge">Rate changes mid-storage</li><li class="badge">Records and print needs</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>System approach</h4>
+                    <p>The workflow became structured forms, business rules and calculations, saved bills with live search, a dashboard and print-ready A4 invoices, because agents still work from paper.</p>
+                  </li>
+                  <li class="hb-ex__result">
+                    <h4>Result</h4>
+                    <p>A practical web-based operational system designed around the actual workflow, used at the billing counter to verify charges before final submission.</p>
+                  </li>
+                </ol>
+              </article>
+              <article class="hb-ex__panel" id="hb-ex-vehicle" data-tab-panel data-label="Vehicle tracking">
+                <ol class="hb-ex__steps">
+                  <li>
+                    <h4>Operational need</h4>
+                    <p>Vehicle positions across warehouse, shed and yard lived in one person's spreadsheet. When they were away, the team lost visibility.</p>
+                  </li>
+                  <li>
+                    <h4>Vehicle and delivery information</h4>
+                    <p>Daily receipts and deliveries are recorded per location, and the app works offline because terminal connectivity is not guaranteed.</p>
+                  </li>
+                  <li>
+                    <h4>Tracking and records</h4>
+                    <p>Every save is stored as a version-controlled commit, so there is a full history and any earlier version can be restored.</p>
+                  </li>
+                  <li>
+                    <h4>Balance calculations</h4>
+                    <p>Each location's closing balance carries forward as the next day's opening balance, adjusted by receipts, deliveries and transfers, with a holiday calendar for working days.</p>
+                  </li>
+                  <li>
+                    <h4>Search and reporting</h4>
+                    <p>Charts, report sections, Excel export and a keyboard quick-navigation palette.</p>
+                  </li>
+                  <li class="hb-ex__result">
+                    <h4>Result</h4>
+                    <p>A working web system the whole department can check and update, replacing a single-person file.</p>
+                  </li>
+                </ol>
+              </article>
             </div>
-            <span class="workflow__connector" aria-hidden="true"></span>
-            <div class="workflow__node" role="listitem">
-              <span class="workflow__label">03 · Build</span>
-              <span class="workflow__text">Create the system with AI-assisted development.</span>
+          </div>
+
+          <!-- AI fits in -->
+          <div class="hb-ai fi">
+            <h3 class="hb-ai__title">Where AI Fits In</h3>
+            <div class="hb-ai__inputs">
+              <span>My domain experience</span><i aria-hidden="true">+</i><span>Business requirements</span><i aria-hidden="true">+</i><span>System thinking</span>
             </div>
-            <span class="workflow__connector" aria-hidden="true"></span>
-            <div class="workflow__node" role="listitem">
-              <span class="workflow__label">04 · Validate</span>
-              <span class="workflow__text">Test against real-world scenarios.</span>
-            </div>
-            <span class="workflow__connector" aria-hidden="true"></span>
-            <div class="workflow__node workflow__node--result" role="listitem">
-              <span class="workflow__label">05 · Deploy</span>
-              <span class="workflow__text">Put the working product into use.</span>
-            </div>
+            <ol class="hb-ai__chain" aria-label="From inputs to a deployed product">
+              <li class="hb-ai__ai"><span>AI-assisted development</span><small>The accelerator</small></li>
+              <li><span>Implementation</span><small>Reviewed by me</small></li>
+              <li><span>My testing + validation</span><small>Owned by me</small></li>
+              <li><span>Deployed product</span><small>Owned by me</small></li>
+            </ol>
+            <p class="hb-ai__msg"><strong>AI accelerates implementation. It does not replace operational understanding.</strong></p>
           </div>
           <p class="hm-note fi">
-            AI accelerates the implementation. I remain responsible for understanding the problem,
-            defining the system and validating the result.
+            My software development approach is self-directed and AI-assisted. My strongest
+            foundation comes from real-world port and logistics operations, business-process
+            understanding, workflow design, testing and practical system building.
           </p>
         </div>
       </section>
@@ -1067,5 +1214,6 @@
     </footer>
 
     <script src="js/main.js" defer></script>
+    <script src="js/how-i-build.js" defer></script>
   </body>
 </html>

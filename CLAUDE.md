@@ -23,10 +23,15 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
 ## Site maintenance rules added 2026-09-19
 
 - **Homepage is 8 sections (2026-09-29, step 2):** `#hero`, `#credibility`,
-  `#bring` (nav "Expertise"), `#combination`, `#approach`, `#work` (nav
+  `#bring` (nav "Expertise"), `#combination`, `#how-i-build`, `#work` (nav
   "Projects", 3 production systems + a "More projects" list), `#opsflow`,
   `#experience`, `#contact`. Styles live in `css/home.css` and
-  `css/home-sections.css`. The old hero proof strip, trust counters and
+  `css/home-sections.css`. `#how-i-build` (step 3) is an ARIA tab component
+  (`js/how-i-build.js`, `css/hb-process.css`, `css/hb-examples.css`): stages are
+  plain stacked articles, upgraded to tabs at >=900px. Its PortBill/CarView
+  examples were checked against the public repos on 2026-09-29 — PortBill has
+  a Worker, saved bills with search, a dashboard and automated tests (its case
+  study page still says "no backend"; fix in the case-study step). The old hero proof strip, trust counters and
   `#verify` grid are gone. "3 in production" (`#credibility`) means portbill,
   carview and otbill — recount if one is added; the JSON-LD `ItemList` in
   `index.html` still lists live deployments and must match reality.

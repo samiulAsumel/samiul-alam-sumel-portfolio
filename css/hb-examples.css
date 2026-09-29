@@ -1,0 +1,51 @@
+/* ============================================================
+   How I Build, part 2: worked examples, "Where AI fits in", and the
+   transparency note. Tokens only.
+   ============================================================ */
+
+/* ---- Worked examples ---- */
+.hb-ex { margin-top: var(--space-11); }
+.hb-ex__title { font-size: var(--text-h2); letter-spacing: var(--tracking-heading); margin-bottom: var(--space-2); }
+.hb-ex__cap { margin-bottom: var(--space-5); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); color: var(--color-text-muted); }
+/* Segmented control: two examples share one row of tab buttons */
+.hb-ex__tabs { display: inline-flex; flex-wrap: wrap; gap: var(--space-1); padding: var(--space-1); margin-bottom: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
+.hb-ex__tabs .tab { flex-direction: row; align-items: center; padding: var(--space-2) var(--space-5); }
+.hb-ex__panel:not([hidden]) { animation: hb-in var(--dur-slow) var(--ease-out); }
+.hb-ex__steps { list-style: none; counter-reset: hb-ex; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--space-4); }
+.hb-ex__steps > li {
+  counter-increment: hb-ex; display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-pad);
+  background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg);
+  transition: border-color var(--dur-base) var(--ease-standard), transform var(--dur-base) var(--ease-standard);
+}
+.hb-ex__steps > li:hover { border-color: var(--color-border-accent); transform: translateY(-2px); }
+.hb-ex__steps > li::before { content: counter(hb-ex, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); }
+.hb-ex__steps h4 { font-size: var(--text-h4); }
+.hb-ex__steps p { font-size: var(--text-body-sm); color: var(--color-text-2); }
+.hb-ex__result { border-color: var(--color-border-accent) !important; background: var(--color-accent-subtle) !important; }
+.hb-ex__chips { list-style: none; gap: var(--space-2); }
+
+/* ---- Where AI fits in ---- */
+.hb-ai { margin-top: var(--space-11); padding: var(--space-8) var(--space-7); background: var(--color-surface-raised); border: var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-subtle); }
+.hb-ai__title { font-size: var(--text-h2); letter-spacing: var(--tracking-heading); margin-bottom: var(--space-6); }
+.hb-ai__inputs { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.hb-ai__inputs span { padding: var(--space-3) var(--space-5); font-weight: var(--weight-medium); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md); }
+.hb-ai__inputs i { font-style: normal; font-family: var(--font-mono); color: var(--color-accent-text); }
+/* Downward stem from the inputs into the chain */
+.hb-ai__chain { list-style: none; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-8); }
+.hb-ai__chain::before { content: ''; position: absolute; left: var(--space-8); bottom: 100%; width: 2px; height: var(--space-8); background: var(--color-border-strong); }
+.hb-ai__chain li { position: relative; display: flex; flex-direction: column; gap: 2px; padding: var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.hb-ai__chain li:not(:last-child)::after { content: '→'; content: '→' / ''; position: absolute; top: 50%; right: calc(var(--space-4) * -1 + 1px); z-index: 1; transform: translate(50%, -50%); font-family: var(--font-mono); color: var(--color-accent-text); }
+.hb-ai__chain span { font-weight: var(--weight-semibold); }
+.hb-ai__chain small { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); color: var(--color-text-muted); }
+.hb-ai__ai { border-color: var(--color-border-accent) !important; background: var(--color-accent-subtle) !important; }
+.hb-ai__msg { margin-top: var(--space-7); max-width: var(--measure); font-size: var(--text-body-lg); color: var(--color-text); }
+
+@media (max-width: 900px) {
+  .hb-ai { padding: var(--space-6) var(--space-5); }
+  .hb-ai__chain { grid-template-columns: minmax(0, 1fr); }
+  .hb-ai__chain::before { left: var(--space-6); }
+  .hb-ai__chain li:not(:last-child)::after { content: '↓'; content: '↓' / ''; top: auto; right: auto; bottom: calc(var(--space-4) * -1 + 1px); left: 50%; transform: translate(-50%, 50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb-ex__panel:not([hidden]) { animation: none; }
+}

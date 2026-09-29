@@ -75,6 +75,20 @@
       if (focusTab) tabs[index].focus();
     }
 
+    // Gives every panel the height of the tallest one, so switching stages never moves the content below.
+    function equalize() {
+      if (!root.classList.contains('is-tabs')) return;
+      panels.forEach(panel => { panel.style.minHeight = ''; });
+      let tallest = 0;
+      panels.forEach(panel => {
+        const wasHidden = panel.hidden;
+        panel.hidden = false; // Measured within one task, so the user never sees the other panels.
+        tallest = Math.max(tallest, panel.offsetHeight);
+        panel.hidden = wasHidden;
+      });
+      panels.forEach(panel => { panel.style.minHeight = `${tallest}px`; });
+    }
+
     // Tabs mode: wide screens get roles, one visible panel and the roving-tabindex keyboard model.
     function enterTabsMode() {
       root.classList.add('is-tabs');
@@ -86,6 +100,7 @@
         panel.tabIndex = 0;
       });
       select(current, false);
+      equalize();
     }
 
     // Stacked mode: every stage stays visible; the one nearest mid-screen gets the active state.
@@ -95,6 +110,7 @@
       tablist.hidden = true;
       panels.forEach(panel => {
         panel.hidden = false;
+        panel.style.minHeight = '';
         panel.removeAttribute('role');
         panel.removeAttribute('aria-labelledby');
         panel.removeAttribute('tabindex');
@@ -129,6 +145,10 @@
 
     if (stackedQuery) stackedQuery.addEventListener('change', applyMode);
     applyMode();
+    // Re-measure after web fonts load and when the width changes (debounced), since both change wrapping.
+    let resizeTimer = null;
+    window.addEventListener('resize', () => { window.clearTimeout(resizeTimer); resizeTimer = window.setTimeout(equalize, 150); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
   }
 
   document.querySelectorAll('[data-tabs]').forEach(initTabs);

@@ -28,7 +28,8 @@
 .hm-app__bar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border-bottom: var(--border-default); }
 .hm-app__bar span { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--color-border-strong); }
 .hm-app__bar em { margin-left: var(--space-2); font-style: normal; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-text-muted); }
-.hm-app__bar b { margin-left: auto; }
+.hm-app__bar b { margin-left: auto; flex-shrink: 0; }
+.hm-app__bar em { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hm-app__body { display: grid; grid-template-columns: 9rem minmax(0, 1fr); }
 .hm-app__nav { list-style: none; padding: var(--space-3); border-right: var(--border-default); display: flex; flex-direction: column; gap: 2px; }
 .hm-app__nav li { padding: var(--space-2) var(--space-3); font-size: var(--text-caption); color: var(--color-text-muted); border-radius: var(--radius-sm); }

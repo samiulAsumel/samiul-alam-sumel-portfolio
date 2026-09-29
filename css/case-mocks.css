@@ -8,8 +8,8 @@
 .frame { background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-elevated); }
 .frame__bar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--color-surface-2); border-bottom: var(--border-default); }
 .frame__bar > span { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--color-border-strong); }
-.frame__bar em { margin-left: var(--space-2); font-style: normal; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-text-muted); }
-.frame__bar .badge { margin-left: auto; }
+.frame__bar em { flex: 1 1 0; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-left: var(--space-2); font-style: normal; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-text-muted); }
+.frame__bar .badge { margin-left: auto; flex-shrink: 0; }
 .frame__body { display: block; position: relative; container-type: inline-size; }
 .frame img { display: block; width: 100%; height: auto; }
 

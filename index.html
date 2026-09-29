@@ -285,6 +285,7 @@
         ]
       }
     </script>
+      <link rel="stylesheet" href="css/motion.css" />
   </head>
   <body>
     <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
@@ -422,13 +423,13 @@
           ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Port &amp; Logistics Ops</span></a
         >
         <ul class="nav-links" role="list">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="/experience/">Experience</a></li>
-          <li><a href="#work">Projects</a></li>
-          <li><a href="/capabilities/">Expertise</a></li>
+          <li><a href="#hero" data-spy="hero credibility bring combination how-i-build">Home</a></li>
+          <li><a href="/experience/" data-spy="experience">Experience</a></li>
+          <li><a href="#work" data-spy="work opsflow">Projects</a></li>
+          <li><a href="/capabilities/" data-spy="capabilities">Expertise</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/resume/">CV</a></li>
-          <li><a href="#contact" class="btn btn--secondary btn--sm">Contact</a></li>
+          <li><a href="#contact" data-spy="contact" class="btn btn--secondary btn--sm">Contact</a></li>
         </ul>
         <button
           class="cmdk-tgl"
@@ -1168,11 +1169,11 @@
         <div class="container">
           <div class="section-header fi">
             <p class="eyebrow">Contact</p>
-            <h2 class="section-header__title" id="contact-title">Let's talk about your operations.</h2>
+            <h2 class="section-header__title" id="contact-title">Let's Build Better Operations</h2>
           </div>
           <div class="hm-contact">
             <div class="hm-contact__main fl">
-              <p class="ct-hook">Looking for someone who understands the workflow before touching the code?</p>
+              <p class="ct-hook">If you work in port, logistics, transport, supply chain or business software and have an operational problem worth solving, I'd be interested in discussing it.</p>
               <p class="card__body">
                 I'm open to international and remote roles where port, logistics or business-systems
                 knowledge meets software delivery.
@@ -1187,6 +1188,8 @@
               <div class="ct-btns">
                 <a href="mailto:sa.sumel91@gmail.com" class="btn btn--primary">Start a Conversation <span class="arw" aria-hidden="true">↗</span></a>
                 <a href="/resume/" class="btn btn--secondary">View Resume <span class="arw" aria-hidden="true">↗</span></a>
+                <button type="button" class="btn btn--ghost copy-btn" data-copy="sa.sumel91@gmail.com" data-copy-target="#ct-email" aria-label="Copy email address to clipboard">Copy email</button>
+                <span class="copy-status" role="status" aria-live="polite"></span>
               </div>
               <ul class="hm-cv" role="list" aria-label="CV downloads">
                 <li>
@@ -1206,7 +1209,7 @@
                 ><span class="clk-ic" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
                 <div>
                   <div class="clk-l">Email</div>
-                  <div class="clk-v">sa.sumel91@gmail.com</div>
+                  <div class="clk-v" id="ct-email">sa.sumel91@gmail.com</div>
                 </div></a
               >
               <a href="tel:+8801312312512" class="clk"
@@ -1300,6 +1303,7 @@
     </footer>
 
     <script src="js/main.js" defer></script>
+    <script src="js/ux.js" defer></script>
     <script src="js/how-i-build.js" defer></script>
   </body>
 </html>

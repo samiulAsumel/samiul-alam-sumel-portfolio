@@ -259,7 +259,7 @@ a.card, .card--interactive, .vf-card, .dp-card { cursor: pointer; }
 /* ============================================================
    PAGE CHROME: reading progress + back-to-top
    ============================================================ */
-#spb { position: fixed; top: 0; left: 0; height: 2px; width: 0; z-index: 9999; background: var(--color-accent); pointer-events: none; }
+#spb { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 9999; background: var(--color-accent); pointer-events: none; transform: scaleX(0); transform-origin: left; will-change: transform; }
 .totop {
   position: fixed; right: var(--space-5); bottom: var(--space-5); z-index: 900; width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--color-text-2);

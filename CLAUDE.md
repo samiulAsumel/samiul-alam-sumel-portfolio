@@ -46,6 +46,13 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   records in either). Keep OT Bill described as overtime billing, not payroll, and
   CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
   (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
+- **Motion rules (2026-09-30, step 8):** all interaction polish lives in `css/motion.css`
+  (loaded last on every page) and `js/ux.js`. Animate `transform` and `opacity` only; no
+  animation libraries; no cursor effects (the existing card spotlight/magnetic buttons stay);
+  nothing may run continuously except the hero node outline (opacity-only, off under reduced
+  motion). Nav scroll-spy uses IntersectionObserver via `data-spy` on homepage nav links; the
+  progress bar is `scaleX`. Tab panels get equal min-heights from `how-i-build.js`. Cross-page fade
+  uses `@view-transition`. Copy-email button must always show visible + announced feedback.
 - **Capabilities (2026-09-30, step 7):** `/capabilities/` (+ homepage `#capabilities`); the nav
   "Expertise" link now points there. No percentages, bars, ratings or certificates, ever.
   Technology claims need repo evidence: Working with = live projects (HTML/CSS/JS, PWA, Cloudflare

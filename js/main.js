@@ -74,60 +74,20 @@
   }
 
   /* ----------------------------------------------------------
-     SCROLL PROGRESS BAR + NAV STATE
-     Drives the thin progress bar at the top of the page and keeps the
-     navbar's "scrolled" style and active nav link in sync with scroll position.
+     NAV STATE
+     Toggles the navbar's "scrolled" style. The progress bar and the
+     active-section highlighting live in ux.js (IntersectionObserver and
+     transform-based, so scrolling never triggers layout).
   ---------------------------------------------------------- */
-  const progressBar = document.getElementById('spb'); // The visual progress bar element (its width = % scrolled).
   const navbar = document.getElementById('nb'); // Main site navbar.
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]'); // Only in-page anchor links get "active" highlighting.
-  const sections = Array.from(document.querySelectorAll('section[id]')); // Every section with an id — these are the scroll-spy targets.
 
-  // Computes how far down the page the user has scrolled as a percentage
-  // and sets the progress bar's width to match.
-  function updateProgress() {
-    // Total scrollable distance = full document height minus one viewport
-    // height (you can't scroll past the point where the bottom of the
-    // document meets the bottom of the viewport).
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    if (progressBar && total > 0) {
-      progressBar.style.width = ((window.scrollY / total) * 100).toFixed(2) + '%';
-    }
-  }
-
-  // Determines which section is "active" for the purpose of nav-link
-  // highlighting: the last section whose top has scrolled above a fixed
-  // offset (130px, roughly the navbar height plus some breathing room).
-  function getActiveSection() {
-    const y = window.scrollY + 130;
-    let active = null;
-    for (const section of sections) {
-      // Sections are assumed to be in document order, so the loop keeps
-      // overwriting `active` — the final match is the lowest section whose
-      // top has already scrolled past the threshold, i.e. the one currently
-      // occupying the viewport near the top.
-      if (section.offsetTop <= y) active = section.id;
-    }
-    return active;
-  }
-
-  // Runs on every scroll event: toggles the navbar's "scrolled" style,
-  // updates the progress bar, and highlights the matching nav link.
   function updateNav() {
     if (navbar) navbar.classList.toggle('sc', window.scrollY > 50); // 'sc' = "scrolled" styling once past 50px.
-    updateProgress();
-    const active = getActiveSection();
-    navLinks.forEach(link => {
-      // href is like "#about" — strip the leading '#' to compare against the section id.
-      link.classList.toggle('active', link.getAttribute('href').slice(1) === active);
-    });
   }
 
-  // { passive: true } tells the browser this listener never calls
-  // preventDefault(), so it can optimize scroll performance instead of
-  // waiting to see if scrolling should be blocked.
+  // { passive: true } tells the browser this listener never calls preventDefault(), so scrolling is never blocked.
   window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav(); // Run once immediately so the UI is correct even before the first scroll (e.g. page loaded mid-scroll via back/forward).
+  updateNav(); // Correct state immediately, even when the page loads mid-scroll (e.g. back/forward).
 
   /* ----------------------------------------------------------
      MOBILE MENU

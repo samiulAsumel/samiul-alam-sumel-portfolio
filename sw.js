@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sas-portfolio-v80';
+const CACHE_NAME = 'sas-portfolio-v81';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -23,6 +23,7 @@ const PRECACHE_ASSETS = [
   './css/exp-profile-sections.css',
   './css/cap.css',
   './css/cap-sections.css',
+  './css/motion.css',
   './css/fonts.css',
   './assets/fonts/inter-latin.woff2',
   './assets/fonts/jetbrains-mono-latin.woff2',
@@ -31,6 +32,7 @@ const PRECACHE_ASSETS = [
   './js/case-study.js',
   './js/opsflow.js',
   './js/capabilities.js',
+  './js/ux.js',
   './favicon.svg',
   './icon-192.png',
   './icon-512.png',

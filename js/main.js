@@ -249,25 +249,6 @@
     window.requestAnimationFrame(step);
   }
 
-  // Trigger the "trust stats" counters once that section scrolls into view,
-  // rather than animating them immediately on page load (which the user
-  // wouldn't even see yet).
-  const statsEl = document.querySelector('#stats .trust');
-  if (statsEl && 'IntersectionObserver' in window) {
-    const statsObs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(document.getElementById('c1'), 12, '+');
-          animateCounter(document.getElementById('c2'), 3);
-          animateCounter(document.getElementById('c3'), 9);
-          animateCounter(document.getElementById('c4'), 8);
-          statsObs.disconnect(); // One-shot — no need to keep observing after the counters have run.
-        }
-      });
-    }, { threshold: 0.3 }); // Requires 30% visibility before triggering, so it fires once meaningfully in view.
-    statsObs.observe(statsEl);
-  }
-
   // Same pattern for the smaller counter pair inside the About section.
   const aboutEl = document.getElementById('about');
   if (aboutEl && 'IntersectionObserver' in window) {

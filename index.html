@@ -72,6 +72,8 @@
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/systems.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/home-sections.css" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -279,6 +281,9 @@
   </head>
   <body>
     <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+      <symbol id="i-warehouse" viewBox="0 0 24 24"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z" /><path d="M6 18h12" /><path d="M6 14h12" /><rect width="12" height="12" x="6" y="10" /></symbol>
+      <symbol id="i-workflow" viewBox="0 0 24 24"><rect width="8" height="8" x="3" y="3" rx="2" /><path d="M7 11v4a2 2 0 0 0 2 2h4" /><rect width="8" height="8" x="13" y="13" rx="2" /></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" /><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" /><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" /></symbol>
       <symbol id="i-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34" />
       <circle cx="11" cy="11" r="8" /></symbol>
       <symbol id="i-house" viewBox="0 0 24 24"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
@@ -413,7 +418,7 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="/experience/">Experience</a></li>
           <li><a href="#work">Projects</a></li>
-          <li><a href="#skills">Expertise</a></li>
+          <li><a href="#bring">Expertise</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/resume/">CV</a></li>
           <li><a href="#contact" class="btn btn--secondary btn--sm">Contact</a></li>
@@ -453,7 +458,7 @@
       <a href="#hero">Home</a>
       <a href="/experience/">Experience</a>
       <a href="#work">Projects</a>
-      <a href="#skills">Expertise</a>
+      <a href="#bring">Expertise</a>
       <a href="/about/">About</a>
       <a href="/resume/">CV</a>
       <a href="#contact">Contact</a>
@@ -471,24 +476,19 @@
         </div>
         <ul class="cmdk-list" id="cmdk-list" role="listbox">
           <li role="option" data-group="Section" data-href="#hero"><svg class="icon"><use href="#i-house"/></svg><span>Home</span></li>
-          <li role="option" data-group="Section" data-href="#difference"><svg class="icon"><use href="#i-target"/></svg><span>The Difference</span></li>
+          <li role="option" data-group="Section" data-href="#bring"><svg class="icon"><use href="#i-workflow"/></svg><span>What I Bring</span></li>
+          <li role="option" data-group="Section" data-href="#combination"><svg class="icon"><use href="#i-layers"/></svg><span>The Combination</span></li>
+          <li role="option" data-group="Section" data-href="#approach"><svg class="icon"><use href="#i-repeat"/></svg><span>From Friction to Software</span></li>
+          <li role="option" data-group="Section" data-href="#work"><svg class="icon"><use href="#i-rocket"/></svg><span>Selected Systems</span></li>
+          <li role="option" data-group="Section" data-href="#opsflow"><svg class="icon"><use href="#i-warehouse"/></svg><span>OpsFlow (Building)</span></li>
+          <li role="option" data-group="Section" data-href="#experience"><svg class="icon"><use href="#i-anchor"/></svg><span>Professional Experience</span></li>
+          <li role="option" data-group="Section" data-href="#contact"><svg class="icon"><use href="#i-mail"/></svg><span>Contact</span></li>
           <li role="option" data-group="Page" data-href="/engineering/"><svg class="icon"><use href="#i-code"/></svg><span>Engineering (full pages)</span></li>
           <li role="option" data-group="Page" data-href="/about/"><svg class="icon"><use href="#i-anchor"/></svg><span>About</span></li>
-          <li role="option" data-group="Section" data-href="#story"><svg class="icon"><use href="#i-repeat"/></svg><span>The Story</span></li>
-          <li role="option" data-group="Section" data-href="#method"><svg class="icon"><use href="#i-code"/></svg><span>How I Build</span></li>
-          <li role="option" data-group="Section" data-href="#work"><svg class="icon"><use href="#i-rocket"/></svg><span>Selected Engineering Work</span></li>
-          <li role="option" data-group="Section" data-href="#skills"><svg class="icon"><use href="#i-palette"/></svg><span>Skills</span></li>
           <li role="option" data-group="Section" data-href="/engineering/ai-engineering/"><svg class="icon"><use href="#i-brain"/></svg><span>AI as an Engineering Multiplier</span></li>
-          <li role="option" data-group="Section" data-href="#maturity"><svg class="icon"><use href="#i-target"/></svg><span>Engineering Maturity</span></li>
           <li role="option" data-group="Section" data-href="/engineering/roadmap/"><svg class="icon"><use href="#i-satellite-dish"/></svg><span>Engineering Roadmap</span></li>
           <li role="option" data-group="Page" data-href="/experience/"><svg class="icon"><use href="#i-anchor"/></svg><span>12+ Years Inside Real Operations</span></li>
-          <li role="option" data-group="Section" data-href="#services"><svg class="icon"><use href="#i-wrench"/></svg><span>Services I Deliver</span></li>
-          <li role="option" data-group="Section" data-href="#infra"><svg class="icon"><use href="#i-terminal"/></svg><span>Linux &amp; Automation Practice</span></li>
-          <li role="option" data-group="Section" data-href="#dev"><svg class="icon"><use href="#i-database"/></svg><span>Active Growth</span></li>
-          <li role="option" data-group="Section" data-href="#edu"><svg class="icon"><use href="#i-clipboard-list"/></svg><span>Education</span></li>
-          <li role="option" data-group="Section" data-href="#verify"><svg class="icon"><use href="#i-check-circle"/></svg><span>Build in Public</span></li>
           <li role="option" data-group="Page" data-href="/resume/"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume</span></li>
-          <li role="option" data-group="Section" data-href="#contact"><svg class="icon"><use href="#i-mail"/></svg><span>Contact</span></li>
           <li role="option" data-group="Project" data-href="https://portbill.pages.dev" data-external="true"><svg class="icon"><use href="#i-receipt"/></svg><span>Port Billing Calculator (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://carview.pages.dev" data-external="true"><svg class="icon"><use href="#i-car"/></svg><span>carview (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://otbill.pages.dev" data-external="true"><svg class="icon"><use href="#i-timer"/></svg><span>OT Bill Management (Live)</span></li>
@@ -498,7 +498,7 @@
           <li role="option" data-group="Project" data-href="https://outreach-copilot.pages.dev" data-external="true"><svg class="icon"><use href="#i-send"/></svg><span>Outreach Copilot (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://englishmastery.pages.dev" data-external="true"><svg class="icon"><use href="#i-book-open"/></svg><span>English Mastery (Live)</span></li>
           <li role="option" data-group="Project" data-href="https://github.com/samiulAsumel/jarvis" data-external="true"><svg class="icon"><use href="#i-bot"/></svg><span>JARVIS (GitHub)</span></li>
-          <li role="option" data-group="Action" data-href="#resume"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume Downloads</span></li>
+          <li role="option" data-group="Action" data-href="#contact"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume Downloads</span></li>
           <li role="option" data-group="Action" data-href="https://github.com/samiulAsumel" data-external="true"><svg class="icon icon-brand"><use href="#i-github"/></svg><span>Open GitHub</span></li>
           <li role="option" data-group="Action" data-href="https://linkedin.com/in/samiul-alam-sumel" data-external="true"><svg class="icon icon-brand"><use href="#i-linkedin"/></svg><span>Open LinkedIn</span></li>
           <li role="option" data-group="Action" data-href="mailto:sa.sumel91@gmail.com" data-external="true"><svg class="icon"><use href="#i-mail"/></svg><span>Email sa.sumel91@gmail.com</span></li>
@@ -515,2203 +515,459 @@
 
     <main id="main-content" tabindex="-1">
       <!-- HERO -->
-      <section id="hero" aria-label="Introduction">
-        <div class="wrap">
-          <div class="h-grid">
-            <div class="hc">
-              <div class="h-eye fi">
-                <span class="h-dot" aria-hidden="true"></span>Open to Work ·
-                Remote Worldwide
-              </div>
-              <h1 class="h-name fi">MD Samiul Alam Sumel</h1>
-              <p class="h-role fi">Port &amp; Logistics<br />Operations Specialist.</p>
-              <p class="h-titles fi">Business Systems &amp; Automation · AI-Assisted Full-Stack Product Builder</p>
-              <p class="h-tag fi">
-                I turn operational bottlenecks into practical software —
-                from business rules and workflow design to deployed products.
-              </p>
-              <div class="h-proof fi">
-                <div class="h-proof-item"><span class="h-proof-val">12+</span><span class="h-proof-lbl">Years Operations</span></div>
-                <div class="h-proof-item"><span class="h-proof-val">3</span><span class="h-proof-lbl">Production Systems</span></div>
-                <div class="h-proof-item"><span class="h-proof-val">8</span><span class="h-proof-lbl">Live Deployments</span></div>
-              </div>
-              <div class="h-btns fi">
-                <a href="#work" class="btn btn-p">View Production Work <span class="arw">↗</span></a>
-                <a href="#resume" class="btn btn-o"
-                  >Download Resume <span class="arw">↗</span></a
-                >
-              </div>
-              <div class="h-social fi">
-                <a
-                  href="https://github.com/samiulAsumel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GitHub</a
-                >
-                <a
-                  href="https://linkedin.com/in/samiul-alam-sumel"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >LinkedIn</a
-                >
-              </div>
+      <section id="hero" class="hm-hero" aria-labelledby="hero-title">
+        <div class="container hm-hero__grid">
+          <div class="hm-hero__copy">
+            <p class="eyebrow fi">Port &amp; Logistics Operations × Business Systems × Automation</p>
+            <h1 class="hm-hero__title fi" id="hero-title">
+              <span class="hm-hero__name">MD Samiul Alam Sumel</span>
+              <span class="hm-hero__role">Port &amp; Logistics Operations Specialist</span>
+            </h1>
+            <p class="hm-hero__lead fi">
+              Building the systems that make real-world operations faster, clearer and more automated.
+            </p>
+            <p class="hm-hero__body fi">
+              12+ years of hands-on experience in port operations, cargo billing, vehicle and cargo
+              tracking, revenue reporting, documentation and operational workflows at Mongla Port
+              Authority — combined with hands-on experience designing and deploying software that
+              automates real business processes.
+            </p>
+            <ul class="hm-hero__caps fi" role="list" aria-label="Technical capabilities">
+              <li><span class="hm-hero__cap-k" aria-hidden="true">02</span>Business Systems &amp; Automation</li>
+              <li><span class="hm-hero__cap-k" aria-hidden="true">03</span>AI-Assisted Full-Stack Product Building</li>
+            </ul>
+            <div class="cluster hm-hero__cta fi">
+              <a href="#work" class="btn btn--primary btn--lg">View Projects <span class="arw" aria-hidden="true">↗</span></a>
+              <a href="#experience" class="btn btn--secondary btn--lg">View Experience <span class="arw" aria-hidden="true">↗</span></a>
             </div>
-            <div class="h-visual fi">
-              <p class="h-visual-hd">From Problem to Product</p>
-              <div
-                class="pipeline"
-                data-pipeline="hero"
-                role="group"
-                aria-label="How a real-world problem becomes deployed software — select a step to see what it means"
-              >
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="A workflow still running on paper or a spreadsheet, observed first-hand inside port operations.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Problem</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="The problem written down in plain language and confirmed back with the people who do the work, before any code.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Requirement</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="The actual slab, VAT, levy, and eligibility rules the software has to get exactly right — taken from how the operation really runs, not simplified.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Business Rules</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="A practical architecture sized to the real problem — client-side only when no backend is needed, a Worker and version-controlled data when several people need shared state.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>System</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Built with AI-assisted development, then manually tested against the real business rules and edge cases before it ships.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Software</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="C&amp;F agents, the billing desk, and the Traffic Department at Mongla Port — real people using it daily, not a demo audience.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Real Users</span>
-                </button>
-              </div>
-              <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
-                <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
-                <p class="pipeline-panel-text" data-pipeline-panel-text></p>
-              </div>
+            <p class="hm-hero__links fi">
+              <a class="link" href="Samiul_Alam_Sumel_CV.pdf" download>Download CV</a>
+              <a class="link" href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+            <p class="hm-hero__avail fi"><span class="hm-dot" aria-hidden="true"></span>Open to international and remote opportunities</p>
+          </div>
+
+          <!-- Decorative flow: the copy above already says everything this shows -->
+          <div class="hm-flow fi" aria-hidden="true">
+            <div class="hm-flow__node">
+              <span class="hm-flow__idx">01 · Source</span>
+              <span class="hm-flow__label">Real operation</span>
+              <span class="hm-flow__meta">Port operations · Cargo workflow</span>
+            </div>
+            <div class="hm-flow__node">
+              <span class="hm-flow__idx">02 · Model</span>
+              <span class="hm-flow__label">Business workflow</span>
+              <span class="hm-flow__meta">Rules / Data / Users</span>
+            </div>
+            <div class="hm-flow__node">
+              <span class="hm-flow__idx">03 · Logic</span>
+              <span class="hm-flow__label">Business rules</span>
+              <span class="hm-flow__meta">Billing / Revenue</span>
+            </div>
+            <div class="hm-flow__node">
+              <span class="hm-flow__idx">04 · Automate</span>
+              <span class="hm-flow__label">Automation</span>
+              <span class="hm-flow__meta">Reporting / Tracking</span>
+            </div>
+            <div class="hm-flow__node hm-flow__node--end">
+              <span class="hm-flow__idx">05 · System</span>
+              <span class="hm-flow__label">Software system</span>
+              <span class="hm-flow__meta">Web application</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- TRUST STRIP -->
-      <section id="stats" aria-label="Key statistics">
-        <div class="wrap">
-          <div class="trust fi">
-            <div class="trust-cell">
-              <div class="trust-val" id="c1">12+</div>
-              <div class="trust-lbl">Years Port Operations</div>
+      <!-- CREDIBILITY STRIP -->
+      <section id="credibility" class="hm-cred" aria-label="Credentials at a glance">
+        <div class="container">
+          <dl class="hm-cred__grid fi">
+            <div class="hm-cred__item">
+              <dt>Experience</dt>
+              <dd class="hm-cred__val">12+ years</dd>
+              <dd class="hm-cred__ctx">Port &amp; logistics operations</dd>
             </div>
-            <div class="trust-cell">
-              <div class="trust-val" id="c2">3</div>
-              <div class="trust-lbl">Production Systems</div>
+            <div class="hm-cred__item">
+              <dt>Operational systems</dt>
+              <dd class="hm-cred__val">3 in production</dd>
+              <dd class="hm-cred__ctx">Billing, vehicle tracking, overtime billing</dd>
             </div>
-            <div class="trust-cell">
-              <div class="trust-val" id="c3">9</div>
-              <div class="trust-lbl">Featured Projects</div>
+            <div class="hm-cred__item">
+              <dt>Software</dt>
+              <dd class="hm-cred__val">Multiple live products</dd>
+              <dd class="hm-cred__ctx">Deployed and publicly reachable</dd>
             </div>
-            <div class="trust-cell">
-              <div class="trust-val" id="c4">8</div>
-              <div class="trust-lbl">Live Deployments</div>
+            <div class="hm-cred__item">
+              <dt>Method</dt>
+              <dd class="hm-cred__val">AI-assisted</dd>
+              <dd class="hm-cred__ctx">Product development, human-validated</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </section>
 
-      <!-- THE DIFFERENCE -->
-      <section id="difference" class="sec" aria-labelledby="difference-title">
-        <div class="wrap">
-          <p class="slabel fi">01 / The Difference</p>
-          <h2 class="stitle fi" id="difference-title">The <span>Difference</span></h2>
-          <div class="sline fi"></div>
-          <div class="diff-grid">
-            <div class="diff-hook fl">
-              <p class="diff-hook-line">Most developers learn software first.</p>
-              <p class="diff-hook-line diff-hook-em">I learned the operation first.</p>
-              <p class="diff-body">
-                I spent years inside the workflows that the software now
-                supports. That means I can start from the actual operational
-                problem, not just the technology. I understand the users, the
-                workflow constraints, and the business rules before I write a
-                line of code — that's the concrete advantage, not a claim
-                that domain experience makes me better than every developer.
-              </p>
-            </div>
-            <div class="diff-formula fr" aria-hidden="true">
-              <div class="diff-term">Domain Knowledge</div>
-              <div class="diff-plus">+</div>
-              <div class="diff-term">Engineering</div>
-              <div class="diff-plus">+</div>
-              <div class="diff-term">Product Thinking</div>
-              <div class="diff-plus">+</div>
-              <div class="diff-term diff-term-hi">AI-Assisted Execution</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SELECTED ENGINEERING WORK -->
-      <section id="work" class="sec" aria-labelledby="work-title">
-        <div class="wrap">
-          <p class="slabel fi">02 / Problem → Product</p>
-          <h2 class="stitle fi" id="work-title">Software That Solves <span>Real Workflow Problems</span></h2>
-          <div class="sline fi"></div>
-          <p class="work-intro fi">
-            Built from observed operational problems and deployed into real
-            workflows. Not every project here carries equal weight — three
-            of these are in daily use by coworkers at Mongla Port; three
-            more are live, real products. Expand any one for the full case
-            study: problem, users, constraints, architecture, and what I'd
-            have done differently.
-          </p>
-
-          <div class="work-tier-hd fi">
-            <span class="work-tier-t">Production / Real Operations</span>
-            <span class="work-tier-line"></span>
-          </div>
-          <p class="work-tier-note fi">In daily coworker use at Mongla Port — the strongest evidence on this site.</p>
-
-          <!-- CASE STUDY: PORT BILLING CALCULATOR -->
-          <details class="case-study fi">
-            <summary class="cs-summary">
-              <div class="cs-thumb">
-                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
-                <img src="assets/screenshots/portbill-thumb.webp" alt="Port Billing Calculator's live Quick Preview panel showing an auto-calculated total" loading="lazy" width="240" height="150" />
-              </div>
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">Port Billing Calculator</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  Real-time advance wharfrent calculator so C&amp;F agents can verify
-                  charges before committing, not after.
-                </p>
-              </div>
-              <span class="cs-chevron" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="cs-body">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    The port's billing system creates permanent entries — there was
-                    no way for a C&amp;F agent to estimate wharfrent charges before
-                    committing to them. That caused billing disputes, excessive
-                    cargo dwell time, and repeated trips to the counter just to
-                    check a number.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Users</div>
-                  <p class="cs-block-p">
-                    C&amp;F agents at Mongla Port who need to know the expected
-                    charge before final submission, and — indirectly — the billing
-                    desk, which now fields fewer disputes over surprise totals.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Constraints</div>
-                  <p class="cs-block-p">
-                    Had to match the port authority's actual slab/VAT/levy rules
-                    exactly — a wrong estimate is worse than no estimate. No access
-                    to the port's internal billing database, since this is an
-                    advance estimator, not a system of record. Output had to be
-                    print-ready A4, because C&amp;F agents still work from paper.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The System</div>
-                  <p class="cs-block-p">
-                    Slab-based charge computation, VAT and levy calculation,
-                    inside/outside cargo split, hoisting charge auto-calculation,
-                    print-ready A4 output.
-                  </p>
-                </div>
-                <div class="cs-full">
-                  <div class="cs-block-t">See It In Action</div>
-                  <div class="cs-demo">
-                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">portbill.pages.dev</span></div>
-                    <img src="assets/demos/portbill-demo.gif" alt="Screen recording of the Port Billing Calculator: entering C&amp;F agent and BL details, then the live Quick Preview total jumping from Tk 1,292.15 to Tk 3,087.42 as the hoisting-charge rule auto-applies above 3 tons." loading="lazy" width="780" height="367" />
-                    <div class="cs-demo-cap"><span class="dot" aria-hidden="true"></span>Live capture from portbill.pages.dev — the hoisting-charge business rule firing in real time</div>
-                  </div>
-                </div>
-                <div class="cs-full">
-                  <div class="cs-block-t">Business Rules</div>
-                  <div class="cs-diagram">
-                    <div class="flow flow-h">
-                      <div class="flow-node"><div class="flow-node-k">Cargo Info</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Free Time</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Storage Duration</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Applicable Slab</div></div>
-                    </div>
-                    <div class="flow flow-h" style="margin-top:10px">
-                      <div class="flow-node"><div class="flow-node-k">Charge Calc</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">VAT / Levy</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Additional Charges</div></div>
-                      <div class="flow-connector" aria-hidden="true"></div>
-                      <div class="flow-node"><div class="flow-node-k">Final Bill</div></div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser</div><div class="flow-node-t">C&amp;F agent's device</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">JS Business Logic</div><div class="flow-node-t">Runs entirely client-side — no backend</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">A4 Print Output</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Plain JavaScript/HTML/CSS over a framework — the whole app is
-                    one calculation form, and a framework would add build tooling
-                    for no real benefit. Deployed as a static PWA on Cloudflare
-                    Pages: no hosting cost, works offline, matches how the billing
-                    desk actually operates.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Challenges</div>
-                  <p class="cs-block-p">
-                    Getting the slab/VAT/levy math to match the port authority's
-                    real billing system exactly — any mismatch makes the estimate
-                    actively misleading to the agents relying on it, worse than not
-                    having the tool at all.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    In daily use by C&amp;F agents at Mongla Port to verify expected
-                    charges before final submission — the evidence is that it's
-                    still running there today, not a one-time pilot.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">
-                    A tool doesn't need a backend to be a real system its users
-                    depend on daily — client-side logic was enough because the
-                    estimate never needed to persist past the moment it's checked.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Checked by C&amp;F agents an estimated <strong>10–30+ times a day</strong> at the billing counter — a working estimate; no query logs are kept to cite an exact figure.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/portbill" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                  <a href="projects/portbill" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- CASE STUDY: CARVIEW -->
-          <details class="case-study fi">
-            <summary class="cs-summary">
-              <div class="cs-thumb">
-                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
-                <img src="assets/screenshots/carview-thumb.webp" alt="carview's daily balance dashboard with location summary cards" loading="lazy" width="240" height="150" />
-              </div>
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">carview — Daily Car Balance &amp; Location Tracking</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  From one person's private Excel file to a shared, version-controlled
-                  tracking system for the whole Traffic Department.
-                </p>
-              </div>
-              <span class="cs-chevron" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="cs-body">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    Vehicle positions across warehouse, shed, and yard were recorded
-                    in one person's personal Excel file — invisible to everyone else.
-                    When that person was unavailable, the whole team lost visibility,
-                    creating bottlenecks and a single point of failure.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Users</div>
-                  <p class="cs-block-p">
-                    Mongla Port Authority's Traffic Department — everyone who needs
-                    current vehicle positions, not just the one person who used to
-                    own the spreadsheet.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Constraints</div>
-                  <p class="cs-block-p">
-                    Terminal locations don't guarantee reliable connectivity, so it
-                    had to work offline-first. No budget or infrastructure for a
-                    hosted database. Needed a real history of position changes, not
-                    just a current snapshot.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The System</div>
-                  <p class="cs-block-p">
-                    Offline-first PWA tracking 8 port locations, a Bangladesh
-                    Government Holiday Calendar loader, a Chart.js analytics
-                    dashboard (7 charts + KPIs), 13 report sections, and Excel
-                    export.
-                  </p>
-                </div>
-                <div class="cs-full">
-                  <div class="cs-block-t">See It In Action</div>
-                  <div class="cs-demo">
-                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">carview.pages.dev</span></div>
-                    <img src="assets/demos/carview-demo.gif" alt="Screen recording of carview: the Traffic Department's daily balance dashboard for warehouse, yard, and shed locations, the July 2026 daily tracking table, and the Chart.js analytics dashboard with receive-vs-delivery and closing-balance charts." loading="lazy" width="780" height="367" />
-                    <div class="cs-demo-cap"><span class="dot" aria-hidden="true"></span>Live capture from carview.pages.dev — real Traffic Department tracking data, read-only view</div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser PWA</div><div class="flow-node-t">Offline-first, installable</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Cloudflare Worker</div><div class="flow-node-t">Proxies writes — access token never reaches the browser</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Private GitHub Repo</div><div class="flow-node-t">The actual data store — every save is a commit</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Used a private GitHub repo as the data store instead of standing
-                    up a database — every write becomes a version-controlled commit,
-                    which gives a full audit history for free with no database to
-                    host or maintain. PWA + offline-first because terminal
-                    connectivity isn't guaranteed.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Challenges</div>
-                  <p class="cs-block-p">
-                    Replacing a single Excel file with a shared system without
-                    introducing a point of failure worse than the one it replaced —
-                    the Worker-proxied sync had to be reliable enough that staff
-                    would actually trust it over the spreadsheet they already knew.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    Now the Traffic Department's shared, version-controlled tracking
-                    system — the single-person Excel dependency it replaced is gone.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">
-                    Version control can be the actual data layer, not just for code
-                    — the "no budget for a database" constraint led to a genuinely
-                    different, defensible architecture rather than a compromise.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Now the single system the whole Traffic Department checks and updates daily across all <strong>8 tracked locations</strong> — replacing what used to be one person's private file, though exact daily usage isn't logged.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://carview.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/carview" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                  <a href="projects/carview" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- CASE STUDY: OT BILL MANAGEMENT -->
-          <details class="case-study fi">
-            <summary class="cs-summary">
-              <div class="cs-thumb">
-                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
-                <img src="assets/screenshots/otbill.webp" alt="OT Bill Management System login screen" loading="lazy" width="240" height="150" />
-              </div>
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">OT Bill Management System</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  Turned a fully manual, multi-step overtime billing process into a
-                  single data-entry point and an instant bill.
-                </p>
-              </div>
-              <span class="cs-chevron" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="cs-body">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    Overtime billing was a fully manual Excel process — multi-step
-                    hourly-rate calculations and date-wise OT entry redone by hand
-                    every cycle, with real error risk and real time cost each
-                    period.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Users</div>
-                  <p class="cs-block-p">
-                    Whoever runs the overtime billing cycle at Mongla Port —
-                    previously a repeated manual task every period.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Constraints</div>
-                  <p class="cs-block-p">
-                    Had to match the real hourly-rate and cumulative OT rules
-                    exactly. Needed print-ready A4 output, same as portbill, since
-                    the result feeds physical paperwork.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The System</div>
-                  <p class="cs-block-p">
-                    Staff enter an employee profile once; the system generates the
-                    complete final OT bill instantly with correct hourly rate,
-                    cumulative date-wise OT calculation, and A4 print-ready output.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">JS Business Logic</div><div class="flow-node-t">Client-side, same no-backend shape as portbill</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">A4 Print Output</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Same plain-JS, no-framework, Cloudflare Pages approach as
-                    portbill — each of these is a single-purpose calculation tool,
-                    not a platform, so the simplest architecture that works is the
-                    right one.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Challenges</div>
-                  <p class="cs-block-p">
-                    Eliminating manual calculation errors meant the cumulative
-                    date-wise OT logic had to handle real edge cases correctly, not
-                    just the common case.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    Reduced the billing cycle from hours to minutes and eliminated
-                    the manual calculation errors that came with redoing the math
-                    by hand every period.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">
-                    The biggest win wasn't a feature — it was moving data entry to
-                    a single one-time point (the employee profile), removing the
-                    chance for input errors at the exact place they used to happen
-                    every cycle.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Cuts each overtime billing cycle from an estimated <strong>2–4 hours</strong> of manual Excel work down to minutes — a rough before/after comparison from memory of the old process, not a timed measurement.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/otbill" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                  <a href="projects/otbill" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <div class="work-tier-hd fi">
-            <span class="work-tier-t">Real Products</span>
-            <span class="work-tier-line"></span>
-          </div>
-          <p class="work-tier-note fi">Shipped and live — real products, just not tied to Mongla Port's daily coworker workflows.</p>
-
-          <!-- CASE STUDY: CLIENT INTAKE FORM -->
-          <details class="case-study fi">
-            <summary class="cs-summary">
-              <div class="cs-thumb">
-                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
-                <img src="assets/screenshots/client-intake.webp" alt="Client Intake Form project requirement sheet" loading="lazy" width="240" height="150" />
-              </div>
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">Client Intake Form</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  Turns a scattered email/chat back-and-forth into one structured
-                  sheet that becomes the actual scope of the quotation.
-                </p>
-              </div>
-              <span class="cs-chevron" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="cs-body">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    Collecting project requirements from a freelance/contract client
-                    over email or chat is unstructured — details get missed, and
-                    without a written scope, "what was actually agreed" becomes a
-                    dispute later rather than a shared reference.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Users</div>
-                  <p class="cs-block-p">
-                    Freelance and contract clients bringing a new website, online
-                    store, or custom software project — before any code gets
-                    written.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Constraints</div>
-                  <p class="cs-block-p">
-                    Had to work for a client who has never touched the tool before —
-                    open a link, no account, no install. One form had to flex across
-                    very different project types (a shop's brochure site vs. an
-                    internal SaaS tool) without turning into a maze. An 18-section
-                    form risks losing 20 minutes of typing to a closed tab, with no
-                    account to save progress to.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The System</div>
-                  <p class="cs-block-p">
-                    18 sections, gated by an opening "what are you building?"
-                    answer — website, online store, custom software, or not sure —
-                    that decides which later sections even appear (custom-software
-                    projects get user roles, modules, data sensitivity, and hosting
-                    questions; a brochure site doesn't). Ends in a declaration step
-                    where the client types their name to confirm written engagement
-                    terms — scope, quotation, payment, revisions, ownership — before
-                    a summary is generated and submitted, with the client's own email
-                    app as the fallback.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser Form</div><div class="flow-node-t">One dependency-free HTML page with debounced draft autosave</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Pages Function</div><div class="flow-node-t">Validates each submission and stores it as a JSON file in a GitHub repo</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Admin Dashboard</div><div class="flow-node-t">Password-protected lead pipeline, New through Won or Lost</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Kept it a single dependency-free HTML file on purpose — a client
-                    should be able to open a link and start typing, with nothing to
-                    install or sign up for. Submissions go to a small serverless
-                    function that stores each one as a JSON file in a GitHub
-                    repository — no database to run or pay for — and the
-                    client's own email app is the fallback if that call fails.
-                    The draft autosave needs no account either — it's just
-                    localStorage, debounced and flushed on blur/tab-hide/unload.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Challenges</div>
-                  <p class="cs-block-p">
-                    Branching one form across genuinely different project types
-                    without it feeling like a maze — solved by making the very
-                    first answer ("what are you building?") gate which sections
-                    appear later, rather than showing every client all 18 sections
-                    regardless of relevance.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    Now the intake step before quoting new freelance/contract work —
-                    the same "how do you handle this today" and "why now" questions
-                    the form asks clients are the ones that used to get lost in a
-                    chat thread.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">
-                    Putting the engagement terms — scope, quotation, payment,
-                    revisions, ownership — directly into the form's own declaration
-                    step, instead of a separate contract sent later, means client
-                    and freelancer agree on the boundary of the work before it
-                    starts, not after a disagreement about it.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Used as the intake step before quoting new freelance/contract work — covers everything from a brochure site to a custom internal tool through the same <strong>18-section</strong> flow, though exact usage isn't logged.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                <a href="projects/client-intake-form" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- CASE STUDY: SALAHSYNC -->
-          <details class="case-study fi">
-            <summary class="cs-summary">
-              <div class="cs-thumb">
-                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
-                <img src="assets/screenshots/salahsync.webp" alt="SalahSync daily prayer and routine tracker" loading="lazy" width="240" height="150" />
-              </div>
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">SalahSync</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  Set one anchor — Fajr time and office hours — and the rest of
-                  the day's schedule, prayer to sleep, recalculates itself.
-                </p>
-              </div>
-              <span class="cs-chevron" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="cs-body">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    Started from a static printed daily-routine sheet. Every
-                    time Fajr time shifted with the season, or office hours
-                    changed, the whole sheet had to be redone by hand — and a
-                    paper sheet can't track whether a prayer actually happened
-                    in jamaah, alone, or was missed.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Users</div>
-                  <p class="cs-block-p">
-                    Just me — this is a personal daily-use tool, not a
-                    multi-user product. It's the one I open first every
-                    morning.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Constraints</div>
-                  <p class="cs-block-p">
-                    Had to work fully offline — no prayer-time API, no
-                    server. Had to hold a genuinely global settings space
-                    (~243 countries, full Bangladesh division → district →
-                    upazila) including multi-timezone countries like Russia,
-                    the US, and Australia, without breaking the schedule
-                    math for any of them. And it needed a real bilingual UI —
-                    Bangla and English — not just translated labels bolted on
-                    after the fact.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The System</div>
-                  <p class="cs-block-p">
-                    Set a location (or GPS) and office hours once; prayer
-                    times are computed client-side with a solar calculation
-                    algorithm, and every other block — Tahajjud, Sunnah,
-                    jamaah breaks, learning time, sleep — is recalculated
-                    around them automatically, per day-type (workday / Friday
-                    / Saturday each has its own structure). A tracker logs
-                    jamaah / alone / qaza / missed per prayer plus daily amal,
-                    with streaks and a weekly chart, and flags the day when
-                    something doesn't fit — e.g. sleep falling under target.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Settings</div><div class="flow-node-t">Fajr/location + office hours, set once</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Schedule Engine</div><div class="flow-node-t">Client-side prayer-time calc + day rebuild, no API</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">localStorage + Service Worker</div><div class="flow-node-t">Logs/streaks saved locally, app installable and offline</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Used the praytimes.org solar-calculation algorithm
-                    instead of a prayer-times API specifically so the app
-                    never depends on a network call to know what time it is
-                    to pray. Vanilla JS with ES modules, no framework, no
-                    backend — a service worker with a network-first strategy
-                    keeps it installable and offline-capable while still
-                    picking up the newest version when online. All settings
-                    and logs live in localStorage, with a manual JSON
-                    export/import for backup since there's no account or
-                    server to sync to.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Challenges</div>
-                  <p class="cs-block-p">
-                    Making one Fajr-time input cascade correctly into every
-                    other block of the day — across three different day
-                    profiles and a genuinely global location dataset with
-                    multi-timezone countries — without the schedule engine
-                    needing special-case logic per country.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    Replaced the static printed sheet entirely. Now the first
-                    thing checked every morning — the schedule adjusts itself
-                    to that day's actual prayer times instead of needing to
-                    be redrawn by hand.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">
-                    Treating Bangla/English as a real first-class toggle from
-                    the start — full UI string tables, not just a translated
-                    label here and there — was far less painful than trying
-                    to retrofit i18n onto a UI that assumed one language.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>My own daily schedule since I built it — prayer/amal streaks and weekly stats are tracked locally, though I don't have exported numbers to quote.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://salahsync.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/salahsync" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                <a href="projects/salahsync" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <!-- CASE STUDY: WORLD KITCHEN ATLAS -->
-          <details class="case-study fi">
-            <summary class="cs-summary">
-              <div class="cs-thumb">
-                <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span></div>
-                <img src="assets/screenshots/kitchen-atlas.webp" alt="World Kitchen Atlas culinary encyclopedia homepage" loading="lazy" width="240" height="150" />
-              </div>
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">World Kitchen Atlas</span>
-                  <span class="cs-status">● LIVE</span>
-                </div>
-                <p class="cs-sent">
-                  A culinary encyclopedia that rates its own confidence per
-                  dish instead of presenting uncertain food history as fact.
-                </p>
-              </div>
-              <span class="cs-chevron" aria-hidden="true">⌄</span>
-            </summary>
-            <div class="cs-body">
-              <div class="cs-grid">
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    Most recipe content online is thin — an ingredient list
-                    with no real history, occasion, or cultural context, and
-                    when a dish's origin genuinely isn't settled, most sites
-                    just assert one version as fact anyway.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Users</div>
-                  <p class="cs-block-p">
-                    Public, anonymous visitors browsing world cuisine —
-                    there's no login. I don't have exported traffic numbers
-                    to quote, but it's a real, publicly reachable site with a
-                    working visit counter behind it.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Constraints</div>
-                  <p class="cs-block-p">
-                    The recipe dataset lives in a private repo and its
-                    GitHub token can never reach the browser. Under Next.js's
-                    static export mode, the entire build fails outright if
-                    any country has zero seeded dishes — so real content had
-                    to exist before the site could deploy at all, not after.
-                    And a lot of culinary history is genuinely uncertain, so
-                    the site had to have a real way to say "we're not fully
-                    sure" instead of quietly inventing a clean answer.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">The System</div>
-                  <p class="cs-block-p">
-                    Dishes are organized continent → country → dish, with
-                    client-side search and browse-by-meal-time. Every entry
-                    carries a visible confidence rating — a tick-mark badge
-                    from "verified" down to thinner sourcing — instead of
-                    presenting every dish as equally certain. Small nations
-                    with few well-documented dishes list only what can
-                    genuinely be confirmed rather than padding the count.
-                    Asia is live today — 7 countries, 295 dishes — with the
-                    rest of the world marked "coming soon" rather than faked
-                    in. An admin panel (PBKDF2 auth) handles recipe CRUD
-                    against the private data repo.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Next.js Static Export</div><div class="flow-node-t">Pure static HTML/CSS/JS, no server runtime</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Cloudflare Worker</div><div class="flow-node-t">Proxies the private data repo + admin auth/CRUD + visit tracking</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">Private GitHub Data Repo</div><div class="flow-node-t">One JSON file per country, source of truth</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    The GitHub token that can write to the data repo never
-                    leaves the Worker — the Next.js build fetches through it
-                    at build time, not the browser at request time. Visit
-                    counting runs on a SQLite-backed Durable Object rather
-                    than Workers KV, specifically because KV's free-tier
-                    write limits can't survive a real per-pageview counter.
-                    A cosmetic client-side scraping deterrent
-                    (right-click/DevTools blocking) is paired honestly with
-                    the protection that actually matters — Cloudflare Bot
-                    Fight Mode and WAF rate-limiting — rather than relying on
-                    the client-side layer alone.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Challenges</div>
-                  <p class="cs-block-p">
-                    Deciding how to represent food history that's genuinely
-                    contested or thinly documented, without either asserting
-                    false precision or making the whole site read as
-                    unreliable — solved by making confidence a visible,
-                    per-dish rating instead of a hidden editorial judgment
-                    call.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    Live today with real, sourced content for Asia — 7
-                    countries, 295 dishes — rather than a thin dataset
-                    dressed up to look complete. Europe, Africa, the
-                    Americas, and Oceania are the next phases.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">
-                    On a content-heavy project like this, sourcing and
-                    verifying real information is the actual bottleneck, not
-                    the code — and being upfront about what isn't confirmed
-                    holds up better long-term than presenting a thin dataset
-                    as a finished, authoritative record.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Asia is live with <strong>295 dishes across 7 countries</strong>, each with a visible confidence rating — the rest of the world is planned, not faked in, and I don't have exported visit numbers to quote.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://kitchenatlas.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/world-kitchen-atlas" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                <a href="projects/world-kitchen-atlas" class="btn btn-o">Read Full Case Study <span class="arw">↗</span></a>
-                </div>
-              </div>
-            </div>
-          </details>
-
-          <div class="work-tier-hd fi">
-            <span class="work-tier-t">Product Engineering</span>
-            <span class="work-tier-line"></span>
-          </div>
-          <p class="work-tier-note fi">Shipped and live, but not tied to Mongla Port's daily operations.</p>
-          <div class="pg fi">
-            <div class="pc">
-              <div class="pc-hd">
-                <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-send"/></svg></span>
-                <div class="pc-lks">
-                  <a href="https://outreach-copilot.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="Live App"><svg class="icon"><use href="#i-external-link"/></svg></a>
-                  <a href="https://github.com/samiulAsumel/outreach-copilot" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
-                </div>
-              </div>
-              <h3 class="pc-nm">Outreach Copilot</h3>
-              <span class="cs-status">● LIVE</span>
-              <p class="pc-ds">AI-drafted cold outreach from a saved resume and a target company — email, LinkedIn, WhatsApp, or cover letter. Every send stays manual.</p>
-              <div class="pc-tags"><span class="pt">TypeScript</span><span class="pt">Workers AI</span><span class="pt">D1</span></div>
-            </div>
-            <div class="pc">
-              <div class="pc-hd">
-                <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-book-open"/></svg></span>
-                <div class="pc-lks">
-                  <a href="https://englishmastery.pages.dev" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="Live App"><svg class="icon"><use href="#i-external-link"/></svg></a>
-                  <a href="https://github.com/samiulAsumel/english-reading-mastery" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
-                  <a href="projects/english-mastery" class="pc-lk" aria-label="Case study"><svg class="icon"><use href="#i-file-text"/></svg></a>
-                </div>
-              </div>
-              <h3 class="pc-nm">English Mastery</h3>
-              <span class="cs-status">● LIVE</span>
-              <p class="pc-ds">Structured English learning platform — 88 reading lessons across 9 levels, with 87 paired writing tasks and speaking drills. A Node build script validates every Markdown lesson and generates the static site; CI on every push.</p>
-              <div class="pc-tags"><span class="pt">Node.js</span><span class="pt">Vanilla JS</span><span class="pt">GitHub Actions</span></div>
-            </div>
-            <div class="pc">
-              <div class="pc-hd">
-                <span class="pc-ic" aria-hidden="true"><svg class="icon"><use href="#i-bot"/></svg></span>
-                <div class="pc-lks">
-                  <a href="https://github.com/samiulAsumel/jarvis" target="_blank" rel="noopener noreferrer" class="pc-lk" aria-label="GitHub"><svg class="icon icon-brand"><use href="#i-github"/></svg></a>
-                </div>
-              </div>
-              <h3 class="pc-nm">JARVIS</h3>
-              <span class="cs-status cs-status-alt">● PUBLIC SOURCE — NO DEMO</span>
-              <p class="pc-ds">Self-hosted personal AI assistant with multi-model routing (Groq, OpenRouter, Claude, Gemini, local Ollama), voice I/O, and persistent memory.</p>
-              <div class="pc-tags"><span class="pt">FastAPI</span><span class="pt">Multi-LLM Routing</span><span class="pt">NixOS</span></div>
-            </div>
-          </div>
-
-          <div class="work-tier-hd fi">
-            <span class="work-tier-t">Engineering Labs / Practice</span>
-            <span class="work-tier-line"></span>
-          </div>
-          <p class="work-tier-note fi">
-            Self-directed Bash automation practice — not job-critical production
-            work, listed for transparency. Full detail in
-            <a href="#infra">Linux &amp; Automation Practice</a> below.
-          </p>
-          <div class="labs-row fi">
-            <a href="https://github.com/samiulAsumel/auto-deploy-pipeline" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Auto-Deploy Pipeline</a>
-            <a href="https://github.com/samiulAsumel/auto-ssl-manager" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Auto-SSL Manager</a>
-            <a href="https://github.com/samiulAsumel/log-analyzer-alert" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Log Analyzer &amp; Alert</a>
-            <a href="https://github.com/samiulAsumel/linux-user-access-mgmt" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> User &amp; Access Management</a>
-            <a href="https://github.com/samiulAsumel/enterprise-user-mgmt" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> User &amp; Group Provisioning</a>
-            <a href="https://github.com/samiulAsumel/secure-file-sharing" target="_blank" rel="noopener noreferrer" class="labs-chip"><svg class="icon icon-brand"><use href="#i-github"/></svg> Secure File Sharing</a>
-          </div>
-
-          <div class="gh-live fi" id="gh-live">
-            <div class="gh-live-hd">
-              <svg class="icon icon-brand"><use href="#i-github"/></svg>
-              <span>Live From GitHub — Not A Screenshot</span>
-            </div>
-            <div class="gh-live-stats">
-              <div class="gh-stat">
-                <span class="gh-stat-v" id="gh-repo-count">—</span>
-                <span class="gh-stat-k">Public Repositories</span>
-              </div>
-              <div class="gh-stat">
-                <span class="gh-stat-v" id="gh-last-push">—</span>
-                <span class="gh-stat-k">Last Commit</span>
-              </div>
-            </div>
-            <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="gh-live-lk">github.com/samiulAsumel <span class="arw">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- METHOD -->
-      <section id="method" class="sec" aria-labelledby="method-title">
-        <div class="wrap">
-          <p class="slabel fi">03 / How I Work</p>
-          <h2 class="stitle fi" id="method-title">
-            How I <span>Build</span>
-          </h2>
-          <div class="sline fi"></div>
-          <div class="mtd-manifesto fi">
-            <span class="mtd-manifesto-mark" aria-hidden="true">&ldquo;</span>
-            <p class="mtd-intro">
-              <strong class="mtd-intro-lead">A job starts with a conversation, not a keyboard.</strong>
-              I ask what the workflow looks like today, where people lose time to a manual
-              step, and what "done" needs to mean for them — then I write that
-              down as a plain-language requirement and confirm it back before
-              any code gets written. From there, every project on this site
-              was built with AI assistance. That's a plain fact, not a
-              confession — Claude and similar tools are part of how I get from
-              a requirement to working code. But using a tool isn't a skill.
-              The skill is the workflow around it: getting the requirement
-              right, testing what the tool produces, and being able to explain
-              every part of it clearly.
+      <!-- WHAT I BRING -->
+      <section id="bring" class="section" aria-labelledby="bring-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">What I bring</p>
+            <h2 class="section-header__title" id="bring-title">Operations knowledge that becomes software.</h2>
+            <p class="section-header__lead">
+              My technology work grew from real operational problems. I understand the workflow first,
+              then translate it into business rules, data structures, interfaces and working software.
             </p>
           </div>
-
-          <div class="mtd-standards" style="margin-bottom:var(--sp-8)">
-            <div class="mtd-standards-t fi">Working From Requirements</div>
-            <div class="mtd-standards-grid">
-              <div class="mtd-card mtd-standard-card fi">
-                <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-message-circle"/></svg></div>
-                <div class="mtd-card-t">Talk First, Build Second</div>
-                <p class="mtd-p">
-                  Before any design or code, I go through what the person or
-                  team actually needs — what the current process looks like,
-                  who touches it, and where it breaks down. That conversation
-                  becomes the spec.
-                </p>
-              </div>
-              <div class="mtd-card mtd-standard-card fi">
-                <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></div>
-                <div class="mtd-card-t">Automate The Manual Step</div>
-                <p class="mtd-p">
-                  For a company or industry client, the goal is almost always
-                  the same: find the part of their running process still
-                  done by hand — a paper form, a shared Excel sheet, a
-                  recalculation someone repeats every day — and replace it
-                  with a deployed tool the whole team can use. That's exactly
-                  what portbill, otbill, and carview do for port operations
-                  at Mongla; the same approach applies to any workflow with a
-                  manual bottleneck.
-                </p>
-              </div>
-              <div class="mtd-card mtd-standard-card fi">
-                <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></div>
-                <div class="mtd-card-t">Solve The Problem, Not Just The Request</div>
-                <p class="mtd-p">
-                  A website or dashboard is the deliverable, but the actual
-                  job is closing the gap the client described — if the
-                  stated request doesn't fully solve it, I say so before
-                  building it anyway.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="mtd-grid">
-            <div class="mtd-loop fi">
-              <div class="mtd-loop-t">From Problem to Product</div>
-              <div
-                class="pipeline"
-                data-pipeline="method"
-                role="group"
-                aria-label="The seven-step build process — select a step to see what it means"
-              >
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Sit with the people who do the work and watch where the process actually loses time.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>01 Observe</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Write the problem down in plain language and confirm it back before any code gets written.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>02 Define</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Work out the real business rules and data shape before touching a framework or a database.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>03 Model</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Build with AI-assisted development — the requirement and the business rules are the spec the tool works from.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>04 Build</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Test every business rule and edge case against reality, by hand, before anything ships.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>05 Validate</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Deploy the smallest useful version and get it in front of the people who'll actually use it.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>06 Ship</span>
-                </button>
-                <span class="pipeline-connector" aria-hidden="true">↓</span>
-                <button type="button" class="pipeline-node" aria-expanded="false"
-                  data-explain="Explain what was built and why, clearly enough to teach it to someone else — that's what makes it mine to ship.">
-                  <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>07 Learn</span>
-                </button>
-              </div>
-              <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
-                <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
-                <p class="pipeline-panel-text" data-pipeline-panel-text></p>
-              </div>
-            </div>
-
-            <div class="mtd-rules">
-              <div class="mtd-card fi">
-                <div class="mtd-card-t"><span>01 ·</span> Build, Refine, Explain</div>
-                <p class="mtd-p">
-                  A piece gets built with AI assistance, then manually
-                  tested against the actual business rules and edge cases —
-                  refined until it's right, not just running. Then I explain
-                  it clearly, in the README and out loud, as if teaching a
-                  junior developer. That's what makes it mine to ship.
-                </p>
-              </div>
-              <div class="mtd-card fi">
-                <div class="mtd-card-t"><span>02 ·</span> Context Engineering</div>
-                <p class="mtd-p">
-                  "Build me a billing app" gets a weak result from any model.
-                  Business rules, the real data model, edge cases, and
-                  acceptance criteria stated up front get an accurate one —
-                  I treat specifying that context as its own deliberate
-                  skill, not an afterthought.
-                </p>
-              </div>
-            </div>
+          <div class="grid-auto hm-bring" style="--grid-min: 300px">
+            <article class="card hm-bring__card fi">
+              <span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-warehouse"/></svg></span>
+              <h3 class="card__title">Real port experience</h3>
+              <p class="card__body">12+ years working inside real port and cargo operations.</p>
+              <ul class="cluster hm-chips" role="list">
+                <li class="badge">Cargo</li><li class="badge">Vehicles</li><li class="badge">Containers</li>
+                <li class="badge">Billing</li><li class="badge">Reporting</li><li class="badge">Operational workflows</li>
+              </ul>
+            </article>
+            <article class="card hm-bring__card fi">
+              <span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-workflow"/></svg></span>
+              <h3 class="card__title">Process understanding</h3>
+              <p class="card__body">
+                I understand how operational processes actually move from one step to another before
+                trying to automate them.
+              </p>
+            </article>
+            <article class="card hm-bring__card fi">
+              <span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-receipt"/></svg></span>
+              <h3 class="card__title">Billing &amp; revenue</h3>
+              <p class="card__body">
+                Experience with operational billing, revenue reporting, calculations, charges and
+                reconciliation-oriented workflows.
+              </p>
+            </article>
+            <article class="card hm-bring__card fi">
+              <span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-repeat"/></svg></span>
+              <h3 class="card__title">Business automation</h3>
+              <p class="card__body">
+                Turning repetitive Excel and manual processes into structured digital workflows and
+                operational tools.
+              </p>
+            </article>
+            <article class="card hm-bring__card fi">
+              <span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></span>
+              <h3 class="card__title">Product thinking</h3>
+              <p class="card__body">I think in terms of:</p>
+              <ul class="cluster hm-chips" role="list">
+                <li class="badge">Users</li><li class="badge">Workflows</li><li class="badge">Business rules</li>
+                <li class="badge">Data</li><li class="badge">Permissions</li><li class="badge">Edge cases</li>
+                <li class="badge">Usability</li><li class="badge">Outcomes</li>
+              </ul>
+            </article>
+            <article class="card hm-bring__card fi">
+              <span class="icon-wrap"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
+              <h3 class="card__title">AI-assisted development</h3>
+              <p class="card__body">
+                I use modern AI development tools to accelerate architecture, implementation,
+                debugging, testing, documentation and iteration.
+              </p>
+              <p class="card__body"><strong>I remain responsible for</strong> requirements, business logic, validation and final product decisions.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- GO DEEPER -->
-      <section id="deeper" class="sec" aria-labelledby="deeper-title">
-        <div class="wrap">
-          <p class="slabel fi">04 / Go Deeper</p>
-          <h2 class="stitle fi" id="deeper-title">The Full <span>Detail</span></h2>
-          <div class="sline fi"></div>
-          <p class="work-intro fi">
-            The short version is on this page. Each of these goes further, on
-            its own page.
-          </p>
-          <div class="dp-grid fi">
-            <a href="/engineering/how-i-build/" class="dp-card">
-              <span class="dp-t">How I Build</span>
-              <span class="dp-d">Two real bug fixes from a live repo, in full detail — what was wrong, how I found it, and how I verified the fix.</span>
-            </a>
-            <a href="/engineering/ai-engineering/" class="dp-card">
-              <span class="dp-t">AI-Assisted Development</span>
-              <span class="dp-d">What AI does in my workflow, what stays my responsibility, and why I say so plainly.</span>
-            </a>
-            <a href="/experience/" class="dp-card">
-              <span class="dp-t">Where the Problems Come From</span>
-              <span class="dp-d">12+ years at Mongla Port Authority: the operational work every project starts from.</span>
-            </a>
-            <a href="/engineering/roadmap/" class="dp-card">
-              <span class="dp-t">Engineering Roadmap</span>
-              <span class="dp-d">The learning plan and an honest progress log: current phase, in progress, last completed.</span>
-            </a>
+      <!-- THE COMBINATION -->
+      <section id="combination" class="section section--alt" aria-labelledby="combination-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">The combination</p>
+            <h2 class="section-header__title" id="combination-title">Operations first. Technology second. AI as the accelerator.</h2>
+            <p class="section-header__lead">
+              Many technology professionals understand software but have limited exposure to real
+              operational environments. Many operations professionals understand the business but do
+              not build software. My work sits between these two areas.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="sec" aria-labelledby="skills-title">
-        <div class="wrap">
-          <p class="slabel fi">05 / Technical Stack</p>
-          <h2 class="stitle fi" id="skills-title">
-            Skills by <span>Engineering Capability</span>
-          </h2>
-          <div class="sline fi"></div>
-          <p class="svc-intro fi">
-            Three tiers, honestly: what I've proven through shipped projects,
-            what I've used but not at expert level, and what's current active
-            learning. Everything listed is either something I worked through
-            in self-directed study or used in a public repo — see
-            <a href="/engineering/roadmap/">Roadmap</a> for what's actively in progress.
-          </p>
-          <div class="sk-grid">
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-palette"/></svg></div>
-                <h3 class="sk-ttl">Product Engineering</h3>
-              </div>
-              <div class="sk-group">
-                <div class="sk-tier">Proven Through Projects</div>
-                <div class="sk-pills">
-                  <span class="sp gd">HTML5 (Semantic)</span><span class="sp gd">CSS3</span
-                  ><span class="sp gd">JavaScript (ES6+)</span
-                  ><span class="sp gd">DOM &amp; Events</span><span class="sp gd">ES Modules</span
-                  ><span class="sp gd">React (Hooks, Context)</span>
-                </div>
-              </div>
-              <div class="sk-group">
-                <div class="sk-tier sk-tier-ai">Working Knowledge</div>
-                <div class="sk-pills">
-                  <span class="sp gd">Tailwind CSS</span><span class="sp gd">React Router</span
-                  ><span class="sp gd">React Hook Form</span><span class="sp gd">TanStack Query</span
-                  ><span class="sp gd">Next.js App Router</span><span class="sp gd">REST APIs (CRUD)</span
-                  ><span class="sp gd">JWT / Firebase Auth</span><span class="sp gd">Stripe Payments</span>
-                </div>
-              </div>
+          <div class="hm-combo fi" role="group" aria-label="How operations and software connect">
+            <div class="hm-combo__side hm-combo__side--ops">
+              <p class="hm-combo__tag">Operations</p>
+              <h3 class="hm-combo__title">Port operations</h3>
+              <ul role="list">
+                <li>Business process</li>
+                <li>Data / billing</li>
+              </ul>
             </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-anchor"/></svg></div>
-                <h3 class="sk-ttl">Domain Systems</h3>
-              </div>
-              <div class="sk-pills">
-                <span class="sp bl">Port Billing &amp; Tariff Systems</span
-                ><span class="sp bl">Wharfrent / VAT / Levy Calculation</span
-                ><span class="sp bl">Cargo &amp; Vessel Tracking</span
-                ><span class="sp bl">Workflow Automation</span
-                ><span class="sp bl">C&amp;F Agent Workflows</span
-                ><span class="sp bl">Business-Rule Modeling</span>
-              </div>
-              <p class="sk-card-ev">Proven through <strong>portbill</strong>, <strong>carview</strong> &amp; <strong>otbill</strong> — all three still in daily use.</p>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-cloud"/></svg></div>
-                <h3 class="sk-ttl">Cloud &amp; Deployment</h3>
-              </div>
-              <div class="sk-group">
-                <div class="sk-tier">Proven Through Projects</div>
-                <div class="sk-pills">
-                  <span class="sp gr">Cloudflare Pages</span><span class="sp gr">Cloudflare Workers</span
-                  ><span class="sp gr">PWA Development</span>
-                </div>
-              </div>
-              <div class="sk-group">
-                <div class="sk-tier sk-tier-ai">Working Knowledge</div>
-                <div class="sk-pills">
-                  <span class="sp gr">Firebase Hosting</span><span class="sp gr">Netlify</span>
-                </div>
-              </div>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-terminal"/></svg></div>
-                <h3 class="sk-ttl">Linux &amp; Automation</h3>
-              </div>
-              <div class="sk-pills">
-                <span class="sp nu">Bash Scripting</span><span class="sp nu">Linux Administration (Ubuntu)</span
-                ><span class="sp nu">systemd</span><span class="sp nu">Cron &amp; Timers</span
-                ><span class="sp nu">Monitoring &amp; Alerting Scripts</span>
-              </div>
-              <p class="sk-card-ev">Proven through <strong>auto-deploy-pipeline</strong>, <strong>auto-ssl-manager</strong> &amp; <strong>log-analyzer-alert</strong> — see <a href="#infra">Linux &amp; Automation Practice</a>.</p>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-database"/></svg></div>
-                <h3 class="sk-ttl">Data</h3>
-              </div>
-              <div class="sk-group">
-                <div class="sk-tier">Proven Through Projects</div>
-                <div class="sk-pills">
-                  <span class="sp pu">Cloudflare D1</span><span class="sp pu">Excel Export</span
-                  ><span class="sp pu">Chart.js Analytics</span>
-                </div>
-              </div>
-              <div class="sk-group">
-                <div class="sk-tier sk-tier-ai">Working Knowledge</div>
-                <div class="sk-pills">
-                  <span class="sp pu">MongoDB (Atlas)</span><span class="sp pu">Aggregation Pipeline</span>
-                </div>
-              </div>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-repeat"/></svg></div>
-                <h3 class="sk-ttl">Development Workflow</h3>
-              </div>
-              <div class="sk-pills">
-                <span class="sp gd">Git &amp; GitHub (Branching, PRs)</span
-                ><span class="sp gd">AI-Assisted Development (Claude Code)</span>
-              </div>
+            <ol class="hm-combo__mid" aria-label="System layers">
+              <li><span>Business rules</span></li>
+              <li><span>Data</span></li>
+              <li><span>Automation</span></li>
+              <li><span>Interface</span></li>
+            </ol>
+            <div class="hm-combo__side hm-combo__side--sw">
+              <p class="hm-combo__tag">Software</p>
+              <h3 class="hm-combo__title">Software system</h3>
+              <ul role="list">
+                <li>Web application</li>
+                <li>Reports and tracking</li>
+              </ul>
             </div>
           </div>
-
-          <div class="sk-evidence fi">
-            <div class="sk-evidence-t">Technology <span aria-hidden="true">→</span> Evidence</div>
-            <div class="sk-evidence-grid">
-              <div class="sk-ev-item">
-                <div class="sk-ev-k">Cloudflare Workers</div>
-                <div class="sk-ev-v">Used in <strong>CarView</strong> &amp; <strong>World Kitchen Atlas</strong> — proxies a private GitHub data repo so the write token never reaches the browser.</div>
-              </div>
-              <div class="sk-ev-item">
-                <div class="sk-ev-k">PWA Development</div>
-                <div class="sk-ev-v">Used in <strong>Port Billing Calculator</strong>, <strong>CarView</strong> &amp; <strong>SalahSync</strong> — offline-first, installable, no backend required.</div>
-              </div>
-              <div class="sk-ev-item">
-                <div class="sk-ev-k">Chart.js Analytics</div>
-                <div class="sk-ev-v">Used in <strong>CarView</strong> — a 7-chart analytics dashboard plus KPIs for the Traffic Department.</div>
-              </div>
-              <div class="sk-ev-item">
-                <div class="sk-ev-k">Cloudflare D1</div>
-                <div class="sk-ev-v">Used in <strong>Outreach Copilot</strong> — structured storage for saved resumes and outreach history.</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="sk-current fi">
-            <div class="sk-current-t">Current Development</div>
-            <div class="flow-mini">
-              <span class="flow-mini-node now">TypeScript</span
-              ><span class="flow-mini-node now">Node / Express Depth</span
-              ><span class="flow-mini-node">Testing</span
-              ><span class="flow-mini-node">Docker</span
-              ><span class="flow-mini-node">CI/CD</span
-              ><span class="flow-mini-node">AI Product Engineering</span>
-            </div>
-            <a href="/engineering/roadmap/" class="sk-current-lk">View Engineering Roadmap <span class="arw">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ENGINEERING MATURITY -->
-      <section id="maturity" class="sec" aria-labelledby="maturity-title">
-        <div class="wrap">
-          <p class="slabel fi">06 / Development Philosophy</p>
-          <h2 class="stitle fi" id="maturity-title">Engineering <span>Maturity</span></h2>
-          <div class="sline fi"></div>
-          <div class="mat-grid fi">
-            <div class="mat-card">
-              <div class="mat-num">01</div>
-              <div class="mat-t">Requirement-First</div>
-              <div class="mat-d">Understand the actual workflow before any design or code — that conversation becomes the spec.</div>
-            </div>
-            <div class="mat-card">
-              <div class="mat-num">02</div>
-              <div class="mat-t">Business-Rule Driven</div>
-              <div class="mat-d">Slab charges, VAT, levy, cumulative OT — the rules get modeled before any code, not discovered mid-build.</div>
-            </div>
-            <div class="mat-card">
-              <div class="mat-num">03</div>
-              <div class="mat-t">Practical Architecture</div>
-              <div class="mat-d">Complexity matches the actual need — portbill and otbill run entirely client-side; carview needed a Worker and shared storage because the problem was team-wide visibility.</div>
-            </div>
-            <div class="mat-card">
-              <div class="mat-num">04</div>
-              <div class="mat-t">Ship Early</div>
-              <div class="mat-d">A meaningful git commit for every shipped piece — build the smallest useful version and get it in front of the people who'll use it.</div>
-            </div>
-            <div class="mat-card">
-              <div class="mat-num">05</div>
-              <div class="mat-t">Validate in Reality</div>
-              <div class="mat-d">Every business rule and edge case manually tested against real data before it ships.</div>
-            </div>
-            <div class="mat-card">
-              <div class="mat-num">06</div>
-              <div class="mat-t">Automate Repetition</div>
-              <div class="mat-d">The manual step being replaced is named explicitly, not assumed — that's the actual deliverable, not the UI around it.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about" class="sec" aria-labelledby="about-title">
-        <div class="wrap">
-          <p class="slabel fi">07 / Who I Am</p>
-          <h2 class="stitle fi" id="about-title">About <span>Me</span></h2>
-          <div class="sline fi"></div>
-          <div class="ab-grid">
-            <div class="ab-text fl">
-              <div class="ab-tl">
-              <p>
-                I am a <strong>Product Engineer for Real-World Operations</strong>
-                — I find a real operational problem, design the system around
-                it, and build it with AI-assisted development. I bring
-                <strong><span class="ab-num" id="ab-c-yrs">12</span>+ years</strong>
-                as a Senior Outdoor Assistant at Mongla Port Authority, in
-                wharfrent billing, cargo tracking, and C&amp;F agent
-                coordination. That background led me to build
-                <strong><span class="ab-num" id="ab-c-apps">3</span> self-initiated web applications</strong>
-                — still used daily by the billing desk, the Traffic
-                Department, and C&amp;F agents. I work requirement-first: sit
-                with the people who do the work, write down the actual
-                problem, then build and ship it using AI-assisted development
-                as part of the process. My goal is a remote Product Engineer,
-                port/logistics-tech, or full-stack role, anywhere in the
-                world.
-              </p>
-              </div>
-              <p><a href="/about/">Read the Full Story <span class="arw">→</span></a></p>
-              <div class="lp">
-                <span class="tag">🇧🇩 Bengali — Native</span>
-                <span class="tag bl">🇬🇧 English — Professional</span>
-              </div>
-              <div class="ab-btns">
-                <a href="#resume" class="btn btn-p"
-                  >Download Resume <span class="arw">↗</span></a
-                >
-              </div>
-            </div>
-            <div class="fr">
-              <div class="ab-hl">
-                <div class="hl-item">
-                  <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-anchor"/></svg></div>
-                  <div>
-                    <div class="hl-t">12+ Years Port Operations Background</div>
-                    <div class="hl-d">
-                      Mongla Port Authority — wharfrent billing, terminal
-                      operations, C&amp;F agent coordination. The source of
-                      every problem I've built software for.
-                    </div>
-                  </div>
-                </div>
-                <div class="hl-item">
-                  <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-rocket"/></svg></div>
-                  <div>
-                    <div class="hl-t">Operational Problem → Deployed Product</div>
-                    <div class="hl-d">
-                      3 self-initiated web apps, each starting from an
-                      observed workflow inefficiency and ending in daily
-                      production use by C&amp;F agents and port staff — not
-                      just class exercises
-                    </div>
-                  </div>
-                </div>
-                <div class="hl-item">
-                  <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-repeat"/></svg></div>
-                  <div>
-                    <div class="hl-t">Requirement → Build → Verify</div>
-                    <div class="hl-d">
-                      Built with AI-assisted development, then manually
-                      tested and documented before it ships — see
-                      <a href="#method">How I Build</a>.
-                    </div>
-                  </div>
-                </div>
-                <div class="hl-item">
-                  <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></div>
-                  <div>
-                    <div class="hl-t">Remote — Open to Work Worldwide</div>
-                    <div class="hl-d">
-                      Seeking a Product Engineer, port/logistics-tech, or
-                      web developer role. No time zone constraints —
-                      available anywhere in the world.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="ab-info">
-                <div class="ai">
-                  <div class="ai-ic" aria-hidden="true"><svg class="icon"><use href="#i-map-pin"/></svg></div>
-                  <div>
-                    <div class="ai-l">Location</div>
-                    <div class="ai-v">Mongla, Bangladesh</div>
-                  </div>
-                </div>
-                <div class="ai">
-                  <div class="ai-ic" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></div>
-                  <div>
-                    <div class="ai-l">Email</div>
-                    <div class="ai-v">
-                      <a href="mailto:sa.sumel91@gmail.com"
-                        >sa.sumel91@gmail.com</a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="ai">
-                  <div class="ai-ic" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></div>
-                  <div>
-                    <div class="ai-l">Phone</div>
-                    <div class="ai-v">+880 1312 312 512</div>
-                  </div>
-                </div>
-                <div class="ai">
-                  <div class="ai-ic" aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></div>
-                  <div>
-                    <div class="ai-l">Portfolio</div>
-                    <div class="ai-v">
-                      <a
-                        href="https://sasumel.pages.dev/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >sasumel.pages.dev</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- STORY -->
-      <section id="story" class="sec" aria-labelledby="story-title">
-        <div class="wrap">
-          <p class="slabel fi">08 / The Story</p>
-          <h2 class="stitle fi" id="story-title">From Operations <span>to Engineering</span></h2>
-          <div class="sline fi"></div>
-          <p class="story-intro fi">
-            I don't start with technology. I start with the operational
-            problem — because I spent 12 years inside the operation before
-            I ever wrote software for it.
-          </p>
-          <div class="story-flow fi">
-            <div class="story-node">
-              <div class="story-yr">Nov 2013</div>
-              <div class="story-lbl">Joined</div>
-              <div class="story-d">Junior Outdoor Assistant, Mongla Port Authority</div>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="story-node">
-              <div class="story-yr">Nov 2017</div>
-              <div class="story-lbl">Promoted</div>
-              <div class="story-d">Senior Outdoor Assistant, Traffic Department</div>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="story-node">
-              <div class="story-yr">12+ Years</div>
-              <div class="story-lbl">Domain Depth</div>
-              <div class="story-d">Cargo, billing, vehicle tracking, C&amp;F workflows</div>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="story-node">
-              <div class="story-yr">Problem</div>
-              <div class="story-lbl">Manual Bottleneck</div>
-              <div class="story-d">Repeated manual calculations, spreadsheet dependency</div>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="story-node">
-              <div class="story-yr">Build</div>
-              <div class="story-lbl">Started Building</div>
-              <div class="story-d">Self-taught JavaScript/HTML/CSS to solve it directly</div>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="story-node">
-              <div class="story-yr">Ship</div>
-              <div class="story-lbl">Deployed</div>
-              <div class="story-d">3 real applications, still in daily use</div>
-            </div>
-            <div class="story-arrow">→</div>
-            <div class="story-node hi">
-              <div class="story-yr">Today</div>
-              <div class="story-lbl">Product Engineer</div>
-              <div class="story-d">Real-world operations, AI-assisted development</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES -->
-      <section id="services" class="sec" aria-labelledby="services-title">
-        <div class="wrap">
-          <p class="slabel fi">09 / Freelance &amp; Contract Work</p>
-          <h2 class="stitle fi" id="services-title">
-            Services I <span>Deliver</span>
-          </h2>
-          <div class="sline fi"></div>
-          <p class="svc-intro fi">
-            Describe the workflow and where it's breaking down. I ask
-            questions until the requirement is clear and written down, then
-            design the solution, and build and deploy it using modern
-            full-stack tools and AI-assisted development. For a company or
-            industry, that solution is usually the same shape: find the
-            manual step in a process that already runs — a paper form, a
-            shared spreadsheet, a hand calculation — and replace it with a
-            deployed tool the whole team can rely on. The categories below
-            have a proven, verifiable track record; other problem types are
-            evaluated the same way.
-          </p>
-          <div class="svc-grid">
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-code"/></svg></div>
-                <h3 class="sk-ttl">Full-Stack Web Apps</h3>
-              </div>
-              <p class="svc-desc">
-                React/Next.js on the frontend, Node.js/Express + MongoDB on
-                the backend — REST APIs, JWT/Firebase authentication, and
-                Stripe payments when the job needs them. Scope starts from a
-                written, agreed requirement, not a guess, so what ships
-                matches what was actually asked for.
-              </p>
-              <p class="svc-proof">
-                ✓ 3 apps in daily production use (vanilla JS + Cloudflare
-                Workers); React / Next.js from World Kitchen Atlas, Node/
-                MongoDB backend work via AI-assisted development
-              </p>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-bar-chart"/></svg></div>
-                <h3 class="sk-ttl">Billing &amp; Tracking Dashboards</h3>
-              </div>
-              <p class="svc-desc">
-                Custom billing calculators, tracking dashboards, and
-                operational tools — the same kind of tool I built to solve
-                real problems at my own workplace, after talking through
-                exactly how the numbers are supposed to work with the people
-                who use them daily.
-              </p>
-              <p class="svc-proof">
-                ✓ Built for real daily use, not a demo
-              </p>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-anchor"/></svg></div>
-                <h3 class="sk-ttl">Port &amp; Logistics Workflow Digitisation</h3>
-              </div>
-              <p class="svc-desc">
-                Turning paper-based or Excel-based port and logistics
-                workflows — wharfrent billing, overtime payroll, cargo/vehicle
-                tracking — into deployed, team-wide web tools, backed by
-                first-hand operational knowledge of how those workflows
-                actually run.
-              </p>
-              <p class="svc-proof">
-                ✓ Proven with 3 tools converted from manual/Excel processes
-              </p>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-repeat"/></svg></div>
-                <h3 class="sk-ttl">Manual Process Automation</h3>
-              </div>
-              <p class="svc-desc">
-For any company or industry, not limited to my own domain — I map the actual process with the team, then ship a tool the whole workflow depends on, not a one-off script.
-              </p>
-              <p class="svc-proof">
-                ✓ portbill, otbill, and carview each replaced a specific
-                manual step at Mongla Port and are still in daily use
-              </p>
-            </div>
-            <div class="sk-card fi">
-              <div class="sk-hd">
-                <div class="sk-ic" aria-hidden="true"><svg class="icon"><use href="#i-palette"/></svg></div>
-                <h3 class="sk-ttl">Website Design &amp; Build (AI-Assisted)</h3>
-              </div>
-              <p class="svc-desc">
-                Marketing sites, portfolios, and small business websites —
-                designed, built, and deployed using the same AI-assisted
-                workflow behind every project on this site: a written
-                requirement first, then a build I test end to end and can
-                explain line by line, not a black box handed off untouched.
-              </p>
-              <p class="svc-proof">
-                ✓ This site is the proof — built, tested, and shipped with
-                AI-assisted development, deployed on Cloudflare Pages.
-                <a href="projects/portfolio-site" style="color:inherit;text-decoration:underline">Read the case study ↗</a>
-              </p>
-            </div>
-          </div>
-          <div class="svc-ready fi">
-            <div class="svc-ready-t">Remote &amp; Freelance Readiness</div>
-            <div class="svc-ready-g">
-              <div class="svc-ready-item">
-                <span aria-hidden="true"><svg class="icon"><use href="#i-globe"/></svg></span>No time zone constraints —
-                any schedule, worldwide
-              </div>
-              <div class="svc-ready-item">
-                <span aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></span>Self-managed: scopes,
-                builds, and deploys independently, manually verified before
-                every release
-              </div>
-              <div class="svc-ready-item">
-                <span aria-hidden="true"><svg class="icon"><use href="#i-message-circle"/></svg></span>Async-friendly English,
-                Git/GitHub-based collaboration (branching, PRs)
-              </div>
-              <div class="svc-ready-item">
-                <span aria-hidden="true"><svg class="icon"><use href="#i-check-circle"/></svg></span>Every past project is
-                publicly verifiable before you hire
-              </div>
-              <div class="svc-ready-item">
-                <span aria-hidden="true"><svg class="icon"><use href="#i-mic"/></svg></span>Requirement gathered by
-                conversation first, written down and confirmed before any
-                build starts
-              </div>
-              <div class="svc-ready-item">
-                <span aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></span>Focused on the manual
-                bottleneck that's actually costing time, not just the
-                feature list
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- LINUX & INFRASTRUCTURE -->
-      <section id="infra" class="sec" aria-labelledby="infra-title">
-        <div class="wrap">
-          <p class="slabel fi">10 / Self-Directed Practice</p>
-          <h2 class="stitle fi" id="infra-title">
-            Linux &amp; <span>Automation Practice</span>
-          </h2>
-          <div class="sline fi"></div>
-          <p class="work-intro fi">
-            Six self-directed Bash automation projects, built outside any job
-            or client brief — I wanted to understand how deployment,
-            certificate renewal, log monitoring, and access control actually
-            work under the hood, so I built working versions of each. Each
-            one ships with a dry-run mode and an audit trail, and most have
-            an automated test suite or CI — written to hold up, not just to
-            demo. Daily Linux (Ubuntu) user, scripting and administering my
-            own systems outside of any certification track. Real
-            professional infrastructure experience stops at the three
-            production tools in <a href="#work">Work</a> above; this is
-            deliberate self-study, listed here for transparency, not claimed
-            as job experience.
-          </p>
-          <div class="dg">
-            <div class="dc fi">
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-rocket"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">Auto-Deploy Pipeline</h3>
-                  <div class="dc-org">Self-Directed</div>
-                </div>
-              </div>
-              <p class="dc-note">
-                Zero-downtime deployment in pure Bash — a 9-step run
-                (pre-flight checks, backup, pull, test, atomic symlink
-                switch, service restart, health check, cleanup, notify)
-                across production/staging/dev environments. If the
-                post-deploy health check fails, it rolls back to the
-                previous release automatically, no human in the loop. No
-                Docker or orchestration framework required — if the server
-                has bash, git, and curl, it can deploy.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">Atomic Deploys</span><span class="sp gd">Auto-Rollback</span><span class="sp gd">9/9 Tests Passing</span><a
-                  href="https://github.com/samiulAsumel/auto-deploy-pipeline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
-                >
-              </div>
-            </div>
-            <div class="dc fi">
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-check-circle"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">Auto-SSL Manager</h3>
-                  <div class="dc-org">Self-Directed</div>
-                </div>
-              </div>
-              <p class="dc-note">
-                Monitors every TLS certificate on a schedule and renews
-                Let's Encrypt certificates automatically before they expire.
-                Alerts by email, Slack, Teams, or PagerDuty, rate-limited so
-                a recurring warning doesn't spam the channel while a genuine
-                emergency still fires immediately. Weekly encrypted backups
-                of the certificate store.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">Cert Auto-Renewal</span><span class="sp gd">Multi-Channel Alerts</span><span class="sp gd">CI Pipeline</span><a
-                  href="https://github.com/samiulAsumel/auto-ssl-manager"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
-                >
-              </div>
-            </div>
-            <div class="dc fi">
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-satellite-dish"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">Log Analyzer &amp; Alert</h3>
-                  <div class="dc-org">Self-Directed</div>
-                </div>
-              </div>
-              <p class="dc-note">
-                Scans system, auth, web-server, database, and application
-                logs plus the systemd journal every 15 minutes, correlates
-                findings across sources into a threat score, and fires an
-                alert within minutes of anything serious — a brute-force
-                attempt, an out-of-memory kill, a spike in server errors.
-                Everything below that threshold gets batched into a daily
-                HTML digest instead of adding noise. Findings export as
-                JSON for handing off to a real log pipeline.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">Threat Correlation</span><span class="sp gd">15-Min Scan Cycle</span><span class="sp gd">SIEM-Ready Export</span><a
-                  href="https://github.com/samiulAsumel/log-analyzer-alert"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
-                >
-              </div>
-            </div>
-            <div class="dc fi">
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-clipboard-list"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">User &amp; Access Management</h3>
-                  <div class="dc-org">Self-Directed</div>
-                </div>
-              </div>
-              <p class="dc-note">
-                CSV-driven bulk user lifecycle management across 8
-                independent Bash modules — bulk account creation, disabling
-                with an immediate session kill, SSH key rotation, POSIX ACL
-                and group management, password-aging policy, and a
-                7-section HTML audit report so "who has access to what" has
-                an actual answer instead of institutional memory. Dry-run
-                mode previews every change before anything touches the
-                system; zero warnings from static analysis.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">CSV-Driven</span><span class="sp gd">Dry-Run Safe</span><span class="sp gd">Zero Lint Warnings</span><a
-                  href="https://github.com/samiulAsumel/linux-user-access-mgmt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
-                >
-              </div>
-            </div>
-            <div class="dc fi">
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-wrench"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">User &amp; Group Provisioning</h3>
-                  <div class="dc-org">Self-Directed</div>
-                </div>
-              </div>
-              <p class="dc-note">
-                Bulk user and group provisioning from CSV manifests —
-                account creation, sudo policy that's validated before it's
-                applied, system-wide password-complexity rules, per-user
-                password aging, and brute-force account lockouts, plus an
-                HTML/text security audit report. Every run previews in
-                dry-run mode first — nothing is applied silently.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">CSV Manifests</span><span class="sp gd">Sudo Policy Automation</span><span class="sp gd">Brute-Force Lockout</span><a
-                  href="https://github.com/samiulAsumel/enterprise-user-mgmt"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
-                >
-              </div>
-            </div>
-            <div class="dc fi">
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-database"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">Secure File Sharing</h3>
-                  <div class="dc-org">Self-Directed</div>
-                </div>
-              </div>
-              <p class="dc-note">
-                Multi-team shared-storage layout — five differently
-                permissioned directories (per-team folders, a managers-only
-                reports folder, a read-only public share, a world-writable
-                temp folder that only lets you delete your own files) built
-                with group ownership, the SGID and sticky bits, and POSIX
-                ACLs with default-ACL inheritance, so permissions on new
-                files are correct automatically instead of set by hand
-                after the fact. Config-driven, with automated audit and
-                backup.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">POSIX ACLs</span><span class="sp gd">SGID / Sticky Bit</span><span class="sp gd">Config-Driven</span><a
-                  href="https://github.com/samiulAsumel/secure-file-sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  ><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> Source</a
-                >
-              </div>
-            </div>
-          </div>
-          <p class="dc-caveat" style="margin-top:18px">
-            Self-driven learning, not job-critical production work — listed
-            for transparency only. Docker, CI/CD, and cloud infra beyond
-            these are tracked honestly as planned in the
-            <a href="/engineering/roadmap/">Roadmap</a>, not claimed here.
+          <p class="hm-eq fi">
+            <span>Port operations</span><span class="hm-eq__op" aria-hidden="true">+</span>
+            <span>Business process</span><span class="hm-eq__op" aria-hidden="true">+</span>
+            <span>Data / billing</span><span class="hm-eq__op" aria-hidden="true">+</span>
+            <span>Automation</span><span class="hm-eq__op" aria-hidden="true">+</span>
+            <span>Software</span><span class="hm-eq__op" aria-label="equals">=</span>
+            <strong class="hm-eq__result">Operations technology</strong>
           </p>
         </div>
       </section>
 
-      <!-- ACTIVE GROWTH -->
-      <section id="dev" class="sec" aria-labelledby="dev-title">
-        <div class="wrap">
-          <p class="slabel fi">11 / Active Growth</p>
-          <h2 class="stitle fi" id="dev-title">
-            Active <span>Growth</span>
-          </h2>
-          <div class="sline fi"></div>
-          <div class="dg">
-            <div class="dc dc-track fi">
-              <div class="dc-kicker">Self-Study Track</div>
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-satellite-dish"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">
-                    The Odin Project &amp; Full Stack Open
-                  </h3>
-                  <div class="dc-org">Self-Directed · Aug 2026 – Present</div>
-                </div>
-              </div>
-              <span class="dc-st ac">In Progress</span>
-              <p class="dc-note">
-                Self-paced study for code comprehension, not a second
-                certificate. Starting from The Odin Project's "Intermediate
-                HTML and CSS" course inside its Full Stack JavaScript path,
-                then continuing into Full Stack Open (University of
-                Helsinki) — JavaScript fundamentals, Node.js/Express in
-                depth, testing, and Git workflow, built by writing projects
-                from an assignment brief rather than following a course
-                guide.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">JavaScript Fundamentals</span
-                ><span class="sp gd">Node &amp; Express Depth</span
-                ><span class="sp gd">Testing (Jest / RTL)</span
-                ><span class="sp gd">TypeScript Depth</span
-                ><span class="sp gd">Original Projects</span
-                ><a
-                  href="https://www.theodinproject.com/paths/full-stack-javascript/courses/intermediate-html-and-css"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  >theodinproject.com</a
-                ><a
-                  href="https://fullstackopen.com/en/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="sp nu"
-                  style="cursor:pointer"
-                  >fullstackopen.com</a
-                >
-              </div>
-              <p class="dc-caveat">
-                In progress — listed here for transparency, not counted as a
-                current qualification.
-              </p>
+      <!-- FROM WORKFLOW TO SOFTWARE -->
+      <section id="approach" class="section" aria-labelledby="approach-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">How it gets built</p>
+            <h2 class="section-header__title" id="approach-title">From operational friction to working software.</h2>
+          </div>
+          <div class="workflow fi" role="list">
+            <div class="workflow__node" role="listitem">
+              <span class="workflow__label">01 · Observe</span>
+              <span class="workflow__text">Understand the real process.</span>
             </div>
-            <div class="dc dc-track fi">
-              <div class="dc-kicker">Self-Authored Track</div>
-              <div class="dc-hd">
-                <div class="dc-ic" aria-hidden="true"><svg class="icon"><use href="#i-brain"/></svg></div>
-                <div>
-                  <h3 class="dc-ttl">
-                    Personal AI Product Engineering Curriculum — Self-Authored
-                  </h3>
-                  <div class="dc-org">Self-Directed · Aug 2026 – Present</div>
-                </div>
-              </div>
-              <span class="dc-st ac">In Progress</span>
-              <p class="dc-note">
-                A self-authored, multi-phase curriculum I designed to pair AI
-                product strategy with hands-on engineering — covering AI
-                fundamentals, context engineering, product discovery and
-                specification, full-stack AI product development, and
-                deployment. Follows the requirement-first, AI-assisted build
-                approach described in the <a href="#method">How I Build</a>
-                section above. See the <a href="/engineering/roadmap/">Roadmap</a> for the
-                current phase and progress.
-              </p>
-              <div class="sk-pills dc-chips">
-                <span class="sp gd">Context Engineering</span
-                ><span class="sp gd">AI Product Strategy</span
-                ><span class="sp gd">RAG &amp; AI Agents</span
-                ><span class="sp gd">Product-Driven Learning</span>
-              </div>
-              <p class="dc-caveat">
-                Self-directed and ongoing — not a certification or completed
-                course, listed for transparency.
-              </p>
+            <span class="workflow__connector" aria-hidden="true"></span>
+            <div class="workflow__node" role="listitem">
+              <span class="workflow__label">02 · Model</span>
+              <span class="workflow__text">Define workflow and business rules.</span>
+            </div>
+            <span class="workflow__connector" aria-hidden="true"></span>
+            <div class="workflow__node" role="listitem">
+              <span class="workflow__label">03 · Build</span>
+              <span class="workflow__text">Create the system with AI-assisted development.</span>
+            </div>
+            <span class="workflow__connector" aria-hidden="true"></span>
+            <div class="workflow__node" role="listitem">
+              <span class="workflow__label">04 · Validate</span>
+              <span class="workflow__text">Test against real-world scenarios.</span>
+            </div>
+            <span class="workflow__connector" aria-hidden="true"></span>
+            <div class="workflow__node workflow__node--result" role="listitem">
+              <span class="workflow__label">05 · Deploy</span>
+              <span class="workflow__text">Put the working product into use.</span>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- EDUCATION -->
-      <section id="edu" class="sec" aria-labelledby="edu-title">
-        <div class="wrap">
-          <p class="slabel fi">12 / Background</p>
-          <h2 class="stitle fi" id="edu-title">My <span>Education</span></h2>
-          <div class="sline fi"></div>
-          <div class="eg-group-t fi">Formal Education</div>
-          <div class="eg">
-            <div class="ec fi">
-              <div class="ec-deg">Higher Secondary Certificate</div>
-              <div class="ec-field">Business Studies</div>
-              <div class="ec-inst">Khulna Public College</div>
-              <div class="ec-yr">2009 – 2011</div>
-            </div>
-            <div class="ec fi">
-              <div class="ec-deg">Secondary School Certificate</div>
-              <div class="ec-field">Business Studies</div>
-              <div class="ec-inst">Mongla Bandar Secondary School</div>
-              <div class="ec-yr">1999 – 2009</div>
-            </div>
-          </div>
-          <div class="eg-group-t fi" style="margin-top:var(--sp-5)">Independent Engineering Education</div>
-          <div class="eg eg-solo">
-            <div class="ec ec-active fi">
-              <div class="ec-deg">The Odin Project &amp; Full Stack Open</div>
-              <div class="ec-field">Self-Directed Study — In Progress</div>
-              <div class="ec-inst">Not a credential — code comprehension, not a second certificate</div>
-              <div class="ec-yr">Aug 2026 – Present</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- BUILD IN PUBLIC -->
-      <section id="verify" class="sec" aria-labelledby="verify-title">
-        <div class="wrap">
-          <p class="slabel fi">13 / Don't Take My Word For It</p>
-          <h2 class="stitle fi" id="verify-title">Proof of <span>Work</span></h2>
-          <div class="sline fi"></div>
-          <div class="pow-row fi">
-            <span class="pow-item">Live Systems</span>
-            <span class="pow-item">Public Source</span>
-            <span class="pow-item">Real Workflows</span>
-            <span class="pow-item">Technical Case Studies</span>
-          </div>
-          <p class="vf-note fi">
-            Every system below runs at a public URL and links to its public
-            source. Open any of them and judge for yourself.
+          <p class="hm-note fi">
+            AI accelerates the implementation. I remain responsible for understanding the problem,
+            defining the system and validating the result.
           </p>
-          <div class="vf-grid">
-            <a href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-receipt"/></svg></span>
-              <span class="vf-nm">Port Billing Calculator</span>
-              <span class="vf-st">● LIVE — DAILY USE</span>
-            </a>
-            <a href="https://carview.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-car"/></svg></span>
-              <span class="vf-nm">carview</span>
-              <span class="vf-st">● LIVE — DAILY USE</span>
-            </a>
-            <a href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-timer"/></svg></span>
-              <span class="vf-nm">OT Bill Management</span>
-              <span class="vf-st">● LIVE — DAILY USE</span>
-            </a>
-            <a href="https://kitchenatlas.pages.dev/" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-soup"/></svg></span>
-              <span class="vf-nm">World Kitchen Atlas</span>
-              <span class="vf-st">● LIVE</span>
-            </a>
-            <a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-clipboard-list"/></svg></span>
-              <span class="vf-nm">Client Intake Form</span>
-              <span class="vf-st">● LIVE — DAILY USE</span>
-            </a>
-            <a href="https://salahsync.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-moon-star"/></svg></span>
-              <span class="vf-nm">SalahSync</span>
-              <span class="vf-st">● LIVE — DAILY USE</span>
-            </a>
-            <a href="https://outreach-copilot.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-send"/></svg></span>
-              <span class="vf-nm">Outreach Copilot</span>
-              <span class="vf-st">● LIVE</span>
-            </a>
-            <a href="https://englishmastery.pages.dev" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon"><use href="#i-book-open"/></svg></span>
-              <span class="vf-nm">English Mastery</span>
-              <span class="vf-st">● LIVE</span>
-            </a>
-            <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="vf-card fi">
-              <span class="vf-ic" aria-hidden="true"><svg class="icon icon-brand"><use href="#i-github"/></svg></span>
-              <span class="vf-nm">Full GitHub Portfolio</span>
-              <span class="vf-st">● BROWSE ALL REPOS</span>
-            </a>
+        </div>
+      </section>
+
+      <!-- SELECTED SYSTEMS -->
+      <section id="work" class="section section--alt" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">Selected systems</p>
+            <h2 class="section-header__title" id="work-title">Software built around real operational problems.</h2>
+            <p class="section-header__lead">
+              These projects started from workflows, calculations and reporting problems I encountered
+              or identified in real operational environments.
+            </p>
+          </div>
+          <div class="grid-auto hm-projects" style="--grid-min: 320px">
+            <article class="card card--case-study hm-project fi">
+              <header class="card__header">
+                <h3 class="card__title">Port Billing Calculator</h3>
+                <span class="status status--production">Production</span>
+              </header>
+              <div class="card__body hm-project__body">
+                <p class="card__meta">Port operations · Billing · Revenue</p>
+                <dl class="hm-project__dl">
+                  <div><dt>Problem</dt><dd>Wharf rent (port facility usage charges) was computed by hand, slab by slab with VAT and levy, so customs &amp; freight-forwarding (C&amp;F) agents only learned the charge at the counter.</dd></div>
+                  <div><dt>Solution</dt><dd>A web calculator built on the port authority's real billing rules, used daily by the billing desk to verify charges in advance.</dd></div>
+                </dl>
+                <ul class="cluster hm-chips" role="list"><li class="badge">JavaScript</li><li class="badge">PWA</li><li class="badge">Cloudflare Pages</li></ul>
+                <div class="card__footer">
+                  <a class="btn btn--secondary btn--sm" href="/projects/portbill">View Project <span class="arw" aria-hidden="true">↗</span></a>
+                  <a class="btn btn--text btn--sm" href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="card card--case-study hm-project fi">
+              <header class="card__header">
+                <h3 class="card__title">CarView</h3>
+                <span class="status status--production">Production</span>
+              </header>
+              <div class="card__body hm-project__body">
+                <p class="card__meta">Vehicle &amp; cargo tracking · Yard operations</p>
+                <dl class="hm-project__dl">
+                  <div><dt>Problem</dt><dd>Vehicle and cargo positions across warehouse, shed and yard lived in one person's private Excel file.</dd></div>
+                  <div><dt>Solution</dt><dd>A shared, offline-capable tracking system for the whole Traffic Department, with every change kept as a version-controlled record.</dd></div>
+                </dl>
+                <ul class="cluster hm-chips" role="list"><li class="badge">JavaScript</li><li class="badge">PWA</li><li class="badge">Cloudflare Workers</li></ul>
+                <div class="card__footer">
+                  <a class="btn btn--secondary btn--sm" href="/projects/carview">View Project <span class="arw" aria-hidden="true">↗</span></a>
+                  <a class="btn btn--text btn--sm" href="https://carview.pages.dev" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+                </div>
+              </div>
+            </article>
+            <article class="card card--case-study hm-project fi">
+              <header class="card__header">
+                <h3 class="card__title">OT Bill Management</h3>
+                <span class="status status--production">Production</span>
+              </header>
+              <div class="card__body hm-project__body">
+                <p class="card__meta">Overtime billing · Workflow automation</p>
+                <dl class="hm-project__dl">
+                  <div><dt>Problem</dt><dd>Overtime billing was a manual, multi-step calculation where errors were easy to make.</dd></div>
+                  <div><dt>Solution</dt><dd>A single data-entry point that applies the cumulative, date-wise overtime rules and produces the bill instantly.</dd></div>
+                </dl>
+                <ul class="cluster hm-chips" role="list"><li class="badge">JavaScript</li><li class="badge">Cloudflare Pages</li></ul>
+                <div class="card__footer">
+                  <a class="btn btn--secondary btn--sm" href="/projects/otbill">View Project <span class="arw" aria-hidden="true">↗</span></a>
+                  <a class="btn btn--text btn--sm" href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="hm-more fi">
+            <h3 class="hm-more__title">More projects</h3>
+            <ul class="hm-more__list" role="list">
+              <li><a href="/projects/client-intake-form">Client Intake Form</a><span class="badge badge--live">Live</span></li>
+              <li><a href="/projects/salahsync">SalahSync</a><span class="badge badge--live">Live</span></li>
+              <li><a href="/projects/world-kitchen-atlas">World Kitchen Atlas</a><span class="badge badge--live">Live</span></li>
+              <li><a href="/projects/english-mastery">English Mastery</a><span class="badge badge--live">Live</span></li>
+              <li><a href="https://outreach-copilot.pages.dev" target="_blank" rel="noopener noreferrer">Outreach Copilot ↗</a><span class="badge badge--live">Live</span></li>
+              <li><a href="https://github.com/samiulAsumel/jarvis" target="_blank" rel="noopener noreferrer">JARVIS ↗</a><span class="badge badge--experiment">Source only</span></li>
+              <li><a href="/projects/portfolio-site">This portfolio</a><span class="badge badge--live">Live</span></li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!-- RESUME CTA -->
-      <section id="resume" class="sec" aria-labelledby="resume-title">
-        <div class="wrap">
-          <div class="resume-box fi">
-            <div class="resume-txt">
-              <h2 id="resume-title">Want the full story?</h2>
-              <p>
-                Same facts as this site, formatted for a quick read. Two
-                versions, two formats each — pick whichever fits how you're
-                evaluating me.
-              </p>
+      <!-- OPSFLOW PREVIEW -->
+      <section id="opsflow" class="section" aria-labelledby="opsflow-title">
+        <div class="container hm-ops">
+          <div class="hm-ops__copy fi">
+            <p class="eyebrow">Flagship product</p>
+            <h2 class="hm-ops__title" id="opsflow-title">OpsFlow <span class="status status--building">Building</span></h2>
+            <p class="hm-ops__sub">Logistics Operations Management Platform</p>
+            <p class="section-header__lead">
+              Replace scattered Excel files, WhatsApp messages and manual records with one connected
+              operational system.
+            </p>
+            <ol class="hm-chain" aria-label="Target workflow">
+              <li>Customer</li><li>Order</li><li>Trip</li><li>Invoice</li><li>Payment</li><li>Outstanding</li><li>Reports</li>
+            </ol>
+            <p class="card__body">
+              <strong>Built so far:</strong> accounts, organisations, roles and tenant isolation,
+              customer, route and rate-card data, and fleet records. <strong>Next:</strong> orders,
+              trips and invoicing. No customers yet — it is in active development.
+            </p>
+            <p class="card__meta">TypeScript · React · Cloudflare Workers + D1</p>
+            <div class="cluster">
+              <a class="btn btn--primary" href="https://opsflow91.pages.dev" target="_blank" rel="noopener noreferrer">Explore OpsFlow <span class="arw" aria-hidden="true">↗</span></a>
             </div>
-            <div class="res-grid">
-              <div class="res-card">
-                <div class="res-card-hd">
-                  <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-file-text"/></svg></div>
-                  <div>
-                    <div class="res-card-t">Standard Resume</div>
-                    <span class="tag">Full-Time &amp; Permanent Roles</span>
-                  </div>
-                </div>
-                <p class="res-card-d">Complete 12+ year work history — Port Operations Technologist to self-taught Product Engineer.</p>
-                <div class="res-card-btns">
-                  <a href="Samiul_Alam_Sumel_CV.docx" download class="btn btn-p btn-sm">DOCX <span class="arw">↓</span></a>
-                  <a href="Samiul_Alam_Sumel_CV.pdf" download class="btn btn-o btn-sm">PDF <span class="arw">↓</span></a>
-                </div>
-              </div>
-              <div class="res-card">
-                <div class="res-card-hd">
-                  <div class="hl-ic" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></div>
-                  <div>
-                    <div class="res-card-t">Freelance CV</div>
-                    <span class="tag bl">Contract &amp; Project Work</span>
-                  </div>
-                </div>
-                <p class="res-card-d">Trimmed to project scope, stack, and delivery — built for freelance and contract review.</p>
-                <div class="res-card-btns">
-                  <a href="Samiul_Alam_Sumel_Freelance_CV.docx" download class="btn btn-p btn-sm">DOCX <span class="arw">↓</span></a>
-                  <a href="Samiul_Alam_Sumel_Freelance_CV.pdf" download class="btn btn-o btn-sm">PDF <span class="arw">↓</span></a>
-                </div>
-              </div>
-            </div>
-            <p class="resume-more">Prefer a dedicated page? <a href="/resume/">View the full Resume page ↗</a></p>
           </div>
+          <div class="hm-ops__visual fi">
+            <div class="hm-app" aria-hidden="true">
+              <div class="hm-app__bar"><span></span><span></span><span></span><em>OpsFlow · Dashboard</em><b class="badge badge--demo-data">Demo data</b></div>
+              <div class="hm-app__body">
+                <ul class="hm-app__nav" role="presentation">
+                  <li class="is-on">Dashboard</li><li>Customers</li><li>Orders</li><li>Trips</li><li>Invoices</li><li>Payments</li><li>Reports</li>
+                </ul>
+                <div class="hm-app__main">
+                  <div class="hm-app__kpis">
+                    <div><small>Active orders</small><strong>12</strong></div>
+                    <div><small>Trips</small><strong>5</strong></div>
+                    <div><small>Open invoices</small><strong>8</strong></div>
+                    <div><small>Overdue</small><strong>3</strong></div>
+                  </div>
+                  <table class="hm-app__table">
+                    <thead><tr><th>Order</th><th>Customer</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td>ORD-0001</td><td>Northwind Freight</td><td><i class="hm-pill">In transit</i></td></tr>
+                      <tr><td>ORD-0002</td><td>Harbor Line Traders</td><td><i class="hm-pill hm-pill--ok">Delivered</i></td></tr>
+                      <tr><td>ORD-0003</td><td>Delta Cargo Co.</td><td><i class="hm-pill hm-pill--warn">Invoiced</i></td></tr>
+                      <tr><td>ORD-0004</td><td>Meridian Supply</td><td><i class="hm-pill">In transit</i></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <p class="card__meta hm-ops__cap">Interface concept · fictional data. Orders, trips and invoicing are on the roadmap.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE PREVIEW -->
+      <section id="experience" class="section section--alt" aria-labelledby="experience-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">Professional experience</p>
+            <h2 class="section-header__title" id="experience-title">12+ years inside port operations.</h2>
+          </div>
+          <article class="card card--experience hm-exp fi">
+            <p class="card__meta">Nov 2013 — Present</p>
+            <h3 class="card__title">Mongla Port Authority</h3>
+            <ul class="hm-exp__roles" role="list">
+              <li><p><strong>Senior Outdoor Assistant</strong>, Traffic Department (Revenue Branch)</p><span>Nov 2017 — Present</span></li>
+              <li><p><strong>Junior Outdoor Assistant</strong>, Port &amp; Terminal Operations</p><span>Nov 2013 — Nov 2017</span></li>
+            </ul>
+            <p class="card__body">
+              Wharf rent billing (port facility usage charges), vehicle and cargo tracking across
+              warehouse, shed and yard, and day-to-day coordination with customs &amp;
+              freight-forwarding (C&amp;F) stakeholders, including advance estimates that reduce
+              vehicle dwell time.
+            </p>
+            <ul class="cluster hm-chips" role="list">
+              <li class="badge">Port operations</li><li class="badge">Cargo workflows</li><li class="badge">Vehicle operations</li>
+              <li class="badge">Billing</li><li class="badge">Revenue reporting</li><li class="badge">Documentation</li>
+              <li class="badge">C&amp;F coordination</li><li class="badge">Operational reporting</li><li class="badge">Process automation</li>
+            </ul>
+            <div class="card__footer">
+              <a class="btn btn--secondary" href="/experience/">View Full Experience <span class="arw" aria-hidden="true">↗</span></a>
+            </div>
+          </article>
         </div>
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="sec" aria-labelledby="contact-title">
-        <div class="wrap">
-          <p class="slabel fi">14 / Let's Connect</p>
-          <h2 class="stitle fi" id="contact-title">
-            Let's Build <span>Something Useful.</span>
-          </h2>
-          <div class="sline fi"></div>
-          <div class="cg">
-            <div class="fl">
-              <div class="ct-text">
-                <p class="ct-hook">
-                  Looking for someone who understands the workflow before touching the code?
-                </p>
-                <p>
-                  I'm open to a <strong>remote Product Engineer role</strong> — building AI-assisted, production-grade software for real operational workflows — and to freelance and contract work, with organizations anywhere in the world. No time zone constraints; available to work and communicate on any schedule. That includes building a website — this one is the working example of how I do it.
-                </p>
-              </div>
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-header__title" id="contact-title">Let's talk about your operations.</h2>
+          </div>
+          <div class="hm-contact">
+            <div class="hm-contact__main fl">
+              <p class="ct-hook">Looking for someone who understands the workflow before touching the code?</p>
+              <p class="card__body">
+                I'm open to international and remote roles where port, logistics or business-systems
+                knowledge meets software delivery.
+              </p>
               <div class="ct-av" role="status" aria-live="polite">
                 <div class="av-dot" aria-hidden="true"></div>
                 <div class="av-t">
-                  <strong>Open to Work — Remote Worldwide</strong>
-                  <span
-                    >Product Engineer · Logistics Systems Engineer ·
-                    Full-Stack Developer</span
-                  >
+                  <strong>Open to international and remote opportunities</strong>
+                  <span>Operations technology · Business systems &amp; automation · AI-assisted full-stack products</span>
                 </div>
               </div>
               <div class="ct-btns">
-                <a href="mailto:sa.sumel91@gmail.com" class="btn btn-p">Start a Conversation <span class="arw">↗</span></a>
-                <a href="#resume" class="btn btn-o">View Resume <span class="arw">↗</span></a>
+                <a href="mailto:sa.sumel91@gmail.com" class="btn btn--primary">Start a Conversation <span class="arw" aria-hidden="true">↗</span></a>
+                <a href="/resume/" class="btn btn--secondary">View Resume <span class="arw" aria-hidden="true">↗</span></a>
               </div>
-              <div class="tcos">
-                <div class="tcos-row">
-                  <span class="tcos-k">Primary</span>
-                  <span class="tcos-v">Product Engineer / Operational Systems</span>
-                </div>
-                <div class="tcos-row">
-                  <span class="tcos-k">Secondary</span>
-                  <span class="tcos-v">Logistics-Tech / Full-Stack Developer</span>
-                </div>
-                <div class="tcos-row">
-                  <span class="tcos-k">Additional</span>
-                  <span class="tcos-v">Contract / Freelance</span>
-                </div>
-              </div>
+              <ul class="hm-cv" role="list" aria-label="CV downloads">
+                <li>
+                  <span>Full CV</span>
+                  <a class="link" href="Samiul_Alam_Sumel_CV.pdf" download>PDF</a>
+                  <a class="link" href="Samiul_Alam_Sumel_CV.docx" download>DOCX</a>
+                </li>
+                <li>
+                  <span>Project / contract CV</span>
+                  <a class="link" href="Samiul_Alam_Sumel_Freelance_CV.pdf" download>PDF</a>
+                  <a class="link" href="Samiul_Alam_Sumel_Freelance_CV.docx" download>DOCX</a>
+                </li>
+              </ul>
             </div>
             <div class="cl fr">
               <a href="mailto:sa.sumel91@gmail.com" class="clk"
@@ -2784,17 +1040,16 @@ For any company or industry, not limited to my own domain — I map the actual p
         <div class="ft-center">
           <div class="ft-logo">SAS</div>
           <p class="ft-tagline">
-            Product Engineer for Real-World Operations · I turn operational
-            problems into practical software.
+            Port &amp; logistics operations · Business systems &amp; automation ·
+            AI-assisted full-stack product building.
           </p>
         </div>
         <nav class="ft-links" aria-label="Footer navigation">
           <a href="#hero" class="ft-link">Home</a>
           <a href="/about/" class="ft-link">About</a>
-          <a href="#work" class="ft-link">Work</a>
+          <a href="#work" class="ft-link">Projects</a>
           <a href="/experience/" class="ft-link">Experience</a>
           <a href="/engineering/" class="ft-link">Engineering</a>
-          <a href="#verify" class="ft-link">Build in Public</a>
           <a href="/resume/" class="ft-link">Resume</a>
           <a href="#contact" class="ft-link">Contact</a>
           <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>

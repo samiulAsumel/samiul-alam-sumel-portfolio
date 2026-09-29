@@ -75,8 +75,8 @@
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 100%);
 }
 
-/* ---- Small screens: workflow stacks vertically and the connector draws downward ---- */
-@media (max-width: 768px) {
+/* ---- Narrow screens: five-step flows need ~180px per node, so stack below 1024px ---- */
+@media (max-width: 1024px) {
   .workflow { flex-direction: column; }
   .workflow__connector { flex: 0 0 var(--space-5); width: 2px; height: auto; align-self: center; transform-origin: center top; }
   .workflow.fi .workflow__connector, .workflow.fl .workflow__connector, .workflow.fr .workflow__connector { transform: scaleY(0); }

@@ -22,12 +22,19 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
 
 ## Site maintenance rules added 2026-09-19
 
-- **Project counts appear in four places and must move together** when a
-  project is added: hero proof strip (`.h-proof`), trust strip (`#c3`/`#c4`
-  in `index.html` *and* the `animateCounter` calls in `js/main.js`), the
-  `#verify` proof grid, and the JSON-LD `ItemList` in `index.html`. The
-  counts are: featured project cards (currently 9) and live deployments
-  (currently 8). Recount from the actual cards; never trust the old number.
+- **Homepage is 8 sections (2026-09-29, step 2):** `#hero`, `#credibility`,
+  `#bring` (nav "Expertise"), `#combination`, `#approach`, `#work` (nav
+  "Projects", 3 production systems + a "More projects" list), `#opsflow`,
+  `#experience`, `#contact`. Styles live in `css/home.css` and
+  `css/home-sections.css`. The old hero proof strip, trust counters and
+  `#verify` grid are gone. "3 in production" (`#credibility`) means portbill,
+  carview and otbill — recount if one is added; the JSON-LD `ItemList` in
+  `index.html` still lists live deployments and must match reality.
+- **OpsFlow facts (checked 2026-09-29 against the private repo):** M0 done,
+  M1 identity/RBAC done, M2 master-data and M3 fleet backends done; orders,
+  trips, invoices, payments NOT built; no customers. It is labelled Building,
+  links to the live shell `opsflow91.pages.dev`, and its dashboard mockup is
+  labelled fictional. Re-check the repo roadmap before changing that copy.
 - Fonts are self-hosted (`assets/fonts/*.woff2`, `css/fonts.css`, latin
   subset only). Do not re-add Google Fonts links — `_headers` sets a CSP with
   `font-src 'self'` and `style-src 'self' 'unsafe-inline'`, so any new
@@ -256,7 +263,7 @@ the script's helper functions before adding more content.
 
 - CSS is layered (2026-09-29, design-system step 1); load order in every
   page: `fonts.css → tokens.css → base.css → layout.css → components.css →
-  systems.css → style.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
+  systems.css → style.css`; `index.html` also loads `home.css` and `home-sections.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
   `--text-*`, `--space-*`, `--radius-*`, `--shadow-*`, `--dur-*`), dark default +
   light via `prefers-color-scheme`/`[data-theme]`. Primitives live in
   `layout.css` (`.container .section .section-header .eyebrow .stack .cluster

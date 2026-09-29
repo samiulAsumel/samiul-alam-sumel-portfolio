@@ -147,6 +147,9 @@
     hamburger.setAttribute('aria-expanded', String(open)); // Tells assistive tech whether the menu is currently expanded.
     hamburger.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
     document.body.style.overflow = open ? 'hidden' : ''; // Prevents background scroll while the menu overlay is open.
+    // Keyboard users must land inside the dialog on open and return to the trigger on close.
+    if (open && mobileClose) mobileClose.focus();
+    else if (!open && mobileMenu.contains(document.activeElement)) hamburger.focus();
   }
 
   if (hamburger && mobileMenu) {
@@ -158,7 +161,15 @@
     document.querySelectorAll('.mob a').forEach(link => link.addEventListener('click', () => setMobileMenu(false)));
     // Escape key closes the menu — standard accessibility expectation for overlays.
     document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && mobileMenu.classList.contains('op')) setMobileMenu(false);
+      if (!mobileMenu.classList.contains('op')) return;
+      if (event.key === 'Escape') { setMobileMenu(false); return; }
+      if (event.key !== 'Tab') return;
+      // Trap Tab inside the open menu: wrap from the last focusable element to the first and back.
+      const focusable = mobileMenu.querySelectorAll('a[href], button');
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     });
   }
 
@@ -368,69 +379,6 @@
       card.style.setProperty('--mx', ((event.clientX - rect.left) / rect.width) * 100 + '%');
       card.style.setProperty('--my', ((event.clientY - rect.top) / rect.height) * 100 + '%');
     }, { passive: true });
-  }
-
-  /* ----------------------------------------------------------
-     HERO BACKGROUND ORBS — subtle pointer-driven parallax
-     The soft background "orb" shapes drift slightly opposite/along the
-     cursor to create a subtle depth effect.
-  ---------------------------------------------------------- */
-  const orbs = document.querySelectorAll('.bg-orb');
-  if (canHover && !reducedMotion && orbs.length) {
-    // target = where the cursor currently implies the orbs should be;
-    // cur = the orbs' actual current (lagging) position. Interpolating
-    // between them each frame produces a smooth "catch-up" easing effect
-    // instead of the orbs snapping directly to the cursor.
-    let targetX = 0, targetY = 0, curX = 0, curY = 0;
-    window.addEventListener('pointermove', event => {
-      // Normalize cursor position to a -1..1 range centered on the viewport middle.
-      targetX = (event.clientX / window.innerWidth - 0.5) * 2;
-      targetY = (event.clientY / window.innerHeight - 0.5) * 2;
-    }, { passive: true });
-
-    // Runs every animation frame regardless of pointer movement, so the
-    // easing keeps animating toward the latest target even between moves.
-    function tickOrbs() {
-      // Simple exponential easing: move 4% of the remaining distance to
-      // the target each frame — a cheap way to get smooth "lag" motion.
-      curX += (targetX - curX) * 0.04;
-      curY += (targetY - curY) * 0.04;
-      orbs.forEach((orb, i) => {
-        const strength = (i + 1) * 10; // Later orbs drift further, adding a sense of layered depth.
-        orb.style.transform = `translate(${curX * strength}px, ${curY * strength}px)`;
-      });
-      window.requestAnimationFrame(tickOrbs); // Self-scheduling loop — runs indefinitely once started.
-    }
-    window.requestAnimationFrame(tickOrbs);
-  }
-
-  /* ----------------------------------------------------------
-     CARD TILT — cursor-driven 3D tilt, same card family as the
-     spotlight glow above, plus About's highlight cards
-  ---------------------------------------------------------- */
-  const tiltCards = document.querySelectorAll(SPOTLIGHT_SELECTOR + ',.hl-item');
-  if (canHover && !reducedMotion && tiltCards.length) {
-    const TILT_MAX = 3; // Maximum tilt angle in degrees — kept small for a subtle, professional effect rather than a gimmicky one.
-    tiltCards.forEach(card => {
-      // Unlike the spotlight glow (one shared document listener), tilt is
-      // attached per-card because the rotation calculation and CSS
-      // transform are specific to each card's own bounding box.
-      card.addEventListener('pointermove', event => {
-        const rect = card.getBoundingClientRect();
-        const px = (event.clientX - rect.left) / rect.width; // Cursor x position as 0..1 across the card.
-        const py = (event.clientY - rect.top) / rect.height; // Cursor y position as 0..1 down the card.
-        // Map cursor position to a rotation: center of the card = no tilt;
-        // edges = maximum tilt. Y-axis rotation follows horizontal cursor
-        // movement and vice versa, matching how a real tilted surface would look.
-        const rotY = (px - 0.5) * TILT_MAX * 2;
-        const rotX = (0.5 - py) * TILT_MAX * 2;
-        card.style.transform = `perspective(900px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-2px)`;
-      }, { passive: true });
-      // Reset the tilt back to flat once the cursor leaves the card.
-      card.addEventListener('pointerleave', () => {
-        card.style.transform = '';
-      });
-    });
   }
 
   /* ----------------------------------------------------------

@@ -1,0 +1,287 @@
+/* ============================================================
+   Design tokens — the only place raw colors, sizes and durations live.
+   Dark is the default theme; light is a second palette (media query
+   for system preference, [data-theme] for the explicit toggle).
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces: navy-tinted graphite so the page reads calm, not pure black */
+  --color-bg: #0b0f17;
+  --color-bg-subtle: #0e131d;
+  --color-surface: #111723;
+  --color-surface-2: #172031;
+  --color-surface-raised: #1b2436;
+
+  --color-border: rgba(148, 163, 184, 0.14);
+  --color-border-strong: rgba(148, 163, 184, 0.24);
+  --color-border-accent: rgba(249, 115, 22, 0.55);
+
+  /* Text: muted stays >=4.5:1 on --color-bg and --color-surface */
+  --color-text: #e8edf5;
+  --color-text-2: #a3aec2;
+  --color-text-muted: #8591a6;
+
+  /* One accent. Solid on purpose: gradients are reserved for real depth cues */
+  --color-accent: #f97316;
+  --color-accent-hover: #fb8a3c;
+  --color-accent-text: #fb923c;
+  --color-accent-subtle: rgba(249, 115, 22, 0.1);
+  --color-accent-muted: rgba(249, 115, 22, 0.18);
+  --color-on-accent: #0b0f17;
+
+  --color-success: #4ade80;
+  --color-success-subtle: rgba(74, 222, 128, 0.1);
+  --color-warning: #fbbf24;
+  --color-warning-subtle: rgba(251, 191, 36, 0.1);
+  --color-error: #f87171;
+  --color-error-subtle: rgba(248, 113, 113, 0.1);
+  --color-info: #60a5fa;
+  --color-info-subtle: rgba(96, 165, 250, 0.1);
+
+  --color-inverse-bg: #e8edf5;
+  --color-inverse-text: #0b0f17;
+  --color-inverse-text-2: #3b4658;
+
+  --color-nav-bg: rgba(11, 15, 23, 0.8);
+  --color-overlay: rgba(6, 8, 12, 0.65);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Fluid only where a heading would otherwise dominate a small screen */
+  --text-display: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
+  --text-h1: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-h2: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem);
+  --text-h3: 1.375rem;
+  --text-h4: 1.125rem;
+  --text-body-lg: 1.125rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-caption: 0.8125rem;
+  --text-eyebrow: 0.75rem;
+  --text-button: 0.9375rem;
+  --text-nav: 0.875rem;
+  --text-meta: 0.75rem;
+
+  --leading-tight: 1.1;
+  --leading-heading: 1.2;
+  --leading-snug: 1.4;
+  --leading-body: 1.65;
+
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.02em;
+  --tracking-body: 0;
+  --tracking-eyebrow: 0.14em;
+  --tracking-meta: 0.04em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --measure: 68ch;
+  --measure-narrow: 56ch;
+
+  /* Spacing: 4px base */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
+  --space-8: 2.5rem;
+  --space-9: 3rem;
+  --space-10: 4rem;
+  --space-11: 5rem;
+  --space-12: 6rem;
+  --space-13: 8rem;
+
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --section-y: clamp(4rem, 9vw, 8rem);
+  --card-pad: clamp(1.25rem, 2.4vw, 1.75rem);
+  --grid-gap: clamp(1rem, 2vw, 1.5rem);
+
+  /* Layout */
+  --container: 1200px;
+  --container-narrow: 760px;
+  --nav-h: 64px;
+
+  /* Radius: pills are reserved for dots/avatars */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Elevation: neutral shadows only, no colored glows */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.5);
+  --shadow-3: 0 24px 60px -16px rgba(0, 0, 0, 0.6);
+
+  /* Motion */
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 320ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-distance: 12px;
+
+  --z-nav: 1000;
+  --z-overlay: 1100;
+  --z-toast: 1200;
+
+  /* -------- Legacy aliases --------
+     TODO(samiul): drop once page markup/CSS in steps 2-10 uses --color-* directly. */
+  --bg: var(--color-bg);
+  --bg2: var(--color-bg-subtle);
+  --bg3: var(--color-surface-2);
+  --card: var(--color-surface);
+  --card2: var(--color-surface-2);
+  --bdr: var(--color-border-strong);
+  --bdr-s: var(--color-border);
+  --bdr-s2: var(--color-border-strong);
+  --bdr-h: var(--color-border-accent);
+  --tx: var(--color-text);
+  --tx2: var(--color-text-2);
+  --tx3: var(--color-text-muted);
+  --accent: var(--color-accent);
+  --accent-tx: var(--color-accent-text);
+  --accent2: var(--color-accent);
+  --accent-10: var(--color-accent-subtle);
+  --accent-15: var(--color-accent-muted);
+  --accent-25: rgba(249, 115, 22, 0.28);
+  --gr: var(--color-success);
+  --bl: var(--color-info);
+  --pu: var(--color-text-2);
+  --gr-bg: var(--color-success-subtle);
+  --bl-bg: var(--color-info-subtle);
+  --pu-bg: var(--color-surface-2);
+  --red: var(--color-error);
+  --sp-1: var(--space-1);
+  --sp-2: var(--space-2);
+  --sp-3: var(--space-3);
+  --sp-4: var(--space-4);
+  --sp-5: var(--space-6);
+  --sp-6: var(--space-7);
+  --sp-7: var(--space-9);
+  --sp-8: var(--space-10);
+  --sp-9: var(--space-12);
+  --fs-xs: var(--text-meta);
+  --fs-sm: var(--text-body-sm);
+  --fs-base: var(--text-body);
+  --fs-md: var(--text-body-lg);
+  --fs-lg: var(--text-h3);
+  --fs-xl: var(--text-h2);
+  --fs-2xl: var(--text-h2);
+  --fs-3xl: var(--text-display);
+  --r-xs: var(--radius-sm);
+  --r-sm: var(--radius-md);
+  --r-md: var(--radius-lg);
+  --r-lg: var(--radius-lg);
+  --r-xl: var(--radius-xl);
+  --shd: var(--shadow-2);
+  --shd-lg: var(--shadow-3);
+  --glow: var(--shadow-2);
+  --glow-lg: var(--shadow-3);
+  --grad-accent: linear-gradient(var(--color-accent), var(--color-accent));
+  --grad-btn: linear-gradient(var(--color-accent), var(--color-accent));
+  --glass-bg: var(--color-nav-bg);
+  --noise: none;
+  --ease: var(--dur-base) var(--ease-standard);
+  --ease-spring: var(--dur-slow) var(--ease-out);
+  --font-body: var(--font-sans);
+  --font-display: var(--font-sans);
+}
+
+/* Light theme values, shared by the system-preference block and the explicit toggle */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    color-scheme: light;
+    --color-bg: #f7f8fa;
+    --color-bg-subtle: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-2: #f1f3f6;
+    --color-surface-raised: #ffffff;
+    --color-border: rgba(15, 23, 42, 0.1);
+    --color-border-strong: rgba(15, 23, 42, 0.18);
+    --color-border-accent: rgba(194, 65, 12, 0.5);
+    --color-text: #111827;
+    --color-text-2: #4b5563;
+    --color-text-muted: #5f6b7c;
+    --color-accent: #ea580c;
+    --color-accent-hover: #c2410c;
+    --color-accent-text: #c2410c;
+    --color-accent-subtle: rgba(234, 88, 12, 0.08);
+    --color-accent-muted: rgba(234, 88, 12, 0.14);
+    --color-on-accent: #ffffff;
+    --color-success: #15803d;
+    --color-success-subtle: rgba(21, 128, 61, 0.09);
+    --color-warning: #a16207;
+    --color-warning-subtle: rgba(161, 98, 7, 0.09);
+    --color-error: #dc2626;
+    --color-error-subtle: rgba(220, 38, 38, 0.08);
+    --color-info: #1d4ed8;
+    --color-info-subtle: rgba(29, 78, 216, 0.08);
+    --color-inverse-bg: #1e3a5f;
+    --color-inverse-text: #f1f5f9;
+    --color-inverse-text-2: #cbd5e1;
+    --color-nav-bg: rgba(247, 248, 250, 0.85);
+    --color-overlay: rgba(15, 23, 42, 0.4);
+    --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.08);
+    --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.14);
+    --shadow-3: 0 24px 60px -16px rgba(15, 23, 42, 0.2);
+    --accent-25: rgba(234, 88, 12, 0.24);
+  }
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-bg: #f7f8fa;
+  --color-bg-subtle: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f3f6;
+  --color-surface-raised: #ffffff;
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-border-strong: rgba(15, 23, 42, 0.18);
+  --color-border-accent: rgba(194, 65, 12, 0.5);
+  --color-text: #111827;
+  --color-text-2: #4b5563;
+  --color-text-muted: #5f6b7c;
+  --color-accent: #ea580c;
+  --color-accent-hover: #c2410c;
+  --color-accent-text: #c2410c;
+  --color-accent-subtle: rgba(234, 88, 12, 0.08);
+  --color-accent-muted: rgba(234, 88, 12, 0.14);
+  --color-on-accent: #ffffff;
+  --color-success: #15803d;
+  --color-success-subtle: rgba(21, 128, 61, 0.09);
+  --color-warning: #a16207;
+  --color-warning-subtle: rgba(161, 98, 7, 0.09);
+  --color-error: #dc2626;
+  --color-error-subtle: rgba(220, 38, 38, 0.08);
+  --color-info: #1d4ed8;
+  --color-info-subtle: rgba(29, 78, 216, 0.08);
+  --color-inverse-bg: #1e3a5f;
+  --color-inverse-text: #f1f5f9;
+  --color-inverse-text-2: #cbd5e1;
+  --color-nav-bg: rgba(247, 248, 250, 0.85);
+  --color-overlay: rgba(15, 23, 42, 0.4);
+  --shadow-1: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.14);
+  --shadow-3: 0 24px 60px -16px rgba(15, 23, 42, 0.2);
+  --accent-25: rgba(234, 88, 12, 0.24);
+}
+
+/* Reduced motion: zero durations and no reveal travel, so nothing waits on a transition */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --reveal-distance: 0px;
+  }
+}

@@ -241,10 +241,23 @@ the script's helper functions before adding more content.
 
 ## Style conventions already in place
 
-- CSS: single `css/style.css`, design tokens in `:root`, BEM-ish flat class
-  names (`.sk-card`, `.pc-ds`, `.dc-note`), mobile-first isn't used but
-  `@media(max-width:900px/768px/480px)` breakpoints are — check all three
-  after layout changes.
+- CSS is layered (2026-09-29, design-system step 1); load order in every
+  page: `fonts.css → tokens.css → base.css → layout.css → components.css →
+  style.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
+  `--text-*`, `--space-*`, `--radius-*`, `--shadow-*`, `--dur-*`), dark default +
+  light via `prefers-color-scheme`/`[data-theme]`. Primitives live in
+  `layout.css` (`.container .section .section-header .eyebrow .stack .cluster
+  .grid .divider .bg-layer`) and `components.css` (`.btn--primary/secondary/
+  ghost/text`, `.card--*`, `.badge--*`, `.stat`, `.icon-wrap`, `.link`, nav
+  shell). `style.css` is section-specific only. Legacy names (`.wrap .sec
+  .btn-p .btn-o .tag .sp`, old `--bg/--tx/--accent` tokens) alias onto the new
+  rules; new work uses the new names, never raw hex/px. Single solid orange
+  accent, no gradients, no glows, no blur/scale reveals, no pill radii. Fonts:
+  Inter + JetBrains Mono only (Space Grotesk removed). When verifying locally,
+  serve with a `Cache-Control: no-store` server — Chrome heuristically caches
+  `python3 -m http.server` CSS and shows stale styles.
+- Breakpoints are desktop-first (`max-width:900px/768px/480px`) — check all
+  three after layout changes.
 - Body-copy paragraphs (`.h-desc`, `.ab-text p`, `.svc-intro`, `.svc-desc`,
   `.pc-pb`, `.pc-ds`, `.dc-note`, `.ct-text p`) are `text-align: justify`
   with `hyphens: auto`. Keep this pattern for any new long-form paragraph

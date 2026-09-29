@@ -46,6 +46,15 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   records in either). Keep OT Bill described as overtime billing, not payroll, and
   CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
   (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
+- **Capabilities (2026-09-30, step 7):** `/capabilities/` (+ homepage `#capabilities`); the nav
+  "Expertise" link now points there. No percentages, bars, ratings or certificates, ever.
+  Technology claims need repo evidence: Working with = live projects (HTML/CSS/JS, PWA, Cloudflare
+  Pages/Workers, Firebase Auth/Firestore, Chart.js, Node tests, Git/GitHub, Claude Code); Building
+  with = OpsFlow (TypeScript, React, Vite, Tailwind, Hono, Zod, D1 SQL, Vitest, GitHub Actions);
+  Learning = Node/Express depth, Jest/RTL, TypeScript depth (Odin Project / Full Stack Open, not
+  certifications). TypeScript is now "Building with" (supersedes the old "in progress only" rule).
+  Do not list PostgreSQL, Vercel, Docker, MongoDB, Linux admin/DevOps, cloud/security, German or
+  English-as-skill. Role wording: "AI-Assisted Developer / Product Builder", never "AI engineer".
 - **Experience profile (2026-09-30, step 6):** `/experience/` is the full operations career
   profile and homepage `#experience` its summary (`css/exp-profile*.css`; domain map reuses the
   tab component). Verified facts only: Mongla Port Authority, Traffic Department, Nov 2013 –

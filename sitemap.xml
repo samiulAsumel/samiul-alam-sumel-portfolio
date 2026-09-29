@@ -6,6 +6,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sasumel.pages.dev/capabilities/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sasumel.pages.dev/engineering/ai-engineering/</loc>
     <lastmod>2026-09-30</lastmod>
     <priority>0.8</priority>

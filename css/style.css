@@ -71,6 +71,8 @@
   color:var(--color-accent-text);
   
 }
+/* Secondary + differentiator titles: mono metadata register, below the primary role */
+.h-titles{font-family:var(--font-mono);font-size:var(--text-caption);letter-spacing:var(--tracking-meta);color:var(--color-text-2);max-width:560px;margin:-8px 0 20px;line-height:1.6}
 .h-tag{font-size:1rem;color:var(--tx2);max-width:560px;margin-bottom:32px;line-height:1.7}
 
 .h-proof{display:flex;flex-wrap:wrap;gap:var(--sp-6);margin-bottom:36px}
@@ -87,6 +89,7 @@
 #hero .h-eye{transition-delay:.06s}
 #hero .h-name{transition-delay:.12s}
 #hero .h-role{transition-delay:.18s}
+#hero .h-titles{transition-delay:.21s}
 #hero .h-tag{transition-delay:.24s}
 #hero .h-proof{transition-delay:.3s}
 #hero .h-btns{transition-delay:.36s}

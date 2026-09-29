@@ -134,6 +134,58 @@
   --z-overlay: 1100;
   --z-toast: 1200;
 
+  /* -------- Spec-named semantic aliases --------
+     Later steps use these names; each maps onto an existing token so themes stay in one place. */
+  --background: var(--color-bg);
+  --background-secondary: var(--color-bg-subtle);
+  --surface: var(--color-surface);
+  --surface-elevated: var(--color-surface-raised);
+  --border: var(--color-border);
+  --border-strong: var(--color-border-strong);
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-2);
+  --text-muted: var(--color-text-muted);
+  --accent-hover: var(--color-accent-hover);
+  --success: var(--color-success);
+  --warning: var(--color-warning);
+  --error: var(--color-error);
+  --information: var(--color-info);
+
+  /* Neutral slate for "demo / anonymised data" notices: informational, never alarming */
+  --color-demo: #94a3b8;
+  --color-demo-subtle: rgba(148, 163, 184, 0.1);
+
+  --space-xs: var(--space-1);
+  --space-sm: var(--space-2);
+  --space-md: var(--space-4);
+  --space-lg: var(--space-6);
+  --space-xl: var(--space-7);
+  --space-2xl: var(--space-9);
+  --space-3xl: var(--space-10);
+  --space-4xl: var(--space-12);
+
+  --radius-small: var(--radius-sm);
+  --radius-medium: var(--radius-md);
+  --radius-large: var(--radius-lg);
+  --radius-card: var(--radius-lg);
+  --radius-button: var(--radius-md);
+
+  --shadow-subtle: var(--shadow-1);
+  --shadow-elevated: var(--shadow-2);
+  --shadow-floating: var(--shadow-3);
+
+  --border-default: 1px solid var(--color-border);
+  --border-strong-line: 1px solid var(--color-border-strong);
+  --border-interactive: 1px solid var(--color-border-accent);
+
+  --motion-fast: var(--dur-fast);
+  --motion-normal: var(--dur-base);
+  --motion-slow: var(--dur-slow);
+  /* Workflow connector draw-in is the slowest motion on the site */
+  --dur-draw: 600ms;
+
+  --pattern-grid-size: 48px;
+
   /* -------- Legacy aliases --------
      TODO(samiul): drop once page markup/CSS in steps 2-10 uses --color-* directly. */
   --bg: var(--color-bg);
@@ -235,6 +287,8 @@
     --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.14);
     --shadow-3: 0 24px 60px -16px rgba(15, 23, 42, 0.2);
     --accent-25: rgba(234, 88, 12, 0.24);
+    --color-demo: #475569;
+    --color-demo-subtle: rgba(71, 85, 105, 0.08);
   }
 }
 
@@ -274,6 +328,8 @@
   --shadow-2: 0 8px 24px -8px rgba(15, 23, 42, 0.14);
   --shadow-3: 0 24px 60px -16px rgba(15, 23, 42, 0.2);
   --accent-25: rgba(234, 88, 12, 0.24);
+  --color-demo: #475569;
+  --color-demo-subtle: rgba(71, 85, 105, 0.08);
 }
 
 /* Reduced motion: zero durations and no reveal travel, so nothing waits on a transition */
@@ -282,6 +338,7 @@
     --dur-fast: 0ms;
     --dur-base: 0ms;
     --dur-slow: 0ms;
+    --dur-draw: 0ms;
     --reveal-distance: 0px;
   }
 }

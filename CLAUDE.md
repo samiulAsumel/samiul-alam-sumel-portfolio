@@ -83,6 +83,19 @@ actual current phase/topic, never re-add gap-matrix or visa content.
 
 ## Positioning — read before editing content
 
+**5th reversal (2026-09-29, explicit user instruction via a pasted 10-step
+redesign spec plus an AskUserQuestion confirmation):** the target identity is
+now **Port & Logistics Operations Specialist** (primary) → **Business Systems
+& Automation** (secondary) → **AI-Assisted Full-Stack Product Builder**
+(differentiator). Step 1 changed only brand chrome: nav logo badge ("Port &
+Logistics Ops"), hero `.h-role` and new `.h-titles` line. `<title>`, meta,
+JSON-LD, About/Experience/case-study copy and both CVs still carry the older
+"Product Engineer for Real-World Operations" wording and are rewritten in later
+steps — do not treat that mismatch as a bug to fix piecemeal. Primary nav is
+now Home / Experience / Projects / Expertise / About / CV / Contact on every
+page (Engineering is footer-only; OpsFlow is not in this branch). The older
+positioning text below is history; the 5th-reversal note above wins.
+
 The site's identity is **Product Engineer for Real-World Operations**
 (React/Next.js, Node.js/Express, MongoDB), supporting tagline "I turn
 operational problems into practical software." This is a **third
@@ -243,7 +256,7 @@ the script's helper functions before adding more content.
 
 - CSS is layered (2026-09-29, design-system step 1); load order in every
   page: `fonts.css → tokens.css → base.css → layout.css → components.css →
-  style.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
+  systems.css → style.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
   `--text-*`, `--space-*`, `--radius-*`, `--shadow-*`, `--dur-*`), dark default +
   light via `prefers-color-scheme`/`[data-theme]`. Primitives live in
   `layout.css` (`.container .section .section-header .eyebrow .stack .cluster

@@ -1,0 +1,87 @@
+/* ============================================================
+   Business-system primitives: workflow, data card, system card,
+   process step, status indicator, demo notice, technical grid.
+   Content-agnostic; later steps compose them. Depends on tokens.css.
+   ============================================================ */
+
+/* ---- Status indicator: factual project state ----
+   "Production" is reserved for systems that are genuinely in production use. */
+.status {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-family: var(--font-mono); font-size: var(--text-meta); font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--status-color, var(--color-text-2));
+}
+.status::before { content: ''; width: 7px; height: 7px; border-radius: var(--radius-full); background: currentColor; flex-shrink: 0; }
+.status--production { --status-color: var(--color-success); }
+.status--building { --status-color: var(--color-warning); }
+.status--live-demo { --status-color: var(--color-info); }
+.status--experiment { --status-color: var(--color-text-muted); }
+
+/* ---- Workflow: Problem -> Process -> System -> Result ---- */
+.workflow { display: flex; align-items: stretch; gap: 0; list-style: none; }
+.workflow__node {
+  position: relative; flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-4) var(--space-5); background: var(--color-surface); border: var(--border-default);
+  border-radius: var(--radius-card);
+}
+.workflow__label { font-family: var(--font-mono); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
+.workflow__title { font-size: var(--text-h4); font-weight: var(--weight-semibold); color: var(--color-text); }
+.workflow__text { font-size: var(--text-body-sm); color: var(--color-text-2); line-height: var(--leading-body); }
+/* Connector is a real element so it can draw in; it never takes pointer events */
+.workflow__connector {
+  flex: 0 0 var(--space-7); align-self: center; height: 2px; background: var(--color-border-strong);
+  transform-origin: left center; pointer-events: none;
+}
+.workflow.fi .workflow__connector, .workflow.fl .workflow__connector, .workflow.fr .workflow__connector { transform: scaleX(0); transition: transform var(--dur-draw) var(--ease-out); }
+.workflow.v .workflow__connector { transform: scaleX(1); }
+.workflow__node--result { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+
+/* ---- Data card: label, value, context ---- */
+.data-card { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--card-pad); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-card); }
+.data-card__label { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
+.data-card__value { font-size: var(--text-h2); font-weight: var(--weight-bold); line-height: 1.1; letter-spacing: var(--tracking-heading); font-variant-numeric: tabular-nums; color: var(--color-text); }
+.data-card__context { font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+/* ---- System card: module, description, status slot ---- */
+.system-card { display: flex; flex-direction: column; gap: var(--space-3); padding: var(--card-pad); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-card); transition: border-color var(--motion-normal) var(--ease-standard), box-shadow var(--motion-normal) var(--ease-standard); }
+.system-card__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.system-card__module { font-size: var(--text-h4); font-weight: var(--weight-semibold); color: var(--color-text); }
+.system-card__desc { font-size: var(--text-body-sm); color: var(--color-text-2); line-height: var(--leading-body); }
+.system-card:hover { border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated); }
+
+/* ---- Process step: 01 / title / body ---- */
+.process-step { display: grid; align-content: start; grid-template-columns: auto 1fr; column-gap: var(--space-5); row-gap: var(--space-1); align-items: start; }
+.process-step__num { grid-row: span 2; font-family: var(--font-mono); font-size: var(--text-h3); font-weight: var(--weight-medium); color: var(--color-accent-text); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.process-step__title { font-size: var(--text-h4); font-weight: var(--weight-semibold); color: var(--color-text); }
+.process-step__body { font-size: var(--text-body-sm); color: var(--color-text-2); line-height: var(--leading-body); max-width: var(--measure-narrow); }
+
+/* ---- Demo notice: every future project page shows only fictional or anonymised data ---- */
+.demo-notice {
+  display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4);
+  font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-demo-subtle);
+  border: 1px solid color-mix(in srgb, var(--color-demo) 30%, transparent); border-left-width: 3px; border-radius: var(--radius-md);
+}
+.demo-notice strong { color: var(--color-text); font-weight: var(--weight-semibold); }
+
+/* ---- Technical grid: opt-in fine-line surface for diagrams, masked so edges fade ---- */
+.surface-grid { position: relative; isolation: isolate; }
+.surface-grid::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.5;
+  background-image:
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: var(--pattern-grid-size) var(--pattern-grid-size);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 100%);
+}
+
+/* ---- Small screens: workflow stacks vertically and the connector draws downward ---- */
+@media (max-width: 768px) {
+  .workflow { flex-direction: column; }
+  .workflow__connector { flex: 0 0 var(--space-5); width: 2px; height: auto; align-self: center; transform-origin: center top; }
+  .workflow.fi .workflow__connector, .workflow.fl .workflow__connector, .workflow.fr .workflow__connector { transform: scaleY(0); }
+  .workflow.v .workflow__connector { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workflow .workflow__connector { transform: none !important; transition: none; }
+}

@@ -160,7 +160,7 @@ Logistics Ops"), hero `.h-role` and new `.h-titles` line. `<title>`, meta,
 JSON-LD, About/Experience/case-study copy and both CVs still carry the older
 "Product Engineer for Real-World Operations" wording and are rewritten in later
 steps — do not treat that mismatch as a bug to fix piecemeal. Primary nav is
-now Home / Experience / Projects / Expertise / About / CV / Contact on every
+now Home / Projects / Experience / Expertise / About / CV / Contact on every
 page (Engineering is footer-only; OpsFlow is not in this branch). The older
 positioning text below is history; the 5th-reversal note above wins.
 

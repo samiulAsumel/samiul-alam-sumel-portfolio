@@ -47,6 +47,16 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   CarView as quantity tracking, not GPS. `assets/screenshots/carview*.webp`,
   `otbill.webp` and `assets/demos/carview-demo.gif` are now unreferenced and should
   be deleted once the user confirms.
+- **OpsFlow page (2026-09-29, step 5)** `/projects/opsflow` + homepage `#opsflow`.
+  Status source of truth is the private repo (`docs/roadmap.md`, `routes/`, `pages/`);
+  re-check before editing. As of HEAD 4478e5e: Implemented = tenancy/auth/RBAC,
+  master data (API only), fleet (API + minimal UI), quotations (API + UI); In
+  development = Orders, Trips (user-chosen); Planned = invoices, payments, outstanding,
+  expenses, reports, warehouse. No dashboard exists; every dashboard image is labelled
+  Concept. Never say customers/revenue/live SaaS. Repo is private: no GitHub link. The two
+  real screenshots (`assets/screenshots/opsflow-*.webp`) show a fictional "Demo Company"
+  from a local instance. CSS: `opsflow.css`, `opsflow-sections.css`; JS: `opsflow.js`
+  (module filter) plus the shared tab component in `how-i-build.js`.
 - **OpsFlow facts (checked 2026-09-29 against the private repo):** M0 done,
   M1 identity/RBAC done, M2 master-data and M3 fleet backends done; orders,
   trips, invoices, payments NOT built; no customers. It is labelled Building,

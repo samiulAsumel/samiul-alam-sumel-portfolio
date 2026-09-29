@@ -1,0 +1,60 @@
+/* ============================================================
+   OpsFlow product page, part 1: hero, status system, workflow panels,
+   module grid, fragmented-to-connected visual. Tokens only.
+   Status is always a glyph plus text, never colour alone.
+   ============================================================ */
+
+.of-hero { padding-block: calc(var(--nav-h) + var(--space-9)) var(--space-9); }
+.of-hero__title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); font-size: var(--text-display); letter-spacing: var(--tracking-display); margin-bottom: var(--space-4); }
+.of-hero__lead { font-size: var(--text-h3); font-weight: var(--weight-medium); max-width: 36ch; margin-bottom: var(--space-4); }
+.of-hero__sub { max-width: var(--measure); color: var(--color-text-2); margin-bottom: var(--space-5); }
+.of-status-note { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-6); padding: var(--space-3) var(--space-4); font-size: var(--text-body-sm); color: var(--color-text); background: var(--color-warning-subtle); border: 1px solid color-mix(in srgb, var(--color-warning) 35%, transparent); border-radius: var(--radius-md); }
+
+/* ---- Status chips ---- */
+.mstat { display: inline-flex; align-items: center; gap: var(--space-2); padding: 1px var(--space-3); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; white-space: nowrap; border: 1px solid var(--color-border-strong); border-radius: var(--radius-sm); }
+.mstat i { font-style: normal; }
+.mstat--done { color: var(--color-success); background: var(--color-success-subtle); }
+.mstat--dev { color: var(--color-warning); background: var(--color-warning-subtle); }
+.mstat--plan { color: var(--color-text-2); background: transparent; border-style: dashed; }
+
+/* ---- Workflow panels (reuse the .hb tab component) ---- */
+.of-flow.hb.is-tabs .hb__layout { grid-template-columns: minmax(0, 1fr); }
+.of-flow .hb__panel { min-height: 0; }
+.of-flow.hb.is-tabs .hb__panel { min-height: 0; }
+.of-flow .hb__head { flex-wrap: wrap; }
+.of-flow .hb__head .mstat { margin-left: auto; }
+.of-dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--space-4); }
+.of-dl dt { margin-bottom: 2px; font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
+.of-dl dd { font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+/* ---- Modules ---- */
+.of-filter { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-5); }
+.of-filter button { min-height: 40px; padding: 0 var(--space-4); font-family: inherit; font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-text-2); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); transition: color var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard); }
+.of-filter button:hover { color: var(--color-text); border-color: var(--color-border-strong); }
+.of-filter button[aria-pressed='true'] { color: var(--color-text); background: var(--color-accent-subtle); border-color: var(--color-border-accent); }
+.of-modules { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--space-3); }
+.of-mod { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); transition: border-color var(--dur-base) var(--ease-standard), transform var(--dur-base) var(--ease-standard); }
+.of-mod:hover { border-color: var(--color-border-accent); transform: translateY(-2px); }
+.of-mod[hidden] { display: none; }
+.of-mod__top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2); }
+.of-mod h3 { font-size: var(--text-h4); }
+.of-mod p { font-size: var(--text-body-sm); color: var(--color-text-2); }
+/* Planned modules sit back visually so they cannot pass for finished work */
+.of-mod[data-status='plan'] { background: transparent; border-style: dashed; }
+
+/* ---- Fragmented -> OpsFlow -> connected ---- */
+.of-shift { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--space-6); align-items: center; }
+.of-shift__col { padding: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); }
+.of-shift__col h3 { margin-bottom: var(--space-4); font-family: var(--font-mono); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
+.of-shift__col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+.of-shift__col li { padding: var(--space-2) var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-surface-2); border: 1px dashed var(--color-border-strong); border-radius: var(--radius-md); }
+.of-shift__mid { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-caption); color: var(--color-accent-text); }
+.of-shift__mid b { padding: var(--space-3) var(--space-5); font-size: var(--text-h4); color: var(--color-text); background: var(--color-accent-subtle); border: var(--border-interactive); border-radius: var(--radius-md); }
+.of-shift__col--after { border-color: var(--color-border-accent); }
+.of-shift__col--after li { border-style: solid; }
+
+@media (max-width: 900px) {
+  .of-shift { grid-template-columns: minmax(0, 1fr); }
+  .of-shift__mid { flex-direction: row; justify-content: center; }
+}
+.hm-ops__flow { margin-top: var(--space-9); }

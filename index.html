@@ -76,6 +76,7 @@
     <link rel="stylesheet" href="css/home-sections.css" />
     <link rel="stylesheet" href="css/case-mocks.css" />
     <link rel="stylesheet" href="css/project-cards.css" />
+    <link rel="stylesheet" href="css/opsflow.css" />
     <link rel="stylesheet" href="css/hb-process.css" />
     <link rel="stylesheet" href="css/hb-examples.css" />
 
@@ -494,6 +495,7 @@
           <li role="option" data-group="Page" data-href="/experience/"><svg class="icon"><use href="#i-anchor"/></svg><span>12+ Years Inside Real Operations</span></li>
           <li role="option" data-group="Page" data-href="/resume/"><svg class="icon"><use href="#i-file-text"/></svg><span>Resume</span></li>
           <li role="option" data-group="Project" data-href="/projects/portbill"><svg class="icon"><use href="#i-receipt"/></svg><span>Port Billing System (Case study)</span></li>
+          <li role="option" data-group="Project" data-href="/projects/opsflow"><svg class="icon"><use href="#i-warehouse"/></svg><span>OpsFlow (Product page, in development)</span></li>
           <li role="option" data-group="Project" data-href="/projects/carview"><svg class="icon"><use href="#i-car"/></svg><span>Vehicle Tracking / CarView (Case study)</span></li>
           <li role="option" data-group="Project" data-href="/projects/otbill"><svg class="icon"><use href="#i-timer"/></svg><span>OT Bill Management (Case study)</span></li>
           <li role="option" data-group="Project" data-href="https://clif91.pages.dev/" data-external="true"><svg class="icon"><use href="#i-clipboard-list"/></svg><span>Client Intake Form (Live)</span></li>
@@ -1003,31 +1005,32 @@
 
       <!-- OPSFLOW PREVIEW -->
       <section id="opsflow" class="section" aria-labelledby="opsflow-title">
-        <div class="container hm-ops">
-          <div class="hm-ops__copy fi">
-            <p class="eyebrow">Flagship product</p>
-            <h2 class="hm-ops__title" id="opsflow-title">OpsFlow <span class="status status--building">Building</span></h2>
-            <p class="hm-ops__sub">Logistics Operations Management Platform</p>
-            <p class="section-header__lead">
-              Replace scattered Excel files, WhatsApp messages and manual records with one connected
-              operational system.
-            </p>
-            <ol class="hm-chain" aria-label="Target workflow">
-              <li>Customer</li><li>Order</li><li>Trip</li><li>Invoice</li><li>Payment</li><li>Outstanding</li><li>Reports</li>
-            </ol>
-            <p class="card__body">
-              <strong>Built so far:</strong> accounts, organisations, roles and tenant isolation,
-              customer, route and rate-card data, and fleet records. <strong>Next:</strong> orders,
-              trips and invoicing. No customers yet — it is in active development.
-            </p>
-            <p class="card__meta">TypeScript · React · Cloudflare Workers + D1</p>
-            <div class="cluster">
-              <a class="btn btn--primary" href="https://opsflow91.pages.dev" target="_blank" rel="noopener noreferrer">Explore OpsFlow <span class="arw" aria-hidden="true">↗</span></a>
+        <div class="container">
+          <div class="hm-ops">
+            <div class="hm-ops__copy fi">
+              <p class="eyebrow">Flagship product · Building</p>
+              <h2 class="hm-ops__title" id="opsflow-title">OpsFlow <span class="mstat mstat--dev"><i aria-hidden="true">◐</i>In development</span></h2>
+              <p class="hm-ops__sub">One connected system for running everyday transport and logistics operations.</p>
+              <p class="section-header__lead">
+                From customer orders to trips, invoices, payments and outstanding balances, OpsFlow
+                connects the operational workflow in one place. Built to help small and mid-sized
+                businesses replace scattered Excel, WhatsApp and manual records.
+              </p>
+              <p class="of-status-note"><strong>Building — Portfolio Product Project.</strong> No customers, no revenue; not a commercial SaaS.</p>
+              <p class="card__body">
+                <strong>Implemented:</strong> tenant-isolated accounts and roles, customer, route and rate-card
+                data, fleet records and quotations. <strong>In development:</strong> orders and trips.
+                <strong>Planned:</strong> invoices, payments, outstanding balances and reports.
+              </p>
+              <p class="card__meta">TypeScript · React · Cloudflare Workers + D1</p>
+              <div class="cluster">
+                <a class="btn btn--primary" href="/projects/opsflow">View product details <span class="arw" aria-hidden="true">↗</span></a>
+                <a class="btn btn--secondary" href="https://opsflow91.pages.dev" target="_blank" rel="noopener noreferrer">View early build ↗</a>
+              </div>
             </div>
-          </div>
-          <div class="hm-ops__visual fi">
-            <div class="hm-app" aria-hidden="true">
-              <div class="hm-app__bar"><span></span><span></span><span></span><em>OpsFlow · Dashboard</em><b class="badge badge--demo-data">Demo data</b></div>
+            <div class="hm-ops__visual fi">
+              <div class="hm-app" aria-hidden="true">
+              <div class="hm-app__bar"><span></span><span></span><span></span><em>Dashboard · concept</em><b class="badge badge--demo-data">Concept</b></div>
               <div class="hm-app__body">
                 <ul class="hm-app__nav" role="presentation">
                   <li class="is-on">Dashboard</li><li>Customers</li><li>Orders</li><li>Trips</li><li>Invoices</li><li>Payments</li><li>Reports</li>
@@ -1051,7 +1054,51 @@
                 </div>
               </div>
             </div>
-            <p class="card__meta hm-ops__cap">Interface concept · fictional data. Orders, trips and invoicing are on the roadmap.</p>
+            
+              <p class="card__meta hm-ops__cap">Concept · synthetic demonstration data. There is no dashboard in the current build yet.</p>
+            </div>
+          </div>
+          <div class="hm-ops__flow fi">
+            <div class="hb of-flow" id="of-flow-home" data-tabs data-tabs-label="OpsFlow core workflow" data-stack-below="768" data-tabs-class="hb__tabs" data-progress>
+              <div data-tablist-slot></div>
+              <div class="hb__layout"><div class="hb__panels">
+                <article class="hb__panel" id="ofh-stage-1" data-tab-panel data-label="Customer" data-num="01">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">01</span><h3 class="hb__title">Customer</h3><span class="mstat mstat--done"><i aria-hidden="true">●</i>Implemented</span></header>
+                  <p class="hb__desc">Maintain the customer information used across the whole operational lifecycle.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Quotation (implemented) → Order → Invoice → Payment → Outstanding</dd></div></dl>
+                </article>
+                <article class="hb__panel" id="ofh-stage-2" data-tab-panel data-label="Order" data-num="02">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">02</span><h3 class="hb__title">Order</h3><span class="mstat mstat--dev"><i aria-hidden="true">◐</i>In development</span></header>
+                  <p class="hb__desc">Capture what the customer requested, so operations start from one agreed record.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Customer and Quotation → Trip / Operation</dd></div></dl>
+                </article>
+                <article class="hb__panel" id="ofh-stage-3" data-tab-panel data-label="Trip" data-num="03">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">03</span><h3 class="hb__title">Trip</h3><span class="mstat mstat--dev"><i aria-hidden="true">◐</i>In development</span></header>
+                  <p class="hb__desc">Represent the actual operational execution of an order.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Order → Vehicle and Driver → Invoice</dd></div></dl>
+                </article>
+                <article class="hb__panel" id="ofh-stage-4" data-tab-panel data-label="Invoice" data-num="04">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">04</span><h3 class="hb__title">Invoice</h3><span class="mstat mstat--plan"><i aria-hidden="true">○</i>Planned</span></header>
+                  <p class="hb__desc">Convert completed operational work into a billing record.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Trip → Payment → Outstanding</dd></div></dl>
+                </article>
+                <article class="hb__panel" id="ofh-stage-5" data-tab-panel data-label="Payment" data-num="05">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">05</span><h3 class="hb__title">Payment</h3><span class="mstat mstat--plan"><i aria-hidden="true">○</i>Planned</span></header>
+                  <p class="hb__desc">Record payment received against business receivables.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Invoice → Outstanding</dd></div></dl>
+                </article>
+                <article class="hb__panel" id="ofh-stage-6" data-tab-panel data-label="Outstanding" data-num="06">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">06</span><h3 class="hb__title">Outstanding</h3><span class="mstat mstat--plan"><i aria-hidden="true">○</i>Planned</span></header>
+                  <p class="hb__desc">Give visibility into unpaid balances.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Invoices and Payments → Reports</dd></div></dl>
+                </article>
+                <article class="hb__panel" id="ofh-stage-7" data-tab-panel data-label="Reports" data-num="07">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">07</span><h3 class="hb__title">Reports</h3><span class="mstat mstat--plan"><i aria-hidden="true">○</i>Planned</span></header>
+                  <p class="hb__desc">Turn connected operational data into business information.</p>
+                  <dl class="of-dl"><div><dt>Connects to</dt><dd>Everything upstream</dd></div></dl>
+                </article>
+              </div></div>
+            </div>
           </div>
         </div>
       </section>
@@ -1205,6 +1252,7 @@
           <a href="#hero" class="ft-link">Home</a>
           <a href="/about/" class="ft-link">About</a>
           <a href="#work" class="ft-link">Projects</a>
+          <a href="/projects/opsflow" class="ft-link">OpsFlow</a>
           <a href="/experience/" class="ft-link">Experience</a>
           <a href="/engineering/" class="ft-link">Engineering</a>
           <a href="/resume/" class="ft-link">Resume</a>

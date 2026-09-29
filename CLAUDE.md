@@ -44,9 +44,8 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   data; OT Bill's public repo carries real employee names, IC numbers and salaries
   plus a hard-coded admin password). PortBill keeps its live + GitHub links (no
   records in either). Keep OT Bill described as overtime billing, not payroll, and
-  CarView as quantity tracking, not GPS. `assets/screenshots/carview*.webp`,
-  `otbill.webp` and `assets/demos/carview-demo.gif` are now unreferenced and should
-  be deleted once the user confirms.
+  CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
+  (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
 - **OpsFlow page (2026-09-29, step 5)** `/projects/opsflow` + homepage `#opsflow`.
   Status source of truth is the private repo (`docs/roadmap.md`, `routes/`, `pages/`);
   re-check before editing. As of HEAD 4478e5e: Implemented = tenancy/auth/RBAC,

@@ -118,9 +118,9 @@ a Chart.js analytics dashboard (7 charts + KPIs), 13 report sections, and Excel 
 Port Authority.
 
 **Tags:** PWA, Cloudflare Worker, Chart.js, GitHub Sync, Excel Export
-**Links:** [carview.pages.dev](https://carview.pages.dev) | [github.com/samiulAsumel/carview](https://github.com/samiulAsumel/carview)
+**Links:** [Case study](https://sasumel.pages.dev/projects/carview)
 
-## Project 3: OT Bill Management System (otbill.pages.dev)
+## Project 3: OT Bill Management System
 
 **Problem:** Overtime billing was a fully manual Excel process — multi-step hourly rate
 calculations, date-wise OT entry, and final bill generation done by hand every cycle.
@@ -133,7 +133,7 @@ print-ready output.
 errors.
 
 **Tags:** JavaScript, Employee DB, Auto-Calc, A4 Print, Cloudflare Pages
-**Links:** [otbill.pages.dev](https://otbill.pages.dev) | [github.com/samiulAsumel/otbill](https://github.com/samiulAsumel/otbill)
+**Links:** [Case study](https://sasumel.pages.dev/projects/otbill)
 
 ## Project 4: Client Intake Form (clif91.pages.dev)
 

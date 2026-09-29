@@ -327,7 +327,7 @@ PROJECTS = [
     ),
     dict(
         name='Daily Car Balance & Location Tracking System ("carview")',
-        links=[("Live", "https://carview.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/carview")],
+        links=[("Case study", "https://sasumel.pages.dev/projects/carview")],
         problem="Vehicle positions across warehouse, shed, and yard were recorded in one "
                 "person's personal Excel file — invisible to all other staff, creating "
                 "bottlenecks and dependency on a single individual.",
@@ -338,7 +338,7 @@ PROJECTS = [
     ),
     dict(
         name="OT Bill Management System",
-        links=[("Live", "https://otbill.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/otbill")],
+        links=[("Case study", "https://sasumel.pages.dev/projects/otbill")],
         problem="Overtime billing was a fully manual Excel process — multi-step hourly rate "
                 "calculations and final bill generation done by hand every cycle.",
         solution="Staff enters an employee profile once; the system generates the complete "

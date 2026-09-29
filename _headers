@@ -14,7 +14,13 @@
 /assets/screenshots/*
   Cache-Control: public, max-age=604800
 
-/assets/demos/*
+/og-image.png
+  Cache-Control: public, max-age=86400
+
+/icon-*.png
+  Cache-Control: public, max-age=604800
+
+/favicon.svg
   Cache-Control: public, max-age=604800
 
 /sw.js

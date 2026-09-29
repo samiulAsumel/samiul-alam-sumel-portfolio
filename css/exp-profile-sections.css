@@ -1,0 +1,42 @@
+/* ============================================================
+   Experience profile, part 2 (full page only): bridge links,
+   foundation/evolution columns, equation, terminology, industries,
+   target roles and career-fit path. Tokens only.
+   ============================================================ */
+
+.ex-links { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--space-3); margin-top: var(--space-5); }
+.ex-links li { display: flex; flex-direction: column; gap: 2px; padding: var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.ex-links b { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); font-weight: var(--weight-medium); }
+
+.ex-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); margin-bottom: var(--space-6); }
+.ex-two .card h3 { margin-bottom: var(--space-3); font-size: var(--text-h2); }
+.ex-two ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); color: var(--color-text-2); }
+.ex-two li { padding-top: var(--space-2); border-top: var(--border-default); }
+
+.ex-eq { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-top: var(--space-5); padding: var(--space-5) var(--space-6); font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
+.ex-eq i { font-style: normal; font-family: var(--font-mono); color: var(--color-accent-text); }
+.ex-eq strong { padding: var(--space-2) var(--space-4); font-size: var(--text-h4); color: var(--color-text); background: var(--color-accent-subtle); border: var(--border-interactive); border-radius: var(--radius-md); }
+
+.ex-terms { background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
+.ex-terms summary { cursor: pointer; padding: var(--space-4) var(--space-5); font-weight: var(--weight-medium); color: var(--color-text); }
+.ex-terms table { width: calc(100% - var(--space-8)); margin: 0 var(--space-5) var(--space-5); border-collapse: collapse; font-size: var(--text-body-sm); }
+.ex-terms th, .ex-terms td { padding: var(--space-3); text-align: left; border-top: var(--border-default); }
+.ex-terms thead th { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); border-top: 0; }
+.ex-terms tbody th { color: var(--color-text); font-weight: var(--weight-semibold); }
+.ex-terms td { color: var(--color-text-2); }
+
+.ex-ind { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.ex-roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--space-4); }
+.ex-roles h3 { margin-bottom: var(--space-3); font-size: var(--text-h4); }
+.ex-roles ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+.ex-fit { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.ex-fit li { position: relative; display: flex; flex-direction: column; gap: 2px; padding: var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.ex-fit li:not(:last-child)::after { content: '→'; content: '→' / ''; position: absolute; top: 50%; right: calc(var(--space-4) * -1); transform: translate(50%, -50%); z-index: 1; font-family: var(--font-mono); color: var(--color-accent-text); }
+.ex-fit span { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-text-muted); }
+.ex-fit li:last-child { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+
+@media (max-width: 900px) {
+  .ex-two, .ex-fit { grid-template-columns: minmax(0, 1fr); }
+  .ex-fit li:not(:last-child)::after { content: '↓'; content: '↓' / ''; top: auto; right: auto; bottom: calc(var(--space-4) * -1); left: 50%; transform: translate(-50%, 50%); }
+}

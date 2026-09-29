@@ -7,10 +7,10 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="color-scheme" content="light dark" />
 
-    <title>OT Bill Management System — Case Study | Samiul Alam Sumel</title>
+    <title>OT Bill Management / Automation — Case Study | Samiul Alam Sumel</title>
     <meta
       name="description"
-      content="Case study: OT Bill Management System turned a fully manual overtime billing process into a single data-entry point and an instant bill, in daily production use at Mongla Port Authority."
+      content="Case study: an overtime billing system that derives the hourly rate and totals from employee profiles and daily hours, with print-ready A4 output."
     />
     <meta name="author" content="MD Samiul Alam Sumel" />
     <meta name="robots" content="index, follow" />
@@ -25,10 +25,10 @@
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://sasumel.pages.dev/projects/otbill" />
-    <meta property="og:title" content="OT Bill Management System — Case Study" />
+    <meta property="og:title" content="OT Bill Management / Automation — Case Study" />
     <meta
       property="og:description"
-      content="Turned a fully manual, multi-step overtime billing process into a single data-entry point and an instant bill."
+      content="Case study: an overtime billing system that derives the hourly rate and totals from employee profiles and daily hours, with print-ready A4 output."
     />
     <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -37,10 +37,10 @@
     <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="OT Bill Management System — Case Study" />
+    <meta name="twitter:title" content="OT Bill Management / Automation — Case Study" />
     <meta
       name="twitter:description"
-      content="Turned a fully manual, multi-step overtime billing process into a single data-entry point and an instant bill."
+      content="Case study: an overtime billing system that derives the hourly rate and totals from employee profiles and daily hours, with print-ready A4 output."
     />
     <meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
 
@@ -58,16 +58,14 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "OT Bill Management System",
+            "name": "OT Bill Management / Automation",
             "item": "https://sasumel.pages.dev/projects/otbill"
           }
         ]
       }
     </script>
     <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../css/fonts.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/bundle-case.min.css" />
   </head>
   <body>
     <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
@@ -90,10 +88,16 @@
     <nav id="nb" aria-label="Primary navigation">
       <div class="wrap nav-in">
         <a href="/#hero" class="logo"
-          ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Product Engineer</span></a
+          ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Port &amp; Logistics Ops</span></a
         >
         <ul class="nav-links" role="list">
-          <li><a href="/#work">← All Projects</a></li>
+          <li><a href="/#hero">Home</a></li>
+          <li><a href="/experience/">Experience</a></li>
+          <li><a href="/#work" aria-current="page">Projects</a></li>
+          <li><a href="/capabilities/">Expertise</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/resume/">CV</a></li>
+          <li><a href="/#contact" class="btn btn--secondary btn--sm">Contact</a></li>
         </ul>
         <button
           class="theme-tgl"
@@ -103,149 +107,62 @@
         >
           <span aria-hidden="true">◐</span>
         </button>
+        <button class="hbg" id="hbg" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
-    <main id="main-content" tabindex="-1">
-      <section class="sec" style="padding-top:150px" aria-labelledby="cs-title">
-        <div class="wrap">
-          <p class="slabel fi"><a href="/#work" style="color:inherit">← Selected Engineering Work</a></p>
-          <h1 class="stitle fi" id="cs-title">OT Bill <span>Management System</span></h1>
-          <div class="sline fi"></div>
+    <div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <button class="mob-x" id="mobx" aria-label="Close navigation menu">✕</button>
+      <a href="/#hero">Home</a>
+      <a href="/experience/">Experience</a>
+      <a href="/#work" aria-current="page">Projects</a>
+      <a href="/capabilities/">Expertise</a>
+      <a href="/about/">About</a>
+      <a href="/resume/">CV</a>
+      <a href="/#contact">Contact</a>
+      <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+      <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+    </div>
 
-          <article class="case-study cs-standalone fl" style="opacity:1;transform:none;filter:none">
-            <div class="cs-summary" style="cursor:default">
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">OT Bill Management System</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  Turned a fully manual, multi-step overtime billing process into a
-                  single data-entry point and an instant bill.
-                </p>
-              </div>
+    <main id="main-content" tabindex="-1">
+      <div class="cs-page">
+        <div class="container">
+          <a class="cs-back link link--muted" href="/#work">← Selected systems</a>
+          <header class="cs-head">
+            <p class="eyebrow cs-head__cat">Operational Administration / Billing / Automation</p>
+            <h1 class="cs-head__title">OT Bill Management / Automation</h1>
+            <p class="cs-head__lead">A web system that prepares overtime bills from employee profiles and daily overtime hours, applying the rate rule automatically and producing a print-ready A4 bill.</p>
+            <div class="cs-head__meta"><span class="status status--production">Operational system</span></div>
+            <p class="cs-note">Login-gated internal tool: there is no public demo. The interface below is a mockup with fictional data.</p>
+          </header>
+          <figure class="cs-shot"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>ot-bill</em><b class="badge badge--demo-data">Demo data</b></div><div class="frame__body"><div class="mock mock--ot" role="img" aria-label="Illustrative overtime bill screen with fictional data: three steps, an employee card with an automatically derived hourly rate, and a table of daily overtime hours with a total.">
+  <div class="mock__steps"><span>1 · Select employee</span><span class="is-on">2 · Enter daily hours</span><span>3 · Review bill</span></div>
+  <div class="mock__cols">
+    <div class="mock__card"><small>Employee (fictional)</small><b>Demo Employee A</b><small>Basic pay</small><b>10,400</b><small>Hourly rate · basic ÷ 104</small><b>100</b></div>
+    <table><thead><tr><th>Date</th><th>From</th><th>To</th><th>Hours</th></tr></thead>
+      <tbody><tr><td>03 Mar</td><td>18:00</td><td>20:00</td><td>2</td></tr><tr><td>04 Mar</td><td>18:00</td><td>21:00</td><td>3</td></tr><tr><td>07 Mar</td><td>18:00</td><td>20:00</td><td>2</td></tr></tbody>
+      <tfoot><tr><td colspan="3">Total · 7 h × 100</td><td>700</td></tr></tfoot></table>
+  </div>
+</div></div></div><figcaption>Illustrative mockup of the real layout, using fictional figures.</figcaption></figure>
+          <div class="demo-notice" role="note"><span><strong>Data privacy.</strong> Illustrations use fictional / anonymized data. No employee or Mongla Port Authority records are exposed, and there is no public demo of this login-gated tool.</span></div>
+          <div class="cs-layout">
+            <nav class="cs-index" aria-label="Case study sections"><ol><li><a href="#problem"><span>01</span>Business problem</a></li><li><a href="#workflow"><span>02</span>Existing workflow</a></li><li><a href="#approach"><span>03</span>My approach</a></li><li><a href="#system"><span>04</span>System design</a></li><li><a href="#features"><span>05</span>Key features</a></li><li><a href="#technology"><span>06</span>Technology</a></li><li><a href="#role"><span>07</span>My role</a></li><li><a href="#outcome"><span>08</span>Outcome</a></li></ol></nav>
+            <div class="cs-content">
+              <section class="cs-section" id="problem" aria-labelledby="h-problem"><h2 class="cs-section__h" id="h-problem"><span>01</span>Business problem</h2><p>Preparing an overtime bill was a repetitive, multi-step manual calculation: find the employee’s pay, work out an hourly rate, add up the hours day by day, then produce the bill in the required format. Errors were easy to make and hard to spot.</p><p>This is overtime billing, not payroll: the system prepares one kind of bill from a small set of inputs.</p></section>
+              <section class="cs-section" id="workflow" aria-labelledby="h-workflow"><h2 class="cs-section__h" id="h-workflow"><span>02</span>Existing workflow</h2><p>The bill is derived from two inputs: the employee’s profile and the hours worked each day.</p><ol class="flow"><li><b>Operational input</b><span>Overtime worked, recorded per day.</span></li><li><b>OT / bill data</b><span>Employee profile plus daily from / to hours.</span></li><li><b>Business rules</b><span>Hourly rate is basic pay divided by 104, rounded up.</span></li><li><b>Calculation</b><span>Cumulative day-by-day hours multiplied by the rate.</span></li><li><b>Record</b><span>A saved bill per employee per month.</span></li><li><b>Report</b><span>A4 print, an all-bills view and a dashboard.</span></li></ol><ol class="x2s" aria-label="From spreadsheet to system"><li><b>Manual workflow</b>Multi-step calculation.</li><li><b>Spreadsheet work</b>Repeated by hand.</li><li><b>Business rules</b>Rate rule, cumulative hours.</li><li><b>Web system</b>Single data-entry step.</li><li><b>Structured data + reports</b>Saved bills, print, dashboard.</li></ol><p class="x2s-cap">The software is built around the process, not the other way around. Designed to reduce repetitive spreadsheet-based work.</p></section>
+              <section class="cs-section" id="approach" aria-labelledby="h-approach"><h2 class="cs-section__h" id="h-approach"><span>03</span>My approach</h2><p>I encoded the rate rule once, at the employee-profile level, and made daily hours the only thing entered per bill. Everything else, from the hourly rate to the cumulative total and the amount in words, is derived, so the bill cannot disagree with its inputs.</p><ol class="flow"><li><b>Real operational workflow</b><span>How overtime bills were prepared.</span></li><li><b>Business rules</b><span>Rate derivation and cumulative hours.</span></li><li><b>Structured data</b><span>Employee profiles, dated hour entries, bills.</span></li><li><b>Calculation logic</b><span>Rate, totals and amount in words.</span></li><li><b>Web interface</b><span>Three-step bill flow, Bengali-language UI.</span></li><li class="is-out"><b>Reports</b><span>A4 bill, all-bills list, dashboard.</span></li></ol></section>
+              <section class="cs-section" id="system" aria-labelledby="h-system"><h2 class="cs-section__h" id="h-system"><span>04</span>System design</h2><p>Employee and bill records live in Firestore behind sign-in, with a local-storage fallback so the tool still works if the connection drops.</p><ol class="flow"><li><b>User</b><span>Admin or employee, signing in with an ID.</span></li><li><b>Web interface</b><span>Bengali-language, three-step bill flow.</span></li><li><b>Business rules and calculation</b><span>Hourly rate and cumulative totals, in the browser.</span></li><li><b>Firebase Authentication and Cloud Firestore</b><span>Accounts, employee records and bills, with a local-storage fallback.</span></li><li class="is-out"><b>Output</b><span>Print-ready A4 bill.</span></li></ol></section>
+              <section class="cs-section" id="features" aria-labelledby="h-features"><h2 class="cs-section__h" id="h-features"><span>05</span>Key features</h2><ul class="cs-grid"><li><b>Employee database</b>Profiles with basic pay.</li><li><b>Automatic hourly rate</b>Derived from basic pay; no manual rate entry.</li><li><b>Daily overtime entry</b>From and to hours per day with running totals.</li><li><b>Amount in words</b>Printed on the bill.</li><li><b>Saved description template</b>Reusable work description for the branch.</li><li><b>Bill history</b>All bills in one list.</li><li><b>Dashboard</b>Summary of employees, bills, total hours and amount.</li><li><b>Admin and employee sign-in</b>Role-based access.</li><li><b>Offline fallback</b>Local storage when the connection is unavailable.</li><li><b>Print-ready A4 bill</b>Print-ready A4 layout.</li></ul></section>
+              <section class="cs-section" id="technology" aria-labelledby="h-technology"><h2 class="cs-section__h" id="h-technology"><span>06</span>Technology</h2><dl class="cs-tech"><div><dt>Frontend</dt><dd>HTML, CSS and JavaScript with no framework; Bengali-language interface.</dd></div><div><dt>Backend and data</dt><dd>Firebase Authentication and Cloud Firestore, with a local-storage fallback.</dd></div><div><dt>Deployment</dt><dd>Cloudflare Pages.</dd></div><div><dt>Development</dt><dd>Git, GitHub, AI-assisted development.</dd></div></dl></section>
+              <section class="cs-section" id="role" aria-labelledby="h-role"><h2 class="cs-section__h" id="h-role"><span>07</span>My role</h2><ol class="roles" aria-label="Roles across the project"><li>Operations Specialist</li><li>Business Analyst</li><li>System Designer</li><li class="is-ai">AI-Assisted Developer</li><li>Tester</li><li>Deployer</li></ol><ul class="cs-roles-detail"><li><b>Domain understanding</b>Understanding how overtime bills were prepared and checked.</li><li><b>Requirements</b>Identifying the rate rule, the inputs and the required bill format.</li><li><b>System design</b>Designing the three-step flow and the data model.</li><li><b>Development</b>Building the web application with AI-assisted development.</li><li><b>Testing</b>Testing the cumulative logic against real edge cases; there is no automated test suite.</li><li><b>Deployment</b>Deploying the working system and iterating.</li></ul><p class="cs-ai">Built using an AI-assisted development workflow, with business requirements, system logic, testing, validation and deployment directed and verified by me.</p></section>
+              <section class="cs-section" id="outcome" aria-labelledby="h-outcome"><h2 class="cs-section__h" id="h-outcome"><span>08</span>Outcome</h2><ul class="cs-grid cs-outcome"><li><b>Fewer manual steps</b>Replaced a repetitive manual calculation with a single data-entry step and an instant bill.</li><li><b>More consistent</b>Improved consistency of overtime calculations and records.</li><li><b>Designed to reduce errors</b>Deriving the rate and totals automatically is designed to reduce calculation mistakes.</li><li><b>Reusable</b>Turned a workflow into a reusable web-based system.</li></ul></section>
+              <div class="cs-next"><a class="link" href="/#work">← All selected systems</a><a class="link" href="/projects/portbill">Next: Port Billing System →</a></div>
             </div>
-            <div class="cs-body" style="border-top:1px solid var(--bdr-s)">
-              <div class="cs-grid">
-                <div class="cs-full">
-                  <div class="cs-demo">
-                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">otbill.pages.dev</span></div>
-                    <img src="../assets/screenshots/otbill.webp" alt="OT Bill Management System login screen" loading="eager" fetchpriority="high" width="1200" height="750" />
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    Overtime billing was a fully manual Excel process — multi-step
-                    hourly-rate calculations and date-wise OT entry redone by hand
-                    every cycle, with real error risk and real time cost each
-                    period.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Who Had The Problem</div>
-                  <p class="cs-block-p">
-                    Whoever runs the overtime billing cycle at Mongla Port —
-                    previously a repeated manual task every period.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Constraints</div>
-                  <p class="cs-block-p">
-                    Had to match the real hourly-rate and cumulative OT rules
-                    exactly. Needed print-ready A4 output, same as portbill, since
-                    the result feeds physical paperwork.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Requirements</div>
-                  <p class="cs-block-p">
-                    Generate a complete, correct OT bill instantly from a single
-                    data-entry point, matching the real hourly-rate and cumulative
-                    OT rules exactly, output print-ready on A4.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Business Rules</div>
-                  <p class="cs-block-p">
-                    Hourly rate and cumulative date-wise overtime calculation —
-                    the same rules staff previously worked out by hand from Excel,
-                    matched exactly so the automated bill can't drift from what the
-                    real payroll rules require.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">System Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">JS Business Logic</div><div class="flow-node-t">Client-side, same no-backend shape as portbill</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">A4 Print Output</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Same plain-JS, no-framework, Cloudflare Pages approach as
-                    portbill — each of these is a single-purpose calculation tool,
-                    not a platform, so the simplest architecture that works is the
-                    right one.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Implementation</div>
-                  <p class="cs-block-p">
-                    Staff enter an employee profile once; from that single input
-                    the system runs the hourly-rate and cumulative OT logic and
-                    renders the complete bill instantly, without needing to touch
-                    Excel.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Validation</div>
-                  <p class="cs-block-p">
-                    The cumulative date-wise OT logic was tested against real edge
-                    cases, not just the common case, since eliminating manual
-                    calculation errors was the entire point of the tool.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Deployment</div>
-                  <p class="cs-block-p">
-                    Same plain-JS, Cloudflare Pages deployment as portbill — no
-                    backend to host, no build step.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    Reduced the billing cycle from hours to minutes and eliminated
-                    the manual calculation errors that came with redoing the math
-                    by hand every period.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Lessons</div>
-                  <p class="cs-block-p">
-                    The biggest win wasn't a feature — it was moving data entry to
-                    a single one-time point (the employee profile), removing the
-                    chance for input errors at the exact place they used to happen
-                    every cycle.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Cuts each overtime billing cycle from an estimated <strong>2–4 hours</strong> of manual Excel work down to minutes — a rough before/after comparison from memory of the old process, not a timed measurement.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://otbill.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/otbill" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                  <a href="/#work" class="btn btn-o">← Back to Portfolio</a>
-                </div>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer>
@@ -253,16 +170,17 @@
         <div class="ft-center">
           <div class="ft-logo">SAS</div>
           <p class="ft-tagline">
-            Product Engineer for Real-World Operations · I turn operational
-            problems into practical software.
+            Port &amp; logistics operations · Business systems &amp; automation ·
+            AI-assisted full-stack product building.
           </p>
         </div>
         <nav class="ft-links" aria-label="Footer navigation">
           <a href="/#hero" class="ft-link">Home</a>
-          <a href="/#about" class="ft-link">About</a>
+          <a href="/about/" class="ft-link">About</a>
           <a href="/#work" class="ft-link">Projects</a>
+          <a href="/projects/opsflow" class="ft-link">OpsFlow</a>
+          <a href="/engineering/" class="ft-link">Engineering</a>
           <a href="/#contact" class="ft-link">Contact</a>
-          <a href="https://github.com/samiulAsumel/otbill" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
         </nav>
         <div class="ft-bar">
           <p class="ft-copy">
@@ -274,5 +192,6 @@
     </footer>
 
     <script src="../js/main.js" defer></script>
+    <script src="../js/ux.js" defer></script>
   </body>
 </html>

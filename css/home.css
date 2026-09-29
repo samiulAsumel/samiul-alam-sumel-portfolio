@@ -1,0 +1,127 @@
+/* ============================================================
+   Homepage sections, part 1: hero, credibility strip, what I bring,
+   the combination, approach. Tokens only; primitives come from
+   layout/components/systems.css.
+   ============================================================ */
+
+/* ---- Hero ---- */
+.hm-hero { padding-block: calc(var(--nav-h) + var(--space-10)) var(--section-y); }
+.hm-hero__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: var(--space-10); align-items: center; }
+/* The name is a paragraph above the H1 so the H1 is the role alone; spacing matches the old stacked title */
+.hm-hero__name { margin-bottom: var(--space-3); }
+.hm-hero__role { margin-bottom: var(--space-5); }
+/* Name is the quiet line; the role is the headline the eye lands on */
+.hm-hero__name { font-size: var(--text-h4); font-weight: var(--weight-medium); letter-spacing: var(--tracking-meta); color: var(--color-text-2); }
+.hm-hero__role { font-size: var(--text-display); font-weight: var(--weight-bold); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+.hm-hero__lead { font-size: var(--text-h3); font-weight: var(--weight-medium); line-height: var(--leading-snug); color: var(--color-text); max-width: 42ch; margin-bottom: var(--space-5); }
+.hm-hero__body { color: var(--color-text-2); max-width: 60ch; margin-bottom: var(--space-6); text-align: justify; text-align-last: left; hyphens: auto; }
+.hm-hero__caps { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); margin-bottom: var(--space-7); font-size: var(--text-body-sm); color: var(--color-text-2); }
+.hm-hero__caps li { display: inline-flex; align-items: baseline; gap: var(--space-2); }
+.hm-hero__cap-k { font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); }
+.hm-hero__cta { margin-bottom: var(--space-5); }
+.hm-hero__links { display: flex; flex-wrap: wrap; gap: var(--space-5); font-size: var(--text-body-sm); margin-bottom: var(--space-6); }
+.hm-hero__avail { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-caption); color: var(--color-text-muted); }
+.hm-dot { width: 7px; height: 7px; border-radius: var(--radius-full); background: var(--color-success); flex-shrink: 0; }
+
+/* Hero visual: layered nodes on a vertical rail; the travelling dot is purely ornamental */
+.hm-flow {
+  position: relative; display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5);
+  background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-elevated);
+}
+.hm-flow::before { content: ''; position: absolute; top: var(--space-6); bottom: var(--space-6); left: calc(var(--space-5) + 4px); width: 2px; background: var(--color-border-strong); }
+.hm-flow::after {
+  content: ''; position: absolute; left: calc(var(--space-5) + 2px); top: var(--space-6); width: 6px; height: 6px;
+  border-radius: var(--radius-full); background: var(--color-accent); animation: hm-travel 7s var(--ease-standard) infinite;
+}
+@keyframes hm-travel { 0% { top: 6%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 94%; opacity: 0; } }
+.hm-flow__node {
+  position: relative; display: flex; flex-direction: column; gap: 2px; margin-left: var(--space-7);
+  padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md);
+}
+.hm-flow__node::before {
+  content: ''; position: absolute; top: 50%; left: calc(var(--space-7) * -1); width: 10px; height: 10px; margin-top: -5px;
+  border-radius: var(--radius-full); background: var(--color-bg); border: 2px solid var(--color-border-strong);
+}
+.hm-flow__node--end { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+.hm-flow__node--end::before { border-color: var(--color-accent); }
+.hm-flow__idx { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-accent-text); }
+.hm-flow__label { font-weight: var(--weight-semibold); color: var(--color-text); }
+.hm-flow__meta { font-size: var(--text-caption); color: var(--color-text-muted); }
+
+/* ---- Credibility strip ---- */
+.hm-cred { border-block: var(--border-default); background: var(--color-bg-subtle); }
+.hm-cred__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hm-cred__item { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-6); }
+.hm-cred__item + .hm-cred__item { border-left: var(--border-default); }
+.hm-cred dt { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
+.hm-cred__val { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-heading); color: var(--color-text); }
+.hm-cred__ctx { font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+/* ---- What I bring ---- */
+.hm-bring__card { display: flex; flex-direction: column; gap: var(--space-3); }
+.hm-bring__card:hover { transform: translateY(-2px); border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated); background: var(--color-surface-raised); }
+.hm-bring__card .icon-wrap { transition: transform var(--dur-base) var(--ease-out); }
+.hm-bring__card:hover .icon-wrap { transform: translateY(-2px); }
+.hm-bring__card .card__body strong { color: var(--color-text); font-weight: var(--weight-semibold); }
+.hm-chips { list-style: none; gap: var(--space-2); margin-top: var(--space-1); }
+
+/* ---- The combination ---- */
+.hm-combo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 1fr); gap: var(--space-9); align-items: stretch; }
+.hm-combo__side {
+  display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); padding: var(--space-8) var(--space-7);
+  background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl);
+}
+.hm-combo__side--sw { background: var(--color-surface-raised); border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated); }
+.hm-combo__tag { font-family: var(--font-mono); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
+.hm-combo__title { font-size: var(--text-h2); letter-spacing: var(--tracking-heading); }
+.hm-combo__side ul { list-style: none; }
+.hm-combo__side li { padding: var(--space-2) 0; border-top: var(--border-default); color: var(--color-text-2); }
+.hm-combo__mid { list-style: none; display: flex; flex-direction: column; justify-content: center; gap: var(--space-3); }
+.hm-combo__mid li { position: relative; }
+.hm-combo__mid li span {
+  display: block; padding: var(--space-3) var(--space-4); text-align: center; font-size: var(--text-body-sm); font-weight: var(--weight-medium);
+  color: var(--color-text); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md);
+}
+/* Dashed connectors run through the column gaps; the pattern shifts one period per loop so it reads as flow */
+.hm-combo__mid li::before, .hm-combo__mid li::after {
+  content: ''; position: absolute; top: 50%; width: var(--space-9); height: 2px; margin-top: -1px;
+  background: repeating-linear-gradient(90deg, var(--color-border-strong) 0 6px, transparent 6px 12px); background-size: 12px 2px;
+  animation: hm-dash 1.2s linear infinite;
+}
+.hm-combo__mid li::before { right: 100%; }
+.hm-combo__mid li::after { left: 100%; }
+@keyframes hm-dash { to { background-position: 12px 0; } }
+.hm-eq {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-4); margin-top: var(--space-8);
+  padding: var(--space-5) var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg);
+  font-size: var(--text-body-sm); color: var(--color-text-2);
+}
+.hm-eq__op { font-family: var(--font-mono); color: var(--color-accent-text); }
+.hm-eq__result { padding: var(--space-2) var(--space-4); font-size: var(--text-h4); color: var(--color-text); background: var(--color-accent-subtle); border: var(--border-interactive); border-radius: var(--radius-md); }
+
+/* ---- Approach ---- */
+.hm-note { max-width: var(--measure); margin-top: var(--space-8); padding-left: var(--space-5); border-left: 2px solid var(--color-border-accent); color: var(--color-text-2); }
+
+/* ---- Tablet and phone ---- */
+@media (max-width: 900px) {
+  .hm-hero { padding-top: calc(var(--nav-h) + var(--space-8)); }
+  .hm-hero__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-9); }
+  .hm-flow::after { display: none; }
+  .hm-combo { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+  .hm-combo__mid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); position: relative; }
+  .hm-combo__mid li::before, .hm-combo__mid li::after { display: none; }
+  .hm-combo__side { padding: var(--space-6); }
+}
+@media (max-width: 768px) {
+  .hm-cred__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-cred__item { padding: var(--space-5) var(--space-4); }
+  .hm-cred__item:nth-child(odd) { border-left: 0; }
+  .hm-cred__item:nth-child(n + 3) { border-top: var(--border-default); }
+  .hm-hero__cta .btn { flex: 1 1 100%; }
+  /* Justified + hyphenated copy leaves rivers in a narrow column */
+  .hm-hero__body { text-align: left; hyphens: manual; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hm-flow::after { display: none; }
+  .hm-combo__mid li::before, .hm-combo__mid li::after { animation: none; }
+}

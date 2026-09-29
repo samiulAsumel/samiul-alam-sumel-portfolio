@@ -22,12 +22,80 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
 
 ## Site maintenance rules added 2026-09-19
 
-- **Project counts appear in four places and must move together** when a
-  project is added: hero proof strip (`.h-proof`), trust strip (`#c3`/`#c4`
-  in `index.html` *and* the `animateCounter` calls in `js/main.js`), the
-  `#verify` proof grid, and the JSON-LD `ItemList` in `index.html`. The
-  counts are: featured project cards (currently 9) and live deployments
-  (currently 8). Recount from the actual cards; never trust the old number.
+- **Homepage is 8 sections (2026-09-29, step 2):** `#hero`, `#credibility`,
+  `#bring` (nav "Expertise"), `#combination`, `#how-i-build`, `#work` (nav
+  "Projects", 3 production systems + a "More projects" list), `#opsflow`,
+  `#experience`, `#contact`. Styles live in `css/home.css` and
+  `css/home-sections.css`. `#how-i-build` (step 3) is an ARIA tab component
+  (`js/how-i-build.js`, `css/hb-process.css`, `css/hb-examples.css`): stages are
+  plain stacked articles, upgraded to tabs at >=900px. Its PortBill/CarView
+  examples were checked against the public repos on 2026-09-29 — PortBill has
+  a Worker, saved bills with search, a dashboard and automated tests (its case
+  study page still says "no backend"; fix in the case-study step). The old hero proof strip, trust counters and
+  `#verify` grid are gone. "3 in production" (`#credibility`) means portbill,
+  carview and otbill — recount if one is added; the JSON-LD `ItemList` in
+  `index.html` still lists live deployments and must match reality.
+- **Featured systems policy (2026-09-29, step 4).** `#work` and `/projects/portbill`,
+  `/carview`, `/otbill` are the rebuilt 8-part case studies (css: `case-mocks`,
+  `case-visuals`, `case-study`, `project-cards`). Privacy rules, decided with the
+  user: CarView and OT Bill are shown ONLY as synthetic mockups with fictional
+  figures (`.mock`), never the real screenshots/GIF; no live-app or GitHub links
+  for either (CarView's live view and public repo carry real aggregate operating
+  data; OT Bill's public repo carries real employee names, IC numbers and salaries
+  plus a hard-coded admin password). PortBill keeps its live link; its GitHub repo became PRIVATE (2026-09-30), so no GitHub link
+  and the how-i-build page must not point readers at commits. Keep OT Bill described as overtime billing, not payroll, and
+  CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
+  (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
+- **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
+  6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
+  remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in
+  `css/*.css`. After ANY css edit run `python3 scripts/build_css.py` (`--check` reports stale bundles)
+  and commit the bundles. A new css file must be added to the right group(s) in the json. This
+  supersedes "no build step" for CSS only. JS is unbundled. `_redirects` maps the old CV filenames
+  to `MD-Samiul-Alam-Sumel-CV` / `-Project-CV`. SEO: homepage H1 is the role only; og-image is a
+  Chrome-rendered brand card (no stats); JSON-LD lists only supported claims (no phone, no Next.js
+  or MongoDB, no OpsFlow in the "software built" list except its own page, marked in development).
+- **Motion rules (2026-09-30, step 8):** all interaction polish lives in `css/motion.css`
+  (loaded last on every page) and `js/ux.js`. Animate `transform` and `opacity` only; no
+  animation libraries; no cursor effects (the existing card spotlight/magnetic buttons stay);
+  nothing may run continuously except the hero node outline (opacity-only, off under reduced
+  motion). Nav scroll-spy uses IntersectionObserver via `data-spy` on homepage nav links; the
+  progress bar is `scaleX`. Tab panels get equal min-heights from `how-i-build.js`. Cross-page fade
+  uses `@view-transition`. Copy-email button must always show visible + announced feedback.
+- **Capabilities (2026-09-30, step 7):** `/capabilities/` (+ homepage `#capabilities`); the nav
+  "Expertise" link now points there. No percentages, bars, ratings or certificates, ever.
+  Technology claims need repo evidence: Working with = live projects (HTML/CSS/JS, PWA, Cloudflare
+  Pages/Workers, Firebase Auth/Firestore, Chart.js, Node tests, Git/GitHub, Claude Code); Building
+  with = OpsFlow (TypeScript, React, Vite, Tailwind, Hono, Zod, D1 SQL, Vitest, GitHub Actions);
+  Learning = Node/Express depth, Jest/RTL, TypeScript depth (Odin Project / Full Stack Open, not
+  certifications). TypeScript is now "Building with" (supersedes the old "in progress only" rule).
+  Do not list PostgreSQL, Vercel, Docker, MongoDB, Linux admin/DevOps, cloud/security, German or
+  English-as-skill. Role wording: "AI-Assisted Developer / Product Builder", never "AI engineer".
+- **Experience profile (2026-09-30, step 6):** `/experience/` is the full operations career
+  profile and homepage `#experience` its summary (`css/exp-profile*.css`; domain map reuses the
+  tab component). Verified facts only: Mongla Port Authority, Traffic Department, Nov 2013 –
+  Present; Junior Outdoor Assistant Nov 2013 – Nov 2017, Senior Outdoor Assistant (Revenue Branch)
+  Nov 2017 – Present (already published). The user confirmed on 2026-09-30: container tallying and
+  statistics, stuffing/delivery/shipping bills and demurrage, customs-related vehicle (auction)
+  reporting, challan workflow and monthly statements, shipping-agent and stevedoring coordination.
+  Career milestones carry NO dates. Education is exactly "Higher Secondary Certificate (HSC),
+  Business Studies, 2011". No management, volume or percentage claims; target roles are labelled
+  as targets.
+- **OpsFlow page (2026-09-29, step 5)** `/projects/opsflow` + homepage `#opsflow`.
+  Status source of truth is the private repo (`docs/roadmap.md`, `routes/`, `pages/`);
+  re-check before editing. As of HEAD 4478e5e: Implemented = tenancy/auth/RBAC,
+  master data (API only), fleet (API + minimal UI), quotations (API + UI); In
+  development = Orders, Trips (user-chosen); Planned = invoices, payments, outstanding,
+  expenses, reports, warehouse. No dashboard exists; every dashboard image is labelled
+  Concept. Never say customers/revenue/live SaaS. Repo is private: no GitHub link. The two
+  real screenshots (`assets/screenshots/opsflow-*.webp`) show a fictional "Demo Company"
+  from a local instance. CSS: `opsflow.css`, `opsflow-sections.css`; JS: `opsflow.js`
+  (module filter) plus the shared tab component in `how-i-build.js`.
+- **OpsFlow facts (checked 2026-09-29 against the private repo):** M0 done,
+  M1 identity/RBAC done, M2 master-data and M3 fleet backends done; orders,
+  trips, invoices, payments NOT built; no customers. It is labelled Building,
+  links to the live shell `opsflow91.pages.dev`, and its dashboard mockup is
+  labelled fictional. Re-check the repo roadmap before changing that copy.
 - Fonts are self-hosted (`assets/fonts/*.woff2`, `css/fonts.css`, latin
   subset only). Do not re-add Google Fonts links — `_headers` sets a CSP with
   `font-src 'self'` and `style-src 'self' 'unsafe-inline'`, so any new
@@ -82,6 +150,19 @@ real progress, keep it in that same honest-but-generic register: state the
 actual current phase/topic, never re-add gap-matrix or visa content.
 
 ## Positioning — read before editing content
+
+**5th reversal (2026-09-29, explicit user instruction via a pasted 10-step
+redesign spec plus an AskUserQuestion confirmation):** the target identity is
+now **Port & Logistics Operations Specialist** (primary) → **Business Systems
+& Automation** (secondary) → **AI-Assisted Full-Stack Product Builder**
+(differentiator). Step 1 changed only brand chrome: nav logo badge ("Port &
+Logistics Ops"), hero `.h-role` and new `.h-titles` line. `<title>`, meta,
+JSON-LD, About/Experience/case-study copy and both CVs still carry the older
+"Product Engineer for Real-World Operations" wording and are rewritten in later
+steps — do not treat that mismatch as a bug to fix piecemeal. Primary nav is
+now Home / Experience / Projects / Expertise / About / CV / Contact on every
+page (Engineering is footer-only; OpsFlow is not in this branch). The older
+positioning text below is history; the 5th-reversal note above wins.
 
 The site's identity is **Product Engineer for Real-World Operations**
 (React/Next.js, Node.js/Express, MongoDB), supporting tagline "I turn
@@ -241,10 +322,23 @@ the script's helper functions before adding more content.
 
 ## Style conventions already in place
 
-- CSS: single `css/style.css`, design tokens in `:root`, BEM-ish flat class
-  names (`.sk-card`, `.pc-ds`, `.dc-note`), mobile-first isn't used but
-  `@media(max-width:900px/768px/480px)` breakpoints are — check all three
-  after layout changes.
+- CSS is layered (2026-09-29, design-system step 1); load order in every
+  page: `fonts.css → tokens.css → base.css → layout.css → components.css →
+  systems.css → style.css`; `index.html` also loads `home.css` and `home-sections.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
+  `--text-*`, `--space-*`, `--radius-*`, `--shadow-*`, `--dur-*`), dark default +
+  light via `prefers-color-scheme`/`[data-theme]`. Primitives live in
+  `layout.css` (`.container .section .section-header .eyebrow .stack .cluster
+  .grid .divider .bg-layer`) and `components.css` (`.btn--primary/secondary/
+  ghost/text`, `.card--*`, `.badge--*`, `.stat`, `.icon-wrap`, `.link`, nav
+  shell). `style.css` is section-specific only. Legacy names (`.wrap .sec
+  .btn-p .btn-o .tag .sp`, old `--bg/--tx/--accent` tokens) alias onto the new
+  rules; new work uses the new names, never raw hex/px. Single solid orange
+  accent, no gradients, no glows, no blur/scale reveals, no pill radii. Fonts:
+  Inter + JetBrains Mono only (Space Grotesk removed). When verifying locally,
+  serve with a `Cache-Control: no-store` server — Chrome heuristically caches
+  `python3 -m http.server` CSS and shows stale styles.
+- Breakpoints are desktop-first (`max-width:900px/768px/480px`) — check all
+  three after layout changes.
 - Body-copy paragraphs (`.h-desc`, `.ab-text p`, `.svc-intro`, `.svc-desc`,
   `.pc-pb`, `.pc-ds`, `.dc-note`, `.ct-text p`) are `text-align: justify`
   with `hyphens: auto`. Keep this pattern for any new long-form paragraph

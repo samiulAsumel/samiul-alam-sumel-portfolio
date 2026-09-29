@@ -1,0 +1,79 @@
+/* ============================================================
+   Layout primitives: container, section, section header, stack,
+   cluster, grid, divider, background layer.
+   Legacy names (.wrap .sec .slabel .stitle .sline #bg-fx) share the
+   same rules so existing markup adopts them without edits.
+   TODO(samiul): remove the legacy selectors once markup moves to the new names.
+   ============================================================ */
+
+/* ---- Container ---- */
+.container, .wrap { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
+.container--narrow { max-width: var(--container-narrow); }
+
+/* ---- Section ---- */
+.section, .sec { position: relative; padding-block: var(--section-y); overflow: clip; }
+.section--tight { padding-block: calc(var(--section-y) * 0.6); }
+.section--alt { background: var(--color-bg-subtle); }
+/* Hairline between sections replaces the old numbered watermarks */
+.section + .section::before, .sec::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--color-border);
+}
+
+/* ---- Section header: eyebrow, title, lead ---- */
+.section-header { max-width: var(--container-narrow); margin-bottom: var(--space-10); }
+.section-header__title, .stitle {
+  font-size: var(--text-h2); font-weight: var(--weight-bold); line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading); color: var(--color-text); margin-bottom: var(--space-4);
+  position: relative; z-index: 1;
+}
+.section-header__lead { font-size: var(--text-body-lg); color: var(--color-text-2); line-height: var(--leading-body); max-width: var(--measure); }
+.stitle span, .stitle em { font-style: normal; color: var(--color-accent-text); background: none; }
+
+.eyebrow, .slabel {
+  display: flex; align-items: center; gap: var(--space-3);
+  font-family: var(--font-mono); font-size: var(--text-eyebrow); font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text);
+  margin-bottom: var(--space-3); position: relative; z-index: 1;
+}
+.eyebrow::before, .slabel::before { content: ''; width: 20px; height: 1px; background: currentColor; opacity: 0.7; flex-shrink: 0; }
+
+/* Legacy accent bar under titles: kept only as vertical spacing */
+.sline { height: 0; margin-bottom: var(--space-9); }
+
+/* ---- Stack / cluster ---- */
+.stack { display: flex; flex-direction: column; gap: var(--stack-gap, var(--space-4)); }
+.stack--sm { --stack-gap: var(--space-2); }
+.stack--lg { --stack-gap: var(--space-7); }
+.cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cluster-gap, var(--space-3)); }
+
+/* ---- 12-column grid: 12 -> span-6 at tablet -> 1 column at phone ---- */
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gap); }
+.grid > * { grid-column: span 12; min-width: 0; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 280px)), 1fr)); gap: var(--grid-gap); }
+@media (min-width: 768px) {
+  .grid > .col-span-4 { grid-column: span 6; }
+  .grid > .col-span-6 { grid-column: span 6; }
+  .grid > .col-span-8 { grid-column: span 12; }
+}
+@media (min-width: 1024px) {
+  .grid > .col-span-4 { grid-column: span 4; }
+  .grid > .col-span-6 { grid-column: span 6; }
+  .grid > .col-span-8 { grid-column: span 8; }
+}
+
+/* ---- Divider ---- */
+.divider { height: 1px; border: 0; background: var(--color-border); margin-block: var(--space-7); }
+
+/* ---- Background layer: one faint top wash + a masked grid, nothing that moves ---- */
+.bg-layer, #bg-fx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bg-layer::before, #bg-fx::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% -10%, var(--color-accent-subtle), transparent 70%),
+    linear-gradient(var(--color-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+  background-size: auto, 72px 72px, 72px 72px;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 75%);
+  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 75%);
+}

@@ -7,10 +7,10 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="color-scheme" content="light dark" />
 
-    <title>Port Billing Calculator — Case Study | Samiul Alam Sumel</title>
+    <title>Port Billing System — Case Study | Samiul Alam Sumel</title>
     <meta
       name="description"
-      content="Case study: a real-time advance wharfrent calculator built for C&amp;F agents at Mongla Port Authority, in daily production use. Problem, constraints, architecture, and what I learned."
+      content="Case study: a web-based port billing system for wharf rent, VAT and levy with slab and split-rate rules, used at a port billing counter."
     />
     <meta name="author" content="MD Samiul Alam Sumel" />
     <meta name="robots" content="index, follow" />
@@ -25,10 +25,10 @@
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://sasumel.pages.dev/projects/portbill" />
-    <meta property="og:title" content="Port Billing Calculator — Case Study" />
+    <meta property="og:title" content="Port Billing System — Case Study" />
     <meta
       property="og:description"
-      content="A real-time advance wharfrent calculator built for C&amp;F agents at Mongla Port Authority, in daily production use."
+      content="Case study: a web-based port billing system for wharf rent, VAT and levy with slab and split-rate rules, used at a port billing counter."
     />
     <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -37,10 +37,10 @@
     <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Port Billing Calculator — Case Study" />
+    <meta name="twitter:title" content="Port Billing System — Case Study" />
     <meta
       name="twitter:description"
-      content="A real-time advance wharfrent calculator built for C&amp;F agents at Mongla Port Authority, in daily production use."
+      content="Case study: a web-based port billing system for wharf rent, VAT and levy with slab and split-rate rules, used at a port billing counter."
     />
     <meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
 
@@ -58,16 +58,14 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Port Billing Calculator",
+            "name": "Port Billing System",
             "item": "https://sasumel.pages.dev/projects/portbill"
           }
         ]
       }
     </script>
     <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="../assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../css/fonts.css" />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/bundle-case.min.css" />
   </head>
   <body>
     <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
@@ -90,10 +88,16 @@
     <nav id="nb" aria-label="Primary navigation">
       <div class="wrap nav-in">
         <a href="/#hero" class="logo"
-          ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Product Engineer</span></a
+          ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Port &amp; Logistics Ops</span></a
         >
         <ul class="nav-links" role="list">
-          <li><a href="/#work">← All Projects</a></li>
+          <li><a href="/#hero">Home</a></li>
+          <li><a href="/experience/">Experience</a></li>
+          <li><a href="/#work" aria-current="page">Projects</a></li>
+          <li><a href="/capabilities/">Expertise</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/resume/">CV</a></li>
+          <li><a href="/#contact" class="btn btn--secondary btn--sm">Contact</a></li>
         </ul>
         <button
           class="theme-tgl"
@@ -103,204 +107,54 @@
         >
           <span aria-hidden="true">◐</span>
         </button>
+        <button class="hbg" id="hbg" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
-    <main id="main-content" tabindex="-1">
-      <section class="sec" style="padding-top:150px" aria-labelledby="cs-title">
-        <div class="wrap">
-          <p class="slabel fi"><a href="/#work" style="color:inherit">← Selected Engineering Work</a></p>
-          <h1 class="stitle fi" id="cs-title">Port Billing <span>Calculator</span></h1>
-          <div class="sline fi"></div>
+    <div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <button class="mob-x" id="mobx" aria-label="Close navigation menu">✕</button>
+      <a href="/#hero">Home</a>
+      <a href="/experience/">Experience</a>
+      <a href="/#work" aria-current="page">Projects</a>
+      <a href="/capabilities/">Expertise</a>
+      <a href="/about/">About</a>
+      <a href="/resume/">CV</a>
+      <a href="/#contact">Contact</a>
+      <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+      <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+    </div>
 
-          <article class="case-study cs-standalone fl" style="opacity:1;transform:none;filter:none">
-            <div class="cs-summary" style="cursor:default">
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">Port Billing Calculator</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">
-                  Real-time advance wharfrent calculator so C&amp;F agents can verify
-                  charges before committing, not after.
-                </p>
-              </div>
+    <main id="main-content" tabindex="-1">
+      <div class="cs-page">
+        <div class="container">
+          <a class="cs-back link link--muted" href="/#work">← Selected systems</a>
+          <header class="cs-head">
+            <p class="eyebrow cs-head__cat">Port Operations / Cargo &amp; Vehicle Billing / Process Automation</p>
+            <h1 class="cs-head__title">Port Billing System</h1>
+            <p class="cs-head__lead">A web-based billing system designed around port cargo and vehicle billing workflows: wharf rent, payable charges, VAT and levy calculated from the port’s own rules.</p>
+            <div class="cs-head__meta"><span class="status status--production">Operational system</span><div class="cs-links"><a class="btn btn--primary" href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer">Open live calculator ↗</a></div></div>
+            <p class="cs-note">The live tool is the calculator only; it ships with no port records.</p>
+          </header>
+          <figure class="cs-shot"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>portbill.pages.dev</em><b class="badge badge--demo-data">Empty inputs</b></div><div class="frame__body"><button type="button" class="cs-zoom" data-full="../assets/screenshots/portbill.webp" data-alt="Port Billing System car billing form with a live quick-preview panel, shown with empty inputs" aria-label="Enlarge screenshot"><img src="../assets/screenshots/portbill.webp" width="1200" height="750" loading="lazy" decoding="async" alt="Port Billing System car billing form with a live quick-preview panel, shown with empty inputs" /></button></div></div><figcaption>Live calculator with empty inputs. Nothing on screen is a real record. Select the image to enlarge it.</figcaption></figure><dialog class="cs-lightbox" aria-label="Enlarged screenshot"><button type="button" class="btn btn--secondary btn--sm">Close</button><img alt="" /></dialog>
+          <div class="demo-notice" role="note"><span><strong>Data privacy.</strong> Illustrations use fictional / anonymized data. No confidential Mongla Port Authority records are exposed, and the calculator ships with no port records.</span></div>
+          <div class="cs-layout">
+            <nav class="cs-index" aria-label="Case study sections"><ol><li><a href="#problem"><span>01</span>Business problem</a></li><li><a href="#workflow"><span>02</span>Existing workflow</a></li><li><a href="#approach"><span>03</span>My approach</a></li><li><a href="#system"><span>04</span>System design</a></li><li><a href="#features"><span>05</span>Key features</a></li><li><a href="#technology"><span>06</span>Technology</a></li><li><a href="#role"><span>07</span>My role</a></li><li><a href="#outcome"><span>08</span>Outcome</a></li></ol></nav>
+            <div class="cs-content">
+              <section class="cs-section" id="problem" aria-labelledby="h-problem"><h2 class="cs-section__h" id="h-problem"><span>01</span>Business problem</h2><p>Port billing combines many operational inputs: the type of cargo, arrival and delivery dates, weight, free time, where the goods were stored, and the rules that turn all of that into charges. The port’s own billing system creates permanent entries, so customs &amp; freight-forwarding (C&amp;F) agents had no way to estimate charges before committing to them.</p><p>That led to billing disputes, longer cargo dwell time (how long goods wait in port) and repeat trips to the counter just to check a number. The tool is built around these practical workflows, not around a generic invoicing template.</p><ul class="gloss" aria-label="Terms explained"><li><b>Wharf rent</b>: port facility usage charges</li><li><b>C&amp;F agent</b>: customs &amp; freight-forwarding stakeholder</li><li><b>CLD</b>: common landing date, when the storage clock starts</li></ul></section>
+              <section class="cs-section" id="workflow" aria-labelledby="h-workflow"><h2 class="cs-section__h" id="h-workflow"><span>02</span>Existing workflow</h2><p>How a bill is built up. Estimating meant working through steps 03–05 by hand before the official record in step 06 existed.</p><ol class="flow"><li><b>Operational data</b><span>Landing date, delivery date, weight and storage area.</span></li><li><b>Cargo / vehicle details</b><span>Car, general cargo or re-export.</span></li><li><b>Applicable charges</b><span>Wharf rent plus river dues, landing, removal, weighment and hoisting.</span></li><li><b>Business rules</b><span>Free time, slab rates, inside / outside storage, rate change date.</span></li><li><b>Calculation</b><span>VAT and levy applied on top of the charges.</span></li><li><b>Billing record</b><span>The official bill in the port’s own system.</span></li><li><b>Reporting</b><span>Bills checked against the printed bill.</span></li></ol></section>
+              <section class="cs-section" id="approach" aria-labelledby="h-approach"><h2 class="cs-section__h" id="h-approach"><span>03</span>My approach</h2><p>I started from how the billing desk and agents actually work: which inputs matter, which rules apply in which order, and what a valid bill looks like. Each slab, VAT and levy combination was written down as a rule first, then encoded and checked against real bills. The interface came last.</p><ol class="flow"><li><b>Real operational workflow</b><span>How the desk and agents work today.</span></li><li><b>Business rules</b><span>Free time, slabs, VAT, levy, split rates.</span></li><li><b>Structured data</b><span>Dates, weights, storage areas, charges.</span></li><li><b>Calculation logic</b><span>Rules encoded as tested functions.</span></li><li><b>Web interface</b><span>Three billing modules with a live preview.</span></li><li class="is-out"><b>Reports</b><span>Print-ready A4 invoice and saved bills.</span></li></ol></section>
+              <section class="cs-section" id="system" aria-labelledby="h-system"><h2 class="cs-section__h" id="h-system"><span>04</span>System design</h2><p>Sized to the problem: the calculation runs entirely in the browser, so estimates work offline. Saved bills sync through a small Cloudflare Worker, with admin-only changes locked behind a secret.</p><ol class="flow"><li><b>User</b><span>Billing desk or agent, on any device.</span></li><li><b>Web interface</b><span>Car, general cargo and re-export billing modules.</span></li><li><b>Business rules and calculation</b><span>Runs in the browser, so it works offline.</span></li><li><b>Saved bills</b><span>Kept on the device and synced to GitHub through a Cloudflare Worker.</span></li><li class="is-out"><b>Output</b><span>Print-ready A4 invoice.</span></li></ol></section>
+              <section class="cs-section" id="features" aria-labelledby="h-features"><h2 class="cs-section__h" id="h-features"><span>05</span>Key features</h2><ul class="cs-grid"><li><b>Three billing modules</b>Car, general cargo and re-export bills.</li><li><b>Slab-based wharf rent</b>With configurable free time.</li><li><b>VAT and levy</b>Calculated per the port’s rules.</li><li><b>Inside / outside storage</b>Two independent totals per bill.</li><li><b>Split billing</b>Applies old and new rates across a rate change.</li><li><b>Payable charges</b>River dues, landing, removal, weighment, hoisting.</li><li><b>Saved bills</b>With live search by bill number, dates, agent or amount.</li><li><b>Dashboard</b>Read-only overview of saved-bill activity.</li><li><b>Date validation</b>Printing is blocked while dates conflict.</li><li><b>Print-ready invoice</b>A4 layout, because agents still work from paper.</li><li><b>Draft autosave</b>Restores work after a reload.</li><li><b>Offline PWA</b>Installable, works after the first load.</li></ul></section>
+              <section class="cs-section" id="technology" aria-labelledby="h-technology"><h2 class="cs-section__h" id="h-technology"><span>06</span>Technology</h2><dl class="cs-tech"><div><dt>Frontend</dt><dd>HTML, CSS and JavaScript with no runtime dependencies; installable PWA.</dd></div><div><dt>Backend</dt><dd>Cloudflare Worker for saved-bill sync and admin-gated writes.</dd></div><div><dt>Data</dt><dd>Browser storage; GitHub repository through the Worker.</dd></div><div><dt>Deployment</dt><dd>Cloudflare Pages; source on GitHub.</dd></div><div><dt>Quality</dt><dd>Automated tests for rounding, slabs, tonnage, VAT and amount-in-words; ESLint, Stylelint and GitHub Actions CI.</dd></div><div><dt>Development</dt><dd>Git, GitHub, AI-assisted development.</dd></div></dl></section>
+              <section class="cs-section" id="role" aria-labelledby="h-role"><h2 class="cs-section__h" id="h-role"><span>07</span>My role</h2><ol class="roles" aria-label="Roles across the project"><li>Operations Specialist</li><li>Business Analyst</li><li>System Designer</li><li class="is-ai">AI-Assisted Developer</li><li>Tester</li><li>Deployer</li></ol><ul class="cs-roles-detail"><li><b>Domain understanding</b>Understanding the real billing workflow from inside the operation.</li><li><b>Requirements</b>Identifying the business rules and the information each bill needs.</li><li><b>System design</b>Designing the workflow, rule engine and application structure.</li><li><b>Development</b>Building the web application with AI-assisted development.</li><li><b>Testing</b>Testing calculations, workflows and edge cases, with automated tests over the rounding, slab and VAT rules.</li><li><b>Deployment</b>Deploying the working system and iterating on it.</li></ul><p class="cs-ai">Built using an AI-assisted development workflow, with business requirements, system logic, testing, validation and deployment directed and verified by me.</p></section>
+              <section class="cs-section" id="outcome" aria-labelledby="h-outcome"><h2 class="cs-section__h" id="h-outcome"><span>08</span>Outcome</h2><ul class="cs-grid cs-outcome"><li><b>In daily use</b>Used at the billing counter to check charges before final submission.</li><li><b>Rules made reusable</b>Turned a manual, rule-heavy calculation into a reusable web-based system.</li><li><b>Designed for fewer disputes</b>Charges can be verified before committing, designed to reduce disputes and repeat counter visits.</li><li><b>A foundation to build on</b>Saved bills, search and a dashboard give operational data a structure for further automation.</li></ul></section>
+              <div class="cs-next"><a class="link" href="/#work">← All selected systems</a><a class="link" href="/projects/carview">Next: Vehicle Tracking / CarView →</a></div>
             </div>
-            <div class="cs-body" style="border-top:1px solid var(--bdr-s)">
-              <div class="cs-grid">
-                <div class="cs-full">
-                  <div class="cs-demo">
-                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">portbill.pages.dev</span></div>
-                    <img src="../assets/screenshots/portbill.webp" alt="Port Billing Calculator interface — Car Wharfrent Bill form with live Quick Preview total" loading="eager" fetchpriority="high" width="1200" height="750" />
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">
-                    The port's billing system creates permanent entries — there was
-                    no way for a C&amp;F agent to estimate wharfrent charges before
-                    committing to them. That caused billing disputes, excessive
-                    cargo dwell time, and repeated trips to the counter just to
-                    check a number.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Who Had The Problem</div>
-                  <p class="cs-block-p">
-                    C&amp;F agents at Mongla Port who need to know the expected
-                    charge before final submission, and — indirectly — the billing
-                    desk, which now fields fewer disputes over surprise totals.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Constraints</div>
-                  <p class="cs-block-p">
-                    Had to match the port authority's actual slab/VAT/levy rules
-                    exactly — a wrong estimate is worse than no estimate. No access
-                    to the port's internal billing database, since this is an
-                    advance estimator, not a system of record. Output had to be
-                    print-ready A4, because C&amp;F agents still work from paper.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Requirements</div>
-                  <p class="cs-block-p">
-                    Estimate wharfrent charges before a C&amp;F agent commits to
-                    them, matching the port's real slab/VAT/levy rules exactly,
-                    printable on A4, without touching the port's internal billing
-                    database.
-                  </p>
-                </div>
-                <div class="cs-full">
-                  <div class="cs-block-t">See It In Action</div>
-                  <div class="cs-demo">
-                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">portbill.pages.dev</span></div>
-                    <img src="../assets/demos/portbill-demo.gif" alt="Screen recording of the Port Billing Calculator: entering C&amp;F agent and BL details, then the live Quick Preview total jumping from Tk 1,292.15 to Tk 3,087.42 as the hoisting-charge rule auto-applies above 3 tons." loading="lazy" width="780" height="367" />
-                    <div class="cs-demo-cap"><span class="dot" aria-hidden="true"></span>Live capture from portbill.pages.dev — the hoisting-charge business rule firing in real time</div>
-                  </div>
-                </div>
-                <div class="cs-full">
-                  <div class="cs-block-t">Business Rules</div>
-                  <p class="cs-block-p" style="margin-bottom:16px">Select a stage to see what it does.</p>
-                  <div class="mtd-loop" style="padding:var(--sp-5)">
-                    <div
-                      class="pipeline"
-                      data-pipeline="portbill-rules"
-                      role="group"
-                      aria-label="The Port Billing Calculator's business-rule chain — select a stage to see what it does"
-                    >
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The C&amp;F agent enters BL and cargo details — the starting input for every downstream calculation.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Cargo Data</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Determines how many free days apply before storage charges start, per the port's own rules.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Free-Time Logic</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="How long the cargo has actually been on the yard past free time — the number every slab decision depends on.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Storage Duration</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The port authority's slab-wise charge tiers — the exact rule set this tool had to match precisely.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Rate Slab</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Computes the base wharfrent charge from the applicable slab and storage duration.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Charge Engine</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Applies the port authority's VAT and levy rules on top of the base charge.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>VAT / Levy</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Inside/outside cargo split and the hoisting-charge rule for cargo over 3 tons, auto-applied when it fits.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Special Charges</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="The complete advance estimate the C&amp;F agent sees before deciding whether to commit.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>Final Estimate</span>
-                      </button>
-                      <span class="pipeline-connector" aria-hidden="true">↓</span>
-                      <button type="button" class="pipeline-node" aria-expanded="false" data-explain="Formatted for print, because C&amp;F agents still work from paper at the counter.">
-                        <span class="pipeline-node-k"><span class="pipeline-node-dot"></span>A4 Output</span>
-                      </button>
-                    </div>
-                    <div class="pipeline-panel" data-pipeline-panel hidden aria-live="polite">
-                      <span class="pipeline-panel-lbl" data-pipeline-panel-lbl></span>
-                      <p class="pipeline-panel-text" data-pipeline-panel-text></p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">System Architecture</div>
-                  <div class="cs-diagram flow">
-                    <div class="flow-node"><div class="flow-node-k">Browser</div><div class="flow-node-t">C&amp;F agent's device</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">JS Business Logic</div><div class="flow-node-t">Runs entirely client-side — no backend</div></div>
-                    <div class="flow-connector" aria-hidden="true"></div>
-                    <div class="flow-node"><div class="flow-node-k">A4 Print Output</div></div>
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p">
-                    Plain JavaScript/HTML/CSS over a framework — the whole app is
-                    one calculation form, and a framework would add build tooling
-                    for no real benefit.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Implementation</div>
-                  <p class="cs-block-p">
-                    A single calculation form — plain JavaScript reads the agent's
-                    cargo/BL inputs, runs the slab/VAT/levy rules client-side,
-                    updates a live Quick Preview total as fields change, then
-                    renders the print-ready A4 output. No backend, no build step.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Validation</div>
-                  <p class="cs-block-p">
-                    Every slab/VAT/levy combination checked by hand against the
-                    port authority's real billing rules before shipping — a wrong
-                    estimate is worse than no estimate, so mismatches had to be
-                    caught before agents ever saw them.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Deployment</div>
-                  <p class="cs-block-p">
-                    Deployed as a static PWA on Cloudflare Pages: no hosting cost,
-                    works offline, matches how the billing desk actually operates.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">
-                    In daily use by C&amp;F agents at Mongla Port to verify expected
-                    charges before final submission — the evidence is that it's
-                    still running there today, not a one-time pilot.
-                  </p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Lessons</div>
-                  <p class="cs-block-p">
-                    A tool doesn't need a backend to be a real system its users
-                    depend on daily — client-side logic was enough because the
-                    estimate never needed to persist past the moment it's checked.
-                  </p>
-                </div>
-                <div class="cs-impact"><span class="cs-impact-ic">≈</span><span>Checked by C&amp;F agents an estimated <strong>10–30+ times a day</strong> at the billing counter — a working estimate; no query logs are kept to cite an exact figure.</span></div>
-                <div class="cs-full cs-links">
-                  <a href="https://portbill.pages.dev" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/portbill" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                  <a href="/#work" class="btn btn-o">← Back to Portfolio</a>
-                </div>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <footer>
@@ -308,16 +162,18 @@
         <div class="ft-center">
           <div class="ft-logo">SAS</div>
           <p class="ft-tagline">
-            Product Engineer for Real-World Operations · I turn operational
-            problems into practical software.
+            Port &amp; logistics operations · Business systems &amp; automation ·
+            AI-assisted full-stack product building.
           </p>
         </div>
         <nav class="ft-links" aria-label="Footer navigation">
           <a href="/#hero" class="ft-link">Home</a>
-          <a href="/#about" class="ft-link">About</a>
+          <a href="/about/" class="ft-link">About</a>
           <a href="/#work" class="ft-link">Projects</a>
+          <a href="/projects/opsflow" class="ft-link">OpsFlow</a>
+          <a href="/engineering/" class="ft-link">Engineering</a>
           <a href="/#contact" class="ft-link">Contact</a>
-          <a href="https://github.com/samiulAsumel/portbill" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
+          <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
         </nav>
         <div class="ft-bar">
           <p class="ft-copy">
@@ -329,5 +185,7 @@
     </footer>
 
     <script src="../js/main.js" defer></script>
+    <script src="../js/ux.js" defer></script>
+    <script src="../js/case-study.js" defer></script>
   </body>
 </html>

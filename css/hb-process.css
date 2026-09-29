@@ -1,0 +1,104 @@
+/* ============================================================
+   How I Build, part 1: the 7-stage process. Base rules describe the
+   stacked layout (phones, no-JS); .is-tabs adds the wide-screen
+   stepper + architecture rail. Tokens only.
+   ============================================================ */
+
+/* ---- Stages (stacked base) ---- */
+.hb { --hb-step: 0; --hb-count: 7; }
+.hb__panels { display: flex; flex-direction: column; gap: var(--space-6); }
+.hb__panel {
+  position: relative; display: flex; flex-direction: column; gap: var(--space-4); padding: var(--card-pad);
+  background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-card);
+  transition: border-color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard);
+}
+/* Vertical connector between stacked cards */
+.hb__panel + .hb__panel::before { content: ''; position: absolute; left: var(--space-7); bottom: 100%; width: 2px; height: var(--space-6); background: var(--color-border-strong); }
+.hb__panel.is-done + .hb__panel::before, .hb__panel.is-active::before { background: var(--color-accent); }
+.hb.is-stacked .hb__panel.is-active { border-color: var(--color-border-accent); background: var(--color-surface-raised); }
+.hb__head { display: flex; align-items: center; gap: var(--space-4); }
+.hb__num {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; min-width: 2.5rem; height: 2.5rem;
+  font-family: var(--font-mono); font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-accent-text);
+  background: var(--color-accent-subtle); border: 1px solid var(--color-accent-muted); border-radius: var(--radius-md);
+}
+.hb__title { font-size: var(--text-h3); letter-spacing: var(--tracking-heading); }
+.hb__desc { color: var(--color-text-2); max-width: var(--measure); }
+.hb__focus { list-style: none; gap: var(--space-2); }
+.hb__note { padding-left: var(--space-4); border-left: 2px solid var(--color-border-strong); font-size: var(--text-body-sm); color: var(--color-text-2); max-width: var(--measure); }
+
+/* ---- Stage visuals: chains of nodes built from each stage's own <ol> ---- */
+.hb__chain { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.hb__chain li {
+  padding: var(--space-2) var(--space-3); font-family: var(--font-mono); font-size: var(--text-caption); color: var(--color-text);
+  background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-sm);
+}
+.hb__chain li:not(:last-child)::after { content: '→'; content: '→' / ''; margin-left: var(--space-2); color: var(--color-accent-text); }
+.hb__chain--loop li:last-child::after { content: '↺'; content: '↺' / ''; margin-left: var(--space-2); color: var(--color-accent-text); }
+.hb__lines { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--text-caption); color: var(--color-text-2); }
+.hb__tag { display: inline-block; margin-left: var(--space-2); padding: 0 var(--space-2); font-size: var(--text-meta); color: var(--color-text-muted); border: var(--border-default); border-radius: var(--radius-sm); }
+/* Validation console: mono rows on the page background so it reads as a checklist, not a card */
+.hb__console { list-style: none; background: var(--color-bg); border: var(--border-default); border-radius: var(--radius-md); overflow: hidden; }
+.hb__console li { display: grid; grid-template-columns: minmax(8rem, auto) minmax(0, 1fr); gap: var(--space-4); padding: var(--space-3) var(--space-4); font-size: var(--text-caption); }
+.hb__console li + li { border-top: var(--border-default); }
+.hb__console strong { font-family: var(--font-mono); font-weight: var(--weight-medium); color: var(--color-text); }
+.hb__console strong::before { content: '› '; color: var(--color-accent-text); }
+.hb__console span { color: var(--color-text-2); }
+
+/* ---- Tabs mode (wide screens) ---- */
+.hb__tabs { position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: var(--space-2); padding-bottom: var(--space-4); margin-bottom: var(--space-8); }
+.tab {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; padding: var(--space-2) var(--space-3);
+  font-family: inherit; text-align: left; color: var(--color-text-muted); background: transparent; border: 1px solid transparent; border-radius: var(--radius-md);
+  transition: color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard), transform var(--dur-base) var(--ease-out);
+}
+.tab:hover { color: var(--color-text); border-color: var(--color-border-strong); }
+.tab__num { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); }
+.tab__label { font-size: var(--text-body-sm); font-weight: var(--weight-semibold); line-height: var(--leading-snug); overflow-wrap: anywhere; }
+.tab__check { display: none; position: absolute; top: var(--space-2); right: var(--space-3); font-size: var(--text-caption); color: var(--color-accent-text); }
+.tab.is-done { color: var(--color-text-2); }
+.tab.is-done .tab__check { display: block; }
+.tab.is-active { color: var(--color-text); background: var(--color-accent-subtle); border-color: var(--color-border-accent); transform: scale(1.03); }
+.tab.is-active .tab__num { color: var(--color-accent-text); }
+/* Progress rail under the tabs: fill = stages reached; draws in once when the block is revealed */
+.hb__track { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--color-border-strong); }
+.hb__fill { display: block; height: 100%; background: var(--color-accent); width: calc((var(--hb-step) + 1) / var(--hb-count) * 100%); transition: width var(--dur-draw) var(--ease-out); }
+.hb.fi:not(.v) .hb__fill { width: 0; }
+
+.hb.is-tabs .hb__layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: var(--space-8); align-items: start; }
+.hb.is-tabs .hb__panel { min-height: 22rem; padding: var(--space-7); border-radius: var(--radius-xl); background: var(--color-surface-raised); box-shadow: var(--shadow-elevated); }
+.hb.is-tabs .hb__panel + .hb__panel::before { display: none; }
+.hb.is-tabs .hb__panel:not([hidden]) { animation: hb-in var(--dur-slow) var(--ease-out); }
+@keyframes hb-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---- Architecture rail (decorative, tabs mode only) ---- */
+.hb__rail { display: none; }
+.hb.is-tabs .hb__rail { display: block; position: sticky; top: calc(var(--nav-h) + var(--space-6)); padding: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); }
+.hb__rail-cap { margin-bottom: var(--space-5); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
+.hb__rail ol { list-style: none; display: flex; flex-direction: column; gap: var(--space-5); }
+.hb__rail li { position: relative; padding-left: var(--space-7); color: var(--color-text-muted); transition: color var(--dur-base) var(--ease-standard); }
+.hb__rail li span { display: block; font-size: var(--text-body-sm); font-weight: var(--weight-medium); }
+.hb__rail li small { display: block; font-size: var(--text-meta); }
+.hb__rail li::before {
+  content: ''; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; box-sizing: border-box; border-radius: var(--radius-full);
+  background: var(--color-bg); border: 2px solid var(--color-border-strong); transition: background var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard);
+}
+.hb__rail li:not(:last-child)::after { content: ''; position: absolute; left: 5px; top: 20px; bottom: calc(var(--space-5) * -1 + 4px); width: 2px; background: var(--color-border-strong); transition: background var(--dur-slow) var(--ease-standard); }
+.hb__rail li.is-done { color: var(--color-text-2); }
+.hb__rail li.is-done::before { background: var(--color-accent); border-color: var(--color-accent); }
+.hb__rail li.is-done::after { background: var(--color-accent); }
+.hb__rail li.is-active { color: var(--color-text); }
+.hb__rail li.is-active::before { border-color: var(--color-accent); box-shadow: 0 0 0 4px var(--color-accent-subtle); }
+.hb__rail li.is-active span { font-weight: var(--weight-semibold); }
+
+/* ---- Narrow screens ---- */
+@media (max-width: 599px) {
+  .hb__chain { flex-direction: column; align-items: flex-start; }
+  .hb__chain li:not(:last-child)::after { content: '↓'; content: '↓' / ''; }
+  .hb__chain--loop li:last-child::after { content: '↺'; content: '↺' / ''; }
+  .hb__console li { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hb.is-tabs .hb__panel:not([hidden]) { animation: none; }
+  .tab.is-active { transform: none; }
+}

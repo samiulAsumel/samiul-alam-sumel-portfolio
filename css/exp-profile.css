@@ -1,0 +1,61 @@
+/* ============================================================
+   Experience profile, part 1: hero card, domain map, evolution
+   chain and expertise cards. Shared by /experience/ and the
+   homepage summary. Tokens only.
+   ============================================================ */
+
+.ex-hero { padding-block: calc(var(--nav-h) + var(--space-9)) var(--space-8); }
+.ex-hero__title { font-size: var(--text-display); letter-spacing: var(--tracking-display); margin-bottom: var(--space-4); }
+.ex-hero__lead { max-width: var(--measure); font-size: var(--text-body-lg); color: var(--color-text-2); margin-bottom: var(--space-7); }
+.ex-primary { gap: var(--space-4); }
+.ex-primary .card__body { max-width: var(--measure); }
+.ex-block { margin-top: var(--space-9); }
+.ex-block__t { margin-bottom: var(--space-5); font-size: var(--text-h3); letter-spacing: var(--tracking-heading); }
+
+/* ---- Domain map: a hub, nine connected area buttons, one detail panel ---- */
+.dm-hub { display: flex; justify-content: center; }
+.dm-hub span { padding: var(--space-3) var(--space-6); font-family: var(--font-mono); font-size: var(--text-caption); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); background: var(--color-accent-subtle); border: var(--border-interactive); border-radius: var(--radius-md); }
+.dm-hub::after { content: ''; display: block; width: 0; }
+.dm-tabs { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); margin-top: var(--space-6); padding-top: var(--space-5); border-top: 2px solid var(--color-border-strong); }
+/* Stem from the hub down to the rule */
+.dm-tabs::before { content: ''; position: absolute; top: calc(var(--space-6) * -1 - 2px); left: 50%; width: 2px; height: var(--space-6); background: var(--color-border-strong); }
+.dm-tabs .tab { flex-direction: row; align-items: center; padding: var(--space-2) var(--space-4); border-color: var(--color-border); background: var(--color-surface); }
+.dm-tabs .tab.is-active { transform: none; }
+.dm-panels { margin-top: var(--space-6); }
+.dm-panel { padding: var(--space-6); background: var(--color-surface-raised); border: var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-subtle); }
+.dm-panel[hidden] { display: none; }
+.dm-panel:not([hidden]) { animation: hb-in var(--dur-slow) var(--ease-out); }
+.dm-panel h3 { margin-bottom: var(--space-4); font-size: var(--text-h3); }
+.dm-panel ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--space-3); }
+.dm-panel li { padding: var(--space-3) var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.dm-band { margin-top: var(--space-6); }
+
+/* ---- Automation evolution ---- */
+.ev { max-width: 44rem; }
+.ev__end { display: flex; align-items: baseline; gap: var(--space-3); font-size: var(--text-body-sm); color: var(--color-text-2); }
+.ev__end span { padding: 1px var(--space-3); font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); border: var(--border-interactive); border-radius: var(--radius-sm); }
+.ev__list { list-style: none; counter-reset: ev; position: relative; margin: var(--space-4) 0; padding-left: var(--space-7); border-left: 2px solid var(--color-border-strong); margin-left: var(--space-3); }
+.ev__list > li { counter-increment: ev; position: relative; padding-block: var(--space-2); }
+.ev__list > li::before { content: counter(ev, decimal-leading-zero); position: absolute; left: calc(var(--space-7) * -1 - 12px); top: var(--space-3); width: 24px; height: 24px; display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); background: var(--color-bg); border: 2px solid var(--color-border-strong); border-radius: var(--radius-full); }
+.ev__list > li:last-child::before { border-color: var(--color-accent); }
+.ev details { background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); transition: border-color var(--dur-base) var(--ease-standard); }
+.ev details[open], .ev details:hover { border-color: var(--color-border-accent); }
+.ev summary { cursor: pointer; padding: var(--space-3) var(--space-4); list-style: none; display: flex; justify-content: space-between; gap: var(--space-3); color: var(--color-text); }
+.ev summary::-webkit-details-marker { display: none; }
+.ev summary::after { content: '+'; font-family: var(--font-mono); color: var(--color-accent-text); }
+.ev details[open] summary::after { content: '−'; }
+.ev details p { padding: 0 var(--space-4) var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+/* ---- Domain expertise cards ---- */
+.ex-cards { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--space-4); }
+.ex-card { display: flex; flex-direction: column; gap: var(--space-2); }
+.ex-card:hover { transform: translateY(-2px); border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated); }
+.ex-card h3 { font-size: var(--text-h4); }
+.ex-card p { font-size: var(--text-body-sm); color: var(--color-text-2); }
+
+@media (max-width: 600px) {
+  .dm-tabs { justify-content: flex-start; }
+  .dm-tabs::before { display: none; }
+  .dm-hub { justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { .dm-panel:not([hidden]) { animation: none; } .ex-card:hover { transform: none; } }

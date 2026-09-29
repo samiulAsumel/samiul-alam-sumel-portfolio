@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Samiul_Alam_Sumel_CV.docx and Samiul_Alam_Sumel_Freelance_CV.docx.
+"""Generate MD-Samiul-Alam-Sumel-CV.docx and MD-Samiul-Alam-Sumel-Project-CV.docx.
 
 Content is sourced strictly from the portfolio site (../index.html) -- same
 facts, same honest framing, no sugarcoating, no claims beyond what real
@@ -315,7 +315,7 @@ SKILLS = [
 PROJECTS = [
     dict(
         name='Port Billing Calculator',
-        links=[("Live", "https://portbill.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/portbill")],
+        links=[("Live", "https://portbill.pages.dev"), ("Case study", "https://sasumel.pages.dev/projects/portbill")],
         problem="Port billing system creates permanent entries — C&F agents had no way to "
                 "estimate wharfrent charges before committing, causing billing disputes, "
                 "excessive dwell time, and repeated counter visits.",
@@ -327,7 +327,7 @@ PROJECTS = [
     ),
     dict(
         name='Daily Car Balance & Location Tracking System ("carview")',
-        links=[("Live", "https://carview.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/carview")],
+        links=[("Case study", "https://sasumel.pages.dev/projects/carview")],
         problem="Vehicle positions across warehouse, shed, and yard were recorded in one "
                 "person's personal Excel file — invisible to all other staff, creating "
                 "bottlenecks and dependency on a single individual.",
@@ -338,7 +338,7 @@ PROJECTS = [
     ),
     dict(
         name="OT Bill Management System",
-        links=[("Live", "https://otbill.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/otbill")],
+        links=[("Case study", "https://sasumel.pages.dev/projects/otbill")],
         problem="Overtime billing was a fully manual Excel process — multi-step hourly rate "
                 "calculations and final bill generation done by hand every cycle.",
         solution="Staff enters an employee profile once; the system generates the complete "
@@ -543,7 +543,7 @@ def build_final_cv():
                    "Mongla Bandar Secondary School, 1999 – 2009", space_after=2)
     add_skill_line(doc, "Languages", "Bengali — Native   |   English — Professional", space_after=0)
 
-    path = OUT_DIR / "Samiul_Alam_Sumel_CV.docx"
+    path = OUT_DIR / "MD-Samiul-Alam-Sumel-CV.docx"
     doc.save(path)
     print("Saved:", path)
 
@@ -661,7 +661,7 @@ def build_freelance_cv():
                    space_after=2)
     add_skill_line(doc, "Languages", "Bengali — Native   |   English — Professional", space_after=2)
 
-    path = OUT_DIR / "Samiul_Alam_Sumel_Freelance_CV.docx"
+    path = OUT_DIR / "MD-Samiul-Alam-Sumel-Project-CV.docx"
     doc.save(path)
     print("Saved:", path)
 

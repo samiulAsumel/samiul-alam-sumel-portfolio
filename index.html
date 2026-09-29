@@ -47,7 +47,7 @@
     <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="MD Samiul Alam Sumel — Port &amp; Logistics Operations Specialist" />
+    <meta property="og:image:alt" content="MD Samiul Alam Sumel — Port &amp; Logistics Operations, Business Systems &amp; Automation" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
 
@@ -65,22 +65,8 @@
 
     <!-- Fonts (self-hosted) and styles -->
     <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/tokens.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/systems.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/home-sections.css" />
-    <link rel="stylesheet" href="css/case-mocks.css" />
-    <link rel="stylesheet" href="css/project-cards.css" />
-    <link rel="stylesheet" href="css/opsflow.css" />
-    <link rel="stylesheet" href="css/exp-profile.css" />
-    <link rel="stylesheet" href="css/cap.css" />
-    <link rel="stylesheet" href="css/hb-process.css" />
-    <link rel="stylesheet" href="css/hb-examples.css" />
+    <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/bundle-home.min.css" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -91,12 +77,10 @@
         "jobTitle": "Port & Logistics Operations Specialist",
         "description": "Port and logistics operations professional with 12+ years of experience in cargo billing, transport operations, revenue reporting and workflow automation, building practical business systems and AI-assisted software products.",
         "email": "sa.sumel91@gmail.com",
-        "telephone": "+8801312312512",
         "url": "https://sasumel.pages.dev/",
         "sameAs": [
           "https://github.com/samiulAsumel",
-          "https://linkedin.com/in/samiul-alam-sumel",
-          "https://portbill.pages.dev"
+          "https://linkedin.com/in/samiul-alam-sumel"
         ],
         "address": {
           "@type": "PostalAddress",
@@ -105,23 +89,18 @@
           "addressCountry": "BD"
         },
         "knowsAbout": [
-          "AI-Assisted Development",
-          "Context Engineering",
-          "Port Operations",
-          "Wharfrent Billing & Tariff Systems",
-          "Cargo & Vessel Tracking",
-          "C&F Agent Workflows",
-          "Logistics Systems",
+          "Port operations",
+          "Logistics operations",
+          "Cargo billing",
+          "Revenue reporting",
+          "Business process automation",
+          "Workflow automation",
+          "Business systems",
+          "AI-assisted software development",
           "JavaScript",
+          "TypeScript",
           "React",
-          "Next.js",
-          "Node.js",
-          "Express.js",
-          "MongoDB",
-          "REST APIs",
-          "Tailwind CSS",
-          "Git & GitHub",
-          "Workflow Digitization"
+          "Cloudflare Workers"
         ],
         "worksFor": {
           "@type": "Organization",
@@ -144,16 +123,16 @@
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Live systems built by Samiul Alam Sumel",
+        "name": "Software built by MD Samiul Alam Sumel",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "Port Billing Calculator",
+              "name": "Port Billing System",
               "url": "https://portbill.pages.dev",
-              "description": "Advance wharfrent calculator for C&F agents: slab-based charges, VAT/levy, print-ready output.",
+              "description": "Web-based port billing calculator for wharf rent, VAT and levy, with print-ready A4 output. The public tool ships with no port records.",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
               "author": {
@@ -168,9 +147,9 @@
             "position": 2,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "carview",
+              "name": "Vehicle Tracking / CarView",
               "url": "https://sasumel.pages.dev/projects/carview",
-              "description": "Offline-first daily vehicle balance and location tracker with analytics dashboard.",
+              "description": "Offline-capable system for daily vehicle receipts, deliveries and balances across storage locations, with reports and change history. Quantity tracking, not GPS.",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
               "author": {
@@ -187,93 +166,8 @@
               "@type": "SoftwareApplication",
               "name": "OT Bill Management / Automation",
               "url": "https://sasumel.pages.dev/projects/otbill",
-              "description": "Generates overtime bills from an employee profile with date-wise cumulative calculation.",
+              "description": "Overtime bill preparation from employee profiles and daily hours, with automatic rate derivation and A4 print. Overtime billing, not payroll.",
               "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web",
-              "author": {
-                "@type": "Person",
-                "name": "MD Samiul Alam Sumel",
-                "url": "https://sasumel.pages.dev/"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "Client Intake Form",
-              "url": "https://clif91.pages.dev/",
-              "description": "Project requirement intake form with a serverless submission API and a password-protected admin dashboard.",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web",
-              "author": {
-                "@type": "Person",
-                "name": "MD Samiul Alam Sumel",
-                "url": "https://sasumel.pages.dev/"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "SalahSync",
-              "url": "https://salahsync.pages.dev",
-              "description": "Offline-first prayer schedule and habit tracker (installable PWA).",
-              "applicationCategory": "WebApplication",
-              "operatingSystem": "Web",
-              "author": {
-                "@type": "Person",
-                "name": "MD Samiul Alam Sumel",
-                "url": "https://sasumel.pages.dev/"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "World Kitchen Atlas",
-              "url": "https://kitchenatlas.pages.dev",
-              "description": "Culinary encyclopedia with per-dish confidence ratings, built on Next.js.",
-              "applicationCategory": "WebApplication",
-              "operatingSystem": "Web",
-              "author": {
-                "@type": "Person",
-                "name": "MD Samiul Alam Sumel",
-                "url": "https://sasumel.pages.dev/"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 7,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "Outreach Copilot",
-              "url": "https://outreach-copilot.pages.dev",
-              "description": "AI-drafted cold outreach on Cloudflare Workers AI; every send stays manual.",
-              "applicationCategory": "WebApplication",
-              "operatingSystem": "Web",
-              "author": {
-                "@type": "Person",
-                "name": "MD Samiul Alam Sumel",
-                "url": "https://sasumel.pages.dev/"
-              }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 8,
-            "item": {
-              "@type": "SoftwareApplication",
-              "name": "English Mastery",
-              "url": "https://englishmastery.pages.dev",
-              "description": "English learning platform: 88 reading lessons across 9 levels with writing and speaking tracks.",
-              "applicationCategory": "WebApplication",
               "operatingSystem": "Web",
               "author": {
                 "@type": "Person",
@@ -285,7 +179,6 @@
         ]
       }
     </script>
-      <link rel="stylesheet" href="css/motion.css" />
   </head>
   <body>
     <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
@@ -528,10 +421,8 @@
         <div class="container hm-hero__grid">
           <div class="hm-hero__copy">
             <p class="eyebrow fi">Port &amp; Logistics Operations × Business Systems × Automation</p>
-            <h1 class="hm-hero__title fi" id="hero-title">
-              <span class="hm-hero__name">MD Samiul Alam Sumel</span>
-              <span class="hm-hero__role">Port &amp; Logistics Operations Specialist</span>
-            </h1>
+            <p class="hm-hero__name fi">MD Samiul Alam Sumel</p>
+            <h1 class="hm-hero__role fi" id="hero-title">Port &amp; Logistics Operations Specialist</h1>
             <p class="hm-hero__lead fi">
               Building the systems that make real-world operations faster, clearer and more automated.
             </p>
@@ -550,7 +441,7 @@
               <a href="#experience" class="btn btn--secondary btn--lg">View Experience <span class="arw" aria-hidden="true">↗</span></a>
             </div>
             <p class="hm-hero__links fi">
-              <a class="link" href="Samiul_Alam_Sumel_CV.pdf" download>Download CV</a>
+              <a class="link" href="MD-Samiul-Alam-Sumel-CV.pdf" download>Download CV</a>
               <a class="link" href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
             <p class="hm-hero__avail fi"><span class="hm-dot" aria-hidden="true"></span>Open to international and remote opportunities</p>
@@ -1194,13 +1085,13 @@
               <ul class="hm-cv" role="list" aria-label="CV downloads">
                 <li>
                   <span>Full CV</span>
-                  <a class="link" href="Samiul_Alam_Sumel_CV.pdf" download>PDF</a>
-                  <a class="link" href="Samiul_Alam_Sumel_CV.docx" download>DOCX</a>
+                  <a class="link" href="MD-Samiul-Alam-Sumel-CV.pdf" download>PDF</a>
+                  <a class="link" href="MD-Samiul-Alam-Sumel-CV.docx" download>DOCX</a>
                 </li>
                 <li>
                   <span>Project / contract CV</span>
-                  <a class="link" href="Samiul_Alam_Sumel_Freelance_CV.pdf" download>PDF</a>
-                  <a class="link" href="Samiul_Alam_Sumel_Freelance_CV.docx" download>DOCX</a>
+                  <a class="link" href="MD-Samiul-Alam-Sumel-Project-CV.pdf" download>PDF</a>
+                  <a class="link" href="MD-Samiul-Alam-Sumel-Project-CV.docx" download>DOCX</a>
                 </li>
               </ul>
             </div>

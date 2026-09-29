@@ -41,16 +41,16 @@ sw.js                     Service worker (cache-first, bump CACHE_NAME on
 favicon.svg
 scripts/generate_cvs.py   Regenerates both CV .docx files from the same
                          content facts as the site (see below)
-Samiul_Alam_Sumel_CV.docx             Standard CV — full-time job applications
-Samiul_Alam_Sumel_Freelance_CV.docx   Freelance/contract-pitch CV
+MD-Samiul-Alam-Sumel-CV.docx             Standard CV — full-time job applications
+MD-Samiul-Alam-Sumel-Project-CV.docx   Freelance/contract-pitch CV
 ```
 
 ## Which CV to use for what
 
-- **`Samiul_Alam_Sumel_CV.docx`** — standard reverse-chronological CV. Use
+- **`MD-Samiul-Alam-Sumel-CV.docx`** — standard reverse-chronological CV. Use
   for full-time job applications: recruiters, LinkedIn/Indeed, ATS-based
   application systems. Leads with Experience, parses cleanly in ATS.
-- **`Samiul_Alam_Sumel_Freelance_CV.docx`** — services-first pitch CV. Use
+- **`MD-Samiul-Alam-Sumel-Project-CV.docx`** — services-first pitch CV. Use
   for freelance/contract work: Upwork-style platforms, direct client
   outreach, cold pitches. Leads with "Services I Deliver" and proof, which
   converts better with clients but is not what ATS keyword-matching expects
@@ -87,3 +87,7 @@ Every claim on this site and in both CVs must be traceable to something
 real: a completed module in the Programming Hero course, or a verifiable
 public GitHub project. See `CLAUDE.md` for the full content policy before
 editing skills, experience, or project claims.
+
+## CSS bundles
+
+Edit `css/*.css`, then run `python3 scripts/build_css.py` to rebuild the per-page bundles (`css/bundle-*.min.css`) that the pages actually load. `--check` reports stale bundles.

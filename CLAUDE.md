@@ -42,10 +42,19 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   figures (`.mock`), never the real screenshots/GIF; no live-app or GitHub links
   for either (CarView's live view and public repo carry real aggregate operating
   data; OT Bill's public repo carries real employee names, IC numbers and salaries
-  plus a hard-coded admin password). PortBill keeps its live + GitHub links (no
-  records in either). Keep OT Bill described as overtime billing, not payroll, and
+  plus a hard-coded admin password). PortBill keeps its live link; its GitHub repo became PRIVATE (2026-09-30), so no GitHub link
+  and the how-i-build page must not point readers at commits. Keep OT Bill described as overtime billing, not payroll, and
   CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
   (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
+- **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
+  6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
+  remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in
+  `css/*.css`. After ANY css edit run `python3 scripts/build_css.py` (`--check` reports stale bundles)
+  and commit the bundles. A new css file must be added to the right group(s) in the json. This
+  supersedes "no build step" for CSS only. JS is unbundled. `_redirects` maps the old CV filenames
+  to `MD-Samiul-Alam-Sumel-CV` / `-Project-CV`. SEO: homepage H1 is the role only; og-image is a
+  Chrome-rendered brand card (no stats); JSON-LD lists only supported claims (no phone, no Next.js
+  or MongoDB, no OpsFlow in the "software built" list except its own page, marked in development).
 - **Motion rules (2026-09-30, step 8):** all interaction polish lives in `css/motion.css`
   (loaded last on every page) and `js/ux.js`. Animate `transform` and `opacity` only; no
   animation libraries; no cursor effects (the existing card spotlight/magnetic buttons stay);

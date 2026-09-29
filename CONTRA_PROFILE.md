@@ -102,7 +102,7 @@ A4 output.
 final submission.
 
 **Tags:** JavaScript, HTML/CSS, Cloudflare Pages, PWA, Print Output
-**Links:** [portbill.pages.dev](https://portbill.pages.dev) | [github.com/samiulAsumel/portbill](https://github.com/samiulAsumel/portbill)
+**Links:** [portbill.pages.dev](https://portbill.pages.dev) | [Case study](https://sasumel.pages.dev/projects/portbill)
 
 ## Project 2: Daily Car Balance & Location Tracking System ("carview")
 

@@ -89,6 +89,12 @@
       panels.forEach(panel => { panel.style.minHeight = `${tallest}px`; });
     }
 
+    // Measuring forces layout, so it runs when the browser is idle instead of during first paint.
+    function scheduleEqualize() {
+      if ('requestIdleCallback' in window) window.requestIdleCallback(equalize, { timeout: 800 });
+      else window.setTimeout(equalize, 200);
+    }
+
     // Tabs mode: wide screens get roles, one visible panel and the roving-tabindex keyboard model.
     function enterTabsMode() {
       root.classList.add('is-tabs');
@@ -100,7 +106,7 @@
         panel.tabIndex = 0;
       });
       select(current, false);
-      equalize();
+      scheduleEqualize();
     }
 
     // Stacked mode: every stage stays visible; the one nearest mid-screen gets the active state.

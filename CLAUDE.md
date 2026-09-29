@@ -46,6 +46,16 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   records in either). Keep OT Bill described as overtime billing, not payroll, and
   CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
   (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
+- **Experience profile (2026-09-30, step 6):** `/experience/` is the full operations career
+  profile and homepage `#experience` its summary (`css/exp-profile*.css`; domain map reuses the
+  tab component). Verified facts only: Mongla Port Authority, Traffic Department, Nov 2013 –
+  Present; Junior Outdoor Assistant Nov 2013 – Nov 2017, Senior Outdoor Assistant (Revenue Branch)
+  Nov 2017 – Present (already published). The user confirmed on 2026-09-30: container tallying and
+  statistics, stuffing/delivery/shipping bills and demurrage, customs-related vehicle (auction)
+  reporting, challan workflow and monthly statements, shipping-agent and stevedoring coordination.
+  Career milestones carry NO dates. Education is exactly "Higher Secondary Certificate (HSC),
+  Business Studies, 2011". No management, volume or percentage claims; target roles are labelled
+  as targets.
 - **OpsFlow page (2026-09-29, step 5)** `/projects/opsflow` + homepage `#opsflow`.
   Status source of truth is the private repo (`docs/roadmap.md`, `routes/`, `pages/`);
   re-check before editing. As of HEAD 4478e5e: Implemented = tenancy/auth/RBAC,

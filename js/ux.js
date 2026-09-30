@@ -24,7 +24,9 @@
   /* ---- Scroll-spy: a thin band across the middle of the viewport picks exactly one section ---- */
   const spyLinks = Array.from(document.querySelectorAll('.nav-links a[data-spy]'));
   if (spyLinks.length && 'IntersectionObserver' in window) {
-    const targets = spyLinks.flatMap(link => link.dataset.spy.split(' ')).map(id => document.getElementById(id)).filter(Boolean);
+    // Sorted into page order, so the highlight follows the section on screen even when the nav lists them differently.
+    const targets = spyLinks.flatMap(link => link.dataset.spy.split(' ')).map(id => document.getElementById(id)).filter(Boolean)
+      .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
     const inBand = new Set();
     let current = null; // Kept when the band sits in a gap between sections, so the highlight never blinks off.
 

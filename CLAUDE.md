@@ -53,6 +53,14 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   and the how-i-build page must not point readers at commits. Keep OT Bill described as overtime billing, not payroll, and
   CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
   (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
+- **Production systems tiering (2026-09-30, positioning step 2):** the homepage section is "Production Systems"; Port
+  Billing is the full-width flagship card (#1), CarView #2 (operational tracking), OT Bill #3 (workflow automation).
+  All three carry the badge "Live · daily use" (user confirmed, including OT Bill); other projects keep plain "Live".
+  Case studies add: fact strip (`.cs-facts`), Port Billing `Business rules` flow + `Validation`, CarView
+  `Engineering trade-off` (`.cs-decision`), OT Bill four-step strip, and a shared `From workflow to software` chain
+  (`.wf2sw`). Styles live in `css/production.css` (home + case bundles). The Port Billing rule order is taken from
+  portbill `src/car.js`: slabs, then payable charges into the base, VAT on the base, levy added after VAT. Re-check
+  that file before editing the flow. No time-saving figure is claimed for OT Bill.
 - **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
   6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
   remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in

@@ -1,8 +1,8 @@
 {
   "base": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "motion"],
-  "home": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "home", "home-sections", "case-mocks", "project-cards", "opsflow", "exp-profile", "cap", "hb-process", "hb-examples", "motion"],
+  "home": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "home", "home-sections", "case-mocks", "project-cards", "production", "opsflow", "exp-profile", "cap", "hb-process", "hb-examples", "motion"],
   "experience": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "case-visuals", "case-study", "home-sections", "hb-process", "opsflow", "exp-profile", "exp-profile-sections", "motion"],
   "capabilities": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "case-visuals", "case-study", "home-sections", "hb-process", "opsflow", "exp-profile", "exp-profile-sections", "cap", "cap-sections", "motion"],
-  "case": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "case-mocks", "case-visuals", "case-study", "motion"],
+  "case": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "case-mocks", "case-visuals", "case-study", "production", "motion"],
   "opsflow": ["fonts", "tokens", "base", "layout", "components", "systems", "style", "case-mocks", "case-visuals", "case-study", "home-sections", "hb-process", "opsflow", "opsflow-sections", "motion"]
 }

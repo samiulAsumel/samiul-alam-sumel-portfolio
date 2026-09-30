@@ -1,203 +1,147 @@
 # Contra Profile — Copy/Paste Content
 
-> Re-synced against the current source of truth in this repo — `scripts/generate_cvs.py`
-> (`SKILLS` / `PROJECTS` / `ADDITIONAL_PROJECTS`) and `CLAUDE.md`'s positioning + content-policy
-> sections — since the previous version of this file predated the September 2026 title change
-> and had gone stale on a few project details. See **What changed in this pass** at the bottom.
+> Synced with the live portfolio (sasumel.pages.dev) and `scripts/generate_cvs.py` on 2026-09-30,
+> after the five-step positioning pass. Facts come from the site's case studies; keep them in step.
+> Delete this note before publishing.
 
 ## Headline (one-liner)
 
-Product Engineer for Real-World Operations | React · Next.js · Node.js — 3 tools in daily port production use
+Port & Logistics Operations | Business Systems & Automation | AI-Assisted Product Builder
 
 ## Short Bio (compact bio field, ~2–3 sentences)
 
-12+ years of hands-on port operations experience at Mongla Port Authority (wharfrent billing,
-cargo/vehicle tracking, C&F agent workflows) combined with full-stack development (React,
-Next.js, Node.js, MongoDB). I've independently designed, built, and shipped 3 web tools now
-in daily use by C&F agents and the Traffic Department at Mongla Port — real production
-software solving real workplace problems, not class projects.
+12+ years inside real port operations at Mongla Port Authority, building practical business
+systems that turn operational workflows, business rules and repetitive Excel processes into
+working software. Three of my systems (billing, vehicle tracking, overtime billing) are in
+daily use. I build with AI-assisted development; requirements, rules, testing and validation
+stay with me.
 
 ## Full About / Overview
 
-I'm a Product Engineer for Real-World Operations — a port-operations insider who also
-personally designs and ships the software that runs port operations. Not a generalist
-developer, not a pure ops person: the combination of domain judgment and engineering execution.
+Most developers learn software first. I learned the operation first.
 
-I bring 12+ years of professional experience at Mongla Port Authority — Bangladesh's
-second-largest international seaport — working in wharfrent billing, cargo dwell-time
-management, terminal operations, and C&F agent coordination.
+I have 12+ years of hands-on experience in port operations at Mongla Port Authority
+(Traffic Department, Revenue Branch), Bangladesh's second-largest international seaport:
+cargo and vehicle workflows, wharf-rent billing, revenue reporting, documentation, and
+coordination with C&F agents and shipping stakeholders.
 
-I used that operational background to identify real workplace problems and built 3
-self-initiated web applications that are still used daily by C&F agents and port staff at
-Mongla Port. Alongside that, I worked through a large part of an intensive, project-based
-full-stack curriculum (HTML/CSS, JavaScript, React, part of Node.js/Express and Next.js),
-and go deeper through self-directed study (The Odin Project, Full Stack Open) and
-AI-assisted development (Claude Code) for backend and data work.
+From that work I build business systems. I start from the real workflow, write the business
+rules down, then build and validate the software around them. AI-assisted development speeds
+up the implementation; I own the requirements, the rules, the testing and the deployment.
 
-Describe the workflow and where it breaks down, and I'll ask questions until the requirement
-is clear and written down — using 12+ years of port operations experience to judge what
-actually fits — then design, build, and deploy the solution. Every build gets manually
-tested against the real business rules before I call it done.
+I am open to remote work worldwide on:
 
-I'm open to remote work worldwide, no time zone constraints, on:
+* Internal business systems and workflow automation
+* Billing, calculation and tariff tools
+* Tracking and reporting systems (quantity and movement records, not GPS)
+* Operational software for port, logistics and transport teams
 
-* Full-stack web apps (React/Next.js frontend, Node.js/Express + MongoDB backend)
-* Billing & tracking dashboards
-* Turning paper/Excel-based workflows into deployed web tools
-* Port, logistics, or operations-adjacent software (my specialty)
-
-Every project below is publicly verifiable before you hire.
+Education: Higher Secondary Certificate (HSC), Business Studies, 2011. Languages: Bengali
+(native), English (professional).
 
 ## Skills / Tags
 
-Domain: Port billing & tariff systems, wharfrent/VAT/levy calculation, cargo & vessel
-tracking, C&F agent workflows, customs/regulatory compliance context
+Domain systems: Port billing and tariff systems, wharf-rent / VAT / levy calculation, cargo and
+vehicle workflows, revenue reporting, C&F agent workflows, operational tracking, business-rule
+modelling, workflow automation
 
-Frontend: HTML5 (Semantic), CSS3, Responsive Design, Tailwind CSS, DaisyUI, JavaScript
-(ES6+), React (Hooks, Context), React Router, React Hook Form, TanStack Query, Axios,
-Next.js (App Router), NextAuth
+Proven in live projects: HTML5, CSS3, JavaScript, PWA / offline-first, Cloudflare Pages and
+Workers, Firebase Auth and Firestore, Chart.js and Excel export, Git and GitHub, React and
+Next.js (World Kitchen Atlas), AI-assisted development (Claude Code)
 
-Backend & Data: Node.js & Express, REST APIs (CRUD), MongoDB (Atlas), Aggregation Pipeline,
-JWT Auth, Firebase Auth & Admin SDK, Next.js API Routes, Stripe Payments
+Working knowledge (OpsFlow, in development): TypeScript, Tailwind CSS, Vite, Hono, Zod,
+Cloudflare D1 (SQL), Vitest, GitHub Actions
 
-Deployment & Tooling: Git & GitHub (Branching, PRs), Cloudflare Pages/Workers, Firebase,
-Netlify, PWA Development, Chart.js, Bash Scripting, AI-Assisted Development (Claude Code)
+Being developed: Node.js / Express depth, automated testing depth, TypeScript depth
 
-TypeScript — in progress, not a completed skill.
+## What I can help with
 
-## Services / Packages
+1. **Operational workflow digitisation** — replace a repetitive manual or Excel workflow with a
+   structured, deployed tool the whole team can use.
+2. **Billing and calculation systems** — turn tariffs, slabs, taxes and rules into reliable,
+   testable calculation tools with print-ready output.
+3. **Internal business systems** — applications built around how a team actually works.
+4. **Reporting and automation** — cut repeated spreadsheet and reporting work through
+   structured records, reports and exports.
 
-1. **Full-Stack Web App Development** — React/Next.js on the frontend, Node.js/Express +
-   MongoDB on the backend — REST APIs, JWT/Firebase authentication, and Stripe payments
-   when the job needs them. Scope starts from a written, agreed requirement, not a guess.
-2. **Billing & Tracking Dashboards** — custom billing calculators, tracking dashboards, and
-   operational tools — the same kind of tool built to solve real problems at my own
-   workplace, after talking through exactly how the numbers are supposed to work with the
-   people who use them.
-3. **Port & Logistics Workflow Digitisation** — turning paper-based or Excel-based port and
-   logistics workflows into deployed, team-wide web tools, backed by first-hand operational
-   knowledge.
-4. **Manual Process Automation** — for any company or industry: map how a process actually
-   runs today, find the step still done by hand, and replace it with a deployed tool the
-   whole team can use, not just a one-off script.
+Scope always starts from a written, agreed requirement.
 
 ## Rate / Availability
 
-**[FILL IN — this is your call, I have no basis to set it.]** Availability: open to remote
-work worldwide, no time zone constraints.
+Open to remote work worldwide, no time zone constraints. Rates are agreed per project after a
+short scoping conversation.
 
 ---
 
-## Project 1: Port Billing Calculator (portbill.pages.dev)
+## Project 1: Port Billing System (portbill.pages.dev) — Live · daily use
 
-**Problem:** The port billing system creates permanent entries — C&F agents had no way to
-estimate wharfrent charges before committing, causing billing disputes, excessive dwell time,
-and repeated counter visits.
+**Problem:** The port's billing system creates permanent entries, so C&F agents could not check
+wharf rent before committing. The result was billing disputes, longer cargo dwell time and
+repeat trips to the counter.
 
-**Solution:** Real-time advance wharfrent calculator — slab-based charge computation, VAT and
-levy calculation, inside/outside cargo split, hoisting charge auto-calculation, print-ready
-A4 output.
+**Solution:** A browser-based billing system for car, general cargo and re-export bills: slab
+wharf rent with free time, payable charges, VAT and levy from the port's own rules, inside /
+outside storage totals, a rate-change split, saved bills with search, and print-ready A4
+invoices. The calculation runs in the browser and works offline.
 
-**Result:** Actively used by C&F agents at Mongla Port daily to verify expected charges before
-final submission.
+**Validation:** Automated tests cover VAT rounding, tonnage rounding, slab progression, money
+rounding and amount in words, and results were compared with real bills. No accuracy figure is
+claimed.
 
-**Tags:** JavaScript, HTML/CSS, Cloudflare Pages, PWA, Print Output
+**Use:** Used at the billing counter to check charges before final submission.
+
+**Tags:** JavaScript, HTML/CSS, PWA, Cloudflare Pages and Worker, A4 print output
 **Links:** [portbill.pages.dev](https://portbill.pages.dev) | [Case study](https://sasumel.pages.dev/projects/portbill)
 
-## Project 2: Daily Car Balance & Location Tracking System ("carview")
+## Project 2: Vehicle Tracking / CarView — Live · daily use
 
-**Problem:** Vehicle positions across warehouse, shed, and yard were recorded in one person's
-personal Excel file — invisible to all other staff. When that person was unavailable, the
-whole team lost visibility, creating bottlenecks and single-person dependency.
+**Problem:** Vehicle positions across warehouse, shed and yard were kept in one person's
+spreadsheet. When they were unavailable, the team lost visibility.
 
-**Solution:** Offline-first PWA tracking 8 port locations, with a Cloudflare Worker + private
-GitHub repo sync so all staff see current positions with no single-person dependency. Includes
-a Chart.js analytics dashboard (7 charts + KPIs), 13 report sections, and Excel export.
+**Solution:** A shared, offline-capable system for daily vehicle receipts, deliveries and
+balances across eight storage locations, with carry-forward balances, transfers, seven charts,
+thirteen report sections, Excel export and a full change history. Quantity tracking, not GPS.
 
-**Result:** Now the Traffic Department's shared, version-controlled tracking system at Mongla
-Port Authority.
+**Architecture note:** A PWA with a Cloudflare Worker and a private GitHub repository as data
+store. Chosen for one small departmental workflow (simple deployment, version history,
+controlled writes); not a general replacement for a transactional database.
 
-**Tags:** PWA, Cloudflare Worker, Chart.js, GitHub Sync, Excel Export
-**Links:** [Case study](https://sasumel.pages.dev/projects/carview)
+**Tags:** PWA, Cloudflare Worker, Chart.js, Excel export
+**Links:** [Case study](https://sasumel.pages.dev/projects/carview) (no public demo: the running system shows real operating figures)
 
-## Project 3: OT Bill Management System
+## Project 3: OT Bill Management / Automation — Live · daily use
 
-**Problem:** Overtime billing was a fully manual Excel process — multi-step hourly rate
-calculations, date-wise OT entry, and final bill generation done by hand every cycle.
+**Problem:** Preparing an overtime bill was a repetitive, multi-step manual calculation that
+was easy to get wrong.
 
-**Solution:** Staff enters an employee profile once; the system generates the complete final
-OT bill instantly with correct hourly rate, cumulative date-wise OT calculation, and A4
-print-ready output.
+**Solution:** Employee profiles are entered once; daily hours are the only per-bill input. The
+hourly rate, cumulative total and amount in words are derived automatically and printed as an
+A4 bill. Overtime billing, not payroll.
 
-**Result:** Reduced billing cycle time from hours to minutes and eliminated manual calculation
-errors.
+**Tags:** JavaScript, Firebase Auth and Firestore, A4 print output, Cloudflare Pages
+**Links:** [Case study](https://sasumel.pages.dev/projects/otbill) (login-gated internal tool, no public demo)
 
-**Tags:** JavaScript, Employee DB, Auto-Calc, A4 Print, Cloudflare Pages
-**Links:** [Case study](https://sasumel.pages.dev/projects/otbill)
+## Project 4: OpsFlow — Building (product case study)
 
-## Project 4: Client Intake Form (clif91.pages.dev)
+A connected operations system for small and mid-sized transport and logistics businesses:
+customer, order, trip, invoice, payment, outstanding balance and reports. **Status:** tenant-
+isolated accounts and roles, customers, routes and rate cards, fleet records and quotations are
+implemented; orders and trips are in development; invoices, payments, outstanding balances and
+reports are planned. A portfolio product project with no customers or revenue.
 
-**Problem:** Collecting project requirements from a client over email or chat is unstructured
-— details get missed, and following up to fill gaps wastes time on both sides.
+**Tags:** TypeScript, React, Cloudflare Workers, Hono, D1
+**Links:** [Product page](https://sasumel.pages.dev/projects/opsflow) | [Early build](https://opsflow91.pages.dev)
 
-**Solution:** Single-file, client-side project requirement intake form — structured questions,
-no backend required, mailto-based report so the completed brief lands directly in an inbox,
-ready to work from.
+## Other projects (shorter)
 
-**Tags:** JavaScript, HTML/CSS, Client-Side Only
-**Links:** [clif91.pages.dev](https://clif91.pages.dev) | [github.com/samiulAsumel/client-intake-form](https://github.com/samiulAsumel/client-intake-form)
-
-## Project 5: SalahSync (salahsync.pages.dev)
-
-**Problem:** A static printed daily-routine sheet couldn't adapt when Fajr time or office
-hours shifted, and couldn't track whether a prayer was actually made in jamaah, alone, or
-missed.
-
-**Solution:** Offline-first installable PWA: set Fajr time/location and office hours once,
-and the full day's schedule (Tahajjud through sleep) recalculates itself, with a prayer/amal
-tracker, streaks, and offline solar prayer-time calculation — no API dependency.
-
-**Note:** Personal daily-use tool, bilingual Bangla/English UI — single-user, not a
-multi-user product, included here for range and build quality, not team adoption.
-
-**Tags:** PWA, Offline-First, Vanilla JS, i18n
-**Links:** [salahsync.pages.dev](https://salahsync.pages.dev) | [github.com/samiulAsumel/salahsync](https://github.com/samiulAsumel/salahsync)
-
-## Project 6: World Kitchen Atlas (kitchenatlas.pages.dev)
-
-**Problem:** Most recipe content online skips real culinary history, and asserts uncertain
-food history as settled fact rather than acknowledging what isn't actually confirmed.
-
-**Solution:** Next.js static-export culinary encyclopedia on Cloudflare Pages: continent →
-country → dish browsing, client-side search, and a per-dish confidence rating instead of
-presenting every entry as equally certain. A Cloudflare Worker proxies a private GitHub data
-repo so the access token never reaches the browser, plus admin CRUD and a
-Durable-Object-backed visit counter for analytics without a database.
-
-**Note:** Asia is live (7 countries, 280 dishes); other continents are planned. No exported
-traffic numbers, so this is presented as live and real, not as a "daily use" claim.
-
-**Tags:** Next.js, TypeScript, Cloudflare Worker, Durable Objects, Static Export
-**Links:** [kitchenatlas.pages.dev](https://kitchenatlas.pages.dev) | [github.com/samiulAsumel/world-kitchen-atlas](https://github.com/samiulAsumel/world-kitchen-atlas)
-
-## Project 7: Outreach Copilot (outreach-copilot.pages.dev)
-
-**Solution:** Single-user AI-drafted cold-outreach tool — Cloudflare Pages + Workers API,
-D1-backed leads/analytics, Workers AI draft generation across email/LinkedIn/WhatsApp/cover
-letter. Every send stays a manual, deliberate step — nothing goes out automatically.
-
-**Tags:** Cloudflare Workers, D1, Workers AI, Single-User Tool
-**Links:** [outreach-copilot.pages.dev](https://outreach-copilot.pages.dev) | [github.com/samiulAsumel/outreach-copilot](https://github.com/samiulAsumel/outreach-copilot)
-
-## Project 8: JARVIS — Personal AI Assistant (source available)
-
-**Solution:** Self-hosted personal AI assistant with multi-model routing (Groq, OpenRouter,
-Claude, Gemini, local Ollama), voice I/O, and persistent memory.
-
-**Note:** Source available on GitHub; no public live demo.
-
-**Tags:** Multi-LLM Routing, Voice I/O, Self-Hosted
-**Links:** [github.com/samiulAsumel/jarvis](https://github.com/samiulAsumel/jarvis)
+* **Client Intake Form** — 18-section requirement form with a serverless submission API and a
+  password-protected lead dashboard. [clif91.pages.dev](https://clif91.pages.dev)
+* **World Kitchen Atlas** — Next.js static-export culinary encyclopedia on Cloudflare (Asia
+  live: 7 countries, 295 dishes; per-dish confidence rating). [kitchenatlas.pages.dev](https://kitchenatlas.pages.dev)
+* **SalahSync** — personal offline-first PWA for a daily routine; single-user.
+  [salahsync.pages.dev](https://salahsync.pages.dev)
+* **Outreach Copilot** — single-user AI-drafted outreach tool on Cloudflare Workers and D1.
+  [outreach-copilot.pages.dev](https://outreach-copilot.pages.dev)
 
 ## Contact
 
@@ -205,30 +149,3 @@ Email: sa.sumel91@gmail.com
 Portfolio: [sasumel.pages.dev](https://sasumel.pages.dev)
 GitHub: [github.com/samiulAsumel](https://github.com/samiulAsumel)
 LinkedIn: [linkedin.com/in/samiul-alam-sumel](https://linkedin.com/in/samiul-alam-sumel)
-
----
-
-## What changed in this pass (not part of the profile — delete before publishing)
-
-- **Title updated** to "Product Engineer for Real-World Operations" — matches the current
-  site/CV headline (`CLAUDE.md`'s Positioning section, set 2026-09-04). The old headline
-  here ("Port Operations Technologist & Product Engineer") was a prior, since-reversed
-  version; don't reintroduce it without checking `CLAUDE.md` first, since it's flipped three
-  times already.
-- **Skills list flattened** — dropped the "Own: / AI-assisted:" split that was in the CV
-  skills matrix (and, before this pass, implied here too via the "AI-Assisted Development"
-  tag sitting alongside everything else). Per-skill authorship labels read as a hedge on a
-  hiring/client-facing profile; the general AI-assisted-development framing stays in the
-  About section instead, where it's an honest description of process rather than a flag on
-  specific line items.
-- **Tags corrected**: portbill and otbill were tagged "Vercel" in the old version; the actual
-  deployment (per `generate_cvs.py`/site) is Cloudflare Pages.
-- **Project list re-synced to current canonical set**: added SalahSync and Outreach Copilot
-  (both now in `generate_cvs.py`'s `PROJECTS`/`ADDITIONAL_PROJECTS` since the 2026-08-28
-  sweep — they weren't yet when this file was first drafted). Removed the Port Community
-  System (PCS) architecture-showcase entry — it isn't in the canonical project list and
-  doesn't appear on the live site; `CLAUDE.md` only describes how it *should* be labeled if
-  it's ever added, not that it currently is. Add it back here only after it's actually live
-  on the site/CVs.
-- **Rate is still blank** — that's a business call only you can make, not something inferable
-  from the repo. Fill it in before you paste this anywhere.

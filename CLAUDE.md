@@ -10,15 +10,13 @@ Samiul Alam Sumel's personal portfolio: a static site (`index.html` +
 `.docx` files generated from the same source facts as the site
 (`scripts/generate_cvs.py`). No framework, no build step, no backend.
 
-## Pending (updated 2026-09-19)
+## Pending (updated 2026-09-30)
 
-Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
-`salahsync.webp` uploaded and referenced (the `.jpg` is gone). Still open:
-
-1. Recreate `scripts/generate_cover_letter.py` (never pushed) and run it to
-   produce `Samiul_Alam_Sumel_Cover_Letter.docx`; commit both.
-2. Fill in the rate field in `CONTRA_PROFILE.md` (`## Rate / Availability`,
-   currently `[FILL IN]`) before pasting that profile anywhere.
+Nothing open. Done: CVs regenerated for the new positioning; `CONTRA_PROFILE.md` rewritten
+(its rate line is deliberately neutral: "agreed per project"; put a number there only if you
+decide on one); `scripts/generate_cover_letter.py` recreated and
+`Samiul_Alam_Sumel_Cover_Letter.docx` generated (fill `[Role]`, `[Company]` and the one "why this
+company" sentence for each application).
 
 ## Site maintenance rules added 2026-09-19
 

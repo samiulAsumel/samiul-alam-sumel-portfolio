@@ -15,6 +15,12 @@
 .hm-hero__role { font-size: var(--text-display); font-weight: var(--weight-bold); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
 .hm-hero__lead { font-size: var(--text-h3); font-weight: var(--weight-medium); line-height: var(--leading-snug); color: var(--color-text); max-width: 42ch; margin-bottom: var(--space-5); }
 .hm-hero__body { color: var(--color-text-2); max-width: 60ch; margin-bottom: var(--space-6); text-align: justify; text-align-last: left; hyphens: auto; }
+/* Open-to-work signal lives in the eyebrow so the first line already answers "what is he after" */
+.hm-hero__open { display: flex; align-items: center; gap: var(--space-3); }
+/* Two-tier headline: the operations role is the headline, the second line is the supporting positioning */
+.hm-hero__role { font-size: clamp(2rem, 1.5rem + 2.2vw, 3.25rem); }
+.hm-hero__role-2 { display: block; margin-top: var(--space-2); font-size: 0.62em; font-weight: var(--weight-medium); letter-spacing: var(--tracking-heading); color: var(--color-text-2); }
+.hm-hero__tech { margin-bottom: var(--space-5); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
 .hm-hero__caps { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); margin-bottom: var(--space-7); font-size: var(--text-body-sm); color: var(--color-text-2); }
 .hm-hero__caps li { display: inline-flex; align-items: baseline; gap: var(--space-2); }
 .hm-hero__cap-k { font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); }
@@ -50,11 +56,12 @@
 
 /* ---- Credibility strip ---- */
 .hm-cred { border-block: var(--border-default); background: var(--color-bg-subtle); }
-.hm-cred__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hm-cred__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .hm-cred__item { display: flex; flex-direction: column; gap: var(--space-1); padding: var(--space-6); }
 .hm-cred__item + .hm-cred__item { border-left: var(--border-default); }
 .hm-cred dt { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
 .hm-cred__val { font-size: var(--text-h3); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-heading); color: var(--color-text); }
+.hm-cred__item--lead .hm-cred__val { font-size: var(--text-h2); }
 .hm-cred__ctx { font-size: var(--text-body-sm); color: var(--color-text-2); }
 
 /* ---- What I bring ---- */
@@ -113,11 +120,12 @@
   .hm-combo__side { padding: var(--space-6); }
 }
 @media (max-width: 768px) {
-  .hm-cred__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-cred__grid { grid-template-columns: minmax(0, 1fr); }
   .hm-cred__item { padding: var(--space-5) var(--space-4); }
-  .hm-cred__item:nth-child(odd) { border-left: 0; }
-  .hm-cred__item:nth-child(n + 3) { border-top: var(--border-default); }
+  .hm-cred__item + .hm-cred__item { border-left: 0; border-top: var(--border-default); }
   .hm-hero__cta .btn { flex: 1 1 100%; }
+  /* Decorative only (aria-hidden); on phones it would double the hero height before the metrics */
+  .hm-flow { display: none; }
   /* Justified + hyphenated copy leaves rivers in a narrow column */
   .hm-hero__body { text-align: left; hyphens: manual; }
 }

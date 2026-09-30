@@ -35,6 +35,13 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   `#verify` grid are gone. "3 in production" (`#credibility`) means portbill,
   carview and otbill — recount if one is added; the JSON-LD `ItemList` in
   `index.html` still lists live deployments and must match reality.
+- **Hero and first screen (2026-09-30, positioning step 1):** eyebrow is "Open to work · Remote worldwide";
+  H1 is two lines (Port & Logistics Operations / Business Systems & Automation), followed by the mono line
+  "AI-Assisted Product Builder" (user chose Builder over Engineer). `#credibility` has 3 metrics: 12+ years,
+  3 production systems, 8+ live deployments (portbill, opsflow91, clif91, salahsync, kitchenatlas,
+  outreach-copilot, englishmastery, this site; carview and otbill are extra). Recount if a deployment is
+  retired. `#bring` opens with "Most developers learn software first. I learned the operation first." The
+  decorative `.hm-flow` is hidden below 768px to keep the phone hero short.
 - **Featured systems policy (2026-09-29, step 4).** `#work` and `/projects/portbill`,
   `/carview`, `/otbill` are the rebuilt 8-part case studies (css: `case-mocks`,
   `case-visuals`, `case-study`, `project-cards`). Privacy rules, decided with the

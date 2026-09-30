@@ -109,6 +109,36 @@
       scheduleEqualize();
     }
 
+    // Phones only: each stage gets a real toggle button so the stacked list stays short. Runs once, and the
+    // tabs layout ignores the button and body wrapper, so wide screens look exactly as before.
+    function setupCollapse() {
+      if (!root.hasAttribute('data-collapse')) return;
+      panels.forEach((panel, i) => {
+        const head = panel.querySelector('.hb__head');
+        if (!head || panel.querySelector('.hb__body')) return;
+        const body = document.createElement('div');
+        body.className = 'hb__body';
+        body.id = `${panel.id}-body`;
+        Array.from(panel.children).filter(child => child !== head).forEach(child => body.appendChild(child));
+        panel.appendChild(body);
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'hb__toggle';
+        toggle.setAttribute('aria-controls', body.id);
+        toggle.innerHTML = '<span class="visually-hidden"></span>';
+        head.appendChild(toggle);
+        const setOpen = open => {
+          panel.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.querySelector('.visually-hidden').textContent = `${open ? 'Hide' : 'Show'} details: ${panel.dataset.label}`;
+        };
+        setOpen(i === 0);
+        toggle.addEventListener('click', () => setOpen(!panel.classList.contains('is-open')));
+        // The whole header is a larger tap target; the button stays the keyboard and screen-reader control.
+        head.addEventListener('click', event => { if (event.target !== toggle && !toggle.contains(event.target)) toggle.click(); });
+      });
+    }
+
     // Stacked mode: every stage stays visible; the one nearest mid-screen gets the active state.
     function enterStackedMode() {
       root.classList.add('is-stacked');
@@ -149,6 +179,7 @@
       select(moves[event.key], true);
     });
 
+    setupCollapse();
     if (stackedQuery) stackedQuery.addEventListener('change', applyMode);
     applyMode();
     // Re-measure after web fonts load and when the width changes (debounced), since both change wrapping.

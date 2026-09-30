@@ -88,3 +88,6 @@
   .cv-pick { grid-template-columns: minmax(0, 1fr); }
   .next-step { text-align: left; }
 }
+
+.res-facts { margin-top: var(--space-5); font-size: var(--text-body-sm); color: var(--color-text-2); }
+.res-facts strong { color: var(--color-text); }

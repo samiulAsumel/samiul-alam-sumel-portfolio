@@ -85,6 +85,12 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   (remote / contract)"; filenames are unchanged. JSON-LD `jobTitle` is the real current title (Senior Outdoor
   Assistant, Revenue Branch), never a target role. On phones the stage chains, the domain tree and the worked example
   are hidden to keep the page short (`css/production.css`). Do not reintroduce "AI engineer" wording.
+- **Post-polish additions (2026-09-30):** Resume and About now state "Education: HSC, Business Studies, 2011" and
+  Bengali (native) / English (professional); no institutions or scores on the site. `og-image.png` was re-rendered
+  with headless Chrome (chain ends "AI-assisted product building"; LinkedIn needs a Post Inspector re-scrape).
+  On phones the How I Build stages collapse (`data-collapse` on `#hb`, `hb__toggle`/`hb__body` in `js/how-i-build.js`).
+  `_headers` CSP allows `static.cloudflareinsights.com` (script) and `cloudflareinsights.com` (connect) for
+  Cloudflare Web Analytics, which must still be switched on in the Pages dashboard (Metrics); every footer says so.
 - **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
   6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
   remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in

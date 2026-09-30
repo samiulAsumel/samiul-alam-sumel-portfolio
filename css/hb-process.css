@@ -102,3 +102,12 @@
   .hb.is-tabs .hb__panel:not([hidden]) { animation: none; }
   .tab.is-active { transform: none; }
 }
+
+/* ---- Phones: stages collapse to their headers; the first one starts open ---- */
+.hb__toggle { display: none; }
+.hb.is-stacked[data-collapse] .hb__head { cursor: pointer; }
+.hb.is-stacked[data-collapse] .hb__toggle { display: inline-flex; align-items: center; justify-content: center; margin-left: auto; width: 2.25rem; height: 2.25rem; flex-shrink: 0; font: inherit; color: var(--color-text-2); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md); cursor: pointer; }
+.hb.is-stacked[data-collapse] .hb__toggle::after { content: '+'; font-family: var(--font-mono); font-size: var(--text-h4); line-height: 1; }
+.hb.is-stacked[data-collapse] .hb__panel.is-open .hb__toggle::after { content: '\2212'; }
+.hb.is-stacked[data-collapse] .hb__panel:not(.is-open) .hb__body { display: none; }
+.hb.is-stacked[data-collapse] .hb__panel.is-open .hb__head { margin-bottom: var(--space-3); }

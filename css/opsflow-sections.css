@@ -58,3 +58,32 @@
   .dtree ul { margin-left: var(--space-2); padding-left: var(--space-4); }
   .dtree li::before { left: calc(var(--space-4) * -1); width: var(--space-3); }
 }
+
+/* ---- Step 4: status strip, typical pattern, relationships, general-product argument ---- */
+.of-pattern { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--space-2); margin-bottom: var(--space-6); }
+.of-pattern li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); padding: var(--space-2) var(--space-3); font-size: var(--text-body-sm); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.of-pattern span { color: var(--color-text); }
+.of-pattern i { font-style: normal; color: var(--color-accent-text); }
+.of-pattern b { font-weight: var(--weight-medium); color: var(--color-text-2); }
+
+.of-status { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
+.of-status__col { padding: var(--space-5); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
+.of-status__col h3 { margin-bottom: var(--space-3); font-size: var(--text-h4); }
+.of-status__col ul { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-body-sm); color: var(--color-text-2); }
+.of-status__col li::before { content: '· '; color: var(--color-accent-text); }
+.of-status__col--done { border-color: var(--color-border-accent); }
+
+.of-rel { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-5); }
+.of-rel li { display: grid; grid-template-columns: 12rem minmax(0, 1fr) auto; gap: var(--space-4); align-items: center; padding: var(--space-2) var(--space-4); font-size: var(--text-body-sm); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.of-rel b { color: var(--color-text); font-weight: var(--weight-semibold); }
+.of-rel span { color: var(--color-text-2); }
+
+.of-general { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--grid-gap); margin-bottom: var(--space-5); }
+.of-general .card p { color: var(--color-text-2); font-size: var(--text-body-sm); }
+.of-general__r { border-color: var(--color-border-accent); }
+
+@media (max-width: 900px) { .of-status { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 768px) {
+  .of-general { grid-template-columns: minmax(0, 1fr); }
+  .of-rel li { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); justify-items: start; }
+}

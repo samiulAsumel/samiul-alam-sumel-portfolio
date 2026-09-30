@@ -69,6 +69,15 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   course-only items. Linux/Bash appear only as small self-directed practice, never as a DevOps identity. Styles:
   `css/decisions.css` (home + capabilities bundles). Do not read the project repos for this content; it comes from
   what the site already publishes.
+- **OpsFlow case-study order (2026-09-30, positioning step 4):** `/projects/opsflow` now runs problem (with who it is
+  for and a hedged typical pattern), workflow, a Current status strip (BUILDING; Implemented / In development / Planned),
+  modules, data relationships with per-link status, dashboard concepts labelled "Concept · synthetic data", tenant
+  isolation, "From internal tool to general product", architecture, why, AI, roadmap. Status re-verified read-only
+  against the local OpsFlow clone at HEAD 4478e5e: no routes or pages for orders, trips, invoices, payments,
+  outstanding, reports or a dashboard. Re-check before changing any label. The defensive "no customers, no revenue"
+  one-liner stays removed; the status strip carries a single factual scope line instead. `/capabilities/` gained
+  "Problems I Can Help Solve" (in `#challenge`), the career bridge and "Why product building?" (in `#builder`),
+  and "Where My Experience Fits". Role wording stays "Product Builder"; "Product Engineer" appears only as a target role.
 - **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
   6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
   remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in

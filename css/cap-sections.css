@@ -20,3 +20,24 @@
 #cap-fit .dm-tabs { margin-top: 0; padding-top: 0; border-top: 0; justify-content: flex-start; }
 #cap-fit .dm-tabs::before { display: none; }
 #cap-fit + .hb__chain { margin-bottom: var(--space-3); }
+
+/* ---- Step 4: problems I can help solve, career bridge ---- */
+.problems { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: var(--grid-gap); }
+.problems__c h3 { margin-bottom: var(--space-2); font-size: var(--text-h4); }
+.problems__c p { font-size: var(--text-body-sm); color: var(--color-text-2); }
+.problems__ev { margin-top: var(--space-3); font-size: var(--text-caption); color: var(--color-text-muted); }
+
+.bridge-t { margin: var(--space-7) 0 var(--space-3); font-size: var(--text-h4); }
+.bridge { list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--space-3); counter-reset: br; }
+.bridge > li { position: relative; counter-increment: br; display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.bridge > li::before { content: counter(br, decimal-leading-zero); font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); }
+.bridge > li b { color: var(--color-text); font-weight: var(--weight-semibold); }
+.bridge > li:not(:last-child)::after { content: '→'; content: '→' / ''; position: absolute; top: 50%; right: calc(var(--space-3) * -1); transform: translate(50%, -50%); z-index: 1; font-family: var(--font-mono); color: var(--color-accent-text); }
+.bridge > li:first-child { border-color: var(--color-border-accent); }
+.bridge > li:last-child { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
+@media (max-width: 1100px) { .bridge { grid-template-columns: repeat(3, minmax(0, 1fr)); } .bridge > li:nth-child(3n)::after { content: none; } }
+@media (max-width: 640px) {
+  .bridge { grid-template-columns: minmax(0, 1fr); }
+  .bridge > li:not(:last-child)::after { content: '↓'; content: '↓' / ''; top: auto; right: auto; bottom: calc(var(--space-3) * -1); left: 50%; transform: translate(-50%, 50%); }
+  .bridge > li:nth-child(3n)::after { content: '↓'; content: '↓' / ''; }
+}

@@ -293,23 +293,18 @@ CONTACT = [
 ]
 
 SKILLS = [
-    ("Domain & Port Operations", "Port billing & tariff systems, wharfrent/VAT/levy calculation, "
-                                  "cargo & vessel tracking, C&F agent workflows, "
-                                  "customs/regulatory compliance context"),
-    ("Frontend & JavaScript", "HTML5 (Semantic), CSS3, Responsive Design, "
-                               "Tailwind CSS, DaisyUI, JavaScript (ES6+), DOM & Events, "
-                               "Fetch & Promises / Async-Await, Array/Object Methods, ES Modules"),
-    ("React & Next.js", "Own: React (Hooks, Context), React Router, React Hook Form. "
-                         "AI-assisted: TanStack Query, Axios (incl. Interceptors), "
-                         "Next.js App Router, NextAuth"),
-    ("Backend, Data & Deployment", "Own: Git & GitHub (Branching, PRs), deployment "
-                                    "(Cloudflare Pages/Firebase/Netlify). AI-assisted: "
-                                    "Node.js & Express, REST APIs (CRUD), MongoDB (Atlas), "
-                                    "Aggregation Pipeline, JWT Auth, Firebase Auth & Admin "
-                                    "SDK, Next.js API Routes, Stripe Payments, "
-                                    "Pagination & Search"),
-    ("Linux & Automation (self-directed)", "Bash Scripting, Linux Administration (Ubuntu), "
-                                            "systemd, Cron & Timers, Monitoring & Alerting Scripts"),
+    ("Domain & Port Operations", "Port billing, wharf-rent / VAT / levy calculation, cargo and "
+                                  "vehicle tracking, container tallying and statistics, C&F agent "
+                                  "workflows, customs-related reporting"),
+    ("Frontend & JavaScript", "HTML5 (semantic), CSS3, responsive design, JavaScript (ES6+), "
+                               "PWA / offline-first, Chart.js, Tailwind CSS"),
+    ("Building with (OpsFlow, in development)", "TypeScript, React, Vite, Hono, Zod, "
+                                                 "Cloudflare Workers + D1 (SQL), Vitest, GitHub Actions"),
+    ("Deployment & Tooling", "Cloudflare Pages / Workers, Firebase Auth / Firestore, Git & GitHub "
+                              "(branching, PRs), Node.js test runner, Claude Code (AI-assisted "
+                              "development). Learning: Node.js / Express depth"),
+    ("Linux & Automation (self-directed)", "Daily Ubuntu use; Bash scripting practice "
+                                            "(public repos on GitHub)"),
 ]
 
 PROJECTS = [
@@ -321,8 +316,8 @@ PROJECTS = [
                 "excessive dwell time, and repeated counter visits.",
         solution="Real-time advance wharfrent calculator: slab-based charge computation, VAT "
                  "and levy calculation, inside/outside cargo split, hoisting charge "
-                 "auto-calculation, print-ready A4 output. Actively used by C&F agents at "
-                 "Mongla Port daily.",
+                 "auto-calculation, print-ready A4 output. Used at the billing counter to "
+                 "check charges before final submission.",
         tags="JavaScript, HTML/CSS, Cloudflare Pages, PWA, Print Output",
     ),
     dict(
@@ -343,8 +338,7 @@ PROJECTS = [
                 "calculations and final bill generation done by hand every cycle.",
         solution="Staff enters an employee profile once; the system generates the complete "
                  "final OT bill instantly with correct hourly rate, cumulative date-wise OT "
-                 "calculation, and A4 print-ready output. Reduced billing cycle time from "
-                 "hours to minutes.",
+                 "calculation, and A4 print-ready output.",
         tags="JavaScript, Employee DB, Auto-Calc, A4 Print, Cloudflare Pages",
     ),
     dict(
@@ -440,26 +434,20 @@ def build_final_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "Product Engineer for Real-World Operations", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Port & Logistics Operations Specialist", CONTACT)
 
     add_section_heading(doc, "Professional Summary", space_before=0)
     add_body(
         doc,
-        "Product Engineer for Real-World Operations — turns operational problems into "
-        "practical software. 12+ years of hands-on experience in cargo billing, "
-        "vessel/vehicle tracking, and port authority workflows at Mongla Port Authority. "
-        "Works requirement-first — finds the manual step in a process, designs the system, "
-        "and builds it with AI-assisted development, tested against real business rules "
-        "before it ships. 3 self-built tools are in daily production use at the billing "
-        "desk and Traffic Department. Skills backed by that shipped software "
-        "and self-directed study (The Odin Project, Full Stack Open), not a bootcamp "
-        "certificate. Builds frontend independently; backend/data work with AI-assisted "
-        "development (Claude Code), going deeper through a self-authored engineering "
-        "roadmap. "
-        "Not a bootcamp graduate or senior engineer, but bringing 12+ years of professional "
-        "discipline from a demanding operational job. Seeking a remote Product Engineer, "
-        "Port Operations Technologist, Logistics Systems Engineer, or full-stack role, "
-        "worldwide, with no time zone constraints.",
+        "Port & Logistics Operations Specialist with 12+ years of hands-on experience in "
+        "cargo billing, vehicle and cargo tracking, revenue reporting and operational "
+        "workflows at Mongla Port Authority (Traffic Department). Turns repetitive "
+        "manual and Excel processes into working business systems: three self-built web "
+        "tools are used at the billing desk and in the Traffic Department. Builds with "
+        "AI-assisted development (Claude Code); requirements, business rules, testing and "
+        "validation stay with me. Self-directed learning through The Odin Project and Full "
+        "Stack Open. Open to international and remote roles in port and logistics operations "
+        "technology, business systems and automation, or product / full-stack development.",
         size=9.4,
     )
 
@@ -470,19 +458,19 @@ def build_final_cv():
     add_section_heading(doc, "Professional Experience")
     add_role_header(
         doc,
-        "Senior Outdoor Assistant — Port Operations & IT Systems",
+        "Senior Outdoor Assistant (Revenue Branch) — Traffic Department",
         "Mongla Port Authority",
         "Nov 2017 – Present",
         "Bangladesh's second-largest international seaport",
     )
     add_body(doc, "Core Port Operations", space_after=1, size=9.3, italic=True, color=GOLD, align=None)
     for t in [
-        "Manage end-to-end wharfrent billing cycle — slab-wise charge computation, VAT and "
-        "levy calculation, inside/outside cargo split, and final billing issuance for active "
+        "Work through the wharfrent billing cycle — slab-wise charge computation, VAT and "
+        "levy calculation, inside/outside cargo split, and final billing for active "
         "C&F agents; identified the recurring manual-calculation bottleneck and independently "
         "built and deployed portbill, now used daily by the billing desk.",
         "Track cargo and vehicle positions across warehouse, shed, and yard terminal "
-        "locations in real time; the single-person, Excel-only version of this record was "
+        "locations daily; the single-person, Excel-only version of this record was "
         "the direct trigger for building carview, now the Traffic Department's shared, "
         "version-controlled tracking system.",
         "Operate the port automation billing system end-to-end and coordinate C&F agent "
@@ -552,7 +540,7 @@ def build_freelance_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "Product Engineer for Real-World Operations — Freelance & Remote", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Port & Logistics Operations Specialist — Business Systems & Automation", CONTACT)
 
     add_section_heading(doc, "How I Work", space_before=0)
     add_body(
@@ -565,11 +553,9 @@ def build_freelance_cv():
         "manual step in a process that already runs — a paper form, a shared spreadsheet, a "
         "hand calculation — and replace it with a deployed tool the whole team can use. "
         "Every build gets manually tested against the real business rules and explained "
-        "back before I call it done. A Product Engineer for Real-World Operations "
-        "(React/Next.js, Node.js/Express, MongoDB) who worked through a large part of an "
-        "intensive full-stack curriculum, "
-        "backed by 3 live web apps built for real daily use, not demos, and publicly "
-        "verifiable on GitHub. Available for freelance and contract work worldwide, no "
+        "back before I call it done. A port and logistics operations specialist who builds "
+        "business systems with AI-assisted development, backed by 3 web apps built for "
+        "real daily use, not demos. Available for freelance and contract work worldwide, no "
         "time zone constraints.",
         size=9.4,
     )
@@ -577,11 +563,10 @@ def build_freelance_cv():
     add_section_heading(doc, "Services I Deliver")
     services = [
         ("Full-Stack Web Apps",
-         "React/Next.js on the frontend, Node.js/Express + MongoDB on the backend — REST "
-         "APIs, JWT/Firebase authentication, and Stripe payments when the job needs them. "
-         "Scope starts from a written, agreed requirement, not a guess.",
-         "3 apps in daily production use (vanilla JS + Cloudflare Workers); React/Next.js "
-         "via World Kitchen Atlas, Node/MongoDB backend via AI-assisted development."),
+         "Web apps in vanilla JavaScript, with Cloudflare Pages / Workers where shared data "
+         "is needed. Scope starts from a written, agreed requirement, not a guess.",
+         "3 operational apps in use (vanilla JS + Cloudflare Workers); Next.js static "
+         "export via World Kitchen Atlas."),
         ("Billing & Tracking Dashboards",
          "Custom billing calculators, tracking dashboards, and operational tools — the same "
          "kind of tool built to solve real problems at my own workplace, after talking "
@@ -589,7 +574,7 @@ def build_freelance_cv():
          "Built for real daily use, not a demo."),
         ("Port & Logistics Workflow Digitisation",
          "Turning paper-based or Excel-based port and logistics workflows — wharfrent "
-         "billing, overtime payroll, cargo/vehicle tracking — into deployed, team-wide web "
+         "billing, overtime billing, cargo/vehicle tracking — into deployed, team-wide web "
          "tools, backed by first-hand operational knowledge.",
          "Proven with 3 tools converted from manual/Excel processes."),
         ("Manual Process Automation",
@@ -638,7 +623,7 @@ def build_freelance_cv():
     add_body(
         doc,
         "12+ years of professional experience at Mongla Port Authority — Senior Outdoor "
-        "Assistant, Port Operations & IT Systems (Nov 2017 – Present); Junior Outdoor "
+        "Assistant, Revenue Branch, Traffic Department (Nov 2017 – Present); Junior Outdoor "
         "Assistant, Port & Terminal Operations (Nov 2013 – Nov 2017). Wharfrent billing, "
         "terminal operations, cargo dwell time management, and C&F agent coordination — a "
         "track record of discipline and reliability, not just technical skill.",

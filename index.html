@@ -316,7 +316,7 @@
           ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Port &amp; Logistics Ops</span></a
         >
         <ul class="nav-links" role="list">
-          <li><a href="#hero" data-spy="hero credibility bring combination how-i-build">Home</a></li>
+          <li><a href="#hero" data-spy="hero credibility bring combination how-i-build decisions">Home</a></li>
           <li><a href="#work" data-spy="work opsflow">Projects</a></li>
           <li><a href="/experience/" data-spy="experience">Experience</a></li>
           <li><a href="/capabilities/" data-spy="capabilities">Expertise</a></li>
@@ -380,6 +380,7 @@
           <li role="option" data-group="Section" data-href="#bring"><svg class="icon"><use href="#i-workflow"/></svg><span>What I Bring</span></li>
           <li role="option" data-group="Section" data-href="#combination"><svg class="icon"><use href="#i-layers"/></svg><span>The Combination</span></li>
           <li role="option" data-group="Section" data-href="#how-i-build"><svg class="icon"><use href="#i-repeat"/></svg><span>How I Build</span></li>
+          <li role="option" data-group="Section" data-href="#decisions"><svg class="icon"><use href="#i-target"/></svg><span>Engineering Decisions</span></li>
           <li role="option" data-group="Section" data-href="#work"><svg class="icon"><use href="#i-rocket"/></svg><span>Production Systems</span></li>
           <li role="option" data-group="Section" data-href="#opsflow"><svg class="icon"><use href="#i-warehouse"/></svg><span>OpsFlow (Building)</span></li>
           <li role="option" data-group="Section" data-href="#experience"><svg class="icon"><use href="#i-anchor"/></svg><span>Professional Experience</span></li>
@@ -633,69 +634,52 @@
               <div class="hb__panels">
                 <article class="hb__panel" id="hb-stage-1" data-tab-panel data-label="Observe" data-num="01">
                   <header class="hb__head"><span class="hb__num" aria-hidden="true">01</span><h3 class="hb__title">Observe the Operation</h3></header>
-                  <p class="hb__desc">Start with the real-world workflow, users, documents, data and operational constraints. Start with the actual business workflow rather than the software.</p>
-                  <ul class="hb__focus cluster" role="list" aria-label="Focus areas">
-                    <li class="badge">Cargo movement</li><li class="badge">Vehicle operations</li><li class="badge">Billing workflows</li>
-                    <li class="badge">Documentation</li><li class="badge">Reporting</li><li class="badge">Repetitive manual tasks</li>
-                  </ul>
+                  <p class="hb__desc">Understand the real operational workflow first. The questions come before any software.</p>
+                  <ul class="hb__console" role="list" aria-label="Questions asked"><li><strong>Who performs the work?</strong><span>The people who do it today, and where.</span></li><li><strong>What information do they use?</strong><span>Documents, records and spreadsheets.</span></li><li><strong>What gets repeated?</strong><span>Steps done again for every bill, day or record.</span></li><li><strong>Where do errors occur?</strong><span>Manual calculation, copying and missed cases.</span></li><li><strong>What depends on Excel, paper or messages?</strong><span>The parts a system could take over.</span></li></ul>
                   <ol class="hb__chain" aria-label="Operational environment"><li>People</li><li>Process</li><li>Data</li><li>Documents</li></ol>
                 </article>
 
-                <article class="hb__panel" id="hb-stage-2" data-tab-panel data-label="Understand" data-num="02">
-                  <header class="hb__head"><span class="hb__num" aria-hidden="true">02</span><h3 class="hb__title">Understand the Business Process</h3></header>
-                  <p class="hb__desc">Break the operation into clear steps and identify where information moves, where decisions happen and where manual work creates friction.</p>
+                <article class="hb__panel" id="hb-stage-2" data-tab-panel data-label="Define" data-num="02">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">02</span><h3 class="hb__title">Define the Requirement</h3></header>
+                  <p class="hb__desc">Turn the operational problem into a precise software requirement.</p>
+                  <ul class="hb__focus cluster" role="list" aria-label="Requirement elements"><li class="badge">Users</li><li class="badge">Inputs</li><li class="badge">Outputs</li><li class="badge">Workflow states</li><li class="badge">Exceptions</li><li class="badge">Constraints</li><li class="badge">Reporting requirements</li></ul>
                   <ol class="hb__chain" aria-label="Process structure"><li>Input</li><li>Process</li><li>Decision</li><li>Output</li></ol>
-                  <ul class="hb__lines" role="list" aria-label="Example processes">
-                    <li>Cargo → Calculation → Billing → Report</li>
-                    <li>Vehicle → Delivery → Charges → Balance</li>
-                    <li>Order → Trip → Invoice → Payment <span class="hb__tag">the workflow OpsFlow is being built around</span></li>
-                  </ul>
+                  <ul class="hb__lines" role="list" aria-label="Example processes"><li>Cargo → Calculation → Billing → Report</li><li>Vehicle → Delivery → Charges → Balance</li><li>Order → Trip → Invoice → Payment <span class="hb__tag">the workflow OpsFlow is being built around</span></li></ul>
                 </article>
 
                 <article class="hb__panel" id="hb-stage-3" data-tab-panel data-label="Model" data-num="03">
                   <header class="hb__head"><span class="hb__num" aria-hidden="true">03</span><h3 class="hb__title">Model the Workflow</h3></header>
-                  <p class="hb__desc">Convert the operational process into structured workflows, business rules, data relationships and system requirements.</p>
-                  <ul class="hb__focus cluster" role="list" aria-label="What gets modelled">
-                    <li class="badge">Workflow</li><li class="badge">Business rules</li><li class="badge">Data</li>
-                    <li class="badge">Users</li><li class="badge">Permissions</li><li class="badge">Reports</li>
-                  </ul>
+                  <p class="hb__desc">Convert the workflow into rules and structures a system can follow. The rules are written down before any code, because software cannot guess them.</p>
+                  <ul class="hb__focus cluster" role="list" aria-label="What gets modelled"><li class="badge">Business rules</li><li class="badge">Calculations</li><li class="badge">Entities</li><li class="badge">Relationships</li><li class="badge">Validation rules</li><li class="badge">User flows</li></ul>
                   <ol class="hb__chain" aria-label="Modelling sequence"><li>Business process</li><li>Workflow</li><li>Business rules</li><li>Data model</li><li>System requirements</li></ol>
                 </article>
 
                 <article class="hb__panel" id="hb-stage-4" data-tab-panel data-label="Design" data-num="04">
                   <header class="hb__head"><span class="hb__num" aria-hidden="true">04</span><h3 class="hb__title">Design the System</h3></header>
-                  <p class="hb__desc">Design the interface, data flow, system structure and user experience around the actual business problem.</p>
+                  <p class="hb__desc">Choose an application architecture, data model, interface, deployment model and technology stack that fit the requirement. Technology follows the operational need, not the other way round.</p>
                   <ol class="hb__chain" aria-label="System structure"><li>User interface</li><li>Application logic</li><li>Database</li><li>Reports / outputs</li></ol>
-                  <ul class="hb__focus cluster" role="list" aria-label="Design concerns">
-                    <li class="badge">Forms</li><li class="badge">Validation</li><li class="badge">Calculations</li><li class="badge">Dashboards</li>
-                    <li class="badge">Search / filter</li><li class="badge">Reporting</li><li class="badge">User roles</li><li class="badge">Audit / history where applicable</li>
-                  </ul>
+                  <ul class="hb__focus cluster" role="list" aria-label="Design concerns"><li class="badge">Forms</li><li class="badge">Validation</li><li class="badge">Calculations</li><li class="badge">Dashboards</li><li class="badge">Search / filter</li><li class="badge">Reporting</li><li class="badge">User roles</li><li class="badge">Audit / history where applicable</li></ul>
                   <p class="hb__note">Sized to the problem: a calculator that only estimates needs no database, while shared records need a data store and a small API.</p>
                 </article>
 
                 <article class="hb__panel" id="hb-stage-5" data-tab-panel data-label="Build" data-num="05">
                   <header class="hb__head"><span class="hb__num" aria-hidden="true">05</span><h3 class="hb__title">Build with AI-Assisted Development</h3></header>
-                  <p class="hb__desc">I use AI coding tools to accelerate implementation, while I remain responsible for understanding the requirements, system logic, architecture, testing, validation and deployment.</p>
+                  <p class="hb__desc">AI is an implementation accelerator, not the source of domain knowledge. It speeds up the work once the requirement and the rules are clear.</p>
                   <ol class="hb__chain" aria-label="Development flow"><li>Requirements</li><li>Architecture</li><li>AI-assisted implementation</li><li>Code review / inspection</li><li>Testing</li><li>Iteration</li></ol>
+                  <ul class="hb__focus cluster" role="list" aria-label="Stays with me"><li class="badge">Requirement interpretation</li><li class="badge">Business logic</li><li class="badge">Architecture decisions</li><li class="badge">Code review</li><li class="badge">Testing</li><li class="badge">Debugging</li><li class="badge">Validation</li><li class="badge">Deployment</li></ul>
                 </article>
 
                 <article class="hb__panel" id="hb-stage-6" data-tab-panel data-label="Validate" data-num="06">
                   <header class="hb__head"><span class="hb__num" aria-hidden="true">06</span><h3 class="hb__title">Validate Against the Real Workflow</h3></header>
-                  <p class="hb__desc">A system is useful only when its behavior matches the operational process it is designed to support.</p>
-                  <ul class="hb__console" role="list" aria-label="Validation checks">
-                    <li><strong>Business logic</strong><span>Do calculations and rules behave correctly?</span></li>
-                    <li><strong>Data</strong><span>Is information stored and displayed consistently?</span></li>
-                    <li><strong>Workflow</strong><span>Does the system follow the actual operational sequence?</span></li>
-                    <li><strong>User experience</strong><span>Can users complete tasks efficiently?</span></li>
-                    <li><strong>Edge cases</strong><span>What happens when data is incomplete, duplicated or unusual?</span></li>
-                  </ul>
+                  <p class="hb__desc">A system is useful only when its behaviour matches the operational process it supports.</p>
+                  <ul class="hb__console" role="list" aria-label="Validation checks"><li><strong>Business rules</strong><span>Do calculations follow the rules as written?</span></li><li><strong>Edge cases</strong><span>What happens when data is incomplete, duplicated or unusual?</span></li><li><strong>Known scenarios</strong><span>Do results match cases the desk already knows?</span></li><li><strong>Invalid input</strong><span>Is bad or missing data rejected clearly?</span></li><li><strong>Calculation results</strong><span>Compared with known or manual results where available.</span></li><li><strong>User workflow</strong><span>Can users finish the task in the real order?</span></li></ul>
                   <p class="hb__note">In the port billing calculator, the slab, VAT and rounding rules are covered by automated tests and were compared against real bills.</p>
                 </article>
 
-                <article class="hb__panel" id="hb-stage-7" data-tab-panel data-label="Deploy &amp; Improve" data-num="07">
-                  <header class="hb__head"><span class="hb__num" aria-hidden="true">07</span><h3 class="hb__title">Deploy, Observe &amp; Improve</h3></header>
-                  <p class="hb__desc">Deploy the working system, monitor how it behaves, identify issues and continuously improve the product.</p>
-                  <ol class="hb__chain hb__chain--loop" aria-label="Improvement loop"><li>Build</li><li>Deploy</li><li>Use</li><li>Feedback</li><li>Improve</li><li>Repeat</li></ol>
+                <article class="hb__panel" id="hb-stage-7" data-tab-panel data-label="Ship &amp; Improve" data-num="07">
+                  <header class="hb__head"><span class="hb__num" aria-hidden="true">07</span><h3 class="hb__title">Ship &amp; Improve</h3></header>
+                  <p class="hb__desc">Deploy the working system, watch how it is used, and keep improving it from real feedback.</p>
+                  <ol class="hb__chain hb__chain--loop" aria-label="Improvement loop"><li>Deploy</li><li>Use</li><li>Feedback</li><li>Problems found</li><li>Improve</li><li>Repeat</li></ol>
                   <p class="hb__note">The live tools run as installable web apps on Cloudflare Pages and Workers, with code versioned on GitHub. <a class="link" href="/engineering/how-i-build/">Read two real bug fixes, in full ↗</a></p>
                 </article>
               </div>
@@ -779,23 +763,53 @@
 
           <!-- AI fits in -->
           <div class="hb-ai fi">
-            <h3 class="hb-ai__title">Where AI Fits In</h3>
-            <div class="hb-ai__inputs">
-              <span>My domain experience</span><i aria-hidden="true">+</i><span>Business requirements</span><i aria-hidden="true">+</i><span>System thinking</span>
+              <h3 class="hb-ai__title">AI-Assisted Development Is Part of the Workflow</h3>
+              <div class="hb-ai__inputs">
+                <span>My domain experience</span><i aria-hidden="true">+</i><span>Business requirements</span><i aria-hidden="true">+</i><span>System thinking</span>
+              </div>
+              <ol class="wf2sw wf2sw--nine" aria-label="AI-assisted development workflow"><li><b>Requirement</b></li><li><b>Context</b></li><li><b>Business rules</b></li><li><b>Architecture</b></li><li><b>AI-assisted implementation</b></li><li><b>Review</b></li><li><b>Testing</b></li><li><b>Validation</b></li><li><b>Deployment</b></li></ol>
+              <p class="hb-ai__msg"><strong>AI accelerates implementation. Requirements, business rules, review, testing, validation and deployment stay with me.</strong></p>
             </div>
-            <ol class="hb-ai__chain" aria-label="From inputs to a deployed product">
-              <li class="hb-ai__ai"><span>AI-assisted development</span><small>The accelerator</small></li>
-              <li><span>Implementation</span><small>Reviewed by me</small></li>
-              <li><span>My testing + validation</span><small>Owned by me</small></li>
-              <li><span>Deployed product</span><small>Owned by me</small></li>
-            </ol>
-            <p class="hb-ai__msg"><strong>AI accelerates implementation. It does not replace operational understanding.</strong></p>
-          </div>
           <p class="hm-note fi">
             My software development approach is self-directed and AI-assisted. My strongest
             foundation comes from real-world port and logistics operations, business-process
             understanding, workflow design, testing and practical system building.
           </p>
+        </div>
+      </section>
+
+      <!-- ENGINEERING DECISIONS -->
+      <section id="decisions" class="section section--alt" aria-labelledby="decisions-title">
+        <div class="container">
+          <div class="section-header fi">
+            <p class="eyebrow">Engineering decisions</p>
+            <h2 class="section-header__title" id="decisions-title">Engineering Decisions</h2>
+            <p class="section-header__lead">
+              Good engineering is not choosing the most complicated technology. It is choosing an
+              appropriate solution for the actual constraints.
+            </p>
+          </div>
+          <div class="dec-grid">
+            <article class="dec-card fi"><p class="dec-card__k">Decision 1 · Port Billing</p><h3>Business logic in the browser</h3><dl class="dec-dl"><div><dt>Problem</dt><dd>Billing needed deterministic calculations from the port’s tariff and operational rules.</dd></div><div><dt>Decision</dt><dd>Run the rules as plain JavaScript in the browser.</dd></div><div><dt>Why</dt><dd>The estimate appears immediately and works offline, with no backend infrastructure for the calculation itself. Only saved bills sync, through a small Cloudflare Worker.</dd></div><div><dt>Trade-off</dt><dd>Right for this calculation workflow. If the need grew to centralised transactional records, complex multi-user workflows or server-side audit, the architecture would need reconsidering.</dd></div></dl></article>
+            <article class="dec-card fi"><p class="dec-card__k">Decision 2 · CarView</p><h3>PWA, Worker and GitHub-backed data</h3><dl class="dec-dl"><div><dt>Problem</dt><dd>A departmental workflow needed shared, structured records and controlled changes.</dd></div><div><dt>Decision</dt><dd>An installable web app with a Cloudflare Worker and GitHub-backed data.</dd></div><div><dt>Why</dt><dd>Simple deployment, version history, controlled writes and a lightweight architecture suited this one workflow.</dd></div><div><dt>Trade-off</dt><dd>Not a universal database architecture. A higher-volume transactional system would normally call for a conventional database.</dd></div></dl></article>
+            <article class="dec-card fi"><p class="dec-card__k">Decision 3 · PWA</p><h3>Installable web apps for operational tools</h3><dl class="dec-dl"><div><dt>Problem</dt><dd>Operational tools have to reach staff on ordinary devices without a distribution process.</dd></div><div><dt>Decision</dt><dd>Ship them as installable web apps.</dd></div><div><dt>Why</dt><dd>Lightweight access, browser-based deployment, an installable experience and a responsive interface, with little to distribute. Port Billing and CarView also keep working offline.</dd></div><div><dt>Trade-off</dt><dd>The browser sets the limits, so this suits tools that do not need deep device integration.</dd></div></dl></article>
+            <article class="dec-card fi"><p class="dec-card__k">Decision 4 · AI-assisted development</p><h3>AI as an implementation accelerator</h3><dl class="dec-dl"><div><dt>Problem</dt><dd>Building software independently takes significant implementation time.</dd></div><div><dt>Decision</dt><dd>Use AI-assisted development as part of the workflow.</dd></div><div><dt>Why</dt><dd>It speeds up implementation, refactoring, debugging assistance, documentation, code exploration and repetitive work.</dd></div><div><dt>I own</dt><dd>Requirements, domain understanding, business rules, architecture, validation, testing, deployment and the final decisions.</dd></div></dl></article>
+          </div>
+          <div class="own fi">
+            <h3 class="own__t">What I own</h3>
+            <div class="own-grid">
+              <div class="own-col"><h4>Business</h4><ul><li>Operational requirements</li><li>Workflow analysis</li><li>Business rules</li><li>Exceptions</li><li>User needs</li></ul></div>
+              <div class="own-col"><h4>Product</h4><ul><li>Feature definition</li><li>Workflow design</li><li>UX decisions</li><li>Prioritisation</li></ul></div>
+              <div class="own-col"><h4>Engineering</h4><ul><li>Architecture decisions</li><li>Implementation direction</li><li>Integration</li><li>Testing</li><li>Debugging</li><li>Deployment</li></ul></div>
+            </div>
+            <p class="own__ai"><strong>AI</strong> assists with implementation and exploration. It does not replace operational understanding or engineering judgement, and generated code is reviewed and tested before it ships.</p>
+          </div>
+          <div class="principle fi">
+            <p class="principle__t">My engineering principle</p>
+            <p class="principle__q">Design around the workflow, not around the technology.</p>
+            <p>I choose technology based on:</p>
+            <ol class="principle__list"><li>Operational constraints</li><li>Workflow complexity</li><li>Data requirements</li><li>User needs</li><li>Maintainability</li><li>Deployment simplicity</li><li>Future requirements</li></ol>
+          </div>
         </div>
       </section>
 

@@ -61,6 +61,14 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   (`.wf2sw`). Styles live in `css/production.css` (home + case bundles). The Port Billing rule order is taken from
   portbill `src/car.js`: slabs, then payable charges into the base, VAT on the base, levy added after VAT. Re-check
   that file before editing the flow. No time-saving figure is claimed for OT Bill.
+- **Engineering evidence (2026-09-30, positioning step 3):** homepage gains `#decisions` (4 decision cards with
+  trade-offs, "What I own", engineering principle) after `#how-i-build`, which now uses the stage names Observe,
+  Define, Model, Design, Build, Validate, Ship & Improve and a nine-step AI workflow (`.wf2sw--nine`). `/capabilities/`
+  skills: Domain Systems group first; Technology in four blocks (Proven / Working knowledge / Currently developing /
+  Engineering practice) plus "Technology by system" trails. Evidence-only rule kept: no MongoDB, Docker, JWT or
+  course-only items. Linux/Bash appear only as small self-directed practice, never as a DevOps identity. Styles:
+  `css/decisions.css` (home + capabilities bundles). Do not read the project repos for this content; it comes from
+  what the site already publishes.
 - **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
   6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
   remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in

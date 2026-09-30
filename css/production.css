@@ -52,6 +52,16 @@
   .pcard--flagship { flex-direction: column; }
   .pcard--flagship .pcard__media { flex: none; padding: var(--space-4) var(--space-4) 0; }
 }
-@media (max-width: 600px) {
+/* Phones: two columns keep the eight-step chain short; it only goes single-column on very narrow screens */
+@media (max-width: 340px) {
   .wf2sw { grid-template-columns: minmax(0, 1fr); }
+}
+/* Phones: stage chains repeat the stage text and the tree repeats the cards below it, so they are dropped to keep the section short */
+@media (max-width: 900px) {
+  #how-i-build .hb__panel .hb__chain { display: none; }
+}
+@media (max-width: 768px) {
+  .reltree { display: none; }
+  /* The worked example repeats the Port Billing and CarView case studies, which are one tap away */
+  #how-i-build .hb-ex { display: none; }
 }

@@ -78,6 +78,13 @@ Done since the 2026-09-08 note: CV `.docx`/`.pdf` regenerated and committed;
   one-liner stays removed; the status strip carries a single factual scope line instead. `/capabilities/` gained
   "Problems I Can Help Solve" (in `#challenge`), the career bridge and "Why product building?" (in `#builder`),
   and "Where My Experience Fits". Role wording stays "Product Builder"; "Product Engineer" appears only as a target role.
+- **Final polish (2026-09-30, positioning step 5):** homepage order is now hero, credibility, bring, Production Systems
+  (`#work`), Experience, How I Build, Decisions, OpsFlow, capabilities summary, contact + CVs; `#combination` was
+  removed as a duplicate. Primary nav on every page: Systems / How I Build / Experience / Expertise / About / CV /
+  Contact (the logo is Home). The two CVs are labelled "Global Operations & Systems CV" and "Product Building CV
+  (remote / contract)"; filenames are unchanged. JSON-LD `jobTitle` is the real current title (Senior Outdoor
+  Assistant, Revenue Branch), never a target role. On phones the stage chains, the domain tree and the worked example
+  are hidden to keep the page short (`css/production.css`). Do not reintroduce "AI engineer" wording.
 - **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
   6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
   remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in

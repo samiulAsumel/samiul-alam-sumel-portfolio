@@ -70,3 +70,21 @@
   .hm-app__nav { display: none; }
   .hm-app__kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* ---- Final polish: recruiter path links, contact routes, CV chooser ---- */
+.next-step { margin-top: var(--space-7); font-size: var(--text-body-sm); text-align: right; }
+.ct-paths { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-5); }
+.ct-paths li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) auto; gap: var(--space-3); align-items: baseline; padding: var(--space-3) 0; border-top: var(--border-default); font-size: var(--text-body-sm); }
+.ct-paths b { color: var(--color-text); font-weight: var(--weight-semibold); }
+.ct-paths span { color: var(--color-text-2); }
+.cv-pick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-5); }
+.cv-card { padding: var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
+.cv-card h3 { font-size: var(--text-body); letter-spacing: var(--tracking-heading); }
+.cv-card h3 small { display: block; font-family: var(--font-mono); font-size: var(--text-meta); font-weight: var(--weight-regular); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
+.cv-card p { margin-top: var(--space-2); font-size: var(--text-body-sm); color: var(--color-text-2); }
+.cv-card__dl { display: flex; gap: var(--space-4); }
+@media (max-width: 768px) {
+  .ct-paths li { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
+  .cv-pick { grid-template-columns: minmax(0, 1fr); }
+  .next-step { text-align: left; }
+}

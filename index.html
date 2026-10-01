@@ -578,13 +578,25 @@
 
           <div class="wf2sw-wrap fi"><p class="wf2sw-cap">From workflow to software</p><ol class="wf2sw" aria-label="From workflow to software"><li><b>Real workflow</b></li><li><b>Operational problem</b></li><li><b>Business rules</b></li><li><b>System design</b></li><li><b>AI-assisted implementation</b></li><li><b>Testing &amp; validation</b></li><li><b>Deployment</b></li><li><b>Real use</b></li></ol></div>
 
-          <!-- How the three systems connect back to one operational domain -->
+          <!-- One operational domain, three systems built from it -->
           <div class="reltree fi">
-            <p class="reltree__root">Port operations</p>
+            <p class="reltree__root"><span>Port operations</span><small>One domain, three systems</small></p>
             <ul class="reltree__branches" role="list">
-              <li><span class="reltree__area">Billing</span><a class="reltree__sys" href="/projects/portbill">Port Billing System</a></li>
-              <li><span class="reltree__area">Vehicle operations</span><a class="reltree__sys" href="/projects/carview">CarView</a></li>
-              <li><span class="reltree__area">Admin / billing</span><a class="reltree__sys" href="/projects/otbill">OT Bill Automation</a></li>
+              <li><a class="reltree__card" href="/projects/portbill">
+                <span class="reltree__iconwrap"><svg class="reltree__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3v11"/><circle cx="12" cy="5" r="1.5"/><path d="M5 12a7 7 0 0 0 14 0"/><path d="M8 9h8"/></svg></span>
+                <span class="reltree__text"><span class="reltree__area">Billing</span><span class="reltree__sys">Port Billing System</span><span class="reltree__out">Wharf rent, VAT and levy</span></span>
+                <span class="reltree__go" aria-hidden="true">→</span>
+              </a></li>
+              <li><a class="reltree__card" href="/projects/carview">
+                <span class="reltree__iconwrap"><svg class="reltree__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 16V11l2-4h10l2 4v5"/><path d="M3 16h18"/><circle cx="8" cy="16" r="1.75"/><circle cx="16" cy="16" r="1.75"/></svg></span>
+                <span class="reltree__text"><span class="reltree__area">Vehicle operations</span><span class="reltree__sys">CarView</span><span class="reltree__out">Vehicle quantity tracking</span></span>
+                <span class="reltree__go" aria-hidden="true">→</span>
+              </a></li>
+              <li><a class="reltree__card" href="/projects/otbill">
+                <span class="reltree__iconwrap"><svg class="reltree__icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 16h5"/></svg></span>
+                <span class="reltree__text"><span class="reltree__area">Overtime billing</span><span class="reltree__sys">OT Bill Automation</span><span class="reltree__out">Overtime billing workflow</span></span>
+                <span class="reltree__go" aria-hidden="true">→</span>
+              </a></li>
             </ul>
           </div>
 

@@ -61,7 +61,6 @@
   #how-i-build .hb__panel .hb__chain { display: none; }
 }
 @media (max-width: 768px) {
-  .reltree { display: none; }
   /* The worked example repeats the Port Billing and CarView case studies, which are one tap away */
   #how-i-build .hb-ex { display: none; }
 }

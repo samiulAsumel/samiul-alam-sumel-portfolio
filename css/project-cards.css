@@ -4,30 +4,28 @@
    by mouse, touch and keyboard. Tokens only.
    ============================================================ */
 
-/* ---- Domain map: one operational domain, three systems ---- */
-.reltree { position: relative; margin-bottom: var(--space-8); padding: var(--space-8) var(--space-6) var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
-.reltree__root { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); text-align: center; }
-.reltree__root span { padding: var(--space-2) var(--space-5); font-family: var(--font-mono); font-size: var(--text-caption); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-accent-text); background: var(--color-accent-subtle); border: var(--border-interactive); border-radius: var(--radius-md); }
-.reltree__root small { font-size: var(--text-caption); color: var(--color-text-muted); }
-/* Stem drops from the centred root to the bar; each card gets its own drop */
-.reltree__root::after { content: ''; width: 2px; height: var(--space-5); background: var(--color-border-strong); }
-.reltree__branches { list-style: none; position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); padding-top: var(--space-5); }
-.reltree__branches::before { content: ''; position: absolute; top: 0; left: 16.66%; right: 16.66%; height: 2px; background: var(--color-border-strong); }
-.reltree__branches li { position: relative; display: flex; }
-.reltree__branches li::before { content: ''; position: absolute; left: 50%; bottom: 100%; width: 2px; height: var(--space-5); background: var(--color-border-strong); }
-.reltree__card { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'text' 'go'; align-content: space-between; gap: var(--space-4); padding: var(--space-5); text-decoration: none; color: var(--color-text); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md); }
-.reltree__text { grid-area: text; display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
-.reltree__area { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-text-muted); }
-.reltree__sys { font-size: var(--text-body-lg, 1.125rem); font-weight: var(--weight-semibold); line-height: 1.25; }
-.reltree__out { font-size: var(--text-caption); color: var(--color-text-muted); }
-.reltree__go { grid-area: go; display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-3); border-top: var(--border-default); font-size: var(--text-caption); font-weight: var(--weight-semibold); color: var(--color-text-muted); }
-.reltree__go i { font-style: normal; display: inline-block; transition: transform var(--dur-base) var(--ease-standard); }
+/* ---- Systems register: one operational domain, three systems ---- */
+.sysreg { margin-bottom: var(--space-8); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
+.sysreg__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-4); padding: var(--space-5) var(--space-6); border-bottom: var(--border-default); }
+.sysreg__title { font-family: var(--font-mono); font-size: var(--text-caption); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-accent-text); }
+.sysreg__sub { font-size: var(--text-caption); color: var(--color-text-muted); }
+/* Header and rows share one column template so the labels line up with the data */
+.sysreg__cols, .sysreg__row { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr) minmax(0, 1.7fr) 9.5rem; align-items: center; column-gap: var(--space-5); padding: var(--space-3) var(--space-6); }
+.sysreg__cols { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; color: var(--color-text-muted); background: var(--color-surface-2); border-bottom: var(--border-default); }
+.sysreg__list { list-style: none; }
+.sysreg__list li + li { border-top: var(--border-default); }
+.sysreg__row { min-height: 64px; text-decoration: none; color: var(--color-text); }
+.sysreg__area { font-size: var(--text-caption); color: var(--color-text-muted); }
+.sysreg__sys { font-weight: var(--weight-semibold); }
+.sysreg__fn { font-size: var(--text-caption); color: var(--color-text-muted); }
+.sysreg__go { display: inline-flex; justify-content: flex-end; gap: var(--space-2); font-size: var(--text-caption); font-weight: var(--weight-semibold); color: var(--color-text-muted); white-space: nowrap; }
+.sysreg__go i { font-style: normal; display: inline-block; transition: transform var(--dur-base) var(--ease-standard); }
 @media (hover: hover) {
-  .reltree__card:hover { border-color: var(--color-border-strong); }
-  .reltree__card:hover .reltree__go { color: var(--color-accent-text); }
-  .reltree__card:hover .reltree__go i { transform: translateX(3px); }
+  .sysreg__row:hover { background: var(--color-surface-2); }
+  .sysreg__row:hover .sysreg__go { color: var(--color-accent-text); }
+  .sysreg__row:hover .sysreg__go i { transform: translateX(3px); }
 }
-.reltree__card:focus-visible { outline: 2px solid var(--color-accent-text); outline-offset: 2px; }
+.sysreg__row:focus-visible { outline: 2px solid var(--color-accent-text); outline-offset: -2px; }
 
 /* ---- Project cards ---- */
 .hm-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
@@ -55,15 +53,12 @@
 @media (max-width: 1024px) { .hm-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 768px) {
   .hm-projects { grid-template-columns: minmax(0, 1fr); }
-  .reltree { padding: var(--space-6) var(--space-4) var(--space-4); }
-  .reltree__root { align-items: flex-start; text-align: left; }
-  .reltree__root::after { display: none; }
-  .reltree__branches { grid-template-columns: minmax(0, 1fr); padding-top: var(--space-4); padding-left: var(--space-5); }
-  .reltree__branches::before { top: 0; bottom: var(--space-6); left: 0; right: auto; width: 2px; height: auto; }
-  .reltree__branches li::before { left: calc(var(--space-5) * -1); bottom: auto; top: 50%; width: var(--space-5); height: 2px; }
+  .sysreg__head, .sysreg__row { padding-left: var(--space-4); padding-right: var(--space-4); }
+  .sysreg__cols { display: none; }
+  .sysreg__row { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-1); padding-top: var(--space-4); padding-bottom: var(--space-4); }
+  .sysreg__area { order: -1; font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; }
+  .sysreg__go { margin-top: var(--space-2); }
 }
 @media (prefers-reduced-motion: reduce) {
   .pcard:hover, .pcard:hover .pcard__media .frame { transform: none; }
-  .reltree__go i { transition: none; }
-  .reltree__card:hover .reltree__go i { transform: none; }
 }

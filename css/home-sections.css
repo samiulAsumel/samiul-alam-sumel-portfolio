@@ -96,3 +96,6 @@
 .cvtree { margin-top: var(--space-5); margin-bottom: 0; padding: var(--space-4); }
 .cvtree .systree__row { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-1); }
 .cvtree__dl { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
+
+/* Contact paths: the button must not stretch across the single-column tree row. */
+.ctree .cvtree__dl { justify-self: start; }

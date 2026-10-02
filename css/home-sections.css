@@ -95,4 +95,4 @@
 /* CV picker reuses the systree connector lines; rows hold download links, not one link. */
 .cvtree { margin-top: var(--space-5); margin-bottom: 0; padding: var(--space-4); }
 .cvtree .systree__row { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-1); }
-.cvtree__dl { display: flex; gap: var(--space-4); margin-top: var(--space-2); font-size: var(--text-caption); font-weight: var(--weight-semibold); }
+.cvtree__dl { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }

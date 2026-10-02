@@ -434,20 +434,20 @@ def build_final_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "Port & Logistics Operations Specialist", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Business Process Automation Specialist", CONTACT)
 
     add_section_heading(doc, "Professional Summary", space_before=0)
     add_body(
         doc,
-        "Port & Logistics Operations Specialist with 12+ years of hands-on experience in "
+        "Business Process Automation Specialist with 12+ years of hands-on experience in "
         "cargo billing, vehicle and cargo tracking, revenue reporting and operational "
         "workflows at Mongla Port Authority (Traffic Department). Turns repetitive "
         "manual and Excel processes into working business systems: three self-built web "
         "tools are used at the billing desk and in the Traffic Department. Builds with "
         "AI-assisted development (Claude Code); requirements, business rules, testing and "
         "validation stay with me. Self-directed learning through The Odin Project and Full "
-        "Stack Open. Open to international and remote roles in port and logistics operations "
-        "technology, business systems and automation, or product / full-stack development.",
+        "Stack Open. Open to international and remote roles in business process automation, "
+        "internal tools and web systems, operations technology, or product development.",
         size=9.4,
     )
 
@@ -540,7 +540,7 @@ def build_freelance_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "Port & Logistics Operations Specialist — Business Systems & Automation", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Business Process Automation Specialist — Web Systems & Internal Tools", CONTACT)
 
     add_section_heading(doc, "How I Work", space_before=0)
     add_body(
@@ -553,8 +553,8 @@ def build_freelance_cv():
         "manual step in a process that already runs — a paper form, a shared spreadsheet, a "
         "hand calculation — and replace it with a deployed tool the whole team can use. "
         "Every build gets manually tested against the real business rules and explained "
-        "back before I call it done. A port and logistics operations specialist who builds "
-        "business systems with AI-assisted development, backed by 3 web apps built for "
+        "back before I call it done. A business process automation specialist who builds "
+        "web systems with AI-assisted development, backed by 3 web apps built for "
         "real daily use, not demos. Available for freelance and contract work worldwide, no "
         "time zone constraints.",
         size=9.4,
@@ -572,8 +572,8 @@ def build_freelance_cv():
          "kind of tool built to solve real problems at my own workplace, after talking "
          "through exactly how the numbers are supposed to work with the people who use them.",
          "Built for real daily use, not a demo."),
-        ("Port & Logistics Workflow Digitisation",
-         "Turning paper-based or Excel-based port and logistics workflows — wharfrent "
+        ("Operations Workflow Digitisation",
+         "Turning paper-based or Excel-based operational workflows — wharfrent "
          "billing, overtime billing, cargo/vehicle tracking — into deployed, team-wide web "
          "tools, backed by first-hand operational knowledge.",
          "Proven with 3 tools converted from manual/Excel processes."),

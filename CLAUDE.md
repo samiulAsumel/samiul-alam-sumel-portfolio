@@ -194,6 +194,8 @@ actual current phase/topic, never re-add gap-matrix or visa content.
 
 ## Positioning — read before editing content
 
+> **6th reversal (2026-10-02, explicit user instruction):** the user wants global positioning, not port-only. Primary title is now **Business Process Automation** (H1) / **Web Systems & Internal Tools** (second line); role wording in About/CVs is "Business Process Automation Specialist"; nav badge "Process Automation"; one-line pitch "If your team does it by hand, I turn it into a system." Port operations stay as the verified origin and proof (experience facts unchanged), never the headline. `og-image.png` re-rendered for the new title. The 5th-reversal note below is history.
+
 **5th reversal (2026-09-29, explicit user instruction via a pasted 10-step
 redesign spec plus an AskUserQuestion confirmation):** the target identity is
 now **Port & Logistics Operations Specialist** (primary) → **Business Systems

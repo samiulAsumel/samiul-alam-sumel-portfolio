@@ -335,6 +335,18 @@
   const cmdkToggle = document.getElementById('cmdk-tgl'); // Optional visible button that also opens the palette.
 
   if (cmdkOverlay && cmdkInput && cmdkList) {
+    // Icons are built here instead of written into the HTML so the page keeps a small DOM.
+    cmdkList.querySelectorAll('li[data-icon]').forEach(item => {
+      const svgNs = 'http://www.w3.org/2000/svg';
+      const icon = document.createElementNS(svgNs, 'svg');
+      const use = document.createElementNS(svgNs, 'use');
+      const isBrand = /github|linkedin/.test(item.dataset.icon);
+      icon.setAttribute('class', isBrand ? 'icon icon-brand' : 'icon');
+      icon.setAttribute('aria-hidden', 'true');
+      use.setAttribute('href', '#' + item.dataset.icon);
+      icon.appendChild(use);
+      item.insertBefore(icon, item.firstChild);
+    });
     const cmdkItems = Array.from(cmdkList.querySelectorAll('li')); // Snapshot of every command item, as a real array (not a live NodeList) for easy filtering.
     let lastFocused = null; // Element that had focus before the palette opened, so focus can be restored on close (accessibility best practice).
 

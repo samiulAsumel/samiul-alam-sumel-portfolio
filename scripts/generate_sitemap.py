@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE_URL = "https://sasumel.pages.dev"
 # 404 is intentionally excluded; it must never be indexed.
 EXCLUDED = {"404.html"}
+# Pages whose visible images are declared in the sitemap (image extension).
+IMAGES = {"": ["assets/screenshots/portbill-thumb.webp"]}
 PRIORITY = {"": "1.0", "resume": "0.9", "about": "0.8", "experience": "0.8", "engineering": "0.8"}
 
 
@@ -54,14 +56,19 @@ def build_sitemap() -> str:
         url = page_url(page)
         slug = url.removeprefix(BASE_URL).strip("/").split("/")[0]
         priority = PRIORITY.get(slug, "0.7")
+        images = "".join(
+            f"\n    <image:image>\n      <image:loc>{BASE_URL}/{src}</image:loc>\n    </image:image>"
+            for src in IMAGES.get(slug, [])
+        )
         entries.append(
             f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{last_modified(page)}</lastmod>\n"
-            f"    <priority>{priority}</priority>\n  </url>"
+            f"    <priority>{priority}</priority>{images}\n  </url>"
         )
     body = "\n".join(entries)
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+        '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
         f"{body}\n</urlset>\n"
     )
 

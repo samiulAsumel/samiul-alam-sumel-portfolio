@@ -1,0 +1,28 @@
+# MD Samiul Alam Sumel — Business Process Automation
+
+> MD Samiul Alam Sumel is a business process automation specialist. Samiul turns manual work (spreadsheets, paper forms, hand calculations) into web systems that teams use every day. Samiul has 12+ years of operations experience at Mongla Port Authority, Bangladesh, and is open to remote work worldwide.
+
+This file summarises facts published on https://sasumel.pages.dev/. Case studies describe real systems; CarView and OT Bill are shown only as synthetic mockups with fictional figures.
+
+## Key facts
+- Role: Senior Outdoor Assistant (Revenue Branch), Traffic Department, Mongla Port Authority (since November 2013).
+- Focus: business process automation, web systems and internal tools, AI-assisted development.
+- Systems in daily use: 3 (port billing, vehicle tracking, overtime billing).
+- Live deployments: 8+ public web applications.
+
+## Pages
+- [Home](https://sasumel.pages.dev/): overview, production systems, how I build
+- [About](https://sasumel.pages.dev/about/): background and what I am looking for
+- [Experience](https://sasumel.pages.dev/experience/): 12+ years of port operations
+- [Capabilities](https://sasumel.pages.dev/capabilities/): skills and problems I can help solve
+- [Resume](https://sasumel.pages.dev/resume/): CV downloads
+- [Port Billing System](https://sasumel.pages.dev/projects/portbill): case study
+- [CarView vehicle tracking](https://sasumel.pages.dev/projects/carview): case study
+- [OT Bill Management](https://sasumel.pages.dev/projects/otbill): case study
+- [OpsFlow](https://sasumel.pages.dev/projects/opsflow): logistics operations product, in development
+- [Privacy and cookies](https://sasumel.pages.dev/privacy/)
+
+## Contact
+- Email: sa.sumel91@gmail.com
+- GitHub: https://github.com/samiulAsumel
+- LinkedIn: https://linkedin.com/in/samiul-alam-sumel

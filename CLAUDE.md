@@ -18,6 +18,17 @@ decide on one); `scripts/generate_cover_letter.py` recreated and
 `Samiul_Alam_Sumel_Cover_Letter.docx` generated (fill `[Role]`, `[Company]` and the one "why this
 company" sentence for each application).
 
+## WebAnalyzer pass (2026-10-06, explicit user instruction)
+
+- Homepage H1 now carries the name: `MD Samiul Alam Sumel` (span `.hm-hero__name`) + role + second line. This
+  supersedes "homepage H1 is the role only" below. Title is `MD Samiul Alam Sumel | Business Process Automation`.
+- New: `/privacy/` (linked "Privacy & cookies" in every footer, plus "Last updated" `<time>`), `/.well-known/security.txt`
+  (expires 2027-10-06, renew it), `/llms.txt`, homepage `#faq` with matching FAQPage JSON-LD. Keep FAQ text and JSON-LD identical.
+- Buttons use only three class sets (`btn--primary`, `btn--secondary`, `btn--secondary btn--sm`); sizes for hero and CV trees
+  come from CSS, not extra classes. Command-palette icons are built in `js/main.js` from `data-icon` to keep the DOM under 1500
+  elements. No HTML comments in shipped pages. `_headers` drops Pages' wildcard CORS header.
+- Cannot be fixed: CAA record (pages.dev), SRI for the auto-injected Cloudflare beacon.
+
 ## Site maintenance rules added 2026-09-19
 
 - **Homepage is 8 sections (2026-09-29, step 2):** `#hero`, `#credibility`,

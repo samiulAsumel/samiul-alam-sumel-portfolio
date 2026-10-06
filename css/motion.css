@@ -48,7 +48,7 @@
 .ev__list > li.is-seen::before { border-color: var(--color-accent); background: var(--color-accent-subtle); }
 
 /* ---- Tab components: upcoming stages sit back a little ---- */
-.tab:not(.is-active):not(.is-done) .tab__label { opacity: 0.8; }
+.tab:not(.is-active):not(.is-done) .tab__label { color: var(--color-text-2); }
 .tab.is-active .tab__label { opacity: 1; }
 
 /* ---- Copy button ---- */

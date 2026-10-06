@@ -71,8 +71,8 @@
 .ab-tl {position:relative;padding-left:28px}
 .ab-tl::before {content:'';position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--accent) 0%,var(--accent-25) 65%,transparent 100%)}
 .ab-tl::after {content:'';position:absolute;left:0;top:10px;width:2px;height:var(--fill,0px);background:var(--grad-accent);transition:height .15s linear}
-.ab-tl p {position:relative;opacity:.72;transition:opacity .4s var(--ease-out)}
-.ab-tl p.active {opacity:1}
+.ab-tl p {position:relative;color:var(--color-text-2);transition:color .4s var(--ease-out)}
+.ab-tl p.active {color:var(--color-text)}
 .ab-tl p::before {content:'';position:absolute;left:-34px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--bg2);border:2px solid var(--accent);box-shadow:0 0 0 4px var(--bg2);transition:background var(--ease),box-shadow var(--ease)}
 .ab-tl p.active::before {background:var(--accent);box-shadow:0 0 0 4px var(--bg2),0 0 0 6px var(--accent-15)}
 .ab-hl {display:flex;flex-direction:column;gap:var(--sp-3);margin-top:6px}
@@ -150,6 +150,8 @@
 /* Live screen-recording demo embedded in a case study */
 .cs-demo {margin-top:8px;border:1px solid var(--bdr-s);border-radius:var(--r-md);overflow:hidden;background:var(--card2);box-shadow:var(--shd)}
 .cs-demo img {width:100%;height:auto;display:block}
+/* Screenshot is only 480px wide; stretching it to the column fails the low-resolution image check */
+.cs-demo--native img {max-width:480px;margin-inline:auto}
 /* Browser-frame chrome (dots + address bar) wrapped around screenshots.
    Full size in .cs-demo / project pages; .cs-thumb uses the mini variant
    (dots only, no address bar — the thumb is 64px tall). */

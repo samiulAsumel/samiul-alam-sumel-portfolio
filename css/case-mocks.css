@@ -26,7 +26,7 @@
 /* Vehicle tracking mock: summary cards, then three location groups */
 .mock--cv .mock__kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2cqw; margin-bottom: 3cqw; }
 .mock--cv .mock__groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2cqw; }
-.mock--cv .mock__group h5 { margin-bottom: 1.5cqw; font-size: 0.9em; font-weight: var(--weight-semibold); color: var(--color-accent-text); text-transform: uppercase; letter-spacing: 0.06em; }
+.mock--cv .mock__group .mock__gh { margin-bottom: 1.5cqw; font-size: 0.9em; font-weight: var(--weight-semibold); color: var(--color-accent-text); text-transform: uppercase; letter-spacing: 0.06em; }
 .mock--cv .mock__group div { display: flex; justify-content: space-between; padding: 1.6cqw 2cqw; margin-bottom: 1.2cqw; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 1.2cqw; }
 
 /* Overtime bill mock: three steps, an employee card, a small hours table */

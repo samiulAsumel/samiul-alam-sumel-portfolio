@@ -335,17 +335,56 @@
   const cmdkToggle = document.getElementById('cmdk-tgl'); // Optional visible button that also opens the palette.
 
   if (cmdkOverlay && cmdkInput && cmdkList) {
-    // Icons are built here instead of written into the HTML so the page keeps a small DOM.
-    cmdkList.querySelectorAll('li[data-icon]').forEach(item => {
-      const svgNs = 'http://www.w3.org/2000/svg';
+    // The list is built here, not written into the HTML, so the page keeps a small DOM.
+    const CMDK_ITEMS = [
+    {group: 'Section', icon: 'i-house', label: 'Home', href: '#hero'},
+    {group: 'Section', icon: 'i-workflow', label: 'What I Bring', href: '#bring'},
+    {group: 'Section', icon: 'i-repeat', label: 'How I Build', href: '#how-i-build'},
+    {group: 'Section', icon: 'i-target', label: 'Engineering Decisions', href: '#decisions'},
+    {group: 'Section', icon: 'i-rocket', label: 'Production Systems', href: '#work'},
+    {group: 'Section', icon: 'i-warehouse', label: 'OpsFlow (Building)', href: '#opsflow'},
+    {group: 'Section', icon: 'i-anchor', label: 'Professional Experience', href: '#experience'},
+    {group: 'Section', icon: 'i-mail', label: 'Contact', href: '#contact'},
+    {group: 'Page', icon: 'i-code', label: 'Engineering (full pages)', href: '/engineering/'},
+    {group: 'Page', icon: 'i-anchor', label: 'About', href: '/about/'},
+    {group: 'Section', icon: 'i-brain', label: 'AI as an Engineering Multiplier', href: '/engineering/ai-engineering/'},
+    {group: 'Section', icon: 'i-satellite-dish', label: 'Engineering Roadmap', href: '/engineering/roadmap/'},
+    {group: 'Page', icon: 'i-anchor', label: '12+ Years Inside Real Operations', href: '/experience/'},
+    {group: 'Page', icon: 'i-file-text', label: 'Resume', href: '/resume/'},
+    {group: 'Project', icon: 'i-receipt', label: 'Port Billing System (Case study)', href: '/projects/portbill'},
+    {group: 'Project', icon: 'i-warehouse', label: 'OpsFlow (Product page, in development)', href: '/projects/opsflow'},
+    {group: 'Project', icon: 'i-car', label: 'Vehicle Tracking / CarView (Case study)', href: '/projects/carview'},
+    {group: 'Project', icon: 'i-timer', label: 'OT Bill Management (Case study)', href: '/projects/otbill'},
+    {group: 'Project', icon: 'i-clipboard-list', label: 'Client Intake Form (Live)', href: 'https://clif91.pages.dev/', external: true},
+    {group: 'Project', icon: 'i-moon-star', label: 'SalahSync (Live)', href: 'https://salahsync.pages.dev', external: true},
+    {group: 'Project', icon: 'i-soup', label: 'World Kitchen Atlas (Live)', href: 'https://kitchenatlas.pages.dev', external: true},
+    {group: 'Project', icon: 'i-send', label: 'Outreach Copilot (Live)', href: 'https://outreach-copilot.pages.dev', external: true},
+    {group: 'Project', icon: 'i-book-open', label: 'English Mastery (Live)', href: 'https://englishmastery.pages.dev', external: true},
+    {group: 'Project', icon: 'i-bot', label: 'JARVIS (GitHub)', href: 'https://github.com/samiulAsumel/jarvis', external: true},
+    {group: 'Action', icon: 'i-file-text', label: 'Resume Downloads', href: '#contact'},
+    {group: 'Action', icon: 'i-github', label: 'Open GitHub', href: 'https://github.com/samiulAsumel', external: true},
+    {group: 'Action', icon: 'i-linkedin', label: 'Open LinkedIn', href: 'https://linkedin.com/in/samiul-alam-sumel', external: true},
+    {group: 'Action', icon: 'i-mail', label: 'Email sa.sumel91@gmail.com', href: 'mailto:sa.sumel91@gmail.com', external: true},
+    {group: 'Action', icon: 'i-moon-star', label: 'Toggle light / dark theme', action: 'theme'}
+    ];
+    const svgNs = 'http://www.w3.org/2000/svg';
+    CMDK_ITEMS.forEach(entry => {
+      const item = document.createElement('li');
+      item.setAttribute('role', 'option');
+      item.dataset.group = entry.group;
+      if (entry.href) item.dataset.href = entry.href;
+      if (entry.action) item.dataset.action = entry.action;
+      if (entry.external) item.dataset.external = 'true';
       const icon = document.createElementNS(svgNs, 'svg');
       const use = document.createElementNS(svgNs, 'use');
-      const isBrand = /github|linkedin/.test(item.dataset.icon);
-      icon.setAttribute('class', isBrand ? 'icon icon-brand' : 'icon');
+      icon.setAttribute('class', /github|linkedin/.test(entry.icon) ? 'icon icon-brand' : 'icon');
       icon.setAttribute('aria-hidden', 'true');
-      use.setAttribute('href', '#' + item.dataset.icon);
+      use.setAttribute('href', '#' + entry.icon);
       icon.appendChild(use);
-      item.insertBefore(icon, item.firstChild);
+      const label = document.createElement('span');
+      label.textContent = entry.label;
+      item.append(icon, label);
+      cmdkList.appendChild(item);
     });
     const cmdkItems = Array.from(cmdkList.querySelectorAll('li')); // Snapshot of every command item, as a real array (not a live NodeList) for easy filtering.
     let lastFocused = null; // Element that had focus before the palette opened, so focus can be restored on close (accessibility best practice).

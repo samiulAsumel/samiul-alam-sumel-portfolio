@@ -1,224 +1,195 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="color-scheme" content="light dark" />
-
-    <title>Client Intake Form — Case Study | Samiul Alam Sumel</title>
-    <meta name="description" content="Case study: Client Intake Form, an 18-section requirement form with a serverless submission API and a password-protected admin dashboard for tracking leads." />
-    <meta name="author" content="MD Samiul Alam Sumel" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://sasumel.pages.dev/projects/client-intake-form" />
-
-    <meta name="theme-color" content="#0a0c11" />
-    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
-    <link rel="manifest" href="../manifest.json" />
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://sasumel.pages.dev/projects/client-intake-form" />
-    <meta property="og:title" content="Client Intake Form — Case Study" />
-    <meta property="og:description" content="Case study: Client Intake Form, an 18-section requirement form with a serverless submission API and a password-protected admin dashboard for tracking leads." />
-    <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Client Intake Form — Case Study" />
-    <meta name="twitter:description" content="Case study: Client Intake Form, an 18-section requirement form with a serverless submission API and a password-protected admin dashboard for tracking leads." />
-    <meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://sasumel.pages.dev/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Client Intake Form",
-            "item": "https://sasumel.pages.dev/projects/client-intake-form"
-          }
-        ]
-      }
-    </script>
-    <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../css/bundle-base.min.css" />
-  </head>
-  <body>
-    <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-      <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
-      <path d="M14 2v5a1 1 0 0 0 1 1h5" />
-      <path d="M10 9H8" />
-      <path d="M16 13H8" />
-      <path d="M16 17H8" /></symbol>
-      <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
-      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
-    </svg>
-    <div id="spb" aria-hidden="true"></div>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <a href="#main-content" id="totop" class="totop" aria-label="Back to top">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="m18 15-6-6-6 6"/>
-      </svg>
-    </a>
-
-    <nav id="nb" aria-label="Primary navigation">
-      <div class="wrap nav-in">
-        <a href="/#hero" class="logo"
-          ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Process Automation</span></a
-        >
-        <ul class="nav-links" role="list">
-          <li><a href="/#work" aria-current="page">Systems</a></li>
-        <li><a href="/experience/">Experience</a></li>
-          <li><a href="/#how-i-build">How I Build</a></li>
-          <li><a href="/capabilities/">Expertise</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/resume/">CV</a></li>
-          <li><a href="/#contact" class="btn btn--secondary btn--sm">Contact</a></li>
-        </ul>
-        <button
-          class="theme-tgl"
-          id="theme-tgl"
-          type="button"
-          aria-label="Toggle light/dark theme"
-        >
-          <span aria-hidden="true">◐</span>
-        </button>
-        <button class="hbg" id="hbg" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-
-    <div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-      <button class="mob-x" id="mobx" aria-label="Close navigation menu">✕</button>
-      <a href="/#work" aria-current="page">Systems</a>
-      <a href="/experience/">Experience</a>
-      <a href="/#how-i-build">How I Build</a>
-      <a href="/capabilities/">Expertise</a>
-      <a href="/about/">About</a>
-      <a href="/resume/">CV</a>
-      <a href="/#contact">Contact</a>
-      <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
-      <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
-    </div>
-
-    <main id="main-content" tabindex="-1">
-      <section class="sec" style="padding-top:150px" aria-labelledby="cs-title">
-        <div class="wrap">
-          <p class="slabel fi"><a href="/#work" style="color:inherit">← Selected Engineering Work</a></p>
-          <h1 class="stitle fi" id="cs-title">Client Intake <span>Form</span></h1>
-          <div class="sline fi"></div>
-
-          <article class="case-study cs-standalone fl" style="opacity:1;transform:none;filter:none">
-            <div class="cs-summary" style="cursor:default">
-              <div class="cs-summary-body">
-                <div class="cs-summary-hd">
-                  <span class="cs-nm">Client Intake Form</span>
-                  <span class="cs-status">● LIVE — DAILY USE</span>
-                </div>
-                <p class="cs-sent">Turns a scattered email and chat back-and-forth into one structured sheet that becomes the actual scope of the quotation.</p>
-              </div>
-            </div>
-            <div class="cs-body" style="border-top:1px solid var(--bdr-s)">
-              <div class="cs-grid">
-                <div class="cs-full">
-                  <div class="cs-demo">
-                    <div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">clif91.pages.dev</span></div>
-                    <img src="../assets/screenshots/client-intake.webp" alt="Client Intake Form project requirement sheet" loading="eager" fetchpriority="high" width="1200" height="750" />
-                  </div>
-                </div>
-                <div>
-                  <div class="cs-block-t">The Problem</div>
-                  <p class="cs-block-p">Collecting project requirements from a freelance or contract client over email or chat is unstructured. Details get missed, and without a written scope, &ldquo;what was actually agreed&rdquo; becomes a dispute later instead of a shared reference.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Who Uses It</div>
-                  <p class="cs-block-p">Freelance and contract clients bringing a new website, online store or custom software project, before any code is written, and me, on the receiving end.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Constraints</div>
-                  <p class="cs-block-p">It had to work for a client who has never seen the tool: open a link, no account, no install. One form had to flex across very different projects, from a brochure site to an internal SaaS tool, without becoming a maze. And an 18-section form risks losing twenty minutes of typing to a closed tab.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">System Architecture</div>
-                  <div class="cs-diagram flow"><div class="flow-node"><div class="flow-node-k">Browser Form</div><div class="flow-node-t">One dependency-free HTML page with debounced draft autosave</div></div><div class="flow-connector" aria-hidden="true"></div><div class="flow-node"><div class="flow-node-k">Pages Function: Submit</div><div class="flow-node-t">Validates the reference format, drops honeypot spam, stamps the time</div></div><div class="flow-connector" aria-hidden="true"></div><div class="flow-node"><div class="flow-node-k">JSON File In A GitHub Repo</div><div class="flow-node-t">One file per submission, written through the GitHub Contents API</div></div><div class="flow-connector" aria-hidden="true"></div><div class="flow-node"><div class="flow-node-k">Admin Dashboard</div><div class="flow-node-t">Password login, then a status pipeline for every lead</div></div></div>
-                </div>
-                <div>
-                  <div class="cs-block-t">How It Works</div>
-                  <p class="cs-block-p">The first answer, &ldquo;what are you building?&rdquo;, decides which later sections appear: custom-software projects get user roles, modules, data sensitivity and hosting questions; a brochure site does not. The form ends in a declaration step where the client types their name to confirm written engagement terms covering scope, quotation, payment, revisions and ownership. The submission goes to the API, and if that fails the form falls back to opening the client&rsquo;s own email app with the summary ready to send.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Technical Decisions</div>
-                  <p class="cs-block-p"><strong>A single-file client.</strong> The form itself is one dependency-free HTML file on purpose. A client should be able to open a link and start typing with nothing to install or sign up for.</p><p class="cs-block-p" style="margin-top:10px"><strong>A database-free backend.</strong> Each submission is one JSON file written through the GitHub Contents API, so there is no database to run or pay for, and every change is a commit that doubles as an audit trail. Which repository holds the files is a deployment setting.</p><p class="cs-block-p" style="margin-top:10px"><strong>Simple, checked admin auth.</strong> The admin password is verified against a PBKDF2 hash (SHA-256) and a successful login returns an HMAC-signed token that expires after 12 hours. The list, item and status endpoints all reject requests without a valid token.</p><p class="cs-block-p" style="margin-top:10px"><strong>A lead pipeline.</strong> Every submission moves through New, Contacted, Quoted, Negotiating, Won or Lost, so the dashboard shows where each conversation stands.</p><p class="cs-block-p" style="margin-top:10px"><strong>Graceful degradation.</strong> Draft autosave uses local storage, debounced and flushed when the tab is hidden or closed, so no server or account is needed to keep progress. If the API is unreachable, the email fallback still delivers the brief.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Known Gaps</div>
-                  <p class="cs-block-p">There is no automated test suite yet, and the optional WhatsApp alert on a new submission is a configuration setting rather than something built in by default.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">Result</div>
-                  <p class="cs-block-p">It is now the intake step before quoting new freelance and contract work, and the &ldquo;how do you handle this today&rdquo; and &ldquo;why now&rdquo; questions it asks are the ones that used to get lost in a chat thread. Exact usage is not logged.</p>
-                </div>
-                <div>
-                  <div class="cs-block-t">What I Learned</div>
-                  <p class="cs-block-p">Putting the engagement terms directly into the form&rsquo;s declaration step, instead of a separate contract sent later, means client and freelancer agree on the boundary of the work before it starts, not after a disagreement about it.</p>
-                </div>
-                <div class="cs-full cs-links">
-                  <a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
-                  <a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
-                  <a href="/#work" class="btn btn-o">← Back to Portfolio</a>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="wrap">
-        <div class="ft-center">
-          <div class="ft-logo">SAS</div>
-          <p class="ft-tagline">
-            Business process automation · Web systems &amp; internal tools ·
-            AI-assisted product building.
-          </p>
-        </div>
-        <nav class="ft-links" aria-label="Footer navigation">
-          <a href="/#hero" class="ft-link">Home</a>
-          <a href="/about/" class="ft-link">About</a>
-          <a href="/#work" class="ft-link">Projects</a>
-          <a href="/projects/opsflow" class="ft-link">OpsFlow</a>
-          <a href="/engineering/" class="ft-link">Engineering</a>
-          <a href="/#contact" class="ft-link">Contact</a>
-          <a href="/privacy/" class="ft-link">Privacy &amp; cookies</a>
-          <a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
-        </nav>
-        <div class="ft-bar">
-          <p class="ft-copy">
-            © 2026 <span>MD Samiul Alam Sumel</span>. All rights reserved. Visit counts use cookie-free Cloudflare Web Analytics. Last updated <time datetime="2026-10-06">6 October 2026</time>.
-          </p>
-          <a href="/#hero" class="ft-top">↑ Back to portfolio</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="../js/main.js" defer></script>
-    <script src="../js/ux.js" defer></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="color-scheme" content="light dark" />
+<title>Client Intake Form — Case Study | Samiul Alam Sumel</title>
+<meta name="description" content="Case study: Client Intake Form, an 18-section requirement form with a serverless submission API and a password-protected admin dashboard for tracking leads." />
+<meta name="author" content="MD Samiul Alam Sumel" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sasumel.pages.dev/projects/client-intake-form" />
+<meta name="theme-color" content="#0a0c11" />
+<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+<link rel="manifest" href="../manifest.json" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sasumel.pages.dev/projects/client-intake-form" />
+<meta property="og:title" content="Client Intake Form — Case Study" />
+<meta property="og:description" content="Case study: Client Intake Form, an 18-section requirement form with a serverless submission API and a password-protected admin dashboard for tracking leads." />
+<meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Client Intake Form — Case Study" />
+<meta name="twitter:description" content="Case study: Client Intake Form, an 18-section requirement form with a serverless submission API and a password-protected admin dashboard for tracking leads." />
+<meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sasumel.pages.dev/"},{"@type":"ListItem","position":2,"name":"Client Intake Form","item":"https://sasumel.pages.dev/projects/client-intake-form"}]}</script>
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="../css/bundle-base.min.css" />
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+<path d="M14 2v5a1 1 0 0 0 1 1h5" />
+<path d="M10 9H8" />
+<path d="M16 13H8" />
+<path d="M16 17H8" /></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+</svg>
+<div id="spb" aria-hidden="true"></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" id="totop" class="totop" aria-label="Back to top">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m18 15-6-6-6 6"/>
+</svg>
+</a>
+<nav id="nb" aria-label="Primary navigation">
+<div class="wrap nav-in">
+<a href="/#hero" class="logo"
+><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Process Automation</span></a
+>
+<ul class="nav-links" role="list">
+<li><a href="/#work" aria-current="page">Systems</a></li>
+<li><a href="/experience/">Experience</a></li>
+<li><a href="/#how-i-build">How I Build</a></li>
+<li><a href="/capabilities/">Expertise</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/resume/">CV</a></li>
+<li><a href="/#contact" class="btn btn--secondary btn--sm">Contact</a></li>
+</ul>
+<button
+class="theme-tgl"
+id="theme-tgl"
+type="button"
+aria-label="Toggle light/dark theme"
+>
+<span aria-hidden="true">◐</span>
+</button>
+<button class="hbg" id="hbg" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+<button class="mob-x" id="mobx" aria-label="Close navigation menu">✕</button>
+<a href="/#work" aria-current="page">Systems</a>
+<a href="/experience/">Experience</a>
+<a href="/#how-i-build">How I Build</a>
+<a href="/capabilities/">Expertise</a>
+<a href="/about/">About</a>
+<a href="/resume/">CV</a>
+<a href="/#contact">Contact</a>
+<a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+<a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+</div>
+<main id="main-content" tabindex="-1">
+<section class="sec" style="padding-top:150px" aria-labelledby="cs-title">
+<div class="wrap">
+<p class="slabel fi"><a href="/#work" style="color:inherit">← Selected Engineering Work</a></p>
+<h1 class="stitle fi" id="cs-title">Client Intake <span>Form</span></h1>
+<div class="sline fi"></div>
+<article class="case-study cs-standalone fl" style="opacity:1;transform:none;filter:none">
+<div class="cs-summary" style="cursor:default">
+<div class="cs-summary-body">
+<div class="cs-summary-hd">
+<span class="cs-nm">Client Intake Form</span>
+<span class="cs-status">● LIVE — DAILY USE</span>
+</div>
+<p class="cs-sent">Turns a scattered email and chat back-and-forth into one structured sheet that becomes the actual scope of the quotation.</p>
+</div>
+</div>
+<div class="cs-body" style="border-top:1px solid var(--bdr-s)">
+<div class="cs-grid">
+<div class="cs-full">
+<div class="cs-demo">
+<div class="bframe-bar" aria-hidden="true"><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-dot"></span><span class="bframe-url">clif91.pages.dev</span></div>
+<img src="../assets/screenshots/client-intake.webp" alt="Client Intake Form project requirement sheet" loading="eager" fetchpriority="high" width="1200" height="750" />
+</div>
+</div>
+<div>
+<div class="cs-block-t">The Problem</div>
+<p class="cs-block-p">Collecting project requirements from a freelance or contract client over email or chat is unstructured. Details get missed, and without a written scope, &ldquo;what was actually agreed&rdquo; becomes a dispute later instead of a shared reference.</p>
+</div>
+<div>
+<div class="cs-block-t">Who Uses It</div>
+<p class="cs-block-p">Freelance and contract clients bringing a new website, online store or custom software project, before any code is written, and me, on the receiving end.</p>
+</div>
+<div>
+<div class="cs-block-t">Constraints</div>
+<p class="cs-block-p">It had to work for a client who has never seen the tool: open a link, no account, no install. One form had to flex across very different projects, from a brochure site to an internal SaaS tool, without becoming a maze. And an 18-section form risks losing twenty minutes of typing to a closed tab.</p>
+</div>
+<div>
+<div class="cs-block-t">System Architecture</div>
+<div class="cs-diagram flow"><div class="flow-node"><div class="flow-node-k">Browser Form</div><div class="flow-node-t">One dependency-free HTML page with debounced draft autosave</div></div><div class="flow-connector" aria-hidden="true"></div><div class="flow-node"><div class="flow-node-k">Pages Function: Submit</div><div class="flow-node-t">Validates the reference format, drops honeypot spam, stamps the time</div></div><div class="flow-connector" aria-hidden="true"></div><div class="flow-node"><div class="flow-node-k">JSON File In A GitHub Repo</div><div class="flow-node-t">One file per submission, written through the GitHub Contents API</div></div><div class="flow-connector" aria-hidden="true"></div><div class="flow-node"><div class="flow-node-k">Admin Dashboard</div><div class="flow-node-t">Password login, then a status pipeline for every lead</div></div></div>
+</div>
+<div>
+<div class="cs-block-t">How It Works</div>
+<p class="cs-block-p">The first answer, &ldquo;what are you building?&rdquo;, decides which later sections appear: custom-software projects get user roles, modules, data sensitivity and hosting questions; a brochure site does not. The form ends in a declaration step where the client types their name to confirm written engagement terms covering scope, quotation, payment, revisions and ownership. The submission goes to the API, and if that fails the form falls back to opening the client&rsquo;s own email app with the summary ready to send.</p>
+</div>
+<div>
+<div class="cs-block-t">Technical Decisions</div>
+<p class="cs-block-p"><strong>A single-file client.</strong> The form itself is one dependency-free HTML file on purpose. A client should be able to open a link and start typing with nothing to install or sign up for.</p><p class="cs-block-p" style="margin-top:10px"><strong>A database-free backend.</strong> Each submission is one JSON file written through the GitHub Contents API, so there is no database to run or pay for, and every change is a commit that doubles as an audit trail. Which repository holds the files is a deployment setting.</p><p class="cs-block-p" style="margin-top:10px"><strong>Simple, checked admin auth.</strong> The admin password is verified against a PBKDF2 hash (SHA-256) and a successful login returns an HMAC-signed token that expires after 12 hours. The list, item and status endpoints all reject requests without a valid token.</p><p class="cs-block-p" style="margin-top:10px"><strong>A lead pipeline.</strong> Every submission moves through New, Contacted, Quoted, Negotiating, Won or Lost, so the dashboard shows where each conversation stands.</p><p class="cs-block-p" style="margin-top:10px"><strong>Graceful degradation.</strong> Draft autosave uses local storage, debounced and flushed when the tab is hidden or closed, so no server or account is needed to keep progress. If the API is unreachable, the email fallback still delivers the brief.</p>
+</div>
+<div>
+<div class="cs-block-t">Known Gaps</div>
+<p class="cs-block-p">There is no automated test suite yet, and the optional WhatsApp alert on a new submission is a configuration setting rather than something built in by default.</p>
+</div>
+<div>
+<div class="cs-block-t">Result</div>
+<p class="cs-block-p">It is now the intake step before quoting new freelance and contract work, and the &ldquo;how do you handle this today&rdquo; and &ldquo;why now&rdquo; questions it asks are the ones that used to get lost in a chat thread. Exact usage is not logged.</p>
+</div>
+<div>
+<div class="cs-block-t">What I Learned</div>
+<p class="cs-block-p">Putting the engagement terms directly into the form&rsquo;s declaration step, instead of a separate contract sent later, means client and freelancer agree on the boundary of the work before it starts, not after a disagreement about it.</p>
+</div>
+<div class="cs-full cs-links">
+<a href="https://clif91.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-p">Live Demo <span class="arw">↗</span></a>
+<a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="btn btn-o">GitHub <span class="arw">↗</span></a>
+<a href="/#work" class="btn btn-o">← Back to Portfolio</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="ft-center">
+<div class="ft-logo">SAS</div>
+<p class="ft-tagline">
+Business process automation · Web systems &amp; internal tools ·
+AI-assisted product building.
+</p>
+</div>
+<nav class="ft-links" aria-label="Footer navigation">
+<a href="/#hero" class="ft-link">Home</a>
+<a href="/about/" class="ft-link">About</a>
+<a href="/#work" class="ft-link">Projects</a>
+<a href="/projects/opsflow" class="ft-link">OpsFlow</a>
+<a href="/engineering/" class="ft-link">Engineering</a>
+<a href="/#contact" class="ft-link">Contact</a>
+<a href="/privacy/" class="ft-link">Privacy &amp; cookies</a>
+<a href="/privacy/#cookies" class="ft-link">Cookie policy</a>
+<a href="https://github.com/samiulAsumel/client-intake-form" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
+</nav>
+<div class="ft-bar">
+<p class="ft-copy">
+© 2026 <span>MD Samiul Alam Sumel</span>. All rights reserved. Visit counts use cookie-free Cloudflare Web Analytics. Last updated <time datetime="2026-10-06">6 October 2026</time>.
+</p>
+<a href="/#hero" class="ft-top">↑ Back to portfolio</a>
+</div>
+</div>
+</footer>
+<script src="../js/main.js" defer></script>
+<script src="../js/ux.js" defer></script>
+</body>
 </html>

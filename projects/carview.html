@@ -1,207 +1,179 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="color-scheme" content="light dark" />
-
-    <title>Vehicle Tracking / CarView — Case Study | Samiul Alam Sumel</title>
-    <meta
-      name="description"
-      content="Case study: an offline-capable system tracking daily vehicle receipts, deliveries and balances across port storage locations, with reports and history."
-    />
-    <meta name="author" content="MD Samiul Alam Sumel" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://sasumel.pages.dev/projects/carview" />
-
-    <meta name="theme-color" content="#0a0c11" />
-    <meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
-    <link rel="manifest" href="../manifest.json" />
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
-    <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png" />
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
-
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://sasumel.pages.dev/projects/carview" />
-    <meta property="og:title" content="Vehicle Tracking / CarView — Case Study" />
-    <meta
-      property="og:description"
-      content="Case study: an offline-capable system tracking daily vehicle receipts, deliveries and balances across port storage locations, with reports and history."
-    />
-    <meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Vehicle Tracking / CarView — Case Study" />
-    <meta
-      name="twitter:description"
-      content="Case study: an offline-capable system tracking daily vehicle receipts, deliveries and balances across port storage locations, with reports and history."
-    />
-    <meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://sasumel.pages.dev/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Vehicle Tracking / CarView",
-            "item": "https://sasumel.pages.dev/projects/carview"
-          }
-        ]
-      }
-    </script>
-    <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="../css/bundle-case.min.css" />
-  </head>
-  <body>
-    <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-      <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
-      <path d="M14 2v5a1 1 0 0 0 1 1h5" />
-      <path d="M10 9H8" />
-      <path d="M16 13H8" />
-      <path d="M16 17H8" /></symbol>
-      <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
-      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
-    </svg>
-    <div id="spb" aria-hidden="true"></div>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <a href="#main-content" id="totop" class="totop" aria-label="Back to top">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="m18 15-6-6-6 6"/>
-      </svg>
-    </a>
-
-    <nav id="nb" aria-label="Primary navigation">
-      <div class="wrap nav-in">
-        <a href="/#hero" class="logo"
-          ><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Process Automation</span></a
-        >
-        <ul class="nav-links" role="list">
-          <li><a href="/#work" aria-current="page">Systems</a></li>
-        <li><a href="/experience/">Experience</a></li>
-          <li><a href="/#how-i-build">How I Build</a></li>
-          <li><a href="/capabilities/">Expertise</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/resume/">CV</a></li>
-          <li><a href="/#contact" class="btn btn--secondary btn--sm">Contact</a></li>
-        </ul>
-        <button
-          class="theme-tgl"
-          id="theme-tgl"
-          type="button"
-          aria-label="Toggle light/dark theme"
-        >
-          <span aria-hidden="true">◐</span>
-        </button>
-        <button class="hbg" id="hbg" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-
-    <div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-      <button class="mob-x" id="mobx" aria-label="Close navigation menu">✕</button>
-      <a href="/#work" aria-current="page">Systems</a>
-      <a href="/experience/">Experience</a>
-      <a href="/#how-i-build">How I Build</a>
-      <a href="/capabilities/">Expertise</a>
-      <a href="/about/">About</a>
-      <a href="/resume/">CV</a>
-      <a href="/#contact">Contact</a>
-      <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
-      <a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
-    </div>
-
-    <main id="main-content" tabindex="-1">
-      <div class="cs-page">
-        <div class="container">
-          <a class="cs-back link link--muted" href="/#work">← Production systems</a>
-          <header class="cs-head">
-            <p class="eyebrow cs-head__cat">Transport Operations / Vehicle Tracking / Reporting</p>
-            <h1 class="cs-head__title">Vehicle Tracking / CarView</h1>
-            <p class="cs-head__lead">A shared, offline-capable system for tracking daily vehicle receipts, deliveries and balances across port storage locations, with reporting and a full change history.</p>
-            <div class="cs-head__meta"><span class="cs-tier">#2 · Operational tracking system</span><span class="status status--production">Live · daily use</span></div>
-            <dl class="cs-facts"><div><dt>Domain</dt><dd>Vehicle balance and location tracking, reporting</dd></div><div><dt>Users</dt><dd>Traffic Department staff</dd></div><div><dt>Status</dt><dd>Live · daily use</dd></div></dl>
-            <p class="cs-note">No public demo link: the running system shows real operating figures. The interface below is a mockup with fictional numbers.</p>
-          </header>
-          <figure class="cs-shot"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>vehicle-tracking</em><b class="badge badge--demo-data">Demo data</b></div><div class="frame__body"><div class="mock mock--cv" role="img" aria-label="Illustrative vehicle tracking dashboard with fictional figures: summary cards for opening balance, receipts, deliveries and closing balance, and groups for warehouses, yards and sheds.">
-  <div class="mock__head"><strong>Vehicle Tracking</strong><span>Daily balance · sample month</span></div>
-  <div class="mock__kpis">
-    <div class="mock__card"><small>Opening</small><b>120</b></div>
-    <div class="mock__card"><small>Receipts</small><b>45</b></div>
-    <div class="mock__card"><small>Deliveries</small><b>38</b></div>
-    <div class="mock__card"><small>Closing</small><b>127</b></div>
-  </div>
-  <div class="mock__groups">
-    <div class="mock__group"><p class="mock__gh">Warehouse</p><div><span>Warehouse A</span><b>48</b></div><div><span>Warehouse B</span><b>30</b></div></div>
-    <div class="mock__group"><p class="mock__gh">Yard</p><div><span>Yard 1</span><b>22</b></div><div><span>Yard 2</span><b>12</b></div></div>
-    <div class="mock__group"><p class="mock__gh">Shed</p><div><span>Shed 1</span><b>9</b></div><div><span>Shed 2</span><b>6</b></div></div>
-  </div>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="color-scheme" content="light dark" />
+<title>Vehicle Tracking / CarView — Case Study | Samiul Alam Sumel</title>
+<meta
+name="description"
+content="Case study: an offline-capable system tracking daily vehicle receipts, deliveries and balances across port storage locations, with reports and history."
+/>
+<meta name="author" content="MD Samiul Alam Sumel" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://sasumel.pages.dev/projects/carview" />
+<meta name="theme-color" content="#0a0c11" />
+<meta name="theme-color" content="#faf9f7" media="(prefers-color-scheme: light)" />
+<link rel="manifest" href="../manifest.json" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png" />
+<link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sasumel.pages.dev/projects/carview" />
+<meta property="og:title" content="Vehicle Tracking / CarView — Case Study" />
+<meta
+property="og:description"
+content="Case study: an offline-capable system tracking daily vehicle receipts, deliveries and balances across port storage locations, with reports and history."
+/>
+<meta property="og:image" content="https://sasumel.pages.dev/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Samiul Alam Sumel — Portfolio" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vehicle Tracking / CarView — Case Study" />
+<meta
+name="twitter:description"
+content="Case study: an offline-capable system tracking daily vehicle receipts, deliveries and balances across port storage locations, with reports and history."
+/>
+<meta name="twitter:image" content="https://sasumel.pages.dev/og-image.png" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sasumel.pages.dev/"},{"@type":"ListItem","position":2,"name":"Vehicle Tracking / CarView","item":"https://sasumel.pages.dev/projects/carview"}]}</script>
+<link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="../css/bundle-case.min.css" />
+</head>
+<body>
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+<path d="M14 2v5a1 1 0 0 0 1 1h5" />
+<path d="M10 9H8" />
+<path d="M16 13H8" />
+<path d="M16 17H8" /></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+</svg>
+<div id="spb" aria-hidden="true"></div>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" id="totop" class="totop" aria-label="Back to top">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m18 15-6-6-6 6"/>
+</svg>
+</a>
+<nav id="nb" aria-label="Primary navigation">
+<div class="wrap nav-in">
+<a href="/#hero" class="logo"
+><svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="16" r="2.1" fill="currentColor" opacity=".5"/><circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".75"/><circle cx="16" cy="4" r="2.9" fill="currentColor"/><path d="M6.1 14.3 8.3 11.7M11.7 8.3 13.9 5.7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".55"/></svg>SAS <span class="logo-badge">Process Automation</span></a
+>
+<ul class="nav-links" role="list">
+<li><a href="/#work" aria-current="page">Systems</a></li>
+<li><a href="/experience/">Experience</a></li>
+<li><a href="/#how-i-build">How I Build</a></li>
+<li><a href="/capabilities/">Expertise</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/resume/">CV</a></li>
+<li><a href="/#contact" class="btn btn--secondary btn--sm">Contact</a></li>
+</ul>
+<button
+class="theme-tgl"
+id="theme-tgl"
+type="button"
+aria-label="Toggle light/dark theme"
+>
+<span aria-hidden="true">◐</span>
+</button>
+<button class="hbg" id="hbg" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mob">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+<button class="mob-x" id="mobx" aria-label="Close navigation menu">✕</button>
+<a href="/#work" aria-current="page">Systems</a>
+<a href="/experience/">Experience</a>
+<a href="/#how-i-build">How I Build</a>
+<a href="/capabilities/">Expertise</a>
+<a href="/about/">About</a>
+<a href="/resume/">CV</a>
+<a href="/#contact">Contact</a>
+<a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+<a href="https://linkedin.com/in/samiul-alam-sumel" target="_blank" rel="noopener noreferrer"><svg class="icon icon-brand" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</a>
+</div>
+<main id="main-content" tabindex="-1">
+<div class="cs-page">
+<div class="container">
+<a class="cs-back link link--muted" href="/#work">← Production systems</a>
+<header class="cs-head">
+<p class="eyebrow cs-head__cat">Transport Operations / Vehicle Tracking / Reporting</p>
+<h1 class="cs-head__title">Vehicle Tracking / CarView</h1>
+<p class="cs-head__lead">A shared, offline-capable system for tracking daily vehicle receipts, deliveries and balances across port storage locations, with reporting and a full change history.</p>
+<div class="cs-head__meta"><span class="cs-tier">#2 · Operational tracking system</span><span class="status status--production">Live · daily use</span></div>
+<dl class="cs-facts"><div><dt>Domain</dt><dd>Vehicle balance and location tracking, reporting</dd></div><div><dt>Users</dt><dd>Traffic Department staff</dd></div><div><dt>Status</dt><dd>Live · daily use</dd></div></dl>
+<p class="cs-note">No public demo link: the running system shows real operating figures. The interface below is a mockup with fictional numbers.</p>
+</header>
+<figure class="cs-shot"><div class="frame"><div class="frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>vehicle-tracking</em><b class="badge badge--demo-data">Demo data</b></div><div class="frame__body"><div class="mock mock--cv" role="img" aria-label="Illustrative vehicle tracking dashboard with fictional figures: summary cards for opening balance, receipts, deliveries and closing balance, and groups for warehouses, yards and sheds.">
+<div class="mock__head"><strong>Vehicle Tracking</strong><span>Daily balance · sample month</span></div>
+<div class="mock__kpis">
+<div class="mock__card"><small>Opening</small><b>120</b></div>
+<div class="mock__card"><small>Receipts</small><b>45</b></div>
+<div class="mock__card"><small>Deliveries</small><b>38</b></div>
+<div class="mock__card"><small>Closing</small><b>127</b></div>
+</div>
+<div class="mock__groups">
+<div class="mock__group"><p class="mock__gh">Warehouse</p><div><span>Warehouse A</span><b>48</b></div><div><span>Warehouse B</span><b>30</b></div></div>
+<div class="mock__group"><p class="mock__gh">Yard</p><div><span>Yard 1</span><b>22</b></div><div><span>Yard 2</span><b>12</b></div></div>
+<div class="mock__group"><p class="mock__gh">Shed</p><div><span>Shed 1</span><b>9</b></div><div><span>Shed 2</span><b>6</b></div></div>
+</div>
 </div></div></div><figcaption>Illustrative mockup of the real layout, using fictional figures.</figcaption></figure>
-          <div class="demo-notice" role="note"><span><strong>Data privacy.</strong> Illustrations use fictional / anonymized data. No confidential Mongla Port Authority records are exposed; the interface shown is a mockup with invented figures.</span></div>
-          <div class="cs-layout">
-            <nav class="cs-index" aria-label="Case study sections"><ol><li><a href="#problem"><span>01</span>Business problem</a></li><li><a href="#workflow"><span>02</span>Existing workflow</a></li><li><a href="#approach"><span>03</span>My approach</a></li><li><a href="#system"><span>04</span>System design</a></li><li><a href="#tradeoff"><span>05</span>Engineering trade-off</a></li><li><a href="#features"><span>06</span>Key features</a></li><li><a href="#technology"><span>07</span>Technology</a></li><li><a href="#role"><span>08</span>My role</a></li><li><a href="#wf2sw"><span>09</span>From workflow to software</a></li><li><a href="#outcome"><span>10</span>Outcome</a></li></ol></nav>
-            <div class="cs-content">
-              <section class="cs-section" id="problem" aria-labelledby="h-problem"><h2 class="cs-section__h" id="h-problem"><span>01</span>Business problem</h2><p>Vehicle positions across warehouse, shed and yard were recorded in one person’s personal spreadsheet, invisible to everyone else. When that person was unavailable, the whole team lost visibility of where vehicles were held.</p><p>The need was to keep movement information organised, shared and traceable, at terminal locations where connectivity is not guaranteed and there was no budget for a hosted database.</p></section>
-              <section class="cs-section" id="workflow" aria-labelledby="h-workflow"><h2 class="cs-section__h" id="h-workflow"><span>02</span>Existing workflow</h2><p>Tracking here means quantity and movement records per location per day. It is not GPS tracking.</p><ol class="flow"><li><b>Vehicle movements</b><span>Vehicles received into, and delivered out of, a storage location.</span></li><li><b>Operational record</b><span>One entry per location per day.</span></li><li><b>Delivery / movement information</b><span>Receipts, deliveries and transfers between locations.</span></li><li><b>Balance</b><span>Each day closes with the prior balance adjusted by movements.</span></li><li><b>Search and tracking</b><span>Month navigation and a keyboard quick-navigation palette.</span></li><li><b>Reporting</b><span>Charts, report sections and Excel export.</span></li></ol><ol class="x2s" aria-label="From private Excel to shared system"><li><b>Private Excel file</b>One person’s spreadsheet.</li><li><b>Shared operational system</b>Installable, offline-capable.</li><li><b>Structured data</b>One record per location per day.</li><li><b>Reporting</b>Thirteen report sections, Excel export.</li><li><b>Analytics</b>Seven charts and summary cards.</li></ol><p class="x2s-cap">The software is built around the process, not the other way around. Designed to reduce repetitive spreadsheet-based work.</p></section>
-              <section class="cs-section" id="approach" aria-labelledby="h-approach"><h2 class="cs-section__h" id="h-approach"><span>03</span>My approach</h2><p>I kept the running-balance logic staff already used on paper, where a location’s day closes with the previous closing balance adjusted by that day’s receipts and deliveries, and made it automatic. Then I added what a personal file could not give: shared access, offline entry and a history of every change.</p><ol class="flow"><li><b>Real operational workflow</b><span>Daily receipts and deliveries per location.</span></li><li><b>Business rules</b><span>Carry-forward balance, working days, transfers.</span></li><li><b>Structured data</b><span>One dated record per location per day.</span></li><li><b>Calculation logic</b><span>Balances recomputed from the records.</span></li><li><b>Web interface</b><span>Daily entry, charts, reports, transfers.</span></li><li class="is-out"><b>Reports</b><span>Report sections and Excel export.</span></li></ol></section>
-              <section class="cs-section" id="system" aria-labelledby="h-system"><h2 class="cs-section__h" id="h-system"><span>04</span>System design</h2><p>With no database budget, the data store is a private GitHub repository: every save becomes a version-controlled commit, which gives a full audit history without a database to host.</p><ol class="flow"><li><b>User</b><span>Traffic staff, on desktop or phone.</span></li><li><b>Installable web app</b><span>Offline-first; entry works without a connection.</span></li><li><b>Business rules and calculation</b><span>Balances and reports computed from the records.</span></li><li><b>Cloudflare Worker</b><span>Authenticated writes; the GitHub token never reaches the browser.</span></li><li class="is-out"><b>Private GitHub data repository</b><span>Every save is a commit, with in-app version history and restore.</span></li></ol></section>
-              <section class="cs-section" id="tradeoff" aria-labelledby="h-tradeoff"><h2 class="cs-section__h" id="h-tradeoff"><span>05</span>Engineering trade-off</h2><p>Why this architecture suits this workflow, and where it would not.</p><dl class="cs-decision"><div><dt>Constraint</dt><dd>A small departmental workflow, no budget for a hosted database, and terminals where connectivity is not guaranteed.</dd></div><div><dt>Decision</dt><dd>Keep structured data in a private GitHub repository, written only through a Cloudflare Worker that holds the token.</dd></div><div><dt>Benefit</dt><dd>Simple deployment, a full version history with restore, and controlled writes.</dd></div><div class="is-tradeoff"><dt>Trade-off</dt><dd>It is not a general-purpose database. It would not automatically suit a high-volume transactional system, which needs proper concurrency control and querying.</dd></div></dl></section>
-              <section class="cs-section" id="features" aria-labelledby="h-features"><h2 class="cs-section__h" id="h-features"><span>06</span>Key features</h2><ul class="cs-grid"><li><b>Daily entry</b>Across eight storage locations: warehouses, yards and sheds.</li><li><b>Automatic balances</b>Opening and closing balances carry forward day to day.</li><li><b>Rotation numbers</b>Inline-editable per row and included in exports.</li><li><b>Car transfers</b>Between locations, with history; balances cascade forward.</li><li><b>Holiday calendar</b>Weekends plus a loadable Bangladesh government holiday calendar drive the working-day logic.</li><li><b>Analytics charts</b>Seven charts plus summary cards.</li><li><b>Reports</b>Thirteen report sections with period filters.</li><li><b>Excel export</b>For anyone who needs the data outside the app.</li><li><b>Version history</b>Any earlier version can be restored.</li><li><b>Quick navigation</b>Ctrl+K palette for tabs, months, locations and reports.</li><li><b>Offline-first PWA</b>Installable, with a card layout on phones.</li></ul></section>
-              <section class="cs-section" id="technology" aria-labelledby="h-technology"><h2 class="cs-section__h" id="h-technology"><span>07</span>Technology</h2><dl class="cs-tech"><div><dt>Frontend</dt><dd>HTML, CSS and JavaScript with no framework; installable PWA. Chart.js for charts, SheetJS for Excel export.</dd></div><div><dt>Backend</dt><dd>Cloudflare Worker for authenticated writes.</dd></div><div><dt>Data</dt><dd>Version-controlled JSON in a private GitHub repository.</dd></div><div><dt>Deployment</dt><dd>Cloudflare Pages.</dd></div><div><dt>Quality</dt><dd>Node test runner over the balance-calculation core.</dd></div><div><dt>Development</dt><dd>Git, GitHub, AI-assisted development.</dd></div></dl></section>
-              <section class="cs-section" id="role" aria-labelledby="h-role"><h2 class="cs-section__h" id="h-role"><span>08</span>My role</h2><ol class="roles" aria-label="Roles across the project"><li>Operations Specialist</li><li>Business Analyst</li><li>System Designer</li><li class="is-ai">AI-Assisted Developer</li><li>Tester</li><li>Deployer</li></ol><ul class="cs-roles-detail"><li><b>Identified</b>A single-person spreadsheet as the only view of vehicle positions.</li><li><b>Studied</b>How the department recorded vehicles by location and day.</li><li><b>Defined</b>Carry-forward balances, transfers and working days.</li><li><b>Designed</b>The repository-as-data-store architecture and the Worker.</li><li><b>Built</b>The app, with AI-assisted implementation under my direction.</li><li><b>Tested</b>Balance logic with automated tests and against real use.</li><li><b>Deployed</b>The PWA and the Worker, then iterating.</li><li><b>Iterated</b>Refined through daily use by the department.</li></ul><p class="cs-ai">Built with AI-assisted implementation under my direction. I own the requirements, business rules, validation, testing and deployment; I did not hand-write every line, and AI did not decide what the system should do.</p></section>
-              <section class="cs-section" id="wf2sw" aria-labelledby="h-wf2sw"><h2 class="cs-section__h" id="h-wf2sw"><span>09</span>From workflow to software</h2><p>The same path behind every production system, from the real workflow to daily use.</p><ol class="wf2sw" aria-label="From workflow to software"><li><b>Real workflow</b>Daily records per location</li><li><b>Operational problem</b>One person’s spreadsheet</li><li><b>Business rules</b>Running balance, transfers, holidays</li><li><b>System design</b>PWA, Worker, GitHub data store</li><li><b>AI-assisted implementation</b>Directed and reviewed by me</li><li><b>Testing &amp; validation</b>Balance tests, real use</li><li><b>Deployment</b>Cloudflare Pages + Worker</li><li><b>Real use</b>Traffic Department</li></ol></section>
-              <section class="cs-section" id="outcome" aria-labelledby="h-outcome"><h2 class="cs-section__h" id="h-outcome"><span>10</span>Outcome</h2><ul class="cs-grid cs-outcome"><li><b>A shared system</b>Replaced a single-person spreadsheet dependency with a shared, version-controlled system.</li><li><b>Easier to manage</b>Made operational information easier to search, review and report on.</li><li><b>Traceable</b>Every change is recorded and any earlier version can be restored.</li><li><b>In daily use</b>Used by the department across the tracked locations; exact daily usage is not logged.</li></ul></section>
-              <div class="cs-next"><a class="link" href="/#work">← All production systems</a><a class="link" href="/projects/otbill">Next: OT Bill Management / Automation →</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="wrap">
-        <div class="ft-center">
-          <div class="ft-logo">SAS</div>
-          <p class="ft-tagline">
-            Business process automation · Web systems &amp; internal tools ·
-            AI-assisted product building.
-          </p>
-        </div>
-        <nav class="ft-links" aria-label="Footer navigation">
-          <a href="/#hero" class="ft-link">Home</a>
-          <a href="/about/" class="ft-link">About</a>
-          <a href="/#work" class="ft-link">Projects</a>
-          <a href="/projects/opsflow" class="ft-link">OpsFlow</a>
-          <a href="/engineering/" class="ft-link">Engineering</a>
-          <a href="/#contact" class="ft-link">Contact</a>
-          <a href="/privacy/" class="ft-link">Privacy &amp; cookies</a>
-          <a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
-        </nav>
-        <div class="ft-bar">
-          <p class="ft-copy">
-            © 2026 <span>MD Samiul Alam Sumel</span>. All rights reserved. Visit counts use cookie-free Cloudflare Web Analytics. Last updated <time datetime="2026-10-06">6 October 2026</time>.
-          </p>
-          <a href="/#hero" class="ft-top">↑ Back to portfolio</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="../js/main.js" defer></script>
-    <script src="../js/ux.js" defer></script>
-  </body>
+<div class="demo-notice" role="note"><span><strong>Data privacy.</strong> Illustrations use fictional / anonymized data. No confidential Mongla Port Authority records are exposed; the interface shown is a mockup with invented figures.</span></div>
+<div class="cs-layout">
+<nav class="cs-index" aria-label="Case study sections"><ol><li><a href="#problem"><span>01</span>Business problem</a></li><li><a href="#workflow"><span>02</span>Existing workflow</a></li><li><a href="#approach"><span>03</span>My approach</a></li><li><a href="#system"><span>04</span>System design</a></li><li><a href="#tradeoff"><span>05</span>Engineering trade-off</a></li><li><a href="#features"><span>06</span>Key features</a></li><li><a href="#technology"><span>07</span>Technology</a></li><li><a href="#role"><span>08</span>My role</a></li><li><a href="#wf2sw"><span>09</span>From workflow to software</a></li><li><a href="#outcome"><span>10</span>Outcome</a></li></ol></nav>
+<div class="cs-content">
+<section class="cs-section" id="problem" aria-labelledby="h-problem"><h2 class="cs-section__h" id="h-problem"><span>01</span>Business problem</h2><p>Vehicle positions across warehouse, shed and yard were recorded in one person’s personal spreadsheet, invisible to everyone else. When that person was unavailable, the whole team lost visibility of where vehicles were held.</p><p>The need was to keep movement information organised, shared and traceable, at terminal locations where connectivity is not guaranteed and there was no budget for a hosted database.</p></section>
+<section class="cs-section" id="workflow" aria-labelledby="h-workflow"><h2 class="cs-section__h" id="h-workflow"><span>02</span>Existing workflow</h2><p>Tracking here means quantity and movement records per location per day. It is not GPS tracking.</p><ol class="flow"><li><b>Vehicle movements</b><span>Vehicles received into, and delivered out of, a storage location.</span></li><li><b>Operational record</b><span>One entry per location per day.</span></li><li><b>Delivery / movement information</b><span>Receipts, deliveries and transfers between locations.</span></li><li><b>Balance</b><span>Each day closes with the prior balance adjusted by movements.</span></li><li><b>Search and tracking</b><span>Month navigation and a keyboard quick-navigation palette.</span></li><li><b>Reporting</b><span>Charts, report sections and Excel export.</span></li></ol><ol class="x2s" aria-label="From private Excel to shared system"><li><b>Private Excel file</b>One person’s spreadsheet.</li><li><b>Shared operational system</b>Installable, offline-capable.</li><li><b>Structured data</b>One record per location per day.</li><li><b>Reporting</b>Thirteen report sections, Excel export.</li><li><b>Analytics</b>Seven charts and summary cards.</li></ol><p class="x2s-cap">The software is built around the process, not the other way around. Designed to reduce repetitive spreadsheet-based work.</p></section>
+<section class="cs-section" id="approach" aria-labelledby="h-approach"><h2 class="cs-section__h" id="h-approach"><span>03</span>My approach</h2><p>I kept the running-balance logic staff already used on paper, where a location’s day closes with the previous closing balance adjusted by that day’s receipts and deliveries, and made it automatic. Then I added what a personal file could not give: shared access, offline entry and a history of every change.</p><ol class="flow"><li><b>Real operational workflow</b><span>Daily receipts and deliveries per location.</span></li><li><b>Business rules</b><span>Carry-forward balance, working days, transfers.</span></li><li><b>Structured data</b><span>One dated record per location per day.</span></li><li><b>Calculation logic</b><span>Balances recomputed from the records.</span></li><li><b>Web interface</b><span>Daily entry, charts, reports, transfers.</span></li><li class="is-out"><b>Reports</b><span>Report sections and Excel export.</span></li></ol></section>
+<section class="cs-section" id="system" aria-labelledby="h-system"><h2 class="cs-section__h" id="h-system"><span>04</span>System design</h2><p>With no database budget, the data store is a private GitHub repository: every save becomes a version-controlled commit, which gives a full audit history without a database to host.</p><ol class="flow"><li><b>User</b><span>Traffic staff, on desktop or phone.</span></li><li><b>Installable web app</b><span>Offline-first; entry works without a connection.</span></li><li><b>Business rules and calculation</b><span>Balances and reports computed from the records.</span></li><li><b>Cloudflare Worker</b><span>Authenticated writes; the GitHub token never reaches the browser.</span></li><li class="is-out"><b>Private GitHub data repository</b><span>Every save is a commit, with in-app version history and restore.</span></li></ol></section>
+<section class="cs-section" id="tradeoff" aria-labelledby="h-tradeoff"><h2 class="cs-section__h" id="h-tradeoff"><span>05</span>Engineering trade-off</h2><p>Why this architecture suits this workflow, and where it would not.</p><dl class="cs-decision"><div><dt>Constraint</dt><dd>A small departmental workflow, no budget for a hosted database, and terminals where connectivity is not guaranteed.</dd></div><div><dt>Decision</dt><dd>Keep structured data in a private GitHub repository, written only through a Cloudflare Worker that holds the token.</dd></div><div><dt>Benefit</dt><dd>Simple deployment, a full version history with restore, and controlled writes.</dd></div><div class="is-tradeoff"><dt>Trade-off</dt><dd>It is not a general-purpose database. It would not automatically suit a high-volume transactional system, which needs proper concurrency control and querying.</dd></div></dl></section>
+<section class="cs-section" id="features" aria-labelledby="h-features"><h2 class="cs-section__h" id="h-features"><span>06</span>Key features</h2><ul class="cs-grid"><li><b>Daily entry</b>Across eight storage locations: warehouses, yards and sheds.</li><li><b>Automatic balances</b>Opening and closing balances carry forward day to day.</li><li><b>Rotation numbers</b>Inline-editable per row and included in exports.</li><li><b>Car transfers</b>Between locations, with history; balances cascade forward.</li><li><b>Holiday calendar</b>Weekends plus a loadable Bangladesh government holiday calendar drive the working-day logic.</li><li><b>Analytics charts</b>Seven charts plus summary cards.</li><li><b>Reports</b>Thirteen report sections with period filters.</li><li><b>Excel export</b>For anyone who needs the data outside the app.</li><li><b>Version history</b>Any earlier version can be restored.</li><li><b>Quick navigation</b>Ctrl+K palette for tabs, months, locations and reports.</li><li><b>Offline-first PWA</b>Installable, with a card layout on phones.</li></ul></section>
+<section class="cs-section" id="technology" aria-labelledby="h-technology"><h2 class="cs-section__h" id="h-technology"><span>07</span>Technology</h2><dl class="cs-tech"><div><dt>Frontend</dt><dd>HTML, CSS and JavaScript with no framework; installable PWA. Chart.js for charts, SheetJS for Excel export.</dd></div><div><dt>Backend</dt><dd>Cloudflare Worker for authenticated writes.</dd></div><div><dt>Data</dt><dd>Version-controlled JSON in a private GitHub repository.</dd></div><div><dt>Deployment</dt><dd>Cloudflare Pages.</dd></div><div><dt>Quality</dt><dd>Node test runner over the balance-calculation core.</dd></div><div><dt>Development</dt><dd>Git, GitHub, AI-assisted development.</dd></div></dl></section>
+<section class="cs-section" id="role" aria-labelledby="h-role"><h2 class="cs-section__h" id="h-role"><span>08</span>My role</h2><ol class="roles" aria-label="Roles across the project"><li>Operations Specialist</li><li>Business Analyst</li><li>System Designer</li><li class="is-ai">AI-Assisted Developer</li><li>Tester</li><li>Deployer</li></ol><ul class="cs-roles-detail"><li><b>Identified</b>A single-person spreadsheet as the only view of vehicle positions.</li><li><b>Studied</b>How the department recorded vehicles by location and day.</li><li><b>Defined</b>Carry-forward balances, transfers and working days.</li><li><b>Designed</b>The repository-as-data-store architecture and the Worker.</li><li><b>Built</b>The app, with AI-assisted implementation under my direction.</li><li><b>Tested</b>Balance logic with automated tests and against real use.</li><li><b>Deployed</b>The PWA and the Worker, then iterating.</li><li><b>Iterated</b>Refined through daily use by the department.</li></ul><p class="cs-ai">Built with AI-assisted implementation under my direction. I own the requirements, business rules, validation, testing and deployment; I did not hand-write every line, and AI did not decide what the system should do.</p></section>
+<section class="cs-section" id="wf2sw" aria-labelledby="h-wf2sw"><h2 class="cs-section__h" id="h-wf2sw"><span>09</span>From workflow to software</h2><p>The same path behind every production system, from the real workflow to daily use.</p><ol class="wf2sw" aria-label="From workflow to software"><li><b>Real workflow</b>Daily records per location</li><li><b>Operational problem</b>One person’s spreadsheet</li><li><b>Business rules</b>Running balance, transfers, holidays</li><li><b>System design</b>PWA, Worker, GitHub data store</li><li><b>AI-assisted implementation</b>Directed and reviewed by me</li><li><b>Testing &amp; validation</b>Balance tests, real use</li><li><b>Deployment</b>Cloudflare Pages + Worker</li><li><b>Real use</b>Traffic Department</li></ol></section>
+<section class="cs-section" id="outcome" aria-labelledby="h-outcome"><h2 class="cs-section__h" id="h-outcome"><span>10</span>Outcome</h2><ul class="cs-grid cs-outcome"><li><b>A shared system</b>Replaced a single-person spreadsheet dependency with a shared, version-controlled system.</li><li><b>Easier to manage</b>Made operational information easier to search, review and report on.</li><li><b>Traceable</b>Every change is recorded and any earlier version can be restored.</li><li><b>In daily use</b>Used by the department across the tracked locations; exact daily usage is not logged.</li></ul></section>
+<div class="cs-next"><a class="link" href="/#work">← All production systems</a><a class="link" href="/projects/otbill">Next: OT Bill Management / Automation →</a></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="wrap">
+<div class="ft-center">
+<div class="ft-logo">SAS</div>
+<p class="ft-tagline">
+Business process automation · Web systems &amp; internal tools ·
+AI-assisted product building.
+</p>
+</div>
+<nav class="ft-links" aria-label="Footer navigation">
+<a href="/#hero" class="ft-link">Home</a>
+<a href="/about/" class="ft-link">About</a>
+<a href="/#work" class="ft-link">Projects</a>
+<a href="/projects/opsflow" class="ft-link">OpsFlow</a>
+<a href="/engineering/" class="ft-link">Engineering</a>
+<a href="/#contact" class="ft-link">Contact</a>
+<a href="/privacy/" class="ft-link">Privacy &amp; cookies</a>
+<a href="/privacy/#cookies" class="ft-link">Cookie policy</a>
+<a href="https://github.com/samiulAsumel" target="_blank" rel="noopener noreferrer" class="ft-link">GitHub</a>
+</nav>
+<div class="ft-bar">
+<p class="ft-copy">
+© 2026 <span>MD Samiul Alam Sumel</span>. All rights reserved. Visit counts use cookie-free Cloudflare Web Analytics. Last updated <time datetime="2026-10-06">6 October 2026</time>.
+</p>
+<a href="/#hero" class="ft-top">↑ Back to portfolio</a>
+</div>
+</div>
+</footer>
+<script src="../js/main.js" defer></script>
+<script src="../js/ux.js" defer></script>
+</body>
 </html>

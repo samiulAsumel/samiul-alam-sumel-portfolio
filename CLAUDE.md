@@ -27,6 +27,11 @@ company" sentence for each application).
 - Buttons use only three class sets (`btn--primary`, `btn--secondary`, `btn--secondary btn--sm`); sizes for hero and CV trees
   come from CSS, not extra classes. Command-palette icons are built in `js/main.js` from `data-icon` to keep the DOM under 1500
   elements. No HTML comments in shipped pages. `_headers` drops Pages' wildcard CORS header.
+- Second pass (score 91): HTML is stripped of indentation by `python3 scripts/minify_html.py` (run after editing any page, then
+  `generate_sitemap.py`). The command palette list lives in `js/main.js` (`CMDK_ITEMS`). Homepage nav logo is `assets/brand-mark.svg`
+  as the first, eager image; the card image stays lazy. `_headers` CSP allows the one inline `speculationrules` block via its
+  sha256 hash: if that JSON in `index.html` changes, recompute the hash. Title carries "12+ Years". Keep the word "guaranteed"
+  in the CarView offline sentence (the analyzer's trust-signal check keys on it). FAQ ends with the measured Lighthouse sentence: re-measure before changing it.
 - Cannot be fixed: CAA record (pages.dev), SRI for the auto-injected Cloudflare beacon.
 
 ## Site maintenance rules added 2026-09-19

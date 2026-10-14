@@ -338,7 +338,6 @@
     // The list is built here, not written into the HTML, so the page keeps a small DOM.
     const CMDK_ITEMS = [
     {group: 'Section', icon: 'i-house', label: 'Home', href: '#hero'},
-    {group: 'Section', icon: 'i-workflow', label: 'What I Bring', href: '#bring'},
     {group: 'Section', icon: 'i-repeat', label: 'How I Build', href: '#how-i-build'},
     {group: 'Section', icon: 'i-target', label: 'Engineering Decisions', href: '#decisions'},
     {group: 'Section', icon: 'i-rocket', label: 'Production Systems', href: '#work'},

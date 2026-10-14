@@ -34,14 +34,66 @@ company" sentence for each application).
   in the CarView offline sentence (the analyzer's trust-signal check keys on it). FAQ ends with the measured Lighthouse sentence: re-measure before changing it.
 - Cannot be fixed: CAA record (pages.dev), SRI for the auto-injected Cloudflare beacon.
 
+## Site-wide consistency pass (2026-10-14, explicit user instruction: keep the hero as is, fix everything, no duplicate sections)
+
+- **Identity everywhere:** "Web Developer · Business Systems & Workflow Automation" (nav badge "Web Developer", footer tagline,
+  titles/metas of home, resume, capabilities, FAQ, JSON-LD, `llms.txt`, both CVs, `og-image.png`). Person `jobTitle` stays the real
+  current title. "Business process automation" remains only as a domain term. The hero text itself (incl. "approvals") was kept
+  at the user's explicit request; no system on the site demonstrates an approval workflow, so do not add more "approvals" claims.
+- **Homepage sections now (8):** `#hero`, `#work`, `#experience`, `#how-i-build`, `#decisions`, `#opsflow`, `#faq`, `#contact`.
+  Removed as duplicates: `#credibility` (hero proof chips), `#bring` (hero selector + `#work`), `#capabilities` summary (the
+  /capabilities/ page and nav), Decision 3 and 4 and "What I own" in `#decisions`, FAQ "only for ports?", the contact "View CV"
+  button, second contact paragraph and the self-link row. Do not reintroduce a section that repeats another.
+- **`#how-i-build` worked example:** "A Real Example of the Approach" now walks the same seven stage names (Observe, Define, Model,
+  Design, Build, Validate, Ship) through Port Billing and CarView, using only text the site already published (Validate uses the
+  "automated tests and compared against real bills" sentence). The separate "AI-assisted development" block and its nine-step chain
+  were removed because stage 05 already says it.
+- **FAQ Lighthouse line** is real: measured 2026-10-14 with the locally cached `lighthouse` (`~/.npm/_npx/*/node_modules/lighthouse`)
+  against `python3 -m http.server`-style local serving (no compression): 100/100/100 accessibility, best practices, SEO on 6 runs;
+  mobile performance 90-96, homepage desktop 100. Re-measure before editing that sentence; keep FAQ text and JSON-LD identical.
+- **CSS:** dead rules for removed sections were pruned (home bundle 128 KB to ~114 KB); `.link` has a 24 px minimum height;
+  `Inter Fallback` metric-matched font-face keeps CLS at 0. Homepage static body 1180 elements, runtime about 1450.
+- **CVs** regenerate with a throwaway venv (`python-docx`), then `soffice --headless --convert-to pdf`; both are 2 pages.
+- `assets/screenshots/portbill-thumb.webp` is no longer referenced (kept, not deleted).
+
 ## Hero interactions (2026-10-14, explicit user instruction)
 
-- `js/hero.js` (homepage only): `.hm-swap` cycles spreadsheet / paper form / hand once and ends on the static word `hand`;
-  `.hm-hero__proof` counters (12+, 3, 8+) count up once and end on the published figures; `.hm-flow` steps 01 to 05 once,
-  rests on "Live", and hover/focus/click takes over. Everything is a one-shot, so the "nothing continuous" motion rule holds;
-  the old looping dot and outline keyframes were removed. Chip numbers must match `#credibility`; recount both together.
-  Flow nodes are `<button>`s (keyboard reachable). Lighthouse was NOT re-measured after this change; the FAQ sentence still
-  cites the earlier measurement, so re-measure before keeping it.
+- `js/hero.js` (homepage only): the hook line is static text ("Done by hand / email / spreadsheet ? I'll turn it into a system."); `.hm-hero__proof` counters (12+, 3, 8+) count up once and end on the published figures; `#hero-cap` ("What do you need
+  built?") is an ARIA tab selector (Billing, Tracking, Overtime, Web apps) that steps through once, rests on the first tab,
+  and hands over on hover/focus/click; arrow keys, Home and End work. Everything is a one-shot, so the "nothing continuous"
+  motion rule holds. It replaced the old `.hm-flow` panel (the five stages live in `#how-i-build`).
+- Each tab panel has a headline, a one-line input → rule → output flow (plain text, not list items: the homepage body
+  must stay under 1500 elements; it was 1491 on 2026-10-14), a Before/After pair and the proof row.
+- Each tab's Before/After/Proof text must stay inside what the site already publishes about that system; "Live · daily use"
+  only on Port Billing, CarView and OT Bill; OpsFlow stays "in development". Chip numbers must match `#credibility`.
+- Positioning (2026-10-14, user instruction after a repo review and a web search on hero copy): H1 is outcome-led, "I build
+  systems that take manual work off your team.", with the role line "Web Developer · Business Systems & Workflow Automation".
+  Hero buttons: "See live systems" (#work) and "Contact me" (#contact). The H1 and role line are claims about what he
+  builds; keep them to the published systems. Title, meta and keywords match; nav badge, og-image, FAQ/JSON-LD, llms.txt, About/Resume/Capabilities
+  and the CVs still carry the older "Business Process Automation" wording. Lighthouse was NOT re-measured after these hero
+  changes; re-measure before keeping the FAQ sentence that cites it.
+
+- `#work` (2026-10-14, user instruction): the home section no longer carries the 8-step `.wf2sw` chain, the `.systree`
+  summary list or the capability chips (all duplicated the cards or `#how-i-build`); the three cards use a By hand / Now
+  pair (`.pcard__before` / `.pcard__after`). The chain stays on the case studies. `#bring` ("What I automate") is five
+  before/after cards with proof links. Homepage body was 1429 elements after this; keep it under 1500.
+
+- **Other engineering work (2026-10-14, from the public GitHub repos):** eight cards (name, Live / Source only badge, one-line
+  description, stack, GitHub link). Added `anchora-commerce` (public, Next.js 15 / Prisma / Postgres, "Source only", portfolio
+  build). Deliberately left out: `deskora` (booking logic is still a skeleton until its M4), `talentforge-ai` (no description or
+  evidence), `pcs-port-system` (Kafka/EKS/Terraform would imply a DevOps identity), Linux/Bash repos, `pts-sas`,
+  `devops-command-summary`, and the private repos (`opsflow` has its own section; `serviceflow`, `postcadence` are private).
+- **`#experience` (2026-10-14):** the career path is now six visible steps (`.ev--flat`, no collapsed details) and the six
+  generic "Domain expertise" cards were removed (they repeated the operational-areas tabs and the hero). The `/experience/`
+  page keeps its own collapsible timeline.
+- **Port Billing card image (2026-10-14):** now `assets/screenshots/portbill-home.webp`, a full real capture of the guest-mode
+  `portbill.pages.dev` calculator (empty inputs, no personal data). The old `portbill-thumb.webp` is no longer used on the homepage.
+- **CarView screenshot (2026-10-14, explicit user instruction, risk explained twice):** the homepage CarView card now uses a
+  real capture of the public read-only `carview.pages.dev` (`assets/screenshots/carview.webp`), which shows the Mongla Port
+  Authority header and real aggregate balances. This reverses the "synthetic mockup only" rule for that one card; the
+  `/projects/carview` case study stays synthetic. The OT Bill card uses the user's own screenshot of the empty admin dashboard
+  (`assets/screenshots/otbill.webp`, browser chrome cropped out; no employee names, IDs or salaries visible; Bengali UI text
+  is inside the image only). Claude must not browse otbill.pages.dev: its real data includes employee PII; the user supplies any new capture.
 
 ## Site maintenance rules added 2026-09-19
 
@@ -61,7 +113,7 @@ company" sentence for each application).
 - **Hero and first screen (2026-09-30, positioning step 1):** eyebrow is "Open to work · Remote worldwide";
   H1 is two lines (Port & Logistics Operations / Business Systems & Automation), followed by the mono line
   "AI-Assisted Product Builder" (user chose Builder over Engineer). `#credibility` has 3 metrics: 12+ years,
-  3 production systems, 8+ live deployments (portbill, opsflow91, clif91, salahsync, kitchenatlas,
+  3 production systems, 8+ live deployments (portbill, opsflow (opsflow.sasas.workers.dev; opsflow91.pages.dev no longer resolves), clif91, salahsync, kitchenatlas,
   outreach-copilot, englishmastery, this site; carview and otbill are extra). Recount if a deployment is
   retired. `#bring` opens with "Most developers learn software first. I learned the operation first." The
   decorative `.hm-flow` is hidden below 768px to keep the phone hero short.
@@ -162,7 +214,7 @@ company" sentence for each application).
 - **OpsFlow facts (checked 2026-09-29 against the private repo):** M0 done,
   M1 identity/RBAC done, M2 master-data and M3 fleet backends done; orders,
   trips, invoices, payments NOT built; no customers. It is labelled Building,
-  links to the live shell `opsflow91.pages.dev`, and its dashboard mockup is
+  links to the live shell `opsflow.sasas.workers.dev`, and its dashboard mockup is
   labelled fictional. Re-check the repo roadmap before changing that copy.
 - Fonts are self-hosted (`assets/fonts/*.woff2`, `css/fonts.css`, latin
   subset only). Do not re-add Google Fonts links — `_headers` sets a CSP with

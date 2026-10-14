@@ -434,12 +434,12 @@ def build_final_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "Business Process Automation Specialist", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Web Developer — Business Systems & Workflow Automation", CONTACT)
 
     add_section_heading(doc, "Professional Summary", space_before=0)
     add_body(
         doc,
-        "Business Process Automation Specialist with 12+ years of hands-on experience in "
+        "Web developer specialising in business process automation, with 12+ years of hands-on experience in "
         "cargo billing, vehicle and cargo tracking, revenue reporting and operational "
         "workflows at Mongla Port Authority (Traffic Department). Turns repetitive "
         "manual and Excel processes into working business systems: three self-built web "
@@ -540,7 +540,7 @@ def build_freelance_cv():
     doc = Document()
     set_base_style(doc)
 
-    add_name_header(doc, "MD Samiul Alam Sumel", "Business Process Automation Specialist — Web Systems & Internal Tools", CONTACT)
+    add_name_header(doc, "MD Samiul Alam Sumel", "Web Developer — Business Systems & Workflow Automation", CONTACT)
 
     add_section_heading(doc, "How I Work", space_before=0)
     add_body(
@@ -553,7 +553,7 @@ def build_freelance_cv():
         "manual step in a process that already runs — a paper form, a shared spreadsheet, a "
         "hand calculation — and replace it with a deployed tool the whole team can use. "
         "Every build gets manually tested against the real business rules and explained "
-        "back before I call it done. A business process automation specialist who builds "
+        "back before I call it done. A web developer who specialises in business process automation and builds "
         "web systems with AI-assisted development, backed by 3 web apps built for "
         "real daily use, not demos. Available for freelance and contract work worldwide, no "
         "time zone constraints.",

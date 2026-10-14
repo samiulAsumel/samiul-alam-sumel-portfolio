@@ -26,8 +26,6 @@
 .wf2sw > li b { display: block; color: var(--color-text); font-weight: var(--weight-semibold); }
 .wf2sw > li:nth-child(5) { border-color: var(--color-border-accent); }
 .wf2sw > li:last-child { border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
-.wf2sw-cap { margin-bottom: var(--space-3); font-family: var(--font-mono); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
-.wf2sw-wrap { margin-bottom: var(--space-8); }
 
 /* Four-step variant of the spreadsheet-to-system band */
 @media (min-width: 901px) { .x2s--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
@@ -64,3 +62,11 @@
   /* The worked example repeats the Port Billing and CarView case studies, which are one tap away */
   #how-i-build .hb-ex { display: none; }
 }
+
+/* Production cards read as a before/after: the quiet manual line, then the system line with the accent rule */
+.pcard__before, .pcard__after { font-size: var(--text-body-sm); }
+.pcard__before { color: var(--color-text-muted); }
+.pcard__after { padding-left: var(--space-4); border-left: 2px solid var(--color-accent); color: var(--color-text); font-weight: var(--weight-medium); }
+.pcard__before::before, .pcard__after::before { display: block; margin-bottom: 2px; font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; }
+.pcard__before::before { content: 'By hand'; }
+.pcard__after::before { content: 'Now'; color: var(--color-accent-text); }

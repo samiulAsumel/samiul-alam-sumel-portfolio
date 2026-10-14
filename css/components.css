@@ -147,6 +147,8 @@ a.card, .card--interactive, .vf-card, .dp-card { cursor: pointer; }
   color: var(--color-accent-text); text-decoration: underline; text-decoration-color: transparent;
   text-underline-offset: 3px; transition: text-decoration-color var(--dur-base) var(--ease-standard), color var(--dur-base) var(--ease-standard);
 }
+/* 24px minimum target height (WCAG 2.2 target size); inline links in running text are exempt */
+.link { min-height: 24px; }
 .link:hover { text-decoration-color: currentColor; }
 .link--muted { color: var(--color-text-2); }
 .link--muted:hover { color: var(--color-text); }

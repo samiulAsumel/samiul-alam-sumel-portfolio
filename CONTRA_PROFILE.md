@@ -130,7 +130,7 @@ implemented; orders and trips are in development; invoices, payments, outstandin
 reports are planned. A portfolio product project with no customers or revenue.
 
 **Tags:** TypeScript, React, Cloudflare Workers, Hono, D1
-**Links:** [Product page](https://sasumel.pages.dev/projects/opsflow) | [Early build](https://opsflow91.pages.dev)
+**Links:** [Product page](https://sasumel.pages.dev/projects/opsflow) | [Early build](https://opsflow.sasas.workers.dev)
 
 ## Other projects (shorter)
 

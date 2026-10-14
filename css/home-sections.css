@@ -11,15 +11,22 @@
 .hm-more__list li:hover { border-color: var(--color-border-accent); }
 .hm-more__list a { color: var(--color-text); text-decoration: none; font-weight: var(--weight-medium); font-size: var(--text-body-sm); }
 .hm-more__list a:hover { color: var(--color-accent-text); }
+/* Cards: name and status on one line, then what it is, the stack, and the repo link */
+.hm-more__list--cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--space-4); }
+.hm-more__list--cards li { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: var(--space-2); padding: var(--space-4) var(--space-5); }
+.hm-more__head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.hm-more__head a { font-size: var(--text-body); font-weight: var(--weight-semibold); }
+.hm-more__desc { font-size: var(--text-body-sm); color: var(--color-text-2); }
+.hm-more__stack { margin-top: auto; padding-top: var(--space-2); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); color: var(--color-text-muted); }
+.hm-more__repo { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); font-size: var(--text-body-sm); }
+.hm-more__list .hm-more__repo a { color: var(--color-accent-text); font-weight: var(--weight-regular); }
+.hm-more__all { margin-top: var(--space-5); font-size: var(--text-body-sm); }
 
 /* ---- OpsFlow preview ---- */
 .hm-ops { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: var(--space-10); align-items: center; }
 .hm-ops__copy { display: flex; flex-direction: column; gap: var(--space-4); align-items: flex-start; }
 .hm-ops__title { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4); font-size: var(--text-h1); letter-spacing: var(--tracking-display); }
 .hm-ops__sub { font-size: var(--text-body-lg); font-weight: var(--weight-medium); color: var(--color-text-2); }
-.hm-chain { list-style: none; display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.hm-chain li { padding: 2px var(--space-3); font-family: var(--font-mono); font-size: var(--text-caption); color: var(--color-text-2); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-sm); }
-.hm-chain li:not(:last-child)::after { content: '→'; content: '→' / ''; margin-left: var(--space-2); color: var(--color-accent-text); }
 .hm-ops__visual { min-width: 0; }
 .hm-ops__cap { margin-top: var(--space-3); }
 
@@ -45,10 +52,6 @@
 .hm-pill { display: inline-block; padding: 1px var(--space-2); font-style: normal; font-size: var(--text-meta); color: var(--color-info); background: var(--color-info-subtle); border-radius: var(--radius-sm); }
 .hm-pill--ok { color: var(--color-success); background: var(--color-success-subtle); }
 .hm-pill--warn { color: var(--color-warning); background: var(--color-warning-subtle); }
-
-/* ---- Experience preview ---- */
-.hm-exp { gap: var(--space-4); }
-.hm-exp .card__body { max-width: var(--measure); }
 .hm-exp__roles { list-style: none; }
 .hm-exp__roles li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-1) var(--space-4); padding: var(--space-3) 0; border-top: var(--border-default); color: var(--color-text-2); }
 .hm-exp__roles strong { color: var(--color-text); }
@@ -58,9 +61,6 @@
 .hm-contact { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-10); align-items: start; }
 .hm-contact__main { display: flex; flex-direction: column; gap: var(--space-5); }
 .hm-contact .ct-btns { margin-top: 0; }
-.hm-cv { list-style: none; }
-.hm-cv li { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) 0; border-top: var(--border-default); font-size: var(--text-body-sm); }
-.hm-cv li span { flex: 1; color: var(--color-text-2); }
 
 @media (max-width: 900px) {
   .hm-ops, .hm-contact { grid-template-columns: minmax(0, 1fr); gap: var(--space-9); }
@@ -73,19 +73,7 @@
 
 /* ---- Final polish: recruiter path links, contact routes, CV chooser ---- */
 .next-step { margin-top: var(--space-7); font-size: var(--text-body-sm); text-align: right; }
-.ct-paths { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-5); }
-.ct-paths li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) auto; gap: var(--space-3); align-items: baseline; padding: var(--space-3) 0; border-top: var(--border-default); font-size: var(--text-body-sm); }
-.ct-paths b { color: var(--color-text); font-weight: var(--weight-semibold); }
-.ct-paths span { color: var(--color-text-2); }
-.cv-pick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-5); }
-.cv-card { padding: var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
-.cv-card h3 { font-size: var(--text-body); letter-spacing: var(--tracking-heading); }
-.cv-card h3 small { display: block; font-family: var(--font-mono); font-size: var(--text-meta); font-weight: var(--weight-regular); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
-.cv-card p { margin-top: var(--space-2); font-size: var(--text-body-sm); color: var(--color-text-2); }
-.cv-card__dl { display: flex; gap: var(--space-4); }
 @media (max-width: 768px) {
-  .ct-paths li { grid-template-columns: minmax(0, 1fr); gap: var(--space-1); }
-  .cv-pick { grid-template-columns: minmax(0, 1fr); }
   .next-step { text-align: left; }
 }
 

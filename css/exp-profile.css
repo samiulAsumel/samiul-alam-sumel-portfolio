@@ -59,3 +59,9 @@
   .dm-hub { justify-content: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { .dm-panel:not([hidden]) { animation: none; } .ex-card:hover { transform: none; } }
+
+/* Homepage variant: every step is visible, so a skimmer reads the whole path without opening anything */
+.ev--flat { max-width: none; }
+.ev--flat .ev__list > li { padding-block: var(--space-3); }
+.ev--flat .ev__list > li b { display: block; color: var(--color-text); font-weight: var(--weight-semibold); }
+.ev--flat .ev__list > li p { margin-top: 2px; max-width: 62ch; font-size: var(--text-body-sm); color: var(--color-text-2); }

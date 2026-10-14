@@ -1,24 +1,15 @@
-/* ============================================================
-   Interaction layer (Step 8). One consistent set of hover, press and
-   focus states, using transform and opacity only. Loaded last so it
-   wins over section-specific rules. Nothing here is required to read
-   or use the page. Tokens only.
-   ============================================================ */
 
-/* ---- Cards that sit in grids: a 2px lift, never more ---- */
-.ex-card, .hm-bring__card, .of-mod, .pcard, .cap-group, .system-card, .hm-more__list li, .cs-grid > li, .ex-links li, .of-principles li, .ex-roles .card {
+.ex-card, .of-mod, .pcard, .cap-group, .hm-more__list li, .cs-grid > li, .ex-links li, .of-principles li, .ex-roles .card {
   transition: transform var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard);
 }
 @media (hover: hover) {
-  .ex-card:hover, .hm-bring__card:hover, .of-mod:hover, .pcard:hover, .cap-group:hover, .system-card:hover, .hm-more__list li:hover, .cs-grid > li:hover, .ex-links li:hover, .of-principles li:hover, .ex-roles .card:hover {
+.ex-card:hover, .of-mod:hover, .pcard:hover, .cap-group:hover, .hm-more__list li:hover, .cs-grid > li:hover, .ex-links li:hover, .of-principles li:hover, .ex-roles .card:hover {
     transform: translateY(-2px); border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated);
   }
 }
-.ex-card:active, .hm-bring__card:active, .of-mod:active, .pcard:active, .hm-more__list li:active { transform: translateY(0); box-shadow: var(--shadow-subtle); }
+.ex-card:active, .of-mod:active, .pcard:active, .hm-more__list li:active { transform: translateY(0); box-shadow: var(--shadow-subtle); }
 .hm-more__list li:focus-within, .ex-links li:focus-within { outline: 2px solid var(--color-accent); outline-offset: 2px; border-radius: var(--radius-md); }
-/* Card icons drift 2px on hover, on the icon only */
-.hm-bring__card .icon-wrap, .ex-card .icon-wrap { transition: transform var(--dur-base) var(--ease-out); }
-.hm-bring__card:hover .icon-wrap { transform: translateY(-2px); }
+.ex-card .icon-wrap { transition: transform var(--dur-base) var(--ease-out); }
 
 /* ---- Project cards: tags sharpen, preview shifts, the case-study cue underlines ---- */
 .pcard .badge { opacity: 0.85; transition: opacity var(--dur-base) var(--ease-standard), border-color var(--dur-base) var(--ease-standard); }
@@ -33,10 +24,9 @@
 .btn:hover .arw, .btn:focus-visible .arw { transform: translate(2px, -2px); }
 .btn[disabled], .btn[aria-disabled='true'] { transform: none; }
 
-/* ---- Hero flow: the active step takes an accent outline (compositor-only opacity; hero.js sets .is-active) ---- */
-.hm-flow__node::after { content: ''; position: absolute; inset: -1px; border: 1px solid var(--color-accent); border-radius: inherit; opacity: 0; pointer-events: none; transition: opacity var(--dur-base) var(--ease-standard); }
-.hm-flow__node.is-active::after { opacity: 0.8; }
-.hm-flow__node:hover::after { opacity: 0.45; }
+/* ---- Hero capability panel: the incoming panel fades in (opacity only) ---- */
+.hm-cap.is-enhanced .hm-cap__panel { transition: opacity var(--dur-base) var(--ease-standard), visibility 0s linear var(--dur-base); }
+.hm-cap.is-enhanced .hm-cap__panel.is-on { transition-delay: 0s; }
 
 /* ---- Experience timeline: a step fills in once it has been seen ---- */
 .ev__list > li::after { content: ''; position: absolute; left: calc(var(--space-7) * -1 - 2px); top: 0; bottom: 0; width: 2px; background: var(--color-accent); transform: scaleY(0); transform-origin: top; transition: transform var(--dur-draw) var(--ease-out); }
@@ -59,11 +49,10 @@
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 160ms; animation-timing-function: var(--ease-standard); }
 
 @media (prefers-reduced-motion: reduce) {
-  .hm-flow__node::after { transition: none; }
+  .hm-cap.is-enhanced .hm-cap__panel { transition: none; }
   #spb { transform: none; width: 0; }
   @view-transition { navigation: none; }
-  .ex-card:hover, .hm-bring__card:hover, .of-mod:hover, .pcard:hover, .cap-group:hover, .system-card:hover, .hm-more__list li:hover, .cs-grid > li:hover, .ex-links li:hover, .of-principles li:hover, .ex-roles .card:hover,
-  .pcard:hover .pcard__media .frame, .btn:hover .arw { transform: none; }
+.ex-card:hover, .of-mod:hover, .pcard:hover, .cap-group:hover, .hm-more__list li:hover, .cs-grid > li:hover, .ex-links li:hover, .of-principles li:hover, .ex-roles .card:hover, .pcard:hover .pcard__media .frame, .btn:hover .arw { transform: none; }
   .ev__list > li::after { transition: none; }
 }
 

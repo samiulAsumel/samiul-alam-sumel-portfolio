@@ -1,6 +1,6 @@
 /* ============================================================
-   Hero interactions: the pain word, the proof counters and the
-   step-through of the manual-to-system flow.
+   Hero interactions: the proof counters and the
+   "what do you need built" capability selector.
    Each effect runs once, then rests. The static HTML already holds
    the final state, so no-JS and reduced-motion visitors lose nothing.
    ============================================================ */
@@ -8,28 +8,6 @@
   'use strict'; // Same convention as main.js.
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* ---- Pain word: cycles through the listed words once and ends on the last (the static text) ---- */
-  const swap = document.querySelector('.hm-swap');
-  if (swap && !reduceMotion) {
-    const words = (swap.dataset.words || '').split('|').filter(Boolean);
-    let index = 0;
-    const next = () => {
-      if (index >= words.length - 1) return;
-      swap.classList.add('is-out');
-      window.setTimeout(() => {
-        index += 1;
-        swap.textContent = words[index];
-        swap.classList.remove('is-out');
-        window.setTimeout(next, 1300);
-      }, 220); // Matches --dur-base so the old word is fully hidden before the swap.
-    };
-    // The static word is the last in the list, so start from the first.
-    if (words.length > 1) {
-      swap.textContent = words[0];
-      window.setTimeout(next, 1300);
-    }
-  }
 
   /* ---- Proof counters: 0 to value over ~900ms, then exactly the published figure ---- */
   const counters = document.querySelectorAll('.hm-hero__proof [data-count]');
@@ -48,33 +26,42 @@
     window.requestAnimationFrame(tick);
   }
 
-  /* ---- Flow: steps through 01 to 05 once, then rests on "Live"; any hover, focus or click takes over ---- */
-  const flow = document.querySelector('.hm-flow');
-  const nodes = flow ? Array.from(flow.querySelectorAll('.hm-flow__node')) : [];
-  if (nodes.length) {
-    let current = -1;
+  /* ---- Capability selector: ARIA tabs; steps through the four needs once, then rests on the first.
+         Any hover, focus or click hands control to the visitor. ---- */
+  const cap = document.getElementById('hero-cap');
+  const tabs = cap ? Array.from(cap.querySelectorAll('[role="tab"]')) : [];
+  const panels = cap ? Array.from(cap.querySelectorAll('[role="tabpanel"]')) : [];
+  if (tabs.length && tabs.length === panels.length) {
+    cap.classList.add('is-enhanced');
     let timer = 0;
-    const show = i => {
-      current = i;
-      nodes.forEach((node, n) => node.classList.toggle('is-active', n === i));
-      const node = nodes[i];
-      flow.style.setProperty('--dot-y', `${node.offsetTop + node.offsetHeight / 2}px`);
+    const select = (i, focus) => {
+      tabs.forEach((tab, n) => {
+        const isOn = n === i;
+        tab.setAttribute('aria-selected', String(isOn));
+        tab.tabIndex = isOn ? 0 : -1;
+        panels[n].classList.toggle('is-on', isOn);
+      });
+      if (focus) tabs[i].focus();
     };
     const stop = () => { window.clearTimeout(timer); timer = 0; };
-    const advance = () => {
-      if (current >= nodes.length - 1) return;
-      show(current + 1);
-      timer = window.setTimeout(advance, 1500);
+    const advance = i => {
+      if (i >= tabs.length) { select(0); return; }
+      select(i);
+      timer = window.setTimeout(() => advance(i + 1), 3200); // Long enough to read one Before/After pair.
     };
 
-    nodes.forEach((node, i) => {
-      node.addEventListener('click', () => { stop(); show(i); });
-      node.addEventListener('focus', () => { stop(); show(i); });
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => { stop(); select(i); });
+      tab.addEventListener('keydown', event => {
+        const keys = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+        if (!(event.key in keys)) return;
+        event.preventDefault();
+        stop();
+        select((keys[event.key] + tabs.length) % tabs.length, true);
+      });
     });
-    flow.addEventListener('pointerenter', stop);
+    ['pointerenter', 'focusin'].forEach(type => cap.addEventListener(type, stop));
 
-    if (reduceMotion) show(nodes.length - 1);
-    else { show(0); timer = window.setTimeout(advance, 1500); }
-    window.addEventListener('resize', () => { if (current >= 0) show(current); }, { passive: true });
+    if (!reduceMotion) timer = window.setTimeout(() => advance(1), 3200);
   }
 })();

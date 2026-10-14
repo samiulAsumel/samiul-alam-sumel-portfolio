@@ -1,12 +1,12 @@
-# MD Samiul Alam Sumel — Business Process Automation
+# MD Samiul Alam Sumel — Web Developer, Business Systems & Workflow Automation
 
-> MD Samiul Alam Sumel is a business process automation specialist. Samiul turns manual work (spreadsheets, paper forms, hand calculations) into web systems that teams use every day. Samiul has 12+ years of operations experience at Mongla Port Authority, Bangladesh, and is open to remote work worldwide.
+> MD Samiul Alam Sumel is a full-stack web developer who builds business systems and internal tools. Samiul turns manual work (spreadsheets, paper forms, hand calculations) into web systems that teams use every day. Samiul has 12+ years of operations experience at Mongla Port Authority, Bangladesh, and is open to remote work worldwide.
 
-This file summarises facts published on https://sasumel.pages.dev/. Case studies describe real systems; CarView and OT Bill are shown only as synthetic mockups with fictional figures.
+This file summarises facts published on https://sasumel.pages.dev/. Case studies describe real systems. The homepage shows real screenshots of Port Billing, CarView and OT Bill; the CarView and OT Bill case-study pages use illustrative mockups with fictional figures.
 
 ## Key facts
 - Role: Senior Outdoor Assistant (Revenue Branch), Traffic Department, Mongla Port Authority (since November 2013).
-- Focus: business process automation, web systems and internal tools, AI-assisted development.
+- Focus: web development for business systems and internal tools, business process automation, AI-assisted development.
 - Systems in daily use: 3 (port billing, vehicle tracking, overtime billing).
 - Live deployments: 8+ public web applications.
 

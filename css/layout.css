@@ -68,12 +68,6 @@
 .bg-layer, #bg-fx { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .bg-layer::before, #bg-fx::before {
   content: ''; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 70% 40% at 50% -10%, var(--color-accent-subtle), transparent 70%),
-    linear-gradient(var(--color-border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
   background-size: auto, 72px 72px, 72px 72px;
   opacity: 0.55;
-  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 75%);
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, #000 0%, transparent 75%);
 }

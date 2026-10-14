@@ -1,13 +1,13 @@
 {
   "name": "Samiul Alam Sumel — Portfolio",
   "short_name": "Sumel",
-  "description": "Port & Logistics Operations Specialist — 12+ years of port operations experience, building business systems and AI-assisted software. Open to international and remote opportunities.",
+  "description": "Web developer for business systems and workflow automation, with 12+ years of port operations experience. Open to international and remote opportunities.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0a0c11",
-  "theme_color": "#0a0c11",
+  "background_color": "#0B0F14",
+  "theme_color": "#0B0F14",
   "lang": "en",
   "categories": ["portfolio", "resume", "business", "productivity"],
   "icons": [

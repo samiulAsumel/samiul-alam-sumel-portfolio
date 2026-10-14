@@ -34,6 +34,36 @@ company" sentence for each application).
   in the CarView offline sentence (the analyzer's trust-signal check keys on it). FAQ ends with the measured Lighthouse sentence: re-measure before changing it.
 - Cannot be fixed: CAA record (pages.dev), SRI for the auto-injected Cloudflare beacon.
 
+## Design system (2026-10-14, explicit user instruction: DESIGN.md)
+
+`DESIGN.md` (repo root, listed in `.git/info/exclude`, not public) is the colour/type/spacing rulebook. It **supersedes** every older
+style note in this file (orange accent, light theme, shadows, gradients, justified body copy, 1200px container).
+
+- Dark only; one accent `#4DB8D0` (cyan). Primitives live in `css/tokens.css`; older `--color-*` / legacy names are aliases of
+  them. Light theme, theme toggle (button, `main.js`, palette action, `theme-color` light meta) are gone.
+- No shadows (only `--shadow-modal`), gradients, blur, keyframe animations, view transitions or scroll-reveal. Spacing, radius
+  and font sizes are mapped onto the DESIGN.md scales (spacing 4/8/12/16/24/32/48/72/112; radius 8 and 12; container 1120).
+- **Deliberate exceptions (user decisions):** the hero keeps its count-up numbers, auto-stepping selector, hero fade-in and
+  justified lead paragraphs ("keep the hero's look"); CarView, OT Bill and Port Billing screenshots show the real live apps
+  (captioned honestly) instead of "fictional data".
+- **Derived values not literally in DESIGN.md:** `color-mix()` tints of the accent / status colours / muted text for subtle
+  fills and borders; `--radius-full` for status dots; repeated spacing steps (the old 13 steps collapse onto 9 values);
+  favicon.svg and the app icons use two extra teal shades (`#2E7C8E`, `#1a3a5c`) and `#030a14`; `.link` has a 24px minimum height.
+- Banned and removed: "From workflow to software" chain on the three case studies (same diagram on several pages).
+- Re-check contrast with Lighthouse (cached `lighthouse` under `~/.npm/_npx`) after any colour change; 10 pages scored 100 for
+  accessibility on 2026-10-14. Brand assets (`og-image.png`, icons, `favicon.svg`, `assets/brand-mark.svg`) are cyan.
+
+## Contact composer (2026-10-15, explicit user instruction)
+
+Layout (2026-10-15): left column = hook, availability (with "Based in Mongla, Bangladesh (UTC+6)") and the composer; right column
+= "Elsewhere" links (LinkedIn, GitHub, Port Billing) plus the CV picker. The Email and Phone / WhatsApp rows live inside the composer and
+ARE the send actions (`#cc-mail`, `#cc-wa`); there is no separate button pair.
+`#compose` in `#contact` replaced the old "Contact Me / Copy email" buttons and the "Ways to work together" tree. The visitor picks a
+purpose (hiring, business system, logistics product, other); `js/contact.js` writes a short WhatsApp message (`wa.me/8801312312512`)
+and a detailed email (`mailto:` with subject and body), both editable under "Preview and edit the messages", with Copy buttons and a
+note to fill the `[brackets]`. Without JavaScript the two plain links still work. Nothing is sent or stored by the page. Message
+templates live in `contact.js`; keep them honest (no promises about price, speed or availability).
+
 ## Site-wide consistency pass (2026-10-14, explicit user instruction: keep the hero as is, fix everything, no duplicate sections)
 
 - **Identity everywhere:** "Web Developer · Business Systems & Workflow Automation" (nav badge "Web Developer", footer tagline,

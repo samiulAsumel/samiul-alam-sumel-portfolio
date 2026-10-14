@@ -11,69 +11,6 @@
   // assigning to an undeclared variable, and disallows some legacy syntax.
 
   /* ----------------------------------------------------------
-     THEME TOGGLE
-     Lets the visitor switch between light/dark mode and remembers
-     their choice across visits using localStorage.
-  ---------------------------------------------------------- */
-  const THEME_KEY = 'sas-theme'; // localStorage key used to persist the theme.
-  const root = document.documentElement; // The <html> element — theme is set here via a data-attribute so CSS can react to it globally.
-  const themeToggle = document.getElementById('theme-tgl'); // The button the user clicks to flip the theme.
-
-  // Reads the previously saved theme ('light' | 'dark' | null) from
-  // localStorage. Wrapped in try/catch because some browsers throw when
-  // localStorage is blocked (e.g. private browsing mode, disabled cookies).
-  function readStoredTheme() {
-    try {
-      return window.localStorage.getItem(THEME_KEY);
-    } catch (err) {
-      return null; // Fail silently — theme simply won't be remembered.
-    }
-  }
-
-  // Persists the chosen theme so it survives page reloads/future visits.
-  function storeTheme(value) {
-    try {
-      window.localStorage.setItem(THEME_KEY, value);
-    } catch (err) {
-      /* private mode / storage disabled — theme just won't persist */
-    }
-  }
-
-  // Checks the OS/browser-level color scheme preference, used as the
-  // fallback when the user hasn't explicitly picked a theme on this site.
-  function systemPrefersDark() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
-  // Applies the theme to the page by toggling a `data-theme` attribute on
-  // <html>. The CSS file keys its dark/light variable overrides off this
-  // attribute. Passing anything other than 'light'/'dark' (e.g. null on
-  // first visit) removes the attribute entirely, letting the CSS fall back
-  // to the OS-level `prefers-color-scheme` media query.
-  function applyTheme(value) {
-    if (value === 'light' || value === 'dark') {
-      root.setAttribute('data-theme', value);
-    } else {
-      root.removeAttribute('data-theme');
-    }
-  }
-
-  // On page load: apply whatever theme (if any) was saved from a previous visit.
-  const storedTheme = readStoredTheme();
-  applyTheme(storedTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      // Determine the theme currently in effect: explicit data-theme attribute
-      // if set, otherwise infer from the OS preference.
-      const current = root.getAttribute('data-theme') || (systemPrefersDark() ? 'dark' : 'light');
-      const next = current === 'dark' ? 'light' : 'dark'; // Simple toggle between the two.
-      applyTheme(next);
-      storeTheme(next);
-    });
-  }
-
-  /* ----------------------------------------------------------
      NAV STATE
      Toggles the navbar's "scrolled" style. The progress bar and the
      active-section highlighting live in ux.js (IntersectionObserver and
@@ -364,7 +301,7 @@
     {group: 'Action', icon: 'i-github', label: 'Open GitHub', href: 'https://github.com/samiulAsumel', external: true},
     {group: 'Action', icon: 'i-linkedin', label: 'Open LinkedIn', href: 'https://linkedin.com/in/samiul-alam-sumel', external: true},
     {group: 'Action', icon: 'i-mail', label: 'Email sa.sumel91@gmail.com', href: 'mailto:sa.sumel91@gmail.com', external: true},
-    {group: 'Action', icon: 'i-moon-star', label: 'Toggle light / dark theme', action: 'theme'}
+
     ];
     const svgNs = 'http://www.w3.org/2000/svg';
     CMDK_ITEMS.forEach(entry => {
@@ -422,11 +359,6 @@
     // tab, jumping to an in-page anchor, or navigating to another URL.
     function runItem(item) {
       if (!item) return;
-      if (item.dataset.action === 'theme' && themeToggle) {
-        themeToggle.click(); // Reuse the existing theme-toggle button's own click handler rather than duplicating its logic.
-        closeCmdk();
-        return;
-      }
       const href = item.dataset.href;
       if (!href) return;
       if (item.dataset.download === 'true') {

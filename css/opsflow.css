@@ -24,7 +24,7 @@
 .of-flow .hb__head { flex-wrap: wrap; }
 .of-flow .hb__head .mstat { margin-left: auto; }
 .of-dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--space-4); }
-.of-dl dt { margin-bottom: 2px; font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
+.of-dl dt { margin-bottom: var(--space-1); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
 .of-dl dd { font-size: var(--text-body-sm); color: var(--color-text-2); }
 
 /* ---- Modules ---- */

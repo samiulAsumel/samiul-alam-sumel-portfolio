@@ -24,7 +24,7 @@
 /* Open-to-work signal lives in the eyebrow so the first line already answers "what is he after" */
 .hm-hero__open { display: flex; align-items: center; gap: var(--space-3); }
 /* Two-tier headline: the operations role is the headline, the second line is the supporting positioning */
-.hm-hero__role { font-size: clamp(1.9rem, 1.4rem + 1.9vw, 3rem); }
+.hm-hero__role { font-size: var(--text-display); }
 .hm-hero__role-2 { display: block; margin-top: var(--space-2); font-size: 0.62em; font-weight: var(--weight-medium); letter-spacing: var(--tracking-heading); color: var(--color-text-2); }
 .hm-hero__tech { margin-bottom: var(--space-5); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
 .hm-hero__cta { margin-bottom: var(--space-5); }
@@ -35,13 +35,13 @@
 
 /* Proof chips: the three published numbers, readable before any scrolling */
 .hm-hero__proof { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, auto)); justify-content: start; gap: var(--space-6); margin-bottom: var(--space-6); }
-.hm-hero__proof li { display: flex; flex-direction: column; gap: 2px; padding-left: var(--space-4); border-left: 2px solid var(--color-border-accent); }
+.hm-hero__proof li { display: flex; flex-direction: column; gap: var(--space-1); padding-left: var(--space-4); border-left: 2px solid var(--color-border-accent); }
 .hm-hero__proof strong { font-family: var(--font-mono); font-size: var(--text-h2); font-weight: var(--weight-bold); line-height: 1; font-variant-numeric: tabular-nums; color: var(--color-text); }
 .hm-hero__proof span { font-size: var(--text-caption); color: var(--color-text-muted); max-width: 14ch; }
 
 /* Hero capability selector: the visitor picks a problem and sees the before, the after and the proof.
    All panels share one grid cell so the card keeps the height of the tallest and never jumps. */
-.hm-cap { padding: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-elevated); }
+.hm-cap { padding: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); }
 .hm-cap__title { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
 .hm-cap__tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4) var(--space-5); }
 .hm-cap:not(.is-enhanced) .hm-cap__tabs { display: none; }
@@ -69,7 +69,6 @@
 .hm-cap__ba dt { margin-bottom: var(--space-1); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); text-transform: uppercase; }
 .hm-cap__after dt { color: var(--color-accent-text); }
 .hm-cap__proof { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); font-size: var(--text-body-sm); }
-@keyframes hm-dash { to { background-position: 12px 0; } }
 
 /* ---- Approach ---- */
 .hm-note { max-width: var(--measure); margin-top: var(--space-8); padding-left: var(--space-5); border-left: 2px solid var(--color-border-accent); color: var(--color-text-2); }

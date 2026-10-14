@@ -23,10 +23,6 @@
 .principle__list li { counter-increment: pr; padding: var(--space-2) var(--space-3); font-size: var(--text-body-sm); color: var(--color-text); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md); }
 .principle__list li::before { content: counter(pr) '  '; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-accent-text); }
 
-/* ---- Nine-step AI workflow reuses .wf2sw as a 3 x 3 grid ---- */
-.hb-ai .wf2sw { margin-top: var(--space-6); }
-@media (min-width: 901px) { .wf2sw--nine { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-
 /* ---- Technology by system: a trail from system to the technology it shows ---- */
 .trails { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6); }
 .trails > li { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: var(--space-4); align-items: center; padding: var(--space-3) var(--space-4); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }

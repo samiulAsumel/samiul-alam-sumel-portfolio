@@ -31,14 +31,14 @@
 .hm-ops__cap { margin-top: var(--space-3); }
 
 /* Interface concept: neutral chrome, no traffic-light colours, fictional rows only */
-.hm-app { background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); box-shadow: var(--shadow-floating); overflow: hidden; }
+.hm-app { background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); overflow: hidden; }
 .hm-app__bar { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border-bottom: var(--border-default); }
 .hm-app__bar span { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--color-border-strong); }
 .hm-app__bar em { margin-left: var(--space-2); font-style: normal; font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-text-muted); }
 .hm-app__bar b { margin-left: auto; flex-shrink: 0; }
 .hm-app__bar em { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hm-app__body { display: grid; grid-template-columns: 9rem minmax(0, 1fr); }
-.hm-app__nav { list-style: none; padding: var(--space-3); border-right: var(--border-default); display: flex; flex-direction: column; gap: 2px; }
+.hm-app__nav { list-style: none; padding: var(--space-3); border-right: var(--border-default); display: flex; flex-direction: column; gap: var(--space-1); }
 .hm-app__nav li { padding: var(--space-2) var(--space-3); font-size: var(--text-caption); color: var(--color-text-muted); border-radius: var(--radius-sm); }
 .hm-app__nav .is-on { color: var(--color-accent-text); background: var(--color-accent-subtle); }
 .hm-app__main { padding: var(--space-4); display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
@@ -58,9 +58,8 @@
 .hm-exp__roles span { font-family: var(--font-mono); font-size: var(--text-meta); color: var(--color-text-muted); }
 
 /* ---- Contact ---- */
-.hm-contact { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: var(--space-10); align-items: start; }
+.hm-contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-10); align-items: start; }
 .hm-contact__main { display: flex; flex-direction: column; gap: var(--space-5); }
-.hm-contact .ct-btns { margin-top: 0; }
 
 @media (max-width: 900px) {
   .hm-ops, .hm-contact { grid-template-columns: minmax(0, 1fr); gap: var(--space-9); }
@@ -86,6 +85,32 @@
 .cvtree__dl { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-3); }
 
 /* Contact paths: the button must not stretch across the single-column tree row. */
-.ctree .btn { justify-self: start; margin-top: var(--space-3); }
 /* Buttons inside the trees stay compact without a separate size class */
 .cvtree .btn { min-height: 36px; padding: 0 var(--space-4); font-size: var(--text-body-sm); }
+
+/* ---- Contact composer: purpose chips, WhatsApp and email actions, editable previews ---- */
+.ct-compose { display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
+.ct-compose__t { font-size: var(--text-h3); line-height: var(--leading-heading); }
+.ct-compose__lead { color: var(--color-text-muted); max-width: var(--measure); }
+.cc-purpose { display: flex; flex-wrap: wrap; gap: var(--space-2); border: 0; padding: 0; margin: 0; }
+.cc-chip { position: relative; display: inline-flex; }
+.cc-chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.cc-chip span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-4); font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-text-muted); background: transparent; border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); transition: border-color var(--dur-base) var(--ease-standard), color var(--dur-base) var(--ease-standard), background var(--dur-base) var(--ease-standard); }
+.cc-chip:hover span { color: var(--color-text); }
+.cc-chip input:checked + span { color: var(--color-text); border-color: var(--color-accent); background: var(--color-accent-subtle); }
+.cc-chip input:focus-visible + span { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.cc-actions { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+.cc-edit[hidden] { display: none; }
+.cc-edit { border-top: var(--border-default); padding-top: var(--space-4); }
+.cc-edit summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-accent-text); }
+.cc-edit summary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: var(--radius-md); }
+.cc-pane { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-4); }
+.cc-pane label { font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-text); }
+.cc-pane input, .cc-pane textarea { width: 100%; padding: var(--space-3); font: inherit; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-text); background: var(--color-bg); border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); resize: vertical; }
+.cc-pane input:focus-visible, .cc-pane textarea:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+.cc-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-3); font-size: var(--text-caption); color: var(--color-text-muted); }
+.cc-note { font-size: var(--text-caption); color: var(--color-text-muted); }
+.clk-h { margin-top: var(--space-1); font-size: var(--text-caption); color: var(--color-text-muted); }
+.cl { display: flex; flex-direction: column; gap: var(--space-3); }
+.cl__t { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-text-muted); }
+.cl .cvtree { margin-top: var(--space-4); }

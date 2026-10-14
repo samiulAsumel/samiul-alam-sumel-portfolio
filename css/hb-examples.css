@@ -10,7 +10,6 @@
 /* Segmented control: two examples share one row of tab buttons */
 .hb-ex__tabs { display: inline-flex; flex-wrap: wrap; gap: var(--space-1); padding: var(--space-1); margin-bottom: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-lg); }
 .hb-ex__tabs .tab { flex-direction: row; align-items: center; padding: var(--space-2) var(--space-5); }
-.hb-ex__panel:not([hidden]) { animation: hb-in var(--dur-slow) var(--ease-out); }
 .hb-ex__steps { list-style: none; counter-reset: hb-ex; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--space-4); }
 .hb-ex__steps > li {
   counter-increment: hb-ex; display: flex; flex-direction: column; gap: var(--space-2); padding: var(--card-pad);
@@ -23,9 +22,6 @@
 .hb-ex__steps p { font-size: var(--text-body-sm); color: var(--color-text-2); }
 .hb-ex__result { border-color: var(--color-border-accent) !important; background: var(--color-accent-subtle) !important; }
 .hb-ex__chips { list-style: none; gap: var(--space-2); }
-@media (prefers-reduced-motion: reduce) {
-  .hb-ex__panel:not([hidden]) { animation: none; }
-}
 
 /* Ship card: the live badge and the case-study link sit on one line */
 .hb-ex__proof { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); margin-top: auto; }

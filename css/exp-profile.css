@@ -22,9 +22,8 @@
 .dm-tabs .tab { flex-direction: row; align-items: center; padding: var(--space-2) var(--space-4); border-color: var(--color-border); background: var(--color-surface); }
 .dm-tabs .tab.is-active { transform: none; }
 .dm-panels { margin-top: var(--space-6); }
-.dm-panel { padding: var(--space-6); background: var(--color-surface-raised); border: var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-subtle); }
+.dm-panel { padding: var(--space-6); background: var(--color-surface-raised); border: var(--border-default); border-radius: var(--radius-xl); }
 .dm-panel[hidden] { display: none; }
-.dm-panel:not([hidden]) { animation: hb-in var(--dur-slow) var(--ease-out); }
 .dm-panel h3 { margin-bottom: var(--space-4); font-size: var(--text-h3); }
 .dm-panel ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--space-3); }
 .dm-panel li { padding: var(--space-3) var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
@@ -49,7 +48,7 @@
 /* ---- Domain expertise cards ---- */
 .ex-cards { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--space-4); }
 .ex-card { display: flex; flex-direction: column; gap: var(--space-2); }
-.ex-card:hover { transform: translateY(-2px); border-color: var(--color-border-accent); box-shadow: var(--shadow-elevated); }
+.ex-card:hover { transform: translateY(-2px); border-color: var(--color-border-accent); }
 .ex-card h3 { font-size: var(--text-h4); }
 .ex-card p { font-size: var(--text-body-sm); color: var(--color-text-2); }
 
@@ -58,10 +57,10 @@
   .dm-tabs::before { display: none; }
   .dm-hub { justify-content: flex-start; }
 }
-@media (prefers-reduced-motion: reduce) { .dm-panel:not([hidden]) { animation: none; } .ex-card:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .ex-card:hover { transform: none; } }
 
 /* Homepage variant: every step is visible, so a skimmer reads the whole path without opening anything */
 .ev--flat { max-width: none; }
 .ev--flat .ev__list > li { padding-block: var(--space-3); }
 .ev--flat .ev__list > li b { display: block; color: var(--color-text); font-weight: var(--weight-semibold); }
-.ev--flat .ev__list > li p { margin-top: 2px; max-width: 62ch; font-size: var(--text-body-sm); color: var(--color-text-2); }
+.ev--flat .ev__list > li p { margin-top: var(--space-1); max-width: 62ch; font-size: var(--text-body-sm); color: var(--color-text-2); }

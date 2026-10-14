@@ -6,7 +6,6 @@
 .of-preview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-6); }
 .of-preview figure { display: flex; flex-direction: column; gap: var(--space-3); }
 .of-preview figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-size: var(--text-caption); color: var(--color-text-muted); }
-.of-preview .frame { box-shadow: var(--shadow-subtle); }
 
 @media (max-width: 800px) { .of-preview { grid-template-columns: minmax(0, 1fr); } }
 
@@ -25,7 +24,7 @@
 /* Principles */
 .of-principles { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: var(--space-3); }
 .of-principles li { padding: var(--space-4); font-size: var(--text-body-sm); color: var(--color-text-2); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-md); }
-.of-principles b { display: block; margin-bottom: 2px; font-size: var(--text-body); color: var(--color-text); }
+.of-principles b { display: block; margin-bottom: var(--space-1); font-size: var(--text-body); color: var(--color-text); }
 
 /* Tenancy */
 .of-tenants { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); margin-bottom: var(--space-5); }

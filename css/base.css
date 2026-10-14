@@ -48,11 +48,7 @@ p { text-wrap: pretty; }
 
 ::selection { background: var(--color-accent); color: var(--color-on-accent); }
 
-/* Long-form paragraphs stay justified (site rule) but never leave a stretched last line */
-.ab-text p, .svc-intro, .svc-desc, .pc-ds, .dc-note, .ct-text p, .mtd-p, .mtd-intro, .vf-note,
-.cs-block-p, .cs-sent, .work-intro, .story-intro, .rm-intro, .dm-intro, .ai-eng-p {
-  text-align: justify; text-align-last: left; hyphens: auto; -webkit-hyphens: auto; -ms-hyphens: auto;
-}
+/* Long text stays left-aligned (DESIGN.md). The hero paragraphs set their own alignment in home.css. */
 
 /* ---- Scrollbar ---- */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -86,19 +82,14 @@ p { text-wrap: pretty; }
 /* ---- Icons (inline sprite, referenced via <use>) ---- */
 svg.icon {
   width: 1em; height: 1em; display: inline-block; vertical-align: -0.14em; flex-shrink: 0;
-  fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; overflow: visible;
+  fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; overflow: visible;
 }
 svg.icon.icon-brand { fill: currentColor; stroke: none; }
 
-/* ---- Scroll reveal: opacity + short translate only (no blur/scale) ---- */
-.fi, .fl, .fr {
-  opacity: 0;
-  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
-}
-.fi { transform: translateY(var(--reveal-distance)); }
-.fl { transform: translateX(calc(var(--reveal-distance) * -1)); }
-.fr { transform: translateX(var(--reveal-distance)); }
-.fi.v, .fl.v, .fr.v { opacity: 1; transform: none; }
+/* ---- Reveal: only the hero fades in; every other section is visible on load ---- */
+.fi, .fl, .fr { opacity: 1; transform: none; }
+#hero .fi { opacity: 0; transform: translateY(var(--reveal-distance)); transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out); }
+#hero .fi.v { opacity: 1; transform: none; }
 
 /* ---- Windows High Contrast ---- */
 @media (forced-colors: active) {
@@ -109,19 +100,20 @@ svg.icon.icon-brand { fill: currentColor; stroke: none; }
 /* ---- Reduced motion: keep everything usable, drop the movement ---- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important; scroll-behavior: auto !important;
   }
-  .fi, .fl, .fr { opacity: 1; transform: none; transition: none; }
+  #hero .fi { opacity: 1; transform: none; transition: none; }
 }
 
 /* ---- Print ---- */
-@media print {
-  #nb, #spb, .bg-layer, .hbg, .mob, .ft-top, .theme-tgl, .totop { display: none !important; }
-  body { background: #fff; color: #111; }
-  .section, .sec { padding: 28px 0; }
+@media print {#nb, #spb, .bg-layer, .hbg, .mob, .ft-top, .totop { display: none !important; }
+  body { background: Canvas; color: CanvasText; }
+  .section, .sec { padding: var(--space-5) 0; }
   .sec::before, .sec::after { display: none; }
   .fi, .fl, .fr { opacity: 1; transform: none; }
-  a[href]::after { content: ' (' attr(href) ')'; font-size: 0.7rem; color: #555; }
+  a[href]::after { content: ' (' attr(href) ')'; font-size: var(--text-meta); color: GrayText; }
   .pc-lk[href]::after, .clk[href]::after { content: none; }
 }
+
+/* Links inside running text are underlined (DESIGN.md) */
+p a:not(.btn):not(.link) { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }

@@ -34,6 +34,15 @@ company" sentence for each application).
   in the CarView offline sentence (the analyzer's trust-signal check keys on it). FAQ ends with the measured Lighthouse sentence: re-measure before changing it.
 - Cannot be fixed: CAA record (pages.dev), SRI for the auto-injected Cloudflare beacon.
 
+## Hero interactions (2026-10-14, explicit user instruction)
+
+- `js/hero.js` (homepage only): `.hm-swap` cycles spreadsheet / paper form / hand once and ends on the static word `hand`;
+  `.hm-hero__proof` counters (12+, 3, 8+) count up once and end on the published figures; `.hm-flow` steps 01 to 05 once,
+  rests on "Live", and hover/focus/click takes over. Everything is a one-shot, so the "nothing continuous" motion rule holds;
+  the old looping dot and outline keyframes were removed. Chip numbers must match `#credibility`; recount both together.
+  Flow nodes are `<button>`s (keyboard reachable). Lighthouse was NOT re-measured after this change; the FAQ sentence still
+  cites the earlier measurement, so re-measure before keeping it.
+
 ## Site maintenance rules added 2026-09-19
 
 - **Homepage is 8 sections (2026-09-29, step 2):** `#hero`, `#credibility`,

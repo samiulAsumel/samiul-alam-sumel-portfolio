@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sas-portfolio-v112';
+const CACHE_NAME = 'sas-portfolio-v115';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
@@ -17,6 +17,7 @@ const PRECACHE_ASSETS = [
   './js/opsflow.js',
   './js/capabilities.js',
   './js/ux.js',
+  './js/hero.js',
   './favicon.svg',
   './icon-192.png',
   './icon-512.png',

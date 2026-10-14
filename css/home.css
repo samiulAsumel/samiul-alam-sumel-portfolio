@@ -34,21 +34,37 @@
 .hm-hero__avail { display: flex; align-items: center; gap: var(--space-3); font-size: var(--text-caption); color: var(--color-text-muted); }
 .hm-dot { width: 7px; height: 7px; border-radius: var(--radius-full); background: var(--color-success); flex-shrink: 0; }
 
-/* Hero visual: layered nodes on a vertical rail; the travelling dot is purely ornamental */
+/* Rotating pain word: a fill-in-the-blank. min-width stops the paragraph reflowing as the word changes */
+.hm-swap {
+  display: inline-block; min-width: 11ch; text-align: left; color: var(--color-accent-text); font-weight: var(--weight-semibold);
+  border-bottom: 2px solid var(--color-border-accent); transition: opacity var(--dur-base) var(--ease-standard), transform var(--dur-base) var(--ease-standard);
+}
+.hm-swap.is-out { opacity: 0; transform: translateY(-4px); }
+
+/* Proof chips: the three published numbers, readable before any scrolling */
+.hm-hero__proof { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, auto)); justify-content: start; gap: var(--space-6); margin-bottom: var(--space-6); }
+.hm-hero__proof li { display: flex; flex-direction: column; gap: 2px; padding-left: var(--space-4); border-left: 2px solid var(--color-border-accent); }
+.hm-hero__proof strong { font-family: var(--font-mono); font-size: var(--text-h2); font-weight: var(--weight-bold); line-height: 1; font-variant-numeric: tabular-nums; color: var(--color-text); }
+.hm-hero__proof span { font-size: var(--text-caption); color: var(--color-text-muted); max-width: 14ch; }
+
+/* Hero visual: steps on a vertical rail; the dot marks the active step */
 .hm-flow {
   position: relative; display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5);
   background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); box-shadow: var(--shadow-elevated);
 }
 .hm-flow::before { content: ''; position: absolute; top: var(--space-6); bottom: var(--space-6); left: calc(var(--space-5) + 4px); width: 2px; background: var(--color-border-strong); }
+/* The dot rides to the active step; JS writes --dot-y, so only transform animates */
 .hm-flow::after {
-  content: ''; position: absolute; left: calc(var(--space-5) + 2px); top: var(--space-6); width: 6px; height: 6px;
-  border-radius: var(--radius-full); background: var(--color-accent); animation: hm-travel 7s var(--ease-standard) infinite;
+  content: ''; position: absolute; left: calc(var(--space-5) + 2px); top: 0; width: 6px; height: 6px; margin-top: -3px;
+  border-radius: var(--radius-full); background: var(--color-accent); transform: translateY(var(--dot-y, 0px));
+  transition: transform var(--dur-slow) var(--ease-standard);
 }
-@keyframes hm-travel { 0% { top: 6%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 94%; opacity: 0; } }
 .hm-flow__node {
   position: relative; display: flex; flex-direction: column; gap: 2px; margin-left: var(--space-7);
   padding: var(--space-3) var(--space-4); background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md);
+  font: inherit; text-align: left; color: inherit; cursor: pointer;
 }
+.hm-flow__node:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 .hm-flow__node::before {
   content: ''; position: absolute; top: 50%; left: calc(var(--space-7) * -1); width: 10px; height: 10px; margin-top: -5px;
   border-radius: var(--radius-full); background: var(--color-bg); border: 2px solid var(--color-border-strong);
@@ -129,12 +145,16 @@
   .hm-cred__item { padding: var(--space-5) var(--space-4); }
   .hm-cred__item + .hm-cred__item { border-left: 0; border-top: var(--border-default); }
   .hm-hero__cta .btn { flex: 1 1 100%; }
-  /* Decorative only (aria-hidden); on phones it would double the hero height before the metrics */
+  .hm-hero__proof { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+  .hm-hero__proof li { padding-left: var(--space-3); }
+  .hm-hero__proof strong { font-size: var(--text-h3); }
+  /* On phones the flow would double the hero height before the metrics */
   .hm-flow { display: none; }
   /* Justified + hyphenated copy leaves rivers in a narrow column */
   .hm-hero__body { text-align: left; hyphens: manual; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hm-flow::after { display: none; }
+  .hm-flow::after { transition: none; }
+  .hm-swap { transition: none; }
   .hm-combo__mid li::before, .hm-combo__mid li::after { animation: none; }
 }

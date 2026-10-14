@@ -1,5 +1,9 @@
-# Never publish private visa/learning docs from the samiul-alam-sumel-portfolio project
+# Never publish private learning and job-search documents
 private/
+
+# Local design rulebook and browser-test output (not part of the public site)
+DESIGN.md
+.playwright-mcp/
 
 # Local Wrangler CLI cache
 .wrangler/

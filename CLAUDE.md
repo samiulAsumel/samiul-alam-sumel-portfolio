@@ -1,529 +1,187 @@
 # CLAUDE.md — samiul-alam-sumel-portfolio
 
-Project-specific instructions for Claude Code working in this repo. This
-supplements (does not replace) the user's global instructions.
+Project instructions for Claude Code. They supplement the user's global instructions; where the two
+disagree, the global safety rules win. Last rewritten 2026-10-15 to match the site as deployed.
 
 ## What this is
 
-Samiul Alam Sumel's personal portfolio: a static site (`index.html` +
-`css/style.css` + `js/main.js`) deployed on Cloudflare Pages, plus two CV
-`.docx` files generated from the same source facts as the site
-(`scripts/generate_cvs.py`). No framework, no build step, no backend.
+MD Samiul Alam Sumel's portfolio: a static site (HTML, CSS, vanilla JS) on Cloudflare Pages, plus two CVs
+(DOCX and PDF) generated from the same facts. No framework, no backend, no JS bundler. CSS has one build step.
+Deploy = push to `main` (Pages builds from GitHub; allow 1 to 3 minutes).
 
-## Pending (updated 2026-09-30)
-
-Nothing open. Done: CVs regenerated for the new positioning; `CONTRA_PROFILE.md` rewritten
-(its rate line is deliberately neutral: "agreed per project"; put a number there only if you
-decide on one); `scripts/generate_cover_letter.py` recreated and
-`Samiul_Alam_Sumel_Cover_Letter.docx` generated (fill `[Role]`, `[Company]` and the one "why this
-company" sentence for each application).
-
-## WebAnalyzer pass (2026-10-06, explicit user instruction)
-
-- Homepage H1 now carries the name: `MD Samiul Alam Sumel` (span `.hm-hero__name`) + role + second line. This
-  supersedes "homepage H1 is the role only" below. Title is `MD Samiul Alam Sumel | Business Process Automation`.
-- New: `/privacy/` (linked "Privacy & cookies" in every footer, plus "Last updated" `<time>`), `/.well-known/security.txt`
-  (expires 2027-10-06, renew it), `/llms.txt`, homepage `#faq` with matching FAQPage JSON-LD. Keep FAQ text and JSON-LD identical.
-- Buttons use only three class sets (`btn--primary`, `btn--secondary`, `btn--secondary btn--sm`); sizes for hero and CV trees
-  come from CSS, not extra classes. Command-palette icons are built in `js/main.js` from `data-icon` to keep the DOM under 1500
-  elements. No HTML comments in shipped pages. `_headers` drops Pages' wildcard CORS header.
-- Second pass (score 91): HTML is stripped of indentation by `python3 scripts/minify_html.py` (run after editing any page, then
-  `generate_sitemap.py`). The command palette list lives in `js/main.js` (`CMDK_ITEMS`). Homepage nav logo is `assets/brand-mark.svg`
-  as the first, eager image; the card image stays lazy. `_headers` CSP allows the one inline `speculationrules` block via its
-  sha256 hash: if that JSON in `index.html` changes, recompute the hash. Title carries "12+ Years". Keep the word "guaranteed"
-  in the CarView offline sentence (the analyzer's trust-signal check keys on it). FAQ ends with the measured Lighthouse sentence: re-measure before changing it.
-- Cannot be fixed: CAA record (pages.dev), SRI for the auto-injected Cloudflare beacon.
-
-## Design system (2026-10-14, explicit user instruction: DESIGN.md)
-
-`DESIGN.md` (repo root, listed in `.git/info/exclude`, not public) is the colour/type/spacing rulebook. It **supersedes** every older
-style note in this file (orange accent, light theme, shadows, gradients, justified body copy, 1200px container).
-
-- Dark only; one accent `#4DB8D0` (cyan). Primitives live in `css/tokens.css`; older `--color-*` / legacy names are aliases of
-  them. Light theme, theme toggle (button, `main.js`, palette action, `theme-color` light meta) are gone.
-- No shadows (only `--shadow-modal`), gradients, blur, keyframe animations, view transitions or scroll-reveal. Spacing, radius
-  and font sizes are mapped onto the DESIGN.md scales (spacing 4/8/12/16/24/32/48/72/112; radius 8 and 12; container 1120).
-- **Deliberate exceptions (user decisions):** the hero keeps its count-up numbers, auto-stepping selector, hero fade-in and
-  justified lead paragraphs ("keep the hero's look"); CarView, OT Bill and Port Billing screenshots show the real live apps
-  (captioned honestly) instead of "fictional data".
-- **Derived values not literally in DESIGN.md:** `color-mix()` tints of the accent / status colours / muted text for subtle
-  fills and borders; `--radius-full` for status dots; repeated spacing steps (the old 13 steps collapse onto 9 values);
-  favicon.svg and the app icons use two extra teal shades (`#2E7C8E`, `#1a3a5c`) and `#030a14`; `.link` has a 24px minimum height.
-- Banned and removed: "From workflow to software" chain on the three case studies (same diagram on several pages).
-- Re-check contrast with Lighthouse (cached `lighthouse` under `~/.npm/_npx`) after any colour change; 10 pages scored 100 for
-  accessibility on 2026-10-14. Brand assets (`og-image.png`, icons, `favicon.svg`, `assets/brand-mark.svg`) are cyan.
-
-## Contact composer (2026-10-15, explicit user instruction)
-
-Layout (2026-10-15): left column = hook, availability (with "Based in Mongla, Bangladesh (UTC+6)") and the composer; right column
-= "Elsewhere" links (LinkedIn, GitHub, Port Billing) plus the CV picker. The Email and Phone / WhatsApp rows live inside the composer and
-ARE the send actions (`#cc-mail`, `#cc-wa`); there is no separate button pair.
-`#compose` in `#contact` replaced the old "Contact Me / Copy email" buttons and the "Ways to work together" tree. The visitor picks a
-purpose (hiring, business system, logistics product, other); `js/contact.js` writes a short WhatsApp message (`wa.me/8801312312512`)
-and a detailed email (`mailto:` with subject and body), both editable under "Preview and edit the messages", with Copy buttons and a
-note to fill the `[brackets]`. Without JavaScript the two plain links still work. Nothing is sent or stored by the page. Message
-templates live in `contact.js`; keep them honest (no promises about price, speed or availability).
-
-## Site-wide consistency pass (2026-10-14, explicit user instruction: keep the hero as is, fix everything, no duplicate sections)
-
-- **Identity everywhere:** "Web Developer · Business Systems & Workflow Automation" (nav badge "Web Developer", footer tagline,
-  titles/metas of home, resume, capabilities, FAQ, JSON-LD, `llms.txt`, both CVs, `og-image.png`). Person `jobTitle` stays the real
-  current title. "Business process automation" remains only as a domain term. The hero text itself (incl. "approvals") was kept
-  at the user's explicit request; no system on the site demonstrates an approval workflow, so do not add more "approvals" claims.
-- **Homepage sections now (8):** `#hero`, `#work`, `#experience`, `#how-i-build`, `#decisions`, `#opsflow`, `#faq`, `#contact`.
-  Removed as duplicates: `#credibility` (hero proof chips), `#bring` (hero selector + `#work`), `#capabilities` summary (the
-  /capabilities/ page and nav), Decision 3 and 4 and "What I own" in `#decisions`, FAQ "only for ports?", the contact "View CV"
-  button, second contact paragraph and the self-link row. Do not reintroduce a section that repeats another.
-- **`#how-i-build` worked example:** "A Real Example of the Approach" now walks the same seven stage names (Observe, Define, Model,
-  Design, Build, Validate, Ship) through Port Billing and CarView, using only text the site already published (Validate uses the
-  "automated tests and compared against real bills" sentence). The separate "AI-assisted development" block and its nine-step chain
-  were removed because stage 05 already says it.
-- **FAQ Lighthouse line** is real: measured 2026-10-14 with the locally cached `lighthouse` (`~/.npm/_npx/*/node_modules/lighthouse`)
-  against `python3 -m http.server`-style local serving (no compression): 100/100/100 accessibility, best practices, SEO on 6 runs;
-  mobile performance 90-96, homepage desktop 100. Re-measure before editing that sentence; keep FAQ text and JSON-LD identical.
-- **CSS:** dead rules for removed sections were pruned (home bundle 128 KB to ~114 KB); `.link` has a 24 px minimum height;
-  `Inter Fallback` metric-matched font-face keeps CLS at 0. Homepage static body 1180 elements, runtime about 1450.
-- **CV content rebuilt (2026-10-15):** `scripts/generate_cvs.py` now mirrors the site: skills in the `/capabilities/` tiers, the
-  confirmed operational areas, advance-bill wording, OpsFlow (in development, no customers claim), Anchora Commerce (source only)
-  and the UTC+6 location. Numbers kept only where a case study states them (eight locations, seven charts, thirteen report
-  sections, 295 dish pages, 88 lessons, 18 form sections). Both CVs must stay 2 pages; if a page-3 spill appears, shorten text
-  before adding spacing tricks. The separate "Linux / Automation Practice" section was folded into the skills block.
-- **CVs** regenerate with a throwaway venv (`python-docx`), then `soffice --headless --convert-to pdf`; both are 2 pages.
-- `assets/screenshots/portbill-thumb.webp` is no longer referenced (kept, not deleted).
-
-## Hero interactions (2026-10-14, explicit user instruction)
-
-- `js/hero.js` (homepage only): the hook line is static text ("Done by hand / email / spreadsheet ? I'll turn it into a system."); `.hm-hero__proof` counters (12+, 3, 8+) count up once and end on the published figures; `#hero-cap` ("What do you need
-  built?") is an ARIA tab selector (Billing, Tracking, Overtime, Web apps) that steps through once, rests on the first tab,
-  and hands over on hover/focus/click; arrow keys, Home and End work. Everything is a one-shot, so the "nothing continuous"
-  motion rule holds. It replaced the old `.hm-flow` panel (the five stages live in `#how-i-build`).
-- Each tab panel has a headline, a one-line input → rule → output flow (plain text, not list items: the homepage body
-  must stay under 1500 elements; it was 1491 on 2026-10-14), a Before/After pair and the proof row.
-- Each tab's Before/After/Proof text must stay inside what the site already publishes about that system; "Live · daily use"
-  only on Port Billing, CarView and OT Bill; OpsFlow stays "in development". Chip numbers must match `#credibility`.
-- Positioning (2026-10-14, user instruction after a repo review and a web search on hero copy): H1 is outcome-led, "I build
-  systems that take manual work off your team.", with the role line "Web Developer · Business Systems & Workflow Automation".
-  Hero buttons: "See live systems" (#work) and "Contact me" (#contact). The H1 and role line are claims about what he
-  builds; keep them to the published systems. Title, meta and keywords match; nav badge, og-image, FAQ/JSON-LD, llms.txt, About/Resume/Capabilities
-  and the CVs still carry the older "Business Process Automation" wording. Lighthouse was NOT re-measured after these hero
-  changes; re-measure before keeping the FAQ sentence that cites it.
-
-- `#work` (2026-10-14, user instruction): the home section no longer carries the 8-step `.wf2sw` chain, the `.systree`
-  summary list or the capability chips (all duplicated the cards or `#how-i-build`); the three cards use a By hand / Now
-  pair (`.pcard__before` / `.pcard__after`). The chain stays on the case studies. `#bring` ("What I automate") is five
-  before/after cards with proof links. Homepage body was 1429 elements after this; keep it under 1500.
-
-- **Other engineering work (2026-10-14, from the public GitHub repos):** eight cards (name, Live / Source only badge, one-line
-  description, stack, GitHub link). Added `anchora-commerce` (public, Next.js 15 / Prisma / Postgres, "Source only", portfolio
-  build). Deliberately left out: `deskora` (booking logic is still a skeleton until its M4), `talentforge-ai` (no description or
-  evidence), `pcs-port-system` (Kafka/EKS/Terraform would imply a DevOps identity), Linux/Bash repos, `pts-sas`,
-  `devops-command-summary`, and the private repos (`opsflow` has its own section; `serviceflow`, `postcadence` are private).
-- **`#experience` (2026-10-14):** the career path is now six visible steps (`.ev--flat`, no collapsed details) and the six
-  generic "Domain expertise" cards were removed (they repeated the operational-areas tabs and the hero). The `/experience/`
-  page keeps its own collapsible timeline.
-- **Port Billing card image (2026-10-14):** now `assets/screenshots/portbill-home.webp`, a full real capture of the guest-mode
-  `portbill.pages.dev` calculator (empty inputs, no personal data). The old `portbill-thumb.webp` is no longer used on the homepage.
-- **CarView screenshot (2026-10-14, explicit user instruction, risk explained twice):** the homepage CarView card now uses a
-  real capture of the public read-only `carview.pages.dev` (`assets/screenshots/carview.webp`), which shows the Mongla Port
-  Authority header and real aggregate balances. This reverses the "synthetic mockup only" rule for that one card; the
-  `/projects/carview` case study stays synthetic. The OT Bill card uses the user's own screenshot of the empty admin dashboard
-  (`assets/screenshots/otbill.webp`, browser chrome cropped out; no employee names, IDs or salaries visible; Bengali UI text
-  is inside the image only). Claude must not browse otbill.pages.dev: its real data includes employee PII; the user supplies any new capture.
-
-## Site maintenance rules added 2026-09-19
-
-- **Homepage is 8 sections (2026-09-29, step 2):** `#hero`, `#credibility`,
-  `#bring` (nav "Expertise"), `#combination`, `#how-i-build`, `#work` (nav
-  "Projects", 3 production systems + a "More projects" list), `#opsflow`,
-  `#experience`, `#contact`. Styles live in `css/home.css` and
-  `css/home-sections.css`. `#how-i-build` (step 3) is an ARIA tab component
-  (`js/how-i-build.js`, `css/hb-process.css`, `css/hb-examples.css`): stages are
-  plain stacked articles, upgraded to tabs at >=900px. Its PortBill/CarView
-  examples were checked against the public repos on 2026-09-29 — PortBill has
-  a Worker, saved bills with search, a dashboard and automated tests (its case
-  study page still says "no backend"; fix in the case-study step). The old hero proof strip, trust counters and
-  `#verify` grid are gone. "3 in production" (`#credibility`) means portbill,
-  carview and otbill — recount if one is added; the JSON-LD `ItemList` in
-  `index.html` still lists live deployments and must match reality.
-- **Hero and first screen (2026-09-30, positioning step 1):** eyebrow is "Open to work · Remote worldwide";
-  H1 is two lines (Port & Logistics Operations / Business Systems & Automation), followed by the mono line
-  "AI-Assisted Product Builder" (user chose Builder over Engineer). `#credibility` has 3 metrics: 12+ years,
-  3 production systems, 8+ live deployments (portbill, opsflow (opsflow.sasas.workers.dev; opsflow91.pages.dev no longer resolves), clif91, salahsync, kitchenatlas,
-  outreach-copilot, englishmastery, this site; carview and otbill are extra). Recount if a deployment is
-  retired. `#bring` opens with "Most developers learn software first. I learned the operation first." The
-  decorative `.hm-flow` is hidden below 768px to keep the phone hero short.
-- **Featured systems policy (2026-09-29, step 4).** `#work` and `/projects/portbill`,
-  `/carview`, `/otbill` are the rebuilt 8-part case studies (css: `case-mocks`,
-  `case-visuals`, `case-study`, `project-cards`). Privacy rules, decided with the
-  user: CarView and OT Bill are shown ONLY as synthetic mockups with fictional
-  figures (`.mock`), never the real screenshots/GIF; no live-app or GitHub links
-  for either (CarView's live view and public repo carry real aggregate operating
-  data; OT Bill's public repo carries real employee names, IC numbers and salaries
-  plus a hard-coded admin password). PortBill keeps its live link; its GitHub repo became PRIVATE (2026-09-30), so no GitHub link
-  and the how-i-build page must not point readers at commits. Keep OT Bill described as overtime billing, not payroll, and
-  CarView as quantity tracking, not GPS. Those real screenshots and the demo GIF were deleted on 2026-09-30 at the user's request
-  (still in git history). CVs and CONTRA_PROFILE link only the case-study pages.
-- **Production systems tiering (2026-09-30, positioning step 2):** the homepage section is "Production Systems"; Port
-  Billing is the full-width flagship card (#1), CarView #2 (operational tracking), OT Bill #3 (workflow automation).
-  All three carry the badge "Live · daily use" (user confirmed, including OT Bill); other projects keep plain "Live".
-  Case studies add: fact strip (`.cs-facts`), Port Billing `Business rules` flow + `Validation`, CarView
-  `Engineering trade-off` (`.cs-decision`), OT Bill four-step strip, and a shared `From workflow to software` chain
-  (`.wf2sw`). Styles live in `css/production.css` (home + case bundles). The Port Billing rule order is taken from
-  portbill `src/car.js`: slabs, then payable charges into the base, VAT on the base, levy added after VAT. Re-check
-  that file before editing the flow. No time-saving figure is claimed for OT Bill.
-- **Engineering evidence (2026-09-30, positioning step 3):** homepage gains `#decisions` (4 decision cards with
-  trade-offs, "What I own", engineering principle) after `#how-i-build`, which now uses the stage names Observe,
-  Define, Model, Design, Build, Validate, Ship & Improve and a nine-step AI workflow (`.wf2sw--nine`). `/capabilities/`
-  skills: Domain Systems group first; Technology in four blocks (Proven / Working knowledge / Currently developing /
-  Engineering practice) plus "Technology by system" trails. Evidence-only rule kept: no MongoDB, Docker, JWT or
-  course-only items. Linux/Bash appear only as small self-directed practice, never as a DevOps identity. Styles:
-  `css/decisions.css` (home + capabilities bundles). Do not read the project repos for this content; it comes from
-  what the site already publishes.
-- **OpsFlow case-study order (2026-09-30, positioning step 4):** `/projects/opsflow` now runs problem (with who it is
-  for and a hedged typical pattern), workflow, a Current status strip (BUILDING; Implemented / In development / Planned),
-  modules, data relationships with per-link status, dashboard concepts labelled "Concept · synthetic data", tenant
-  isolation, "From internal tool to general product", architecture, why, AI, roadmap. Status re-verified read-only
-  against the local OpsFlow clone at HEAD 4478e5e: no routes or pages for orders, trips, invoices, payments,
-  outstanding, reports or a dashboard. Re-check before changing any label. The defensive "no customers, no revenue"
-  one-liner stays removed; the status strip carries a single factual scope line instead. `/capabilities/` gained
-  "Problems I Can Help Solve" (in `#challenge`), the career bridge and "Why product building?" (in `#builder`),
-  and "Where My Experience Fits". Role wording stays "Product Builder"; "Product Engineer" appears only as a target role.
-- **Final polish (2026-09-30, positioning step 5):** homepage order is now hero, credibility, bring, Production Systems
-  (`#work`), Experience, How I Build, Decisions, OpsFlow, capabilities summary, contact + CVs; `#combination` was
-  removed as a duplicate. Primary nav on every page: Systems / How I Build / Experience / Expertise / About / CV /
-  Contact (the logo is Home). The two CVs are labelled "Global Operations & Systems CV" and "Product Building CV
-  (remote / contract)"; filenames are unchanged. JSON-LD `jobTitle` is the real current title (Senior Outdoor
-  Assistant, Revenue Branch), never a target role. On phones the stage chains, the domain tree and the worked example
-  are hidden to keep the page short (`css/production.css`). Do not reintroduce "AI engineer" wording.
-- **Post-polish additions (2026-09-30):** Resume and About now state "Education: HSC, Business Studies, 2011" and
-  Bengali (native) / English (professional); no institutions or scores on the site. `og-image.png` was re-rendered
-  with headless Chrome (chain ends "AI-assisted product building"; LinkedIn needs a Post Inspector re-scrape).
-  On phones the How I Build stages collapse (`data-collapse` on `#hb`, `hb__toggle`/`hb__body` in `js/how-i-build.js`).
-  `_headers` CSP allows `static.cloudflareinsights.com` (script) and `cloudflareinsights.com` (connect) for
-  Cloudflare Web Analytics, which must still be switched on in the Pages dashboard (Metrics); every footer says so.
-- **Build step for CSS (2026-09-30, step 9):** pages load ONE bundle each (`css/bundle-<group>.min.css`,
-  6 groups defined in `scripts/css-bundles.json`; the group's old link list, same order, minified) to
-  remove 8-17 render-blocking requests (Lighthouse mobile perf 81 -> 92). Sources stay in
-  `css/*.css`. After ANY css edit run `python3 scripts/build_css.py` (`--check` reports stale bundles)
-  and commit the bundles. A new css file must be added to the right group(s) in the json. This
-  supersedes "no build step" for CSS only. JS is unbundled. `_redirects` maps the old CV filenames
-  to `MD-Samiul-Alam-Sumel-CV` / `-Project-CV`. SEO: homepage H1 is the role only; og-image is a
-  Chrome-rendered brand card (no stats); JSON-LD lists only supported claims (no phone, no Next.js
-  or MongoDB, no OpsFlow in the "software built" list except its own page, marked in development).
-- **Motion rules (2026-09-30, step 8):** all interaction polish lives in `css/motion.css`
-  (loaded last on every page) and `js/ux.js`. Animate `transform` and `opacity` only; no
-  animation libraries; no cursor effects (the existing card spotlight/magnetic buttons stay);
-  nothing may run continuously except the hero node outline (opacity-only, off under reduced
-  motion). Nav scroll-spy uses IntersectionObserver via `data-spy` on homepage nav links; the
-  progress bar is `scaleX`. Tab panels get equal min-heights from `how-i-build.js`. Cross-page fade
-  uses `@view-transition`. Copy-email button must always show visible + announced feedback.
-- **Capabilities (2026-09-30, step 7):** `/capabilities/` (+ homepage `#capabilities`); the nav
-  "Expertise" link now points there. No percentages, bars, ratings or certificates, ever.
-  Technology claims need repo evidence: Working with = live projects (HTML/CSS/JS, PWA, Cloudflare
-  Pages/Workers, Firebase Auth/Firestore, Chart.js, Node tests, Git/GitHub, Claude Code); Building
-  with = OpsFlow (TypeScript, React, Vite, Tailwind, Hono, Zod, D1 SQL, Vitest, GitHub Actions);
-  Learning = Node/Express depth, Jest/RTL, TypeScript depth (Odin Project / Full Stack Open, not
-  certifications). TypeScript is now "Building with" (supersedes the old "in progress only" rule).
-  Do not list PostgreSQL, Vercel, Docker, MongoDB, Linux admin/DevOps, cloud/security, German or
-  English-as-skill. Role wording: "AI-Assisted Developer / Product Builder", never "AI engineer".
-- **Experience profile (2026-09-30, step 6):** `/experience/` is the full operations career
-  profile and homepage `#experience` its summary (`css/exp-profile*.css`; domain map reuses the
-  tab component). Verified facts only: Mongla Port Authority, Traffic Department, Nov 2013 –
-  Present; Junior Outdoor Assistant Nov 2013 – Nov 2017, Senior Outdoor Assistant (Revenue Branch)
-  Nov 2017 – Present (already published). The user confirmed on 2026-09-30: container tallying and
-  statistics, stuffing/delivery/shipping bills and demurrage, customs-related vehicle (auction)
-  reporting, challan workflow and monthly statements, shipping-agent and stevedoring coordination.
-  Career milestones carry NO dates. Education is exactly "Higher Secondary Certificate (HSC),
-  Business Studies, 2011". No management, volume or percentage claims; target roles are labelled
-  as targets.
-- **OpsFlow page (2026-09-29, step 5)** `/projects/opsflow` + homepage `#opsflow`.
-  Status source of truth is the private repo (`docs/roadmap.md`, `routes/`, `pages/`);
-  re-check before editing. As of HEAD 4478e5e: Implemented = tenancy/auth/RBAC,
-  master data (API only), fleet (API + minimal UI), quotations (API + UI); In
-  development = Orders, Trips (user-chosen); Planned = invoices, payments, outstanding,
-  expenses, reports, warehouse. No dashboard exists; every dashboard image is labelled
-  Concept. Never say customers/revenue/live SaaS. Repo is private: no GitHub link. The two
-  real screenshots (`assets/screenshots/opsflow-*.webp`) show a fictional "Demo Company"
-  from a local instance. CSS: `opsflow.css`, `opsflow-sections.css`; JS: `opsflow.js`
-  (module filter) plus the shared tab component in `how-i-build.js`.
-- **OpsFlow facts (checked 2026-09-29 against the private repo):** M0 done,
-  M1 identity/RBAC done, M2 master-data and M3 fleet backends done; orders,
-  trips, invoices, payments NOT built; no customers. It is labelled Building,
-  links to the live shell `opsflow.sasas.workers.dev`, and its dashboard mockup is
-  labelled fictional. Re-check the repo roadmap before changing that copy.
-- Fonts are self-hosted (`assets/fonts/*.woff2`, `css/fonts.css`, latin
-  subset only). Do not re-add Google Fonts links — `_headers` sets a CSP with
-  `font-src 'self'` and `style-src 'self' 'unsafe-inline'`, so any new
-  third-party script, font, image host or `connect-src` origin must be added
-  to `_headers` deliberately.
-- Regenerate the sitemap with `python3 scripts/generate_sitemap.py` after
-  adding or editing any page (it reads git dates; 404 is excluded).
-- New subpages need a `BreadcrumbList` JSON-LD block like the existing ones.
-- Case studies (`projects/*.html`) reuse the `otbill.html` shell. Every claim in one
-  must trace to the project's code, its live site, or its CI (checked 2026-09-19);
-  never quote a metric that was not measured, and re-verify counts (World Kitchen
-  Atlas dish count = dish URLs in its live sitemap) before changing them. Repo READMEs
-  can be stale (Client Intake's says "no backend" but it has a Pages Functions API).
-- Cloudflare Pages 308-redirects `/x.html` to `/x`, so link, canonicalise and
-  sitemap every page by its extensionless URL. `404.html` must keep root-absolute
-  asset paths (it is served at arbitrary depths) and no canonical tag.
-
-## Private learning-protocol docs (not for the site)
-
-`private/` (gitignored, added 2026-08-21) holds four personal Claude-session
-curriculum prompts the user pastes into other sessions to drive his own
-learning: `learning-protocol-germany-visa-v3.3.md` / `ai_product_engineer`
-(a 12-month "Build Twice, Explain Thrice" + Drill-First hands-on coding
-protocol, explicitly tied to a Germany §19c(2) visa route) and
-`learning-protocol-unified-master.md` / `ai_product_founder` (a broader,
-long-horizon "AI Product Founder & Engineer" curriculum, Phase 0–23,
-business/product/leadership-heavy). `ai_product_engineer` and
-`ai_product_founder` are newer copies of the same two curricula and were
-found untracked at the repo root on 2026-08-21 — moved into `private/`
-immediately; if either reappears at repo root, move it back before staging
-anything.
-
-**Policy reversed 2026-08-21 (explicit user instruction, two confirmation
-rounds via AskUserQuestion — see commit `feat(site): reposition as AI
-Product Engineer, rebuild visual system`).** The site now surfaces the
-curricula's **identity, method, and phase roadmap** — not just one generic
-line: the "How I Build" section (`#method`) states plainly that projects are
-AI-assisted and describes the Tool ≠ Skill principle and the Build → Rebuild
-→ Explain discipline; the "Engineering Roadmap" section (`#roadmap`)
-publishes the Phase 0–5 plan (English, visa phase dropped) plus a live,
-honestly-worded status readout (current phase/module, in progress, last
-completed).
-
-**Still never surfaced, no exception:** the Germany §19c(2) visa route, any
-salary/rate figures, the MPA reference-letter open item, the self-graded
-per-skill matrix with ❌ marks, and any Bengali/Banglish source text — the
-site is English-only. Before any future edit near `#method`, `#roadmap`, the
-Growth section, or the CVs, grep for `19c|blue card|visa|salary|৳|reference
-letter` and for Bengali script (`grep -P '[\x{0980}-\x{09FF}]'`) — both must
-return nothing. If asked to update the roadmap/status readout to reflect
-real progress, keep it in that same honest-but-generic register: state the
-actual current phase/topic, never re-add gap-matrix or visa content.
-
-## Positioning — read before editing content
-
-> **6th reversal (2026-10-02, explicit user instruction):** the user wants global positioning, not port-only. Primary title is now **Business Process Automation** (H1) / **Web Systems & Internal Tools** (second line); role wording in About/CVs is "Business Process Automation Specialist"; nav badge "Process Automation"; one-line pitch "If your team does it by hand, I turn it into a system." Port operations stay as the verified origin and proof (experience facts unchanged), never the headline. `og-image.png` re-rendered for the new title. The 5th-reversal note below is history.
-
-**5th reversal (2026-09-29, explicit user instruction via a pasted 10-step
-redesign spec plus an AskUserQuestion confirmation):** the target identity is
-now **Port & Logistics Operations Specialist** (primary) → **Business Systems
-& Automation** (secondary) → **AI-Assisted Full-Stack Product Builder**
-(differentiator). Step 1 changed only brand chrome: nav logo badge ("Port &
-Logistics Ops"), hero `.h-role` and new `.h-titles` line. `<title>`, meta,
-JSON-LD, About/Experience/case-study copy and both CVs still carry the older
-"Product Engineer for Real-World Operations" wording and are rewritten in later
-steps — do not treat that mismatch as a bug to fix piecemeal. Primary nav is
-now Home / Projects / Experience / Expertise / About / CV / Contact on every
-page (Engineering is footer-only; OpsFlow is not in this branch). The older
-positioning text below is history; the 5th-reversal note above wins.
-
-The site's identity is **Product Engineer for Real-World Operations**
-(React/Next.js, Node.js/Express, MongoDB), supporting tagline "I turn
-operational problems into practical software." This is a **third
-deliberate reversal (2026-09-04, explicit user instruction, two
-confirmation rounds via AskUserQuestion)** — of "AI Product Engineer — Port
-& Logistics Domain" (set 2026-08-21, itself a reversal of "Port Operations
-Technologist"-primary set 2026-08-09, itself a reversal of "Product
-Engineer"-primary set 2026-07-28). Rationale given: "AI developer" reads as
-generic in 2026; this title is meant to read as differentiated because the
-site's projects demonstrably originate from real operational problems, not
-from AI-tooling novelty. **Do not drift this back toward "AI Product
-Engineer" or "Port Operations Technologist" as the primary title without
-being explicitly asked** — the 12+ year port-operations background stays
-positioned as domain context and the source of every project's problem
-(see the `#domain` section, née `#experience`), not the headline.
-AI-assisted development is now a supporting credibility-strip line in the
-hero (new `.h-cred` element in `css/style.css`, styled like `.h-titles`),
-not part of the primary title. The concrete job targets (Product Engineer /
-Full-Stack / Frontend / Web Developer / Logistics Systems Engineer) stay
-listed alongside the primary title for ATS matching and junior/mid
-honesty — the Contact section's "Primary Focus" line now leads with
-"Product Engineer." The "Personal AI Product Engineering Curriculum —
-Self-Authored" heading (`#roadmap`) was deliberately left unchanged — it
-names a self-study curriculum, not a job-title claim. Given this identity
-has now flipped three times in about six weeks, treat any future
-positioning request as needing the same explicit confirmation before
-touching the primary title again.
-
-**Tone (2026-07-28, explicit user correction):** no marketing slogans, no
-consulting-deck "identify → analyze → design → build → iterate" arrow-chain
-formulas, no emoji-driven "process" step cards. Say what was built and why
-in plain sentences — the same register as the rest of this file's hard
-content rules. "AI-Assisted Development" (not "AI-Native") is the correct
-term: it accurately scopes AI as a tool used during the build, not a claim
-that the practice is AI-first. If you catch yourself writing a tagline or
-a stepwise methodology graphic for this site, stop and rewrite it as prose.
-
-### Hard content rules (no sugarcoating)
-
-- **Every skill or claim must be traceable** to either (a) a module actually
-  *reached* in the Programming Hero course (`Let's Code Your Career -
-  Fixed-Main.docx` — 81 modules / 14 milestones total, kept locally, not
-  committed; the course was **not finished**, see below — only the portion
-  actually studied counts) or (b) a real, verifiable public GitHub repo
-  (`github.com/samiulAsumel`). If you're about to add a skill/tech pill,
-  grep the course doc or check the actual repo first — don't assume.
-- **Do not re-add**: SELinux, Podman, firewalld, Ansible, n8n,
-  TypeScript as a *completed* skill (it's real but only "in progress" —
-  keep it in the Growth section, not Core Competencies), SQL/Mongoose
-  (never covered by the course — the course uses the native MongoDB
-  driver), Arabic/German languages (removed at the user's request).
-- **RHCSA/RHCE (2026-08-15, reversed again — do not re-add):** the user is
-  no longer pursuing RHCSA/RHCE and is not certified. Do not claim or imply
-  an in-progress certification track anywhere on the site or CVs. The
-  small "Linux & Automation Practice" section (`#infra` on the site;
-  "Linux / Automation Practice" in the standard CV) stays, but framed only
-  as daily Linux/Ubuntu use plus self-directed Bash automation practice —
-  no RHEL, no RHCSA/RHCE, no certification-track language. It is backed by
-  real public repos: `auto-deploy-pipeline`, `auto-ssl-manager`,
-  `log-analyzer-alert` (all verified public Shell repos under
-  `github.com/samiulAsumel`) — keep those, drop the cert framing around them.
-- **The Programming Hero course is NOT completed (corrected 2026-08-21,
-  explicit user correction) — do not claim or imply it is finished
-  anywhere, on the site or in either CV.** The user worked through a real,
-  meaningful portion of it (HTML/CSS, JavaScript, React, part of
-  Node/Express and Next.js) between Jul 2025 and Aug 2026, then
-  stopped/is not continuing it — no exact module or milestone count is
-  available, so don't invent one; frame it as self-directed study, not a
-  completed credential, and drop any 100%-progress-bar or
-  checkmark-list-as-proof-of-completion treatment. The skill pills it used
-  to justify (React, Node/Express, MongoDB, Next.js, etc.) remain valid —
-  they're backed by real shipped projects plus the AI-assisted-development
-  framing (see the `skill-tiering-odin` memory), not by a finished course.
-  Current active self-study, purely for code comprehension (not a second
-  certificate): The Odin Project, starting from its "Intermediate HTML and
-  CSS" course inside the Full Stack JavaScript path, then Full Stack Open
-  (fullstackopen.com).
-- Job history (Mongla Port Authority, both roles) is real and is now part
-  of the headline positioning, not just background — see Positioning above.
-- **9 featured projects** (2026-08-28: added Outreach Copilot and SalahSync
-  after a GitHub + Cloudflare dashboard sweep — see below), each verified
-  before use — don't assume link status, re-check if it's been a while.
-  The "Production / Real-World Systems" tier (top of #work, full
-  case-study `<details>` treatment) is no longer strictly "in daily
-  production use" — the work-intro copy was deliberately loosened to
-  "real, working systems" on 2026-09-02 once it grew to include entries
-  that don't fit that phrase literally. Don't re-tighten the copy back to
-  "production" without checking this list first:
-  - Coworker/client-facing, genuinely in daily production use: Port
-    Billing Calculator (`portbill`), carview, OT Bill Management System
-    (`otbill`), Client Intake Form — real other people rely on these.
-  - Personal daily-use, promoted into the tier 2026-09-02 at the user's
-    explicit request despite being single-user: SalahSync (`salahsync`,
-    live at `salahsync.pages.dev`) — the site case study says so plainly
-    ("Just me — this is a personal daily-use tool, not a multi-user
-    product"); entire README/UI is in Bengali but the site card is
-    English-only, per the Bengali-script grep check below. Uses the same
-    "● LIVE — DAILY USE" status badge as the four above (user's explicit
-    choice), even though the "daily use" there is personal, not
-    multi-user.
-  - Public live product, no confirmed usage, promoted into the tier
-    2026-09-02 at the user's request: World Kitchen Atlas
-    (`world-kitchen-atlas`, live at `kitchenatlas.pages.dev`) — real
-    content (Asia: 7 countries / 280 dishes, confidence-rated per dish),
-    real infra (Cloudflare Worker + private data repo + Durable-Object
-    visit counter), but no exported traffic numbers exist to back a
-    "daily use" claim, so it deliberately uses a plain "● LIVE" status
-    badge instead of "● LIVE — DAILY USE". Its GitHub README describes an
-    earlier build phase (claims the data repo is still empty) — that's
-    stale; the deployed site is well ahead of it, verified directly
-    against `kitchenatlas.pages.dev`. Don't trust that README's "Status"
-    section without re-checking the live site.
-  - Live + GitHub, not in the top tier: Outreach Copilot
-    (`outreach-copilot`, live frontend at `outreach-copilot.pages.dev` +
-    a separate live API Worker) — single-user tool, not promoted.
-  - **Explicitly excluded, do not add** (found in the same 2026-08-28
-    sweep): `pts-sas` (personal 880-lesson curriculum tracker; its own
-    README names "Germany EU Blue Card" as a target market and RHCSA/RHCE
-    tracks — exactly the content the rules below ban) and
-    `devops-command-summary` (a RHCSA/DevOps/SELinux/Ansible/Podman command
-    reference — directly hits the banned-terms grep). Both are real,
-    live-deployed repos; they are excluded on content-policy grounds, not
-    because they're unverified. `deskora` (live at
-    `deskora.sasas.workers.dev`) was deliberately deferred — its own README
-    says the core booking/concurrency logic (the actual selling point) is
-    still a skeleton; revisit once M4 (the concurrency tests) lands.
-    `onboard-signup-form` (GitHub only, no live link, Odin Project exercise
-    extended) was deferred as too small to add given the site's project
-    bar.
-  - GitHub only, **no working live link** — do not label "Live":
-    `pcs-port-system` (its only public URL is a GitHub Pages *docs* site,
-    not a running app — label as "Architecture Showcase" with a Docs
-    link) and `jarvis` (Vercel deploy times out, GitHub Pages only
-    renders the README — GitHub-only card, explicitly noted as
-    "source available, no public demo").
-  Don't add project cards for anything not actually deployed/pushed (e.g.
-  course exercises like "Zap Shift" or "Payooo" only count once they're
-  actually public with a real repo). A standalone "Sasumel" project card
-  (from the Personal Brand Kit) is **not yet added** — check it's live
-  with a public repo before adding.
-
-## Keeping the site and CVs in sync
-
-`index.html` (Skills, Services, Experience, Projects, Infra, Growth
-sections) and `scripts/generate_cvs.py` (`SKILLS`, `PROJECTS`,
-`ADDITIONAL_PROJECTS`, `INFRA_NOTE`, `COURSE_SUMMARY` constants) must tell
-the same story. When you change one, change the other, then regenerate:
+## Commands
 
 ```bash
-python3 scripts/generate_cvs.py
+# Serve locally. Use a no-store server: Chrome caches python's default CSS and shows stale styles.
+python3 - <<'EOF'
+import http.server, socketserver
+class H(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self): self.send_header('Cache-Control', 'no-store'); super().end_headers()
+class S(socketserver.ThreadingTCPServer): allow_reuse_address = True
+S(('127.0.0.1', 8766), H).serve_forever()
+EOF
+
+python3 scripts/build_css.py            # after ANY css/*.css edit; `--check` lists stale bundles
+python3 scripts/minify_html.py          # after editing any page (strips indentation)
+python3 scripts/generate_sitemap.py     # after adding or editing a page (reads git dates; 404 excluded)
 ```
 
-Verify page count stays at 2 pages per CV (`soffice --headless
---convert-to pdf ... && pdfinfo`) — if it grows to 3, tighten spacing in
-the script's helper functions before adding more content.
+CVs (needs `python-docx`; use a throwaway venv, never global Python):
+`python3 -m venv /tmp/v && /tmp/v/bin/pip install python-docx && /tmp/v/bin/python scripts/generate_cvs.py`, then
+`soffice --headless --convert-to pdf --outdir <dir> <docx files>` and copy the PDFs to the repo root.
+Both CVs must stay exactly 2 pages (`pdfinfo`). If a third page appears, shorten text first.
 
-## Style conventions already in place
+Lighthouse is not a dependency. A copy is cached under `~/.npm/_npx/*/node_modules/lighthouse`; run it with
+`CHROME_PATH=/usr/bin/google-chrome node <that>/cli/index.js <url> --chrome-flags="--headless=new --no-sandbox"`
+(add `--preset=desktop` for desktop). Local numbers are not field numbers; say "local" when quoting them.
 
-- CSS is layered (2026-09-29, design-system step 1); load order in every
-  page: `fonts.css → tokens.css → base.css → layout.css → components.css →
-  systems.css → style.css`; `index.html` also loads `home.css` and `home-sections.css`. `tokens.css` holds every raw color/size/duration (`--color-*`,
-  `--text-*`, `--space-*`, `--radius-*`, `--shadow-*`, `--dur-*`), dark default +
-  light via `prefers-color-scheme`/`[data-theme]`. Primitives live in
-  `layout.css` (`.container .section .section-header .eyebrow .stack .cluster
-  .grid .divider .bg-layer`) and `components.css` (`.btn--primary/secondary/
-  ghost/text`, `.card--*`, `.badge--*`, `.stat`, `.icon-wrap`, `.link`, nav
-  shell). `style.css` is section-specific only. Legacy names (`.wrap .sec
-  .btn-p .btn-o .tag .sp`, old `--bg/--tx/--accent` tokens) alias onto the new
-  rules; new work uses the new names, never raw hex/px. Single solid orange
-  accent, no gradients, no glows, no blur/scale reveals, no pill radii. Fonts:
-  Inter + JetBrains Mono only (Space Grotesk removed). When verifying locally,
-  serve with a `Cache-Control: no-store` server — Chrome heuristically caches
-  `python3 -m http.server` CSS and shows stale styles.
-- Breakpoints are desktop-first (`max-width:900px/768px/480px`) — check all
-  three after layout changes.
-- Body-copy paragraphs (`.h-desc`, `.ab-text p`, `.svc-intro`, `.svc-desc`,
-  `.pc-pb`, `.pc-ds`, `.dc-note`, `.ct-text p`) are `text-align: justify`
-  with `hyphens: auto`. Keep this pattern for any new long-form paragraph
-  class; never justify nav links, buttons, tags/pills, or bulleted lists
-  (`.tl-ul`, `.dc-ul`, `.svc-ready-item`) — it looks wrong on short/flex
-  content.
-- `js/main.js` is vanilla JS, no dependencies. Don't add a framework for a
-  single-page static site.
-- Bump `CACHE_NAME` in `sw.js` (`sas-portfolio-vN` → `vN+1`) on **every**
-  content change to `index.html`/`css`/`js` — the service worker is
-  cache-first and stale content will otherwise stick for return visitors.
+## Repository map
+
+| Path | Purpose |
+|---|---|
+| `index.html` | Homepage (8 sections, below) |
+| `about/ capabilities/ experience/ resume/ privacy/ engineering/**` | Section pages (`<dir>/index.html`) |
+| `projects/*.html` | Case studies: portbill, carview, otbill, opsflow, client-intake-form, salahsync, world-kitchen-atlas, english-mastery, portfolio-site |
+| `css/*.css` | Sources. Pages load ONE bundle each: `css/bundle-<group>.min.css`, groups in `scripts/css-bundles.json` |
+| `css/tokens.css` | The only place raw colours, scales and durations live |
+| `js/` | `main.js` (nav, command palette), `ux.js` (scroll-spy, progress bar), `hero.js`, `contact.js`, `how-i-build.js`, `opsflow.js`, `case-study.js`, `capabilities.js` |
+| `sw.js` | Service worker, cache-first. Bump `CACHE_NAME` (`sas-portfolio-vN`) on EVERY change to HTML, CSS or JS |
+| `_headers`, `_redirects` | Cloudflare headers (CSP etc.) and the old-CV-filename redirects |
+| `llms.txt`, `robots.txt`, `sitemap.xml`, `.well-known/security.txt` | Discovery files |
+| `MD-Samiul-Alam-Sumel-CV.*`, `...-Project-CV.*` | CVs: "Global Operations & Systems CV" and "Product Building CV (remote / contract)" |
+| `scripts/` | Build and generator scripts |
+| `CONTRA_PROFILE.md`, `Samiul_Alam_Sumel_Cover_Letter.docx` | Freelance profile and cover-letter template (fill `[Role]`, `[Company]` per use) |
+| `private/`, `DESIGN.md`, `.playwright-mcp/` | Never published (gitignored) |
+
+## Identity and tone
+
+- Identity everywhere: **Web Developer · Business Systems & Workflow Automation**, plus the tag line "AI-Assisted Product Builder".
+  Homepage H1: "I build systems that take manual work off your team." "Business process automation" is a domain term only.
+  Never "AI engineer"; "Product Engineer" appears only as a target role. JSON-LD `jobTitle` is the real current title
+  (Senior Outdoor Assistant, Revenue Branch, Traffic Department), never a target role.
+- Plain sentences, no marketing slogans, no emoji. "AI-assisted development" (not "AI-native"): AI is a tool during the build;
+  requirements, rules, review and testing stay with the author.
+- Changing the primary title needs the user's explicit confirmation. It has changed many times.
+- The hero text (incl. the word "approvals") is kept at the user's request. No system on the site demonstrates an approval
+  workflow, so do not add further "approvals" claims anywhere else.
+
+## Content rules (hard)
+
+- Every claim must trace to real code, a live site, CI, or something the user confirmed. Never quote an unmeasured metric. Numbers
+  allowed because a case study states them: eight locations, seven charts, thirteen report sections (CarView); 295 dish pages in
+  7 countries (World Kitchen Atlas); 88 lessons, 87 writing tasks and 87 speaking drills (English Mastery); 18 form sections
+  (Client Intake). Re-verify before changing them. Repo READMEs can be stale; check the live site.
+- No percentage bars, ratings, certificates or time-saving figures.
+- Skills follow the `/capabilities/` tiers (Proven / Working knowledge / Currently developing / Engineering practice). Linux and
+  Bash appear only as small self-directed practice, never as a DevOps identity. Do not list: MongoDB, Docker, PostgreSQL, Vercel,
+  SELinux, Podman, firewalld, Ansible, n8n, RHEL, German or English-as-a-skill.
+- No RHCSA/RHCE claim or in-progress certification track. The Programming Hero course is NOT completed; never imply it is.
+  Self-study is "The Odin Project, then Full Stack Open, not certificates".
+- Education is exactly "Higher Secondary Certificate (HSC), Business Studies, 2011" on the site (no institutions or scores).
+  The CVs may add institution names. Languages: Bengali (native), English (professional).
+- Experience facts: Mongla Port Authority, Traffic Department, Nov 2013 to present. Junior Outdoor Assistant Nov 2013 to Nov 2017;
+  Senior Outdoor Assistant (Revenue Branch) Nov 2017 to present. User-confirmed areas: container tallying and statistics;
+  stuffing, delivery and shipping bills and demurrage; customs-related vehicle (auction) reporting; challan workflow and monthly
+  statements; shipping-agent and stevedoring coordination. Career milestones carry no dates. No management or volume claims.
+- Port Billing: C&F agents, importers and shipping agents ask what a bill will be; revenue staff used to work each estimate out
+  by hand or in Excel. Port staff use the calculator; agents still work from paper. Rule order: slabs, payable charges into
+  the base, VAT on the base, levy added after VAT (re-check `portbill` `src/car.js` before editing the flow).
+- OT Bill is overtime billing, not payroll. CarView is quantity and movement tracking, not GPS. Keep the word "guaranteed"
+  in CarView's offline sentence (a site-analyzer trust check keys on it).
+- OpsFlow: never say customers, revenue or live SaaS. Labelled "In development". Status source is the private repo; as last
+  checked (HEAD 4478e5e): implemented = tenancy, auth and roles, master data (API), fleet, quotations; in development = orders and
+  trips; planned = invoices, payments, outstanding balances, reports. Every dashboard image is labelled "Concept". Re-check the
+  repo before changing any label.
+- Never publish: salary or rate figures, job-search or relocation specifics, private study documents, or any Bengali text on the
+  site (it is English-only; images of the real UIs are the one exception). Before pushing, both of these must print nothing:
+  `grep -niE '19c|blue card|visa|salary|reference letter|selinux|podman|ansible|n8n|rhcsa|rhce|rhel' index.html scripts/generate_cvs.py`
+  `grep -P '[\x{0980}-\x{09FF}]' index.html scripts/generate_cvs.py`
+- Do not stage the user's personal working files (`learning.txt`, `Let's Code Your Career - Fixed-Main.docx`).
+
+## Homepage
+
+Sections, in order: `#hero`, `#work`, `#experience`, `#how-i-build`, `#decisions`, `#opsflow`, `#faq`, `#contact`.
+Nav: Systems / Experience / How I Build / Expertise (/capabilities/) / About / CV / Contact.
+
+- **One idea per section.** Do not reintroduce a section that repeats another (removed as duplicates: credentials strip, "What I
+  automate", capabilities summary, repeated decision cards, the AI-workflow chain, the process chain on case studies).
+- `#hero`: outcome-led H1, role line, tag line, sub-headline, hook line ("Done by hand / email / spreadsheet ? I'll turn it into a
+  system."), CTAs ("See live systems", "Contact me"), proof chips (12+, 3, 8+), and the "What do you need built?" selector
+  (`#hero-cap`, ARIA tabs: Billing, Tracking, Overtime, Web apps) driven by `js/hero.js`.
+- `#work`: three production systems as By hand / Now cards (Port Billing flagship, CarView, OT Bill) with real screenshots and
+  honest captions, then "Other engineering work" cards (Live or Source only, stack, links to the live app, case study and GitHub).
+- `#how-i-build`: seven stages (Observe to Ship) as tabs from 900px up, collapsing on phones; "A Real Example of the Approach"
+  walks the same stage names through Port Billing and CarView using only published text.
+- `#faq` and its FAQPage JSON-LD must be word-for-word identical. Its Lighthouse sentence is a measured, dated result: re-measure
+  before editing it.
+- `#contact`: composer on the left, "Elsewhere" links and the CV picker on the right (see Behaviours).
+- The 8+ live deployments are: portbill, opsflow (`opsflow.sasas.workers.dev`; `opsflow91.pages.dev` no longer resolves), clif91,
+  salahsync, kitchenatlas, outreach-copilot, englishmastery, this site (carview and otbill are extra). Recount if one is retired,
+  and keep the JSON-LD `ItemList` in step.
+- Budget: keep the homepage under 1500 DOM elements (static about 1165, about 1450 after JS runs). Prefer text over extra list items.
+- Case studies share the `otbill.html` shell. New pages need a `BreadcrumbList` JSON-LD block. Cloudflare Pages 308-redirects
+  `/x.html` to `/x`: link, canonicalise and sitemap by the extensionless URL. `404.html` keeps root-absolute asset paths and no
+  canonical tag.
+
+## Design system (`DESIGN.md`, local only, supersedes older style notes)
+
+- Dark only, one accent `#4DB8D0`. Primitives are in `css/tokens.css` (`--bg`, `--surface-1/2`, `--text`, `--text-muted`, `--accent`,
+  `--on-accent`, `--border-subtle`, `--border-control`, status colours); older `--color-*` and legacy names alias onto them. Never
+  write a hex value in a component. No light theme or toggle.
+- Banned: shadows (except the modal), gradients, blur, glow, emoji icons, keyframe animations, view transitions, scroll-reveal
+  (only the hero fades in), a second accent colour, centred long paragraphs, the same diagram on several pages.
+- Scales: spacing 4/8/12/16/24/32/48/72/112; radius 8 (controls) and 12 (cards); container 1120; type 0.75 to 3.5rem; body 16px at
+  line-height 1.6; buttons at least 44px tall; links underlined in running text; focus ring `2px solid var(--accent)`, offset 3px.
+- **Deliberate exceptions (user decisions):** the hero keeps count-up numbers, the auto-stepping selector, its fade-in and the
+  justified lead paragraphs; the homepage screenshots show the real live apps (see Projects) instead of "fictional data".
+- Derived values: `color-mix()` tints of the accent, status colours and muted text; `--radius-full` for status dots; two extra teal
+  shades in `favicon.svg` and the app icons.
+- Fonts are self-hosted Inter and JetBrains Mono (`assets/fonts`, latin subset) plus a metric-matched `Inter Fallback` that keeps
+  layout shift at 0. Do not add Google Fonts or any third-party origin without updating the CSP in `_headers`.
+- Re-check contrast with Lighthouse after any colour change (10 pages scored 100 for accessibility on 2026-10-14).
+
+## Projects: status and privacy
+
+| System | Public status on the site | Notes |
+|---|---|---|
+| Port Billing | Live · daily use, link to `portbill.pages.dev` | Repo is private: no GitHub link. Homepage image is a real guest-mode capture. |
+| CarView | Live · daily use, case study only | Homepage image is a real capture of the public read-only view (shows the authority name and aggregate figures, by the user's explicit decision). Case study stays synthetic. |
+| OT Bill | Live · daily use, case study only | Real data includes employee names, IC numbers and salaries. **Claude must not browse `otbill.pages.dev`**; the user supplies any new capture (homepage uses their own cropped screenshot of the empty dashboard). |
+| OpsFlow | In development | Private repo, early build at `opsflow.sasas.workers.dev`. |
+| Client Intake Form, SalahSync, World Kitchen Atlas, English Mastery, Outreach Copilot | Live | Plain "Live" badge; SalahSync is a personal tool and says so. |
+| Anchora Commerce, JARVIS | Source only | Portfolio build, no live demo; link to GitHub. |
+
+Deliberately not featured: `deskora` (booking logic still a skeleton; the old Workers URL returns 404), `talentforge-ai` (no
+evidence), `pcs-port-system` (Kafka/EKS/Terraform would imply a DevOps identity), the Linux and Bash repos, `pts-sas`,
+`devops-command-summary`, and the private repos `serviceflow` and `postcadence`. `portbill-thumb.webp` is unused but kept.
+Do not add a card for anything that is not deployed or public with a real repo.
+
+## Behaviours
+
+- `js/hero.js` (homepage): counters, selector. One-shot: steps through the tabs once, rests on the first, and hover, focus or click
+  takes over. Arrow keys, Home and End work. Honours `prefers-reduced-motion`.
+- `js/contact.js`: purpose chips (hiring, business system, logistics product, other) write a short WhatsApp message
+  (`wa.me/8801312312512`) and a detailed email (`mailto:` with subject and body) into the two rows `#cc-wa` and `#cc-mail`, editable
+  under "Preview and edit the messages", with Copy buttons and a `[brackets]` reminder. Without JavaScript both rows still work.
+  Nothing is sent or stored. Keep the templates honest (no promises about price, speed or availability).
+- `js/main.js`: nav, command palette (`CMDK_ITEMS`), mobile menu. `js/ux.js`: scroll-spy via `data-spy`, progress bar.
+- Every control must work by keyboard, and the console must be clean.
+
+## Platform notes
+
+- `_headers` sets a strict CSP (`script-src 'self'`, one hashed inline `speculationrules` block, Cloudflare Web Analytics).
+  If that `speculationrules` JSON changes, recompute its sha256. Cloudflare Web Analytics must be enabled in the Pages dashboard.
+- `/.well-known/security.txt` expires 2027-10-06: renew it. Unfixable: CAA record on `pages.dev`, SRI on the injected beacon.
+- Old CV filenames redirect through `_redirects`.
+- `sitemap.xml` and `llms.txt` list pages; keep `llms.txt` statements true (homepage shows real screenshots; the CarView and
+  OT Bill case studies use labelled mockups).
 
 ## Before pushing
 
-1. Tag-balance check (`grep -c` open vs. close on `div`/`section`/`a`, or
-   just view in a browser).
-2. `grep -niE 'selinux|podman|devops|ansible|n8n|rhcsa|rhce|rhel'` on
-   `index.html` should return nothing at all — see Positioning above.
-2a. `grep -niE '19c|blue card|visa|salary|৳|reference letter' index.html
-   scripts/generate_cvs.py` and `grep -P '[\x{0980}-\x{09FF}]' index.html
-   scripts/generate_cvs.py` should both return nothing — see Private
-   learning-protocol docs above.
-3. Load the page locally, check the browser console for errors, click
-   through nav anchors and both CV download buttons.
-4. Regenerate CVs if content changed; check they're still 2 pages.
-5. Only stage files relevant to the site/CVs. `learning.txt` and `Let's
-   Code Your Career - Fixed-Main.docx` are the user's personal working
-   documents (source material, not site content) — do not commit them
-   unless explicitly asked.
-6. Commit with a Conventional Commits message (`feat(site): ...`,
-   `fix(site): ...`) and only push when the user has asked for it.
+1. `python3 scripts/build_css.py --check` clean; `minify_html.py` and `generate_sitemap.py` run; `sw.js` cache bumped.
+2. Tag balance on the pages touched; no broken internal links; FAQ text equals its JSON-LD.
+3. The two greps under Content rules print nothing.
+4. Local browser check: console clean, keyboard path works, no horizontal scroll at 390px.
+5. CVs regenerated if facts changed, and still 2 pages.
+6. Stage only site files (never `.playwright-mcp/`, `private/`, `DESIGN.md`, personal documents). Review `git diff --cached`.
+7. Conventional Commit (`feat(site): ...`, `fix(site): ...`, `docs(cv): ...`). Push to `main` only when the user asks.

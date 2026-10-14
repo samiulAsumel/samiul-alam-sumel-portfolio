@@ -25,8 +25,8 @@
 .btn[disabled], .btn[aria-disabled='true'] { transform: none; }
 
 /* ---- Hero capability panel: the incoming panel fades in (opacity only) ---- */
-.hm-cap.is-enhanced .hm-cap__panel { transition: opacity var(--dur-base) var(--ease-standard), visibility 0s linear var(--dur-base); }
-.hm-cap.is-enhanced .hm-cap__panel.is-on { transition-delay: 0s; }
+.hm-cap__panel { transition: opacity var(--dur-base) var(--ease-standard), visibility 0s linear var(--dur-base); }
+.hm-cap__panel.is-on { transition-delay: 0s; }
 
 /* ---- Experience timeline: a step fills in once it has been seen ---- */
 .ev__list > li::after { content: ''; position: absolute; left: calc(var(--space-7) * -1 - 2px); top: 0; bottom: 0; width: 2px; background: var(--color-accent); transform: scaleY(0); transform-origin: top; transition: transform var(--dur-draw) var(--ease-out); }
@@ -44,7 +44,7 @@
 #spb { view-transition-name: site-progress; }
 
 @media (prefers-reduced-motion: reduce) {
-  .hm-cap.is-enhanced .hm-cap__panel { transition: none; }
+  .hm-cap__panel { transition: none; }
   #spb { transform: none; width: 0; }
 .ex-card:hover, .of-mod:hover, .pcard:hover, .cap-group:hover, .hm-more__list li:hover, .cs-grid > li:hover, .ex-links li:hover, .of-principles li:hover, .ex-roles .card:hover, .pcard:hover .pcard__media .frame, .btn:hover .arw { transform: none; }
   .ev__list > li::after { transition: none; }

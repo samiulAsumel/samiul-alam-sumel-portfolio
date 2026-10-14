@@ -66,7 +66,7 @@
 
   /* Typography: one sans, one mono */
   --font-sans: 'Inter', 'Inter Fallback', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* Scale (rem): 0.75 label / 0.8125 / 0.9375 / 1 / 1.125 / 1.375 / 1.75 / 2.5 / 3.5 */
   --text-display: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);

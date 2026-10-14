@@ -36,7 +36,7 @@
 /* Proof chips: the three published numbers, readable before any scrolling */
 .hm-hero__proof { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, auto)); justify-content: start; gap: var(--space-6); margin-bottom: var(--space-6); }
 .hm-hero__proof li { display: flex; flex-direction: column; gap: var(--space-1); padding-left: var(--space-4); border-left: 2px solid var(--color-border-accent); }
-.hm-hero__proof strong { font-family: var(--font-mono); font-size: var(--text-h2); font-weight: var(--weight-bold); line-height: 1; font-variant-numeric: tabular-nums; color: var(--color-text); }
+.hm-hero__proof strong { min-width: 3ch; font-family: var(--font-mono); font-size: var(--text-h2); font-weight: var(--weight-bold); line-height: 1; font-variant-numeric: tabular-nums; color: var(--color-text); }
 .hm-hero__proof span { font-size: var(--text-caption); color: var(--color-text-muted); max-width: 14ch; }
 
 /* Hero capability selector: the visitor picks a problem and sees the before, the after and the proof.
@@ -44,7 +44,8 @@
 .hm-cap { padding: var(--space-6); background: var(--color-surface); border: var(--border-default); border-radius: var(--radius-xl); }
 .hm-cap__title { font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--color-accent-text); }
 .hm-cap__tabs { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4) var(--space-5); }
-.hm-cap:not(.is-enhanced) .hm-cap__tabs { display: none; }
+/* The enhanced layout is the default, so the card never changes height when hero.js loads. Without scripting, all panels stack. */
+@media (scripting: none) { .hm-cap__tabs { display: none; } }
 .hm-cap__tab {
   min-height: 40px; padding: 0 var(--space-4); font: inherit; font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--color-text-2);
   background: var(--color-surface-2); border: var(--border-default); border-radius: var(--radius-md); cursor: pointer;
@@ -53,11 +54,12 @@
 .hm-cap__tab[aria-selected='true'] { color: var(--color-text); border-color: var(--color-border-accent); background: var(--color-accent-subtle); }
 .hm-cap__tab:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 .hm-cap__panels { display: block; }
-.hm-cap.is-enhanced .hm-cap__panels { display: grid; }
-.hm-cap.is-enhanced .hm-cap__panel { grid-area: 1 / 1; visibility: hidden; opacity: 0; }
-.hm-cap.is-enhanced .hm-cap__panel.is-on { visibility: visible; opacity: 1; }
+.hm-cap__panels { display: grid; }
+.hm-cap__panel { grid-area: 1 / 1; visibility: hidden; opacity: 0; }
+.hm-cap__panel.is-on { visibility: visible; opacity: 1; }
 .hm-cap__panel + .hm-cap__panel { margin-top: var(--space-6); }
-.hm-cap.is-enhanced .hm-cap__panel + .hm-cap__panel { margin-top: 0; }
+.hm-cap__panel + .hm-cap__panel { margin-top: 0; }
+@media (scripting: none) { .hm-cap__panels { display: block; } .hm-cap__panel { visibility: visible; opacity: 1; } .hm-cap__panel + .hm-cap__panel { margin-top: var(--space-5); } }
 .hm-cap__head { font-size: var(--text-h3); font-weight: var(--weight-bold); line-height: var(--leading-tight); letter-spacing: var(--tracking-heading); color: var(--color-text); margin-bottom: var(--space-4); }
 /* How it works in three beats (input → rule → output), one line of text to keep the DOM small */
 .hm-cap__flow { margin-bottom: var(--space-5); padding: var(--space-2) var(--space-3); font-family: var(--font-mono); font-size: var(--text-meta); letter-spacing: var(--tracking-meta); line-height: var(--leading-snug); color: var(--color-accent-text); background: var(--color-accent-subtle); border: 1px solid var(--color-border-accent); border-radius: var(--radius-sm); }

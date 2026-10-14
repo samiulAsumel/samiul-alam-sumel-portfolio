@@ -83,6 +83,11 @@ templates live in `contact.js`; keep them honest (no promises about price, speed
   mobile performance 90-96, homepage desktop 100. Re-measure before editing that sentence; keep FAQ text and JSON-LD identical.
 - **CSS:** dead rules for removed sections were pruned (home bundle 128 KB to ~114 KB); `.link` has a 24 px minimum height;
   `Inter Fallback` metric-matched font-face keeps CLS at 0. Homepage static body 1180 elements, runtime about 1450.
+- **CV content rebuilt (2026-10-15):** `scripts/generate_cvs.py` now mirrors the site: skills in the `/capabilities/` tiers, the
+  confirmed operational areas, advance-bill wording, OpsFlow (in development, no customers claim), Anchora Commerce (source only)
+  and the UTC+6 location. Numbers kept only where a case study states them (eight locations, seven charts, thirteen report
+  sections, 295 dish pages, 88 lessons, 18 form sections). Both CVs must stay 2 pages; if a page-3 spill appears, shorten text
+  before adding spacing tricks. The separate "Linux / Automation Practice" section was folded into the skills block.
 - **CVs** regenerate with a throwaway venv (`python-docx`), then `soffice --headless --convert-to pdf`; both are 2 pages.
 - `assets/screenshots/portbill-thumb.webp` is no longer referenced (kept, not deleted).
 

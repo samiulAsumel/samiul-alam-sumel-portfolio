@@ -293,102 +293,121 @@ CONTACT = [
 ]
 
 SKILLS = [
-    ("Domain & Port Operations", "Port billing, wharf-rent / VAT / levy calculation, cargo and "
-                                  "vehicle tracking, container tallying and statistics, C&F agent "
-                                  "workflows, customs-related reporting"),
-    ("Frontend & JavaScript", "HTML5 (semantic), CSS3, responsive design, JavaScript (ES6+), "
-                               "PWA / offline-first, Chart.js, Tailwind CSS"),
-    ("Building with (OpsFlow, in development)", "TypeScript, React, Vite, Hono, Zod, "
-                                                 "Cloudflare Workers + D1 (SQL), Vitest, GitHub Actions"),
-    ("Deployment & Tooling", "Cloudflare Pages / Workers, Firebase Auth / Firestore, Git & GitHub "
-                              "(branching, PRs), Node.js test runner, Claude Code (AI-assisted "
-                              "development). Learning: Node.js / Express depth"),
-    ("Linux & Automation (self-directed)", "Daily Ubuntu use; Bash scripting practice "
-                                            "(public repos on GitHub)"),
+    ("Domain & Port Operations", "Port billing, wharf-rent / VAT / levy calculation, advance billing "
+                                  "estimates, cargo and vehicle tracking, container tallying and "
+                                  "statistics, revenue reporting, C&F agent workflows, customs-related "
+                                  "reporting"),
+    ("Proven in live projects", "HTML5, CSS3, JavaScript (ES6+), PWA / offline-first, Cloudflare "
+                                "Pages & Workers, Firebase Auth & Firestore, Chart.js & Excel export, "
+                                "automated tests, Git & GitHub, React & Next.js, AI-assisted "
+                                "development (Claude Code)"),
+    ("Working knowledge", "TypeScript, Tailwind CSS & Vite, Hono & Zod APIs, SQL on Cloudflare D1, "
+                          "database design, Vitest & CI/CD (used in OpsFlow, in development)"),
+    ("Currently developing", "Node.js & Express depth, automated testing depth, TypeScript depth"),
+    ("Self-directed practice", "Linux / Ubuntu, Bash scripting, systemd & cron / timers, monitoring "
+                               "scripts (public repos on GitHub)"),
 ]
 
 PROJECTS = [
     dict(
-        name='Port Billing Calculator',
+        name='Port Billing System',
         links=[("Live", "https://portbill.pages.dev"), ("Case study", "https://sasumel.pages.dev/projects/portbill")],
-        problem="Port billing system creates permanent entries — C&F agents had no way to "
-                "estimate wharfrent charges before committing, causing billing disputes, "
-                "excessive dwell time, and repeated counter visits.",
-        solution="Real-time advance wharfrent calculator: slab-based charge computation, VAT "
-                 "and levy calculation, inside/outside cargo split, hoisting charge "
-                 "auto-calculation, print-ready A4 output. Used at the billing counter to "
-                 "check charges before final submission.",
-        tags="JavaScript, HTML/CSS, Cloudflare Pages, PWA, Print Output",
+        problem="C&F agents, importers and shipping agents kept asking what a bill would be. "
+                "The port's billing system makes permanent entries, so they could not check "
+                "wharf rent before committing, and revenue staff worked each estimate out by "
+                "hand or in Excel, causing billing disputes, longer cargo dwell time and "
+                "repeat counter visits.",
+        solution="Advance bill calculator that applies the port's rules in a fixed order: "
+                 "slab-based wharf rent, river dues, landing, removal, weighment and hoisting "
+                 "added to the base, VAT on the base, then levy; inside/outside storage "
+                 "totalled separately. Saved bills with search, a dashboard and a print-ready "
+                 "A4 invoice. The rules run in the browser, so estimates work offline; slab, "
+                 "VAT and rounding rules are covered by automated tests and were compared "
+                 "against real bills. Used daily at the billing counter.",
+        tags="JavaScript, HTML/CSS, Cloudflare Pages & Worker, PWA, Automated Tests, A4 Print",
     ),
     dict(
-        name='Daily Car Balance & Location Tracking System ("carview")',
+        name='Vehicle Tracking / CarView',
         links=[("Case study", "https://sasumel.pages.dev/projects/carview")],
-        problem="Vehicle positions across warehouse, shed, and yard were recorded in one "
-                "person's personal Excel file — invisible to all other staff, creating "
-                "bottlenecks and dependency on a single individual.",
-        solution="Offline-first PWA tracking 8 port locations, with Cloudflare Worker + private "
-                 "GitHub repo sync, a Chart.js analytics dashboard (7 charts + KPIs), 13 report "
-                 "sections, and Excel export. Built for Mongla Port Authority's Traffic Department.",
-        tags="PWA, Cloudflare Worker, Chart.js, GitHub Sync, Excel Export",
+        problem="Vehicle positions across warehouse, shed and yard were recorded in one "
+                "person's Excel file, invisible to everyone else. When that person was "
+                "unavailable, the whole team lost visibility.",
+        solution="Offline-first installable web app tracking eight storage locations, with "
+                 "daily receipts, deliveries, transfers and running balances; a Cloudflare "
+                 "Worker writes to a private GitHub repo so every save is a version-controlled "
+                 "commit. Seven charts, thirteen report sections and Excel export. Built for "
+                 "the Traffic Department and used daily. It records quantities and "
+                 "movements; it is not GPS tracking.",
+        tags="PWA, Cloudflare Worker, Chart.js, GitHub-backed data, Excel Export",
     ),
     dict(
-        name="OT Bill Management System",
+        name="OT Bill Management / Automation",
         links=[("Case study", "https://sasumel.pages.dev/projects/otbill")],
-        problem="Overtime billing was a fully manual Excel process — multi-step hourly rate "
-                "calculations and final bill generation done by hand every cycle.",
-        solution="Staff enters an employee profile once; the system generates the complete "
-                 "final OT bill instantly with correct hourly rate, cumulative date-wise OT "
-                 "calculation, and A4 print-ready output.",
-        tags="JavaScript, Employee DB, Auto-Calc, A4 Print, Cloudflare Pages",
+        problem="Overtime billing was a repetitive manual calculation: find the employee's "
+                "pay, work out an hourly rate, add up the hours day by day, then produce the "
+                "bill in the required format. Errors were easy to make and hard to spot.",
+        solution="Staff enter an employee profile once; the system prepares the overtime bill "
+                 "from daily hours, applies the rate rule automatically (basic pay divided by "
+                 "104, rounded up) and prints a bill on A4, with an all-bills view and a "
+                 "dashboard. It is overtime billing, not payroll.",
+        tags="JavaScript, Employee records, Auto-calculation, A4 Print, Cloudflare Pages",
+    ),
+    dict(
+        name="OpsFlow (in development)",
+        links=[("Early build", "https://opsflow.sasas.workers.dev"), ("Case study", "https://sasumel.pages.dev/projects/opsflow")],
+        problem="Transport and logistics firms run orders, trips, invoices and payments "
+                "across Excel, WhatsApp and manual records.",
+        solution="Multi-tenant operations software, built in stages. Implemented: "
+                 "tenant-isolated accounts and roles, customer, route and rate-card data, "
+                 "fleet records and quotations. In development: orders and trips. Planned: "
+                 "invoices, payments, outstanding balances and reports. Private repository; "
+                 "an early build, not a live product.",
+        tags="TypeScript, React, Vite, Hono, Zod, Cloudflare Workers + D1, Vitest, GitHub Actions",
     ),
     dict(
         name="Client Intake Form",
         links=[("Live", "https://clif91.pages.dev/"), ("GitHub", "https://github.com/samiulAsumel/client-intake-form")],
         problem="Collecting project requirements from a client over email or chat is "
-                "unstructured — details get missed, wasting time on both sides.",
-        solution="Project requirement intake form — 18 structured sections, a serverless "
-                 "submission API, and a password-protected admin dashboard that tracks each "
-                 "lead from New to Won/Lost, with the client's own email app as a fallback.",
+                "unstructured: details get missed, and without a written scope, what was "
+                "agreed becomes a dispute later.",
+        solution="Project requirement intake form: 18 structured sections that adapt to the "
+                 "project type, a serverless submission API, and a password-protected admin "
+                 "dashboard that tracks each lead from New to Won/Lost, with the client's own "
+                 "email app as a fallback.",
         tags="JavaScript, HTML/CSS, Cloudflare Pages Functions, GitHub API",
     ),
     dict(
         name="SalahSync",
         links=[("Live", "https://salahsync.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/salahsync")],
-        problem="A static printed daily-routine sheet couldn't adapt when Fajr time or office "
-                "hours shifted, and couldn't track whether a prayer was actually made in "
-                "jamaah, alone, or missed.",
-        solution="Offline-first installable PWA: set Fajr time/location and office hours once, "
-                 "and the full day's schedule (Tahajjud through sleep) recalculates itself, "
-                 "with a prayer/amal tracker, streaks, and offline solar prayer-time "
-                 "calculation — no API dependency. Personal daily-use tool, bilingual "
-                 "Bangla/English UI.",
+        problem="A printed daily-routine sheet couldn't adapt when Fajr time or office hours "
+                "shifted, or record whether a prayer was made in jamaah, alone, or missed.",
+        solution="Offline-first installable PWA: set Fajr time and office hours once and the "
+                 "day's schedule recalculates, with a prayer tracker, streaks and offline "
+                 "solar prayer-time calculation (no API). Personal daily-use tool, bilingual UI.",
         tags="PWA, Offline-First, Vanilla JS, i18n",
     ),
     dict(
         name="World Kitchen Atlas",
         links=[("Live", "https://kitchenatlas.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/world-kitchen-atlas")],
-        problem="Most recipe content online skips real culinary history, and asserts "
-                "uncertain food history as settled fact rather than acknowledging what "
-                "isn't actually confirmed.",
+        problem="Most recipe content online is thin, and states uncertain food history as "
+                "settled fact.",
         solution="Next.js static-export culinary encyclopedia on Cloudflare Pages: continent "
                  "-> country -> dish browsing, client-side search, and a per-dish confidence "
-                 "rating instead of presenting every entry as equally certain. Cloudflare "
-                 "Worker proxies a private GitHub data repo, admin CRUD, and a "
-                 "Durable-Object-backed visit counter. Asia live (7 countries, 295 dishes); "
-                 "other continents planned.",
-        tags="Next.js, TypeScript, Cloudflare Worker, Static Export",
+                 "rating. A Cloudflare Worker proxies a private GitHub data repo, with admin "
+                 "CRUD and a Durable-Object-backed visit counter. 295 dish pages across 7 "
+                 "Asian countries; other continents planned.",
+        tags="Next.js, TypeScript, Cloudflare Worker, Durable Objects, Static Export",
     ),
     dict(
         name="English Mastery",
         links=[("Live", "https://englishmastery.pages.dev"), ("GitHub", "https://github.com/samiulAsumel/english-reading-mastery")],
-        problem="English-reading material online is usually a loose pile of pages with no "
-                "level structure, so a learner can't tell where they are or what to read next.",
-        solution="Content-driven learning platform: 88 reading lessons across 9 skill levels "
-                 "with 87 paired writing tasks and speaking drills. A Node build script "
-                 "validates every Markdown lesson against a schema and generates the whole "
-                 "static site, so adding a lesson is a one-file change. Zero-framework "
-                 "HTML/CSS/vanilla JS output, GitHub Actions CI, auto-deployed to Cloudflare "
-                 "Pages.",
+        problem="English-reading material online has no level structure, so a learner can't "
+                "tell where they are or what to read next.",
+        solution="Content-driven learning platform: 88 reading lessons across nine skill "
+                 "levels with 87 paired writing tasks and 87 speaking drills. A Node build "
+                 "script validates every Markdown lesson against a schema and generates the "
+                 "static site, so adding a lesson is a one-file change. GitHub Actions CI, "
+                 "auto-deployed to Cloudflare Pages.",
         tags="Node.js, Vanilla JS, Static Site Generation, GitHub Actions, Cloudflare Pages",
     ),
 ]
@@ -399,16 +418,25 @@ ADDITIONAL_PROJECTS = [
         tag_note=None,
         links=[("Live", "https://outreach-copilot.pages.dev"),
                ("GitHub", "https://github.com/samiulAsumel/outreach-copilot")],
-        sentence="Single-user AI-drafted cold-outreach tool — Cloudflare Pages + Workers API, "
-                 "D1-backed leads/analytics, Workers AI draft generation across email/LinkedIn/"
-                 "WhatsApp/cover letter; every send stays a manual, deliberate step.",
+        sentence="Single-user AI-drafted outreach tool for a hand-picked lead list: Cloudflare "
+                 "Pages + Workers API, D1-backed leads and analytics, Workers AI drafts; every "
+                 "send stays a manual, deliberate step.",
+    ),
+    dict(
+        name="Anchora Commerce",
+        tag_note="source only, portfolio build, not a live shop",
+        links=[("GitHub", "https://github.com/samiulAsumel/anchora-commerce")],
+        sentence="Full-stack commerce platform: storefront with cart and checkout (stock "
+                 "validated in a transaction) and a role-gated admin dashboard. Next.js 15, "
+                 "TypeScript, Prisma, PostgreSQL, Docker, Vitest and Playwright tests, GitHub "
+                 "Actions.",
     ),
     dict(
         name="JARVIS",
         tag_note="source available, no public demo",
         links=[("GitHub", "https://github.com/samiulAsumel/jarvis")],
-        sentence="Self-hosted personal AI assistant with multi-model routing (Groq, OpenRouter, "
-                 "Claude, Gemini, local Ollama), voice I/O, and persistent memory.",
+        sentence="Self-hosted personal AI assistant with multi-model routing, voice I/O and "
+                 "persistent memory.",
     ),
 ]
 
@@ -423,10 +451,9 @@ INFRA_NOTE = (
 )
 
 STUDY_SUMMARY = (
-    "Self-paced study for code comprehension, not a certificate — starting from The Odin "
-    "Project's Intermediate HTML and CSS course, then Full Stack Open (University of "
-    "Helsinki): JavaScript fundamentals, Node.js/Express in depth, testing, and Git "
-    "workflow, built from assignment briefs rather than a course guide."
+    "Self-paced study for code comprehension, not a certificate: The Odin Project, then "
+    "Full Stack Open (University of Helsinki) for JavaScript, Node.js/Express depth, "
+    "testing and Git workflow."
 )
 
 
@@ -439,15 +466,15 @@ def build_final_cv():
     add_section_heading(doc, "Professional Summary", space_before=0)
     add_body(
         doc,
-        "Web developer specialising in business process automation, with 12+ years of hands-on experience in "
-        "cargo billing, vehicle and cargo tracking, revenue reporting and operational "
-        "workflows at Mongla Port Authority (Traffic Department). Turns repetitive "
-        "manual and Excel processes into working business systems: three self-built web "
-        "tools are used at the billing desk and in the Traffic Department. Builds with "
-        "AI-assisted development (Claude Code); requirements, business rules, testing and "
-        "validation stay with me. Self-directed learning through The Odin Project and Full "
-        "Stack Open. Open to international and remote roles in business process automation, "
-        "internal tools and web systems, operations technology, or product development.",
+        "Web developer who builds business systems and internal tools, with 12+ years of "
+        "hands-on experience in cargo billing, vehicle and cargo tracking, revenue reporting "
+        "and operational workflows at Mongla Port Authority (Traffic Department). Replaces "
+        "manual and Excel processes with working web systems: three self-built tools "
+        "(Port Billing, CarView and OT Bill) are in daily use at the billing desk and in the "
+        "Traffic Department. Builds with AI-assisted development (Claude Code); requirements, "
+        "business rules, testing and validation stay with me. Open to international and "
+        "remote roles in web development for business systems and internal tools, process "
+        "automation, operations technology or product building.",
         size=9.4,
     )
 
@@ -465,29 +492,29 @@ def build_final_cv():
     )
     add_body(doc, "Core Port Operations", space_after=1, size=9.3, italic=True, color=GOLD, align=None)
     for t in [
-        "Work through the wharfrent billing cycle — slab-wise charge computation, VAT and "
-        "levy calculation, inside/outside cargo split, and final billing for active "
-        "C&F agents; identified the recurring manual-calculation bottleneck and independently "
-        "built and deployed portbill, now used daily by the billing desk.",
-        "Track cargo and vehicle positions across warehouse, shed, and yard terminal "
-        "locations daily; the single-person, Excel-only version of this record was "
-        "the direct trigger for building carview, now the Traffic Department's shared, "
-        "version-controlled tracking system.",
-        "Operate the port automation billing system end-to-end and coordinate C&F agent "
-        "documentation and advance payment planning.",
+        "Billing: wharf-rent billing (slab-wise charges, VAT and levy, inside/outside cargo "
+        "split), vehicle, general-cargo and stuffing, delivery and shipping-related billing, "
+        "demurrage, advance billing estimates and billing records, applying the port's "
+        "published tariff.",
+        "Reporting: daily and monthly revenue reports, cumulative income statements and "
+        "monthly Traffic Department reporting for port authority management; container, "
+        "cargo, vehicle and jetty statistics; Excel-based data preparation and record checking.",
+        "Operations records: container tallying, vehicle delivery and position tracking across "
+        "warehouse, shed and yard, customs-related vehicle (auction) reporting, and the "
+        "bank-deposit (challan) workflow with monthly statements.",
+        "Coordination: C&F agents (paperwork, billing queries, advance payment planning), "
+        "shipping agents and stevedoring stakeholders.",
     ]:
         add_bullet(doc, t)
-    add_body(doc, "Self-Initiated Web Development & Learning", space_after=1, size=9.3, italic=True, color=GOLD, align=None)
+    add_body(doc, "From manual work to software", space_after=1, size=9.3, italic=True, color=GOLD, align=None)
     for t in [
-        "Talked to the billing desk, Traffic Department, and C&F agents to find the manual "
-        "bottleneck in each workflow — then designed and deployed 3 live web applications "
-        "now used daily by C&F agents and port staff, built with plain JavaScript/HTML/CSS "
-        "and AI-assisted development as a productivity tool.",
-        "Worked through a large part of a full-stack curriculum (HTML/CSS, JavaScript, "
-        "React, part of Node.js/Express and Next.js) alongside a full-time port operations "
-        "career, before stepping away to focus on shipping real projects.",
-        "Maintain an active public GitHub portfolio (github.com/samiulAsumel) demonstrating "
-        "continuous technical growth.",
+        "Moved from manual work to Excel automation, then to internal tools, web apps and "
+        "business systems: Port Billing System, CarView and OT Bill Automation, each built "
+        "around the real workflow after talking to the people who use it, and each in daily use.",
+        "Builds with AI-assisted development as a productivity tool; the requirements, business "
+        "rules, review and testing stay with me.",
+        "Maintains an active public GitHub portfolio (github.com/samiulAsumel) and a "
+        "self-directed practice in Linux and Bash.",
     ]:
         add_bullet(doc, t)
 
@@ -511,9 +538,6 @@ def build_final_cv():
         add_project_entry(doc, pr["name"], pr["links"], pr["problem"], pr["solution"], pr["tags"])
     for pr in ADDITIONAL_PROJECTS:
         add_compact_project(doc, pr["name"], pr["links"], pr["sentence"], pr["tag_note"])
-
-    add_section_heading(doc, "Linux / Automation Practice", space_before=6)
-    add_body(doc, INFRA_NOTE, space_after=3, size=8.8)
 
     add_section_heading(doc, "Self-Directed Study")
     add_role_header(
@@ -545,50 +569,40 @@ def build_freelance_cv():
     add_section_heading(doc, "How I Work", space_before=0)
     add_body(
         doc,
-        "Describe the workflow and where it breaks down — I ask questions until the "
+        "Describe the workflow and where it breaks down. I ask questions until the "
         "requirement is clear and written down, using 12+ years of port operations "
-        "experience to judge what actually fits, then design, build, and deploy the "
-        "solution: frontend independently, backend/data work with AI-assisted development "
-        "(Claude Code). For a company or industry, the goal is usually the same: find the "
-        "manual step in a process that already runs — a paper form, a shared spreadsheet, a "
-        "hand calculation — and replace it with a deployed tool the whole team can use. "
-        "Every build gets manually tested against the real business rules and explained "
-        "back before I call it done. A web developer who specialises in business process automation and builds "
-        "web systems with AI-assisted development, backed by 3 web apps built for "
-        "real daily use, not demos. Available for freelance and contract work worldwide, no "
-        "time zone constraints.",
+        "experience to judge what actually fits, then design, build and deploy the "
+        "solution, with AI-assisted development (Claude Code) as a productivity tool. "
+        "The goal is usually the same in any industry: find the manual step in a process "
+        "that already runs, whether a paper form, a shared spreadsheet or a hand "
+        "calculation, and replace it with a deployed tool the whole team can use. Every "
+        "build is tested against the real rules before I call it done. Backed by three web "
+        "apps built for real daily use, not demos. Based in "
+        "Mongla, Bangladesh (UTC+6) and available for freelance and contract work "
+        "worldwide, with flexible hours.",
         size=9.4,
     )
 
     add_section_heading(doc, "Services I Deliver")
     services = [
-        ("Full-Stack Web Apps",
-         "Web apps in vanilla JavaScript, with Cloudflare Pages / Workers where shared data "
-         "is needed. Scope starts from a written, agreed requirement, not a guess.",
-         "3 operational apps in use (vanilla JS + Cloudflare Workers); Next.js static "
-         "export via World Kitchen Atlas."),
-        ("Billing & Tracking Dashboards",
-         "Custom billing calculators, tracking dashboards, and operational tools — the same "
-         "kind of tool built to solve real problems at my own workplace, after talking "
-         "through exactly how the numbers are supposed to work with the people who use them.",
-         "Built for real daily use, not a demo."),
-        ("Operations Workflow Digitisation",
-         "Turning paper-based or Excel-based operational workflows — wharfrent "
-         "billing, overtime billing, cargo/vehicle tracking — into deployed, team-wide web "
-         "tools, backed by first-hand operational knowledge.",
-         "Proven with 3 tools converted from manual/Excel processes."),
-        ("Manual Process Automation",
-         "For any company or industry: map how a process actually runs today, find the "
-         "step still done by hand, and replace it with a deployed tool the whole team can "
-         "use, not just a one-off script.",
-         "portbill, otbill, and carview each replaced a specific manual step and are still "
-         "in daily use."),
-        ("Website Design & Build (AI-Assisted)",
-         "Marketing sites, portfolios, and small business websites — designed, built, and "
-         "deployed using the same AI-assisted workflow behind every project here: a written "
-         "requirement first, then a build tested end to end and explainable line by line.",
-         "This CV's own portfolio site is the proof — built, tested, and shipped with "
-         "AI-assisted development, deployed on Cloudflare Pages."),
+        ("Billing & Calculation Tools",
+         "Calculators that apply your rules in a fixed order and print the bill: slabs, "
+         "tariffs, VAT and levies. Built after walking through exactly how the numbers are "
+         "supposed to work with the people who use them.",
+         "Port Billing System: rules covered by automated tests and compared against real bills."),
+        ("Tracking & Reporting Systems",
+         "One shared record instead of a personal spreadsheet: daily balances per location, "
+         "charts, reports, Excel export and a full change history, working offline.",
+         "CarView: eight locations, seven charts and thirteen report sections, in daily use."),
+        ("Workflow Automation",
+         "Find the step still done by hand and replace it with a deployed tool the whole team "
+         "uses, not a one-off script.",
+         "OT Bill Automation replaced a manual overtime-bill calculation and is in daily use."),
+        ("Websites & Web Apps",
+         "Business sites, portfolios, content platforms and small web apps, built from a "
+         "written requirement and tested end to end.",
+         "World Kitchen Atlas, English Mastery and this portfolio are live; Anchora Commerce "
+         "shows a full store build (source only)."),
     ]
     for title, desc, proof in services:
         p = doc.add_paragraph()
@@ -599,15 +613,15 @@ def build_freelance_cv():
         r.font.size = Pt(10.3)
         r.font.color.rgb = NAVY
         add_body(doc, desc, space_after=1, size=9.6)
-        add_body(doc, "✓ " + proof, space_after=3, size=9.2, color=GOLD, italic=True, align=None)
+        add_body(doc, "\u2713 " + proof, space_after=3, size=9.2, color=GOLD, italic=True, align=None)
 
     add_section_heading(doc, "Remote & Freelance Readiness")
     for t in [
-        "No time zone constraints — any schedule, worldwide.",
+        "Based in Mongla, Bangladesh (UTC+6); flexible hours and async-friendly across time zones.",
         "Self-managed: scopes, builds, and deploys independently, manually verified before "
         "every release.",
         "Async-friendly English, Git/GitHub-based collaboration (branching, PRs).",
-        "Every past project is publicly verifiable before you hire.",
+        "Live projects and case studies are public, so the work can be checked before you hire.",
     ]:
         add_bullet(doc, t)
 
@@ -622,12 +636,11 @@ def build_freelance_cv():
     add_section_heading(doc, "Professional Background")
     add_body(
         doc,
-        "12+ years of professional experience at Mongla Port Authority — Senior Outdoor "
-        "Assistant, Revenue Branch, Traffic Department (Nov 2017 – Present); Junior Outdoor "
-        "Assistant, Port & Terminal Operations (Nov 2013 – Nov 2017). Wharfrent billing, "
-        "terminal operations, cargo dwell time management, and C&F agent coordination — a "
-        "track record of discipline and reliability, not just technical skill.",
-        size=9.6, space_after=6,
+        "12+ years at Mongla Port Authority: Senior Outdoor Assistant, Revenue Branch, Traffic "
+        "Department (Nov 2017 – Present); Junior Outdoor Assistant, Port & Terminal Operations "
+        "(Nov 2013 – Nov 2017). Billing, revenue reporting, cargo and vehicle tracking, and "
+        "C&F agent coordination: a record of discipline and reliability, not just technical skill.",
+        size=9.6, space_after=4,
     )
 
     add_section_heading(doc, "Self-Directed Study")
@@ -642,7 +655,7 @@ def build_freelance_cv():
     add_section_heading(doc, "Education & Languages")
     add_skill_line(doc, "Education",
                    "HSC — Business Studies, Khulna Public College (2009–2011); "
-                   "SSC — Business Studies, Mongla Bandar Secondary School (1999–2009)",
+                   "SSC — Business Studies, Mongla Bandar Secondary School",
                    space_after=2)
     add_skill_line(doc, "Languages", "Bengali — Native   |   English — Professional", space_after=2)
 
